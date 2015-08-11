@@ -41,3 +41,11 @@ Manage boxes
     vagrant box outdated
     vagrant box remove <box>
     vagrant box add | repackage | update
+
+## VCS
+
+* Commit the `Vagrantfile` but ignore the `.vagrant` directory (which contains machine-specific state).
+
+## Shared filesystem
+
+* By default the directory containing the `Vagrantfile` is shared as `/vagrant` in the VM.
