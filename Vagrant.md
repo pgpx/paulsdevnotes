@@ -33,7 +33,7 @@ Other comamnds:
 
 Destroy the VM (without confirmation):
 
-    vagrant destroy -f
+  <pre><code>vagrant [destroy](http://docs.vagrantup.com/v2/cli/global-status.html) -f</code></pre>
 
 Manage boxes
 
