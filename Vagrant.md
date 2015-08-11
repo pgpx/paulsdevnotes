@@ -12,24 +12,32 @@
 
     vagrant --version
 
-Create a new Vagrantfile (named `precise64`) in the current directory:
+Create a new Vagrantfile (named `precise64`) using the specified box in the current directory:
 
     vagrant init precise64 http://files.vagrantup.com/precise64.box
 
-Then start the box:
+Then start the virtual machine:
 
     vagrant up
 
-Connect to the box:
+Connect to the VM:
 
     vagrant ssh
 
 Other comamnds:
 
     vagrant status
+    vagrant global-status
     vagrant suspend
     vagrant halt
 
-Destroy the box (without confirmation):
+Destroy the VM (without confirmation):
 
     vagrant destroy -f
+
+Manage boxes
+
+    vagrant box list
+    vagrant box outdated
+    vagrant box remove <box>
+    vagrant box add | repackage | update
