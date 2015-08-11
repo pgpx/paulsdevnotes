@@ -8,7 +8,8 @@
 * [Vagrant: Up and Running](https://www.safaribooksonline.com/library/view/vagrant-up-and/9781449336103/)
 * [Vagrant Virtual Development Environment Cookbook](https://www.safaribooksonline.com/library/view/vagrant-virtual-development/9781784393748/)
 
-## Commands
+## [Commands](http://docs.vagrantup.com/v2/cli/index.html)
+
 
     vagrant --version
 
