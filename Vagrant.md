@@ -23,3 +23,13 @@ Then start the box:
 Connect to the box:
 
     vagrant ssh
+
+Other comamnds:
+
+    vagrant status
+    vagrant suspend
+    vagrant halt
+
+Destroy the box (without confirmation):
+
+    vagrant destroy -f
