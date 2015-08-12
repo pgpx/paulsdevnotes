@@ -40,6 +40,30 @@ puppet resource file /tmp/testfile.txt
 puppet resource file /tmp/testfile.txt content='New content'
 ```
 
+## Manifests
+
+[(ref)](https://www.safaribooksonline.com/library/view/learning-puppet-4/9781491907993/ch05.html)
+
+* Variables
+  * Names start with `$` and a lowercase letter, contain lowercase letters, numbers, underscores.
+  * Assignment: `$my_name = 'Joe'`
+  * Cannot be redefined (within a namespace/scope)
+* String constants: `'my string'` or `unquoted`
+  * [Reserved  words](https://docs.puppetlabs.com/puppet/latest/reference/lang_reserved.html) must be quoted.
+* String interpolation: `"value is $my_list[1] or ${num_tokens}"` (curly brackets are preferred?)
+* Comments: `#`
+
 ## [Facter](http://docs.puppetlabs.com/facter/3.0/)
 
 Discovers and reports per-node facts.
+
+```bash
+facter | grep version
+facter | grep mb
+facter --yaml
+facter --json
+```
+
+Access in a manifest: `$content = "Host ${facts['hostname']}"`
+
+
