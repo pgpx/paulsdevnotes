@@ -52,6 +52,48 @@ puppet resource file /tmp/testfile.txt content='New content'
   * [Reserved  words](https://docs.puppetlabs.com/puppet/latest/reference/lang_reserved.html) must be quoted.
 * String interpolation: `"value is $my_list[1] or ${num_tokens}"` (curly brackets are preferred?)
 * Comments: `#`
+* Operators: `+ - * / % << >>`
+  * Add elements to a list: `$mylist + [14,17]`
+  * Add pair to a hash: `$key_pairs + { gid => 500 }`
+  * Append to array: `$my_list << 33` or `$my_list << [33, 55]` (added as a child array)
+* Conditionals: `== != < >=`
+  * String operators are case insensitive
+  * Substing operators are case sensitive: `'Fee' !in 'coffee'` (`in !in`)
+  * Array and hash equality of both lenght and value.  `in` matches values in arrays and keys in hashes.
+  * Booleans: `and or !`
+  * Regex: `$str =~ /tea/` or `$str !~ /coffee/`
+
+Statements:
+
+```ruby
+if (expr) { ... } elsif (expr) { ... } else { ... }
+
+unless (expr) { ... } else { ... }
+
+case $var {
+  'string-val': { ... }
+  $varmatch:    { ... }
+  /regex/:      { ... }
+  func($param): { ... }
+  default:      { }
+
+# Selectors return a value
+$res =  $selector ? {
+  'string-val': 'val1',
+  $varmatch:    'val2',
+  /regex/:      'val3',
+  func($param): 'val4',
+  default:      'val5',
+}
+```
+
+Lambda blocks:
+
+```ruby
+| $firstvalue, $secondvalue | {
+  block of code which operates on these values.
+}
+```
 
 ## [Facter](http://docs.puppetlabs.com/facter/3.0/)
 
