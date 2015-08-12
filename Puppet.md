@@ -30,6 +30,16 @@ resource_type { 'resource_title':
 ```
 [(ref)](https://www.safaribooksonline.com/library/view/learning-puppet-4/9781491907993/ch04.html)
 
+Convert system state into Puppet code / modify state:
+
+```bash
+# Show the current state of the named file
+puppet resource file /tmp/testfile.txt
+
+# Change state with name=val pairs
+puppet resource file /tmp/testfile.txt content='New content'
+```
+
 ## [Facter](http://docs.puppetlabs.com/facter/3.0/)
 
 Discovers and reports per-node facts.
