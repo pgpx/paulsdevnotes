@@ -20,10 +20,16 @@
 ## Resources
 
 ```ruby
-notify { 'greeting':
-  message => 'Hello, world!'
+resource_type { 'resource_title':
+  ensure     => present,         # usually 'present' or 'absent'
+  attribute1 => 1234,            # number
+  attribute2 => 'value',         # string
+  attribute3 => ['red','blue'],  # array
+  noop       => false,           # boolean
 }
 ```
+[(ref)](https://www.safaribooksonline.com/library/view/learning-puppet-4/9781491907993/ch04.html)
+
 ## [Facter](http://docs.puppetlabs.com/facter/3.0/)
 
 Discovers and reports per-node facts.
