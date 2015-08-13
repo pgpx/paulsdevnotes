@@ -10,7 +10,8 @@
   [Codehaus MojoHaus Index](http://www.mojohaus.org/plugins.html)
   ([Github](https://github.com/mojohaus))
 * [assembly](http://maven.apache.org/plugins/maven-assembly-plugin/) -
-  [goals](http://maven.apache.org/plugins/maven-assembly-plugin/plugin-info.html)
+  [goals](http://maven.apache.org/plugins/maven-assembly-plugin/plugin-info.html),
+  [descriptor format](http://maven.apache.org/plugins/maven-assembly-plugin/assembly.html)
   
 	[SO](http://stackoverflow.com/a/28506199/125246): Use `<outputDirectory/>` instead of
 	`<outputDirectory></outputDirectory>` to avoid the following error:
