@@ -4,11 +4,12 @@
 * [Open Source Docs](https://docs.puppetlabs.com/puppet/)
 * [Type Ref](https://docs.puppetlabs.com/references/latest/type.html), [Language Ref](https://docs.puppetlabs.com/puppet/latest/reference/lang_summary.html)
 
-## Books / Videos
+## Books / Videos / Websites
 
 * [Learning Puppet (video)](https://www.safaribooksonline.com/library/view/learning-puppet/9781771373487/)
 * [Learning Puppet 4](https://www.safaribooksonline.com/library/view/learning-puppet-4/9781491907993/)
 * [Puppet Best Practices](https://www.safaribooksonline.com/library/view/puppet-best-practices/9781491922996/)
+* [Puppet Cookbook](http://www.puppetcookbook.com/)
 
 ## Commands
 
@@ -19,7 +20,7 @@
 
 ## Resources
 
-```ruby
+```puppet
 resource_type { 'resource_title':
   ensure     => present,         # usually 'present' or 'absent'
   attribute1 => 1234,            # number
@@ -38,6 +39,16 @@ puppet resource file /tmp/testfile.txt
 
 # Change state with name=val pairs
 puppet resource file /tmp/testfile.txt content='New content'
+```
+
+### [Notify](https://docs.puppetlabs.com/references/latest/type.html#notify)
+```puppet
+notify { 'resource title':
+  name     => # (namevar) An arbitrary tag for your own reference; the...
+  message  => # The message to be sent to the...
+  withpath => # Whether to show the full object path. Defaults...
+  # ...plus any applicable metaparameters.
+}
 ```
 
 ## Manifests
@@ -65,7 +76,7 @@ puppet resource file /tmp/testfile.txt content='New content'
 
 Statements:
 
-```ruby
+```puppet
 if (expr) { ... } elsif (expr) { ... } else { ... }
 
 unless (expr) { ... } else { ... }
