@@ -45,22 +45,25 @@ puppet resource file /tmp/testfile.txt content='New content'
 
 ### [Metaparameters](https://docs.puppetlabs.com/references/latest/metaparameter.html)
 Attributes that apply to all resource types.
-* `alias` - use to refer to resource if title is complex.
-* `audit => true` - (audit) log when a resource has changed (even if you don't want to manage its contents).
-* before
-* `loglevel => [debug|info|notice|warning|err|alert|emerg|crit]` - used to log changes to resource.
-* `noop => true` - do not make any changes (just log)
-* notify
-* require
-* schedule
-* stage
-* subscribe
-* `tag => ['mytag1', 'mytag2']` - used limit resources applied to those matching a tag.
+* [`alias`](https://docs.puppetlabs.com/references/latest/metaparameter.html#alias) -
+    use to refer to resource if title is complex.
+* [`audit`](https://docs.puppetlabs.com/references/latest/metaparameter.html#audit)` => true` -
+    (audit) log when a resource has changed (even if you don't want to manage its contents).
+* [`before`](https://docs.puppetlabs.com/references/latest/metaparameter.html#before)
+* [`loglevel`](https://docs.puppetlabs.com/references/latest/metaparameter.html#loglevel)` => [debug|info|notice|warning|err|alert|emerg|crit]` - used to log changes to resource.
+* [`noop`](https://docs.puppetlabs.com/references/latest/metaparameter.html#noop)` => true` -
+    do not make any changes (just log)
+* [`notify`](https://docs.puppetlabs.com/references/latest/metaparameter.html#notify)
+* [`require`](https://docs.puppetlabs.com/references/latest/metaparameter.html#require)
+* [`schedule`](https://docs.puppetlabs.com/references/latest/metaparameter.html#schedule)
+* [`stage`](https://docs.puppetlabs.com/references/latest/metaparameter.html#stage)
+* [`subscribe`](https://docs.puppetlabs.com/references/latest/metaparameter.html#subscribe)
+* [`tag`](https://docs.puppetlabs.com/references/latest/metaparameter.html#tag)` => ['mytag1', 'mytag2']` -
+    used limit resources applied to those matching a tag.
     Resources automatically get a tag of their resource name (as well as those explicitly defined).
 ```bash
 puppet apply manifest.pp --tags package,mytag1  # At least one tag must match
 ```
-
 
 ### [Exec](https://docs.puppetlabs.com/references/latest/type.html#exec)
 Execute a command, _must_ be idempotent (able to run multiple times).
