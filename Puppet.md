@@ -2,7 +2,9 @@
 
 * <https://puppetlabs.com/>
 * [Open Source Docs](https://docs.puppetlabs.com/puppet/)
-* [Type Ref](https://docs.puppetlabs.com/references/latest/type.html), [Language Ref](https://docs.puppetlabs.com/puppet/latest/reference/lang_summary.html)
+* [Type Ref](https://docs.puppetlabs.com/references/latest/type.html)
+* [Language Ref](https://docs.puppetlabs.com/puppet/latest/reference/lang_summary.html)
+* [Function Ref](http://docs.puppetlabs.com/references/4.2.latest/function.html)
 
 ## Books / Videos / Websites
 
@@ -126,11 +128,13 @@ puppet apply my-manifest.pp
   * [Reserved  words](https://docs.puppetlabs.com/puppet/latest/reference/lang_reserved.html) must be quoted.
 * String interpolation: `"value is $my_list[1] or ${num_tokens}"` (curly brackets are preferred?)
 * Comments: `#`
+
+[Expressions and operators](http://docs.puppetlabs.com/puppet/4.2/reference/lang_expressions.html)
 * Operators: `+ - * / % << >>`
   * Add elements to a list: `$mylist + [14,17]`
   * Add pair to a hash: `$key_pairs + { gid => 500 }`
   * Append to array: `$my_list << 33` or `$my_list << [33, 55]` (added as a child array)
-* Conditionals: `== != < >=`
+* [Conditionals](http://docs.puppetlabs.com/puppet/4.2/reference/lang_conditional.html): `== != < >=`
   * String operators are case insensitive
   * Substing operators are case sensitive: `'Fee' !in 'coffee'` (`in !in`)
   * Array and hash equality of both lenght and value.  `in` matches values in arrays and keys in hashes.
@@ -163,11 +167,55 @@ $res =  $selector ? {
 
 Lambda blocks:
 
-```ruby
+```puppet
 | $firstvalue, $secondvalue | {
   block of code which operates on these values.
 }
 ```
+
+[Iteration and loops](http://docs.puppetlabs.com/puppet/4.2/reference/lang_iteration.html)
+
+* [`each`](http://docs.puppetlabs.com/references/4.2.latest/function.html#each) -
+    invoke lambda for every entry in an array or key-value pair in a hash.
+    Hashes get `|$key,$value|` or `|$array|` (of key,value), arrays get `|$value|` or `|$0-based-index, $value|`
+```puppet
+each( $facts['partitions'] ) |$name, $device| {
+  notice( "${facts['hostname']} has device $name with size ${device['size']} (${device['size_bytes']})" )
+}
+
+['sally', 'joe'].each() | $name | { ... }
+['sally', 'joe'].each() | $index, $name | { ... } # 0-based
+
+```
+* [`filter`](http://docs.puppetlabs.com/references/4.2.latest/function.html#filter) -
+    return only array/hash elements that match the lambda
+```puppet
+$ips = $facts.filter |$key,$value| {
+  $key =~ /^ipaddress6?_/
+}
+```
+
+* [`map`](http://docs.puppetlabs.com/references/4.2.latest/function.html#map) -
+    apply lambda to each value, returning array of results.  If applied to a map, an array of [key,value] is
+    passed to the lambda.
+
+```puppet
+$ips = $insts.map |$entry| {
+  $pair[1]  # value of hash entry
+}
+```
+
+* [`reduce`](http://docs.puppetlabs.com/references/4.2.latest/function.html#reduce) -
+    combine values from array or hash into a single value, starting from the (optional) seed.
+
+```puppet
+$facts['partitions'].reduce(0) | $total, $partition | {
+  total + $partition[1]['size']
+}
+```
+
+* [`slice`](http://docs.puppetlabs.com/references/4.2.latest/function.html#slice)
+
 
 ## [Facter](http://docs.puppetlabs.com/facter/3.0/)
 
