@@ -1,7 +1,7 @@
 # [Bash](http://www.gnu.org/software/bash/)
 
 * [Official FAQ](http://tiswww.case.edu/php/chet/bash/FAQ)
-* [BashFAQ](http://mywiki.wooledge.org/BashFAQ/)
+* [BashFAQ](http://mywiki.wooledge.org/BashFAQ/), [Bash Pitfalls](http://mywiki.wooledge.org/BashPitfalls)
 
 ## Books
 * [Learning the Bash Shell, 3rd Ed. O'Reilly](https://www.safaribooksonline.com/library/view/learning-the-bash/0596009658/)
