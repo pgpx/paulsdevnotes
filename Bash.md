@@ -19,12 +19,7 @@ echo $SHELL
 * Any character in set - `[set]`
 * Any character not in set - `[!set]`
 
-## Paths
-* [Absolute path](http://stackoverflow.com/a/3915420/125246)
-```bash
-function abspath() { echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"; }
-```
-## Argumetns
+## Arguments
 [Iterate over arguments passed to script](http://stackoverflow.com/a/4528563/125246)
 ```bash
 for FILE in "$@"; do     # Does not lose whitespace in arguments
@@ -119,12 +114,6 @@ for NATCO in `svn ls file://$REPO/editions`; do
 echo $1 | sed "s,/$,,"         # substitute, use , as delimiter, remove trailing slash
 ```
 
-## tr
-Convert to lowercase
-```bash
-LC_APP=`echo $FULL_APP | tr '[A-Z]' '[a-z]'`
-```
-
 ## User functions
 ```bash
 function my_func() {
@@ -132,6 +121,38 @@ function my_func() {
 }
 
 NATCO=$(remove_slash "$NATCO")    # Prefer to call functions using $(func_name ...)
+```
+
+## Strings
+
+### tr
+[Convert string to lowercase](http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting)
+```bash
+echo $a | tr '[A-Z]' '[a-z]'
+a="$(tr [A-Z] [a-z] <<< "$a")"
+```
+
+## Paths
+* [Absolute path](http://stackoverflow.com/a/3915420/125246)
+```bash
+function abspath() { echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"; }
+```
+
+* [Determine the path of the executing BASH script](http://stackoverflow.com/questions/630372/determine-the-path-of-the-executing-bash-script)
+```bash
+#For the relative path (i.e. the direct equivalent of Windows' %~dp0):
+MY_PATH="`dirname \"$0\"`"
+echo "$MY_PATH"
+
+#For the absolute, normalized path:
+MY_PATH="`dirname \"$0\"`"              # relative
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"  # absolutized and normalized
+if [ -z "$MY_PATH" ] ; then
+  # error; for some reason, the path is not accessible
+  # to the script (e.g. permissions re-evaled after suid)
+  exit 1  # fail
+fi
+echo "$MY_PATH"
 ```
 
 ## Functions
