@@ -1,8 +1,12 @@
-# Bash
+# [Bash](http://www.gnu.org/software/bash/)
+
+* [Official FAQ](http://tiswww.case.edu/php/chet/bash/FAQ)
+* [BashFAQ](http://mywiki.wooledge.org/BashFAQ/)
 
 ## Books
-* Learning the Bash Shell, 3rd Ed. O'Reilly
-* Bash Cookbook, O'Reilly.
+* [Learning the Bash Shell, 3rd Ed. O'Reilly](https://www.safaribooksonline.com/library/view/learning-the-bash/0596009658/)
+* [Bash Cookbook, O'Reilly.](https://www.safaribooksonline.com/library/view/bash-cookbook/0596526784/)
+* [Pro Bash Programming : Scripting the GNU/Linux Shell, Second Edition](https://www.safaribooksonline.com/library/view/pro-bash-programming/9781484201213/)
 
 ## Shell info
 ```bash
