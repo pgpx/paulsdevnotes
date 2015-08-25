@@ -8,6 +8,12 @@
 * [Bash Cookbook, O'Reilly.](https://www.safaribooksonline.com/library/view/bash-cookbook/0596526784/)
 * [Pro Bash Programming : Scripting the GNU/Linux Shell, Second Edition](https://www.safaribooksonline.com/library/view/pro-bash-programming/9781484201213/)
 
+## Running scripts
+Run a script from a pipe with arguments [SO](http://stackoverflow.com/a/14693303/125246)
+```bash
+cat script | bash -s 5
+```
+
 ## Shell info
 ```bash
 # Bash version
