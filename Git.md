@@ -1,6 +1,7 @@
 # Git Notes
 
 * [Blog](https://git-scm.com/blog)
+* [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/) - tips / FAQs.
 
 ## Tips
 
@@ -10,4 +11,16 @@
 ```bash
 FILE="my/filename.txt" && git archive --remote=git@myremote.co.uk/repo/name.git \
     HEAD "$FILE" | tar -xO "$FILE"
+```
+
+* [Rebase a commit (that wasn't pushed)](http://stackoverflow.com/a/846091/125246)
+```bash
+# Reset to the commit before the merge
+git reset --hard HEAD^  # Maybe --hard to delete files?
+
+# Get the latest contents from the remote
+git fetch
+
+# Rebase the commit
+git rebase origin/master
 ```
