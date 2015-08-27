@@ -10,4 +10,12 @@
 * [Wiki](https://bitbucket.org/atlassian/jgit-flow/wiki/Home),
   [Goals Guide](https://bitbucket.org/atlassian/jgit-flow/wiki/goals.wiki)
 * [Mojo Documentation](http://jgitflow.bitbucket.org/plugin-info.html)
+* [Source](https://bitbucket.org/atlassian/jgit-flow/src)
 
+## Workflow
+
+* [Article with good config](http://george-stathis.com/2013/11/09/painless-maven-project-releases-with-maven-gitflow-plugin/)
+
+```bash
+mvn jgitflow:feature-start featureName=testfeat
+```
