@@ -5,7 +5,6 @@
 * [Blog](https://git-scm.com/blog)
 * [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/) - tips / FAQs.
 * [Git - Reset Demystified](https://git-scm.com/blog/2011/07/11/reset.html)
-
 * <http://stackoverflow.com/questions/1800783/compare-local-git-branch-with-remote-branch>
 * <http://git-scm.com/book/en/Git-Branching-Remote-Branches>
 
@@ -40,11 +39,6 @@ git checkout --track origin/develop
 
 # http://www.kernel.org/pub/software/scm/git/docs/gitignore.html
 # Ignore a file - Add file to .gitignore (which can be in any path, and then filenames are relative to that).
-
-git stash      # temporarily save local changes
-git stash pop  # reapply stashed changes and remove from stash
-git stash drop # delete stashed change
-git stash list
 
 git branch --list          # show branches
 git branch <branch-name>   # Create a branch
@@ -89,7 +83,16 @@ git fetch
 git filter-branch -f --env-filter "GIT_AUTHOR_EMAIL='paul.martin@gmail.com'; GIT_COMMITTER_EMAIL='paul.martin@gmail.com';" -- --all
 ```
 
-## Tips
+### Stash
+```bash
+git stash      # temporarily save local changes so they can be retrieved later
+git stash pop  # reapply stashed changes and remove from stash
+git stash drop # delete stashed change
+git stash list # List stashes
+git stash branch "branch-name" "stash@{0}"  # Create a branch from a named stash
+```
+
+## Tips
 
 * [Undo a commit and redo](http://stackoverflow.com/a/927386/125246)
 
