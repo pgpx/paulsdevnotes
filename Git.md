@@ -97,6 +97,24 @@ git rebase origin/master
 
 ## Remote management
 
+Configure remotes for a repo
+```bash
+# Add an 'origin' remote
+git remote add origin https://github.com/my/myrepo.git
+
+# Push all branches and tags (as tracking)
+git push -u origin --all   (-u set upstream tracking ref on every branch pushed)
+git push -u origin --tags
+
+# Or set upstream branch
+git branch --set-upstream-to=origin/master master
+```
+
+List all branches (including remotes and status)
+```bash
+git branch -avv
+```
+
 Remote all references to remotes from a clone:
 ```bash
 git remote remove origin
@@ -109,23 +127,6 @@ git fetch -v
 # Clone a repository
 git clone <repository address>
 
-Push to an origin server
-git remote rm origin
-git remote add origin https://github.com/pgpx/tis-100-solutions.git
-git branch -vv
-git branch --set-upstream-to=origin/master master
-
-git remote add origin https://github.com/pgpx/tis-100-solutions.git
-git branch --set-upstream-to=origin/master master
-git fetch
-
-# Push to remote
-git remote add origin git@gitlab.cms.tdev2.t-motion.co.uk:ebdc/henry-ee.git
-git push -u origin --all   (-u set upstream tracking ref on every branch pushed)
-git push -u origin --tags
-
 # Push selected changes to remote (not all)
 git push origin a7d640c4bc732826a2d074d2ef18371b34ae9306:develop
-
-git push -u origin develop
 ```
