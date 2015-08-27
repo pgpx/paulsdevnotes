@@ -22,14 +22,7 @@ git status
 # List of local and remote branches:
 git diff -a
 
-# Fetch changes from remote repository into local copy of remote repository
-git fetch -v
-
-# Clone a repository
-git clone <repository address>
-
 git branch develop
-git push -u origin develop
 
 # Look at a local repo's config, including where origin is mapped to.
 cat .git/config
@@ -52,13 +45,6 @@ git rebase -i <Last-commit-to-keep-as-is>
 # https://lostechies.com/derickbailey/2010/06/09/git-oops-i-forgot-to-add-those-new-files-before-committing/
 git commit --amend -C HEAD
 
-# Push to remote
-git remote add origin git@gitlab.cms.tdev2.t-motion.co.uk:ebdc/henry-ee.git
-git push -u origin --all   (-u set upstream tracking ref on every branch pushed)
-git push -u origin --tags
-
-# Push selected changes to remote (not all)
-git push origin a7d640c4bc732826a2d074d2ef18371b34ae9306:develop
 
 # Unstage a change (leave the change on the filesystem, but take it out of the staging area that will get committed with the next commit)
 # http://stackoverflow.com/a/1505968/125246
@@ -69,21 +55,12 @@ git gc --aggressive
 
 git filter-branch --prune-empty --subdirectory-filter save 
 
-git remote rm origin
-git remote add origin https://github.com/pgpx/tis-100-solutions.git
-git branch -vv
-git branch --set-upstream-to=origin/master master
-
-git remote add origin https://github.com/pgpx/tis-100-solutions.git
-git branch --set-upstream-to=origin/master master
-git fetch
-
 # http://dereenigne.org/git/set-git-email-address-on-a-per-repository-basis
 # http://schacon.github.io/git/git-filter-branch.html
 git filter-branch -f --env-filter "GIT_AUTHOR_EMAIL='paul.martin@gmail.com'; GIT_COMMITTER_EMAIL='paul.martin@gmail.com';" -- --all
 ```
 
-### Stash
+### [Stash](http://git-scm.com/docs/git-stash)
 ```bash
 git stash      # temporarily save local changes so they can be retrieved later
 git stash pop  # reapply stashed changes and remove from stash
@@ -121,4 +98,30 @@ Remote all references to remotes from a clone:
 git remote remove origin
 ```
 
+```bash
+# Fetch changes from remote repository into local copy of remote repository
+git fetch -v
+
+# Clone a repository
+git clone <repository address>
+
 Push to an origin server
+git remote rm origin
+git remote add origin https://github.com/pgpx/tis-100-solutions.git
+git branch -vv
+git branch --set-upstream-to=origin/master master
+
+git remote add origin https://github.com/pgpx/tis-100-solutions.git
+git branch --set-upstream-to=origin/master master
+git fetch
+
+# Push to remote
+git remote add origin git@gitlab.cms.tdev2.t-motion.co.uk:ebdc/henry-ee.git
+git push -u origin --all   (-u set upstream tracking ref on every branch pushed)
+git push -u origin --tags
+
+# Push selected changes to remote (not all)
+git push origin a7d640c4bc732826a2d074d2ef18371b34ae9306:develop
+
+git push -u origin develop
+```
