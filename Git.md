@@ -106,7 +106,8 @@ git remote add origin https://github.com/my/myrepo.git
 git push -u origin --all   (-u set upstream tracking ref on every branch pushed)
 git push -u origin --tags
 
-# Or set upstream branch
+# Or set tracking upstream branch as a separate step after pushing branch
+git push origin master
 git branch --set-upstream-to=origin/master master
 ```
 
