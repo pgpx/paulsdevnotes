@@ -7,6 +7,10 @@
 * [Git - Reset Demystified](https://git-scm.com/blog/2011/07/11/reset.html)
 * <http://stackoverflow.com/questions/1800783/compare-local-git-branch-with-remote-branch>
 * <http://git-scm.com/book/en/Git-Branching-Remote-Branches>
+* [SVN-Git Cheat Sheet](https://www.cs.bath.ac.uk/~jjb/web/svn.html)
+* [Git Conventions](https://medium.com/@tjholowaychuk/git-conventions-a940ee20862d)
+* [Squashing commits with rebase](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html)
+* [Git team workflows: merge or rebase?](https://www.atlassian.com/git/articles/git-team-workflows-merge-or-rebase/)
 
 ## Useful commands
 ```bash
