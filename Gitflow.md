@@ -90,22 +90,21 @@ This will:
 * Create a new `release/<releaseVersion>` remote-tracking branch and update the pom version to `<releaseVersion>-SNAPSHOT`.
 * Checkout the `develop` branch and update the pom version with the new `<developmentVersion>-SNAPSHOT`.
 * Checkout the new release branch.
-<plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-javadoc-plugin</artifactId>
-      <configuration>
-        <additionalparam>-Xdoclint:none</additionalparam>
-      </configuration>
-    </plugin>
-  </plugins>
 
 ### [Finish a release](https://bitbucket.org/atlassian/jgit-flow/wiki/goals/release-finish)
 ```bash
 mvn jgitflow:release-finish
+
+# Don't delete the release branch (you'll need to do that manually)
+mvn jgitflow:release-finish -DkeepBranch=true
 ```
 This will:
-* Update the release branch's pom to remove the `-SNAPSHOT` version suffix.
+* Update the release branch's pom to remove the `-SNAPSHOT` version (and any other) suffix.
 * Build, test, javadoc, source, install (or deploy)
-* Checkout `develop` and update the pomto `release`, merge the relase branch in, then update the `pom` back.
-    * __What happens if there are conflicts?__  - probably breaks on the first conflict.
+* Merge the release branch into `master` (will fail if there is a conflict)
+* Merge `master` back into `develop` (will fail if there is a conflict)
+    * Adds commits to `develop` before the merge to change the pom version to that in `master`
+      (to avoid a conflict), and after the merge to change it back to the latest SNAPSHOT version.
+
+Note that the install/release of the built artifact is done from the release branch (not master), so in theory there
+could be differences if changes were made in master that were not merged back into develop/release.  However, that should never be allowed to happen (no changes should be made in master directly)!
