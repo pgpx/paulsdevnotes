@@ -121,9 +121,13 @@ Remove all references to remotes from a clone:
 git remote remove origin
 ```
 
-Delete a remote branch
+Delete a remote branch [(SO)](http://stackoverflow.com/a/2003515/125246)
 ```
-git branch -rd origin/release/4.0.6
+git push origin --delete release/4.0.6
+git branch -d release/4.0.6
+
+# Prune branches on other machines
+git fetch --all --prune
 ```
 
 ```bash
