@@ -122,7 +122,7 @@ git remote remove origin
 ```
 
 Delete a remote branch [(SO)](http://stackoverflow.com/a/2003515/125246)
-```
+```bash
 git push origin --delete release/4.0.6
 git branch -d release/4.0.6
 
