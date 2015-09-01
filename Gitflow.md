@@ -80,19 +80,32 @@ This will:
 ### [Prepare a release](https://bitbucket.org/atlassian/jgit-flow/wiki/goals/release-start)
 ```bash
 mvn jgitflow:release-start
-# Will be prompted to enter a new feature name
+# Will be prompted to enter the release version number and next development version number
 
 # Batch mode (-B or --batch-mode) will not prompt
-mvn --batch-mode jgitflow:feature-start -DfeatureName=my-feature-namae
+mvn --batch-mode jgitflow:release-start -DreleaseVersion=4.0.0 -DdevelopmentVersion=4.0.1
 ```
-This will create a remote-tracking branch (from develop) called `feature/my-feature-name` for the feature and check it out.
 
-### Finish a release
+This will:
+* Create a new `release/<releaseVersion>` remote-tracking branch and update the pom version to `<releaseVersion>-SNAPSHOT`.
+* Checkout the `develop` branch and update the pom version with the new `<developmentVersion>-SNAPSHOT`.
+* Checkout the new release branch.
+<plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-javadoc-plugin</artifactId>
+      <configuration>
+        <additionalparam>-Xdoclint:none</additionalparam>
+      </configuration>
+    </plugin>
+  </plugins>
+
+### [Finish a release](https://bitbucket.org/atlassian/jgit-flow/wiki/goals/release-finish)
 ```bash
-mvn jgitflow:feature-finish
-# Will be prompted to select the feature
+mvn jgitflow:release-finish
 ```
 This will:
-* Compile and run unit tests in the feature branch, and install the generated artifact (locally).
-* Checkout `develop`, then merge in changes from the feature branch.
-    * If the merge fails (due to conflicts) then `feature-finish` will fail with an error and you will have to resolve the conflicts.
+* Update the release branch's pom to remove the `-SNAPSHOT` version suffix.
+* Build, test, javadoc, source, install (or deploy)
+* Checkout `develop` and update the pomto `release`, merge the relase branch in, then update the `pom` back.
+    * __What happens if there are conflicts?__  - probably breaks on the first conflict.
