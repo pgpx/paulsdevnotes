@@ -116,9 +116,14 @@ List all branches (including remotes and status)
 git branch -avv
 ```
 
-Remote all references to remotes from a clone:
+Remove all references to remotes from a clone:
 ```bash
 git remote remove origin
+```
+
+Delete a remote branch
+```
+git branch -rd origin/release/4.0.6
 ```
 
 ```bash
