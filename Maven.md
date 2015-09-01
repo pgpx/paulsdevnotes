@@ -30,6 +30,39 @@
 * [org.codehaus.mojo:exec-maven-plugin](http://www.mojohaus.org/exec-maven-plugin/)
 * `mvn help:system` - show system properties and environment variables that Maven will use.
 
+## Workarounds
+
+### Don't fail if there are Java 8 Javadoc errors
+
+Java 8 causes builds to fail if there are Javadoc (lint) errors.  To avoid this:
+[ref](http://blog.joda.org/2014/02/turning-off-doclint-in-jdk-8-javadoc.html),
+[example](https://github.com/dropwizard/dropwizard/blob/master/pom.xml)
+
+```xml
+<!-- Add a profile to detect Java 8 -->
+<profile>
+  <id>java8-disable-strict-javadoc</id>
+  <activation>
+    <jdk>[1.8,)</jdk>
+  </activation>
+  <properties>
+    <javadoc.doclint.none>-Xdoclint:none</javadoc.doclint.none>
+  </properties>
+</profile>
+
+<!-- Then pass this to Javadoc -->
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-javadoc-plugin</artifactId>
+  <version>2.10.1</version>
+  <configuration>
+    <additionalparam>${javadoc.doclint.none}</additionalparam>
+    <quiet>true</quiet>
+  </configuration>
+</plugin>
+```
+
+
 ## Nexus Notes
 
 * [2.11 docs](http://books.sonatype.com/nexus-book/2.11/reference/index.html)
