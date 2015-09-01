@@ -238,8 +238,13 @@ facter --json
 
 Access in a manifest: `$content = "Host ${facts['hostname']}"`
 
-## Docker
+## Docker
 
 Run Docker containers using Puppet.
 
 * [Plugin info](https://forge.puppetlabs.com/garethr/docker/readme), [GitHub](https://github.com/garethr/garethr-docker)
+
+## Testing
+
+* [Beaker](https://github.com/puppetlabs/beaker) - test framework.
+* [Serverspec](http://serverspec.org/resource_types.html) - RSpec tests for servers, used by Beaker
