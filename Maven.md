@@ -62,6 +62,27 @@ Java 8 causes builds to fail if there are Javadoc (lint) errors.  To avoid this:
 </plugin>
 ```
 
+### Speed up slow dependency report
+Maven dependencies will by default try calling each repository to see if each dependency is found there.  That can take a while!  It will also examine each Jar to get statistics about number of classes, etc. which seems unnecessary.  To disable both ([ref](http://whatiscomingtomyhead.wordpress.com/2011/04/20/if-your-maven-site-build-is-too-slow/)):
+```xml
+<reporting>
+  <plugins>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.4</version>
+          <configuration>
+              <!-- Speed up dependency plugin -->
+              <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+              <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+          </configuration>
+      </plugin>
+  </plugins>
+</reporting>
+```
+## Client configuration
+
+* [Server password encryption](https://maven.apache.org/guides/mini/guide-encryption.html) (for repositories)
 
 ## Nexus Notes
 
