@@ -17,7 +17,8 @@ sudo yum install -y rpm-build
 ```
 
 ## Commands
-* [ref](http://www.rpm.org/max-rpm/s1-rpm-build-starting-build.html)
+
+Building packages ([ref](http://www.rpm.org/max-rpm/s1-rpm-build-starting-build.html)) with [rpmbuild](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch-rpmbuild.html)
 ```sh
 cd /usr/src/redhat/SPECS
 
@@ -26,6 +27,12 @@ rpmbuild -ba cdplayer-1.0.spec
 
 # -bb build binary package (after %prep, %build, %install)q
 rpmbuild -bb cdplayer-1.0.spec
+
+# Test the build (don't build anything, but parse and check for errors)
+rpmbuild -bb --nobuild my.spec
+
+# Clean up - remove the build tree when complete
+rpmbuild --clean my.spec
 
 # Use --define='MACRO EXPR' to define MACRO with value EXPR
 rpmbuild -bb --define "release ${ARTIFACT_BUILD_NO}" \
@@ -37,7 +44,17 @@ rpmbuild -bl -vv cdplayer-1.0.spec
 # Check for files over 1 hour old (3600 seconds) 
 rpm -bl --timecheck 3600 cdplayer-1.0.spec
 ```
- 
+
+Installing packages ([ref](http://www.rpm.org/max-rpm/ch-rpm-install.html))
+```sh
+rpm -i file.rpm
+```
+
+Uninstalling packages  (incl. pre and post) ([ref](http://www.rpm.org/max-rpm/ch-rpm-erase.html))
+```sh
+rpm -e pgk
+```
+
 ##  Creation
 
 Directory structure ([ref](http://www.rpm.org/max-rpm/ch-rpm-build.html)), default parent of `/usr/src/redhat`:
@@ -102,6 +119,22 @@ Requires: playmidi >= 2.3
 Conflicts: playmidi = 2.3-1
 ```
 
+### [Scripts](http://www.rpm.org/max-rpm/s1-rpm-inside-scripts.html)
+Common variables:
+```sh
+RPM_SOURCE_DIR="/usr/src/redhat/SOURCES"
+RPM_BUILD_DIR="/usr/src/redhat/BUILD"
+RPM_DOC_DIR="/usr/doc"
+RPM_OPT_FLAGS="-O2 -m486 -fno-strength-reduce"
+RPM_ARCH="i386"
+RPM_OS="Linux"
+RPM_ROOT_DIR="/tmp/cdplayer"
+RPM_BUILD_ROOT="/tmp/cdplayer"
+RPM_PACKAGE_NAME="cdplayer"
+RPM_PACKAGE_VERSION="1.0"
+RPM_PACKAGE_RELEASE="1"
+```
+
 ### %prep
 Remove remnants of any previous builds, and prepare the `BUILD` directory (as a `sh` script).
 ```sh
@@ -129,6 +162,19 @@ Install the application, as a `sh` script.
 make install
 ```
 
+### %clean
+Clean up files that are not part of an application's normal build area (e.g. `/tmp').
+
+Install/Erase-time scripts
+
+Argument `$1` is the number of times the package has been installed _after_ the operation has completed (e.g. `%pre` and `%post` will have `$1=1` for the first installation, and `%preun` and `%postun` will have `$1=0` for the last uninstallation)
+* `%pre` - Executes just before the package is to be installed.
+* `%post` - Executes just after the package has been installed.
+* `%preun` - Executes just before the package is uninstalled.
+* `%postun` - Executes just after the package is uninstalled.
+
+### %verifyscript
+
 ### %files
 List the files that are part of the package (full paths, which will also be their destination when installed).
 
@@ -155,9 +201,6 @@ Files can have [directives](http://www.rpm.org/max-rpm/s1-rpm-inside-files-list-
 
 # Also: %config, %docdir, %verify, %files -f <file>
 ```
-
-### %clean
-Clean up files that are not part of an application's normal build area (e.g. `/tmp').
 
 ## Macros
 * [ref](http://www.rpm.org/max-rpm/s1-rpm-inside-macros.html)
