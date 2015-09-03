@@ -11,6 +11,10 @@
 * [Git Conventions](https://medium.com/@tjholowaychuk/git-conventions-a940ee20862d)
 * [Squashing commits with rebase](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html)
 * [Git team workflows: merge or rebase?](https://www.atlassian.com/git/articles/git-team-workflows-merge-or-rebase/)
+* From <https://github.com/sindresorhus/awesome#gaming>:
+  * [Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet)
+  * [Git Tips](https://github.com/git-tips/tips)
+  * [Git Addons](https://github.com/stevemao/awesome-git-addons)
 
 ## Useful commands
 ```bash
