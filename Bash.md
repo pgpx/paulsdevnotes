@@ -42,7 +42,7 @@ output=${1:-text}
 ```
 ## Syntax
 
-If/else
+If/else ([Introduction to if](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html))
 ```bash
 if condition          # Or: if condition; then
 then
@@ -64,7 +64,7 @@ String comparisons: [str1 = str2]  [str1 != str2] [str1 < str2] [str1 > str2]
      [-z str1] # Null (length = 0)
 ```
 
-Exit status `$?` [SO](http://stackoverflow.com/a/31348007/125246):
+Exit status `$?` ([SO](http://stackoverflow.com/a/31348007/125246)):
 ```bash
 command1
 if [ $? -ne 0]; then
