@@ -2,19 +2,20 @@
 
 * [Official FAQ](http://tiswww.case.edu/php/chet/bash/FAQ)
 * [BashFAQ](http://mywiki.wooledge.org/BashFAQ/), [Bash Pitfalls](http://mywiki.wooledge.org/BashPitfalls)
+* [Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
 
-## Books
+## Books
 * [Learning the Bash Shell, 3rd Ed. O'Reilly](https://www.safaribooksonline.com/library/view/learning-the-bash/0596009658/)
 * [Bash Cookbook, O'Reilly.](https://www.safaribooksonline.com/library/view/bash-cookbook/0596526784/)
 * [Pro Bash Programming : Scripting the GNU/Linux Shell, Second Edition](https://www.safaribooksonline.com/library/view/pro-bash-programming/9781484201213/)
 
-## Running scripts
+## Running scripts
 Run a script from a pipe with arguments [SO](http://stackoverflow.com/a/14693303/125246)
 ```bash
 cat script | bash -s 5
 ```
 
-## Shell info
+## Shell info
 ```bash
 # Bash version
 echo $BASH_VERSION
@@ -23,7 +24,7 @@ echo $BASH_VERSION
 echo $SHELL
 ```
 
-# Filename wildcards
+# Filename wildcards
 * Any single char - `?`
 * Any string of chars - `*`
 * Any character in set - `[set]`
