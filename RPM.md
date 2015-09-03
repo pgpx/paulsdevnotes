@@ -142,16 +142,18 @@ Files can have [directives](http://www.rpm.org/max-rpm/s1-rpm-inside-files-list-
 /usr/local/bin/cdplay
 /usr/local/man/man1/cdp.1
 
-# Set attributes: %attr (<mode>, <user>, <group) file
+# Set attributes (if not installed with those attributes):
+# %attr (<mode>, <user>, <group) file
 %attr(755, root, root) foo.bar
             
-# Use - to avoid changing an attribute, e.g. the file's user
+# Use - to avoid changing an attribute (because it was intalled with that attribute)
+# e.g. don't set the file's user:
 %attr(755, -, root) foo.bar
 
 # Only include the directory and not its contents
 %dir /usr/blather
 
-#Also: %docdir, %verify, %files -f <file>
+# Also: %config, %docdir, %verify, %files -f <file>
 ```
 
 ### %clean
