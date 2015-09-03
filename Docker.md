@@ -2,9 +2,12 @@
 
 * [Dockerfile ref](https://docs.docker.com/reference/builder/)
 
-## Books
-
+Books
 * [Docker + Consul](https://www.safaribooksonline.com/library/view/docker-in-the/9781939902184/ch15.html#idp6134288)
+
+Links
+* <http://stackengine.com/the-definitive-guide-to-docker-free-and-open-source-tools/>
+
 
 ## Installation
 Mac (with Brew and Cask):
