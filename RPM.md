@@ -187,13 +187,39 @@ e.g. if you set a buildroot ([ref](https://docs.fedoraproject.org/en-US/Fedora_D
 rm -rf $RPM_BUILD_ROOT
 ```
 
-Install/Erase-time scripts
+Install/Erase-time scriptlets [ref](https://fedoraproject.org/wiki/Packaging:ScriptletSnippets)
 
 Argument `$1` is the number of times the package has been installed _after_ the operation has completed (e.g. `%pre` and `%post` will have `$1=1` for the first installation, and `%preun` and `%postun` will have `$1=0` for the last uninstallation)
 * `%pre` - Executes just before the package is to be installed.
 * `%post` - Executes just after the package has been installed.
 * `%preun` - Executes just before the package is uninstalled.
 * `%postun` - Executes just after the package is uninstalled.
+
+Should always exit with a status of 0, unless there is a serious error (and letting it proceed would be worse) [ref](https://fedoraproject.org/wiki/Packaging:ScriptletSnippets) and [ref](http://lists.rpm.org/pipermail/rpm-list/2014-December/001669.html).
+```sh
+exit 0
+# or
+my last command || :
+```
+
+[e.g.](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s04s05.html)
+```sh
+%post
+/sbin/chkconfig --add ypbind
+
+%preun
+if [ "$1" = 0 ] ; then
+  /sbin/service ypbind stop > /dev/null 2>&1
+  /sbin/chkconfig --del ypbind
+fi
+exit 0
+
+%postun
+if [ "$1" -ge 1 ]; then
+  /sbin/service ypbind condrestart > /dev/null 2>&1
+fi
+exit 0
+```
 
 ### %verifyscript
 
@@ -235,7 +261,7 @@ Appears at the end of a spec file, listing significant changes:
 ```
 
 ## Macros
-* Built-in macros - [API](http://rpm.org/api/4.4.2.2/config_macros.html)
+* Built-in macros - [API](http://rpm.org/api/4.4.2.2/config_macros.html), [Fedora wiki](https://fedoraproject.org/wiki/Packaging:RPMMacros?rd=Packaging/RPMMacros)
   * [Variable definition](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02.html)
   * [Conditional](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02s02.html)
   * [Built-in](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02s03.html)
