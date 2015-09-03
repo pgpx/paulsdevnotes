@@ -74,7 +74,7 @@ if [ $? -ne 0]; then
 if ! command1; then
 ```
 
-Arrays:
+## Arrays:
 ```bash
 # Add value to an array:
 myarray+=('new value')
