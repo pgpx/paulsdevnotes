@@ -92,7 +92,9 @@ Release: 1
 Copyright: GPL
 Group: Applications/Sound
 
-# Name of the source file (basename of value), and where the source file is obtained.
+# Name of the source file (basename of value), and where the source file is obtained
+# (though RPM will not download them)
+# Specify Source0, Source1, ... if there are more than one source file.
 Source: ftp://ftp.gnomovision.com/pub/cdplayer/cdplayer-1.0.tgz
 
 # Documentation of the software being packaged
@@ -110,6 +112,12 @@ cannot be equaled with more mundane software...
 ```
 
 [Tag reference](http://www.rpm.org/max-rpm/s1-rpm-inside-tags.html)
+
+Locations:
+* [Buildroot](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s03s02.html) - staging area that looks like the final installation directory (which is usually `/`).  Can be overridden by with the `--buildroot` command-line parameter.
+```
+Buildroot: %{_tmppath}/%{name}-%{version}-root
+```
 
 Dependency tags:
 ```
@@ -142,10 +150,14 @@ Remove remnants of any previous builds, and prepare the `BUILD` directory (as a 
 rm -rf $RPM_BUILD_DIR/cdplayer-1.0
 zcat $RPM_SOURCE_DIR/cdplayer-1.0.tgz | tar -xvf -
 ```
-Setup macro:
+Setup macro ([ref](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s04.html))
+- changes to `BUILD`, and extracts the source files (tar, zip, gzip, tar-gzip bzip2, pack, compress, lzh).
 ```sh
 %prep
 %setup
+
+# Create the directory before unpacking (if not in archive)
+%setup -c -n name -q
 ```
 
 ### %build
@@ -153,6 +165,11 @@ Perform the build as a `sh` script.
 ```sh
 %build
 make
+```
+
+`%configure` macro sets many environment variables ([ref](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s04s02.html)), view them with:
+```sh
+rpm --eval '%configure'
 ```
 
 ### %install
@@ -164,6 +181,11 @@ make install
 
 ### %clean
 Clean up files that are not part of an application's normal build area (e.g. `/tmp').
+e.g. if you set a buildroot ([ref](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s04s04.html)):
+```sh
+%clean
+rm -rf $RPM_BUILD_ROOT
+```
 
 Install/Erase-time scripts
 
@@ -203,4 +225,5 @@ Files can have [directives](http://www.rpm.org/max-rpm/s1-rpm-inside-files-list-
 ```
 
 ## Macros
+* [Built-in macros](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s07.html)
 * [ref](http://www.rpm.org/max-rpm/s1-rpm-inside-macros.html)
