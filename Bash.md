@@ -64,14 +64,23 @@ String comparisons: [str1 = str2]  [str1 != str2] [str1 < str2] [str1 > str2]
      [-z str1] # Null (length = 0)
 ```
 
+Exit status `$?` [SO](http://stackoverflow.com/a/31348007/125246):
+```bash
+command1
+if [ $? -ne 0]; then
+
+# or
+if ! command1; then
+```
+
 Arrays:
 ```bash
 # Add value to an array:
 myarray+=('new value')
 
-#Is array empty?
+# Is array empty?
 if [ -z "$myarray+1" ]; then
-#Not empty:
+# Not empty:
 if [ -n "$myarray+1"]; then
 
 # Array, Value - does the array contain the value?
@@ -83,11 +92,11 @@ contains() {
   done
 }
 
-#Default values:
+# Default values:
 for CC in ${natcos[@]:-AT AL BK BU CS DE HR HY CZ GR HU MK ME NL PL RO SK TE ZZ}; do
 ```
 
-## File checks
+## File checks
 * -a file file exists
 * -d file file exists and is a directory
 * -e file file exists; same as -a
