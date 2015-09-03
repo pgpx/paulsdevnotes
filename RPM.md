@@ -7,12 +7,35 @@ Books
 * [Fedora RPM Guide](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/index.html)
 * [Maximum RPM](http://www.rpm.org/max-rpm/)
 
+## TODO
+* Signing packages
+
+## Setup
+Might need to install rpmbuild:
+```
+sudo yum install -y rpm-build
+```
+
 ## Commands
 * [ref](http://www.rpm.org/max-rpm/s1-rpm-build-starting-build.html)
 ```sh
-# -b build, -a 
 cd /usr/src/redhat/SPECS
-rpm -ba cdplayer-1.0.spec
+
+# -ba build binary and source packages 
+rpmbuild -ba cdplayer-1.0.spec
+
+# -bb build binary package (after %prep, %build, %install)q
+rpmbuild -bb cdplayer-1.0.spec
+
+# Use --define='MACRO EXPR' to define MACRO with value EXPR
+rpmbuild -bb --define "release ${ARTIFACT_BUILD_NO}" \
+  --define "%_topdir ${WORKSPACE}" SPECS/gateway.
+
+# Check the %files list for missing files (because it is manually created and might be incorrect)
+rpmbuild -bl -vv cdplayer-1.0.spec
+
+# Check for files over 1 hour old (3600 seconds) 
+rpm -bl --timecheck 3600 cdplayer-1.0.spec
 ```
  
 ##  Creation
@@ -25,9 +48,16 @@ Directory structure ([ref](http://www.rpm.org/max-rpm/ch-rpm-build.html)), defau
 * `SRPMS` — Source package files created by the build process.
 
 ## Spec File format
+* Comments: `# comment`
+* Macro expansion, using `%{MACRO_NAME}`:
+```sh
+# Where release was defined on the command line as --define "release 3"
+Release: %{release}
+```
 
-### Preamble ([ref](http://www.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html)):
-Only `name`, `version`, `release`, and `source` actually affect the packaging process.
+### Preamble ([ref](http://www.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html)):
+Only `name`, `version`, `release`, and `source` actually affect the packaging process - the package name is always: `<name>-<version>-<release>`
+
 ```sh
 #
 # Example spec file
@@ -38,8 +68,10 @@ Name: cdplayer
 # Version of the software being packaged
 Version: 1.0
 
-# Package's version umber (how many times the software at its present version has been released)
+# Package's version umber (how many times the software at its present version has been released,
+# start at 1, and reset to 1 when there is a new Version)
 Release: 1
+
 Copyright: GPL
 Group: Applications/Sound
 
@@ -58,6 +90,16 @@ can't be beat.  By using the resonant frequency
 of the CD itself, it is able to simulate 20X
 oversampling.  This leads to sound quality that
 cannot be equaled with more mundane software...
+```
+
+[Tag reference](http://www.rpm.org/max-rpm/s1-rpm-inside-tags.html)
+
+Dependency tags:
+```
+Provides: mail-reader
+Requires: playmidi >= 2.3
+# Packages that cannot be installed (with release number)
+Conflicts: playmidi = 2.3-1
 ```
 
 ### %prep
