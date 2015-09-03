@@ -116,7 +116,7 @@ cannot be equaled with more mundane software...
 Locations:
 * [Buildroot](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s03s02.html) - staging area that looks like the final installation directory (which is usually `/`).  Can be overridden by with the `--buildroot` command-line parameter.
 ```
-Buildroot: %{_tmppath}/%{name}-%{version}-root
+Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root
 ```
 
 Dependency tags:
@@ -224,6 +224,20 @@ Files can have [directives](http://www.rpm.org/max-rpm/s1-rpm-inside-files-list-
 # Also: %config, %docdir, %verify, %files -f <file>
 ```
 
+### %changelog ([ref](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s05.html))
+Appears at the end of a spec file, listing significant changes:
+```
+%changelog
+* Fri Jun 21 2002 Bob Marley <marley@redhat.com>
+- automated rebuild
+* Tue May 08 2001 Peter Tosh <tosh@redhat.com> 1.3-1
+- updated to 1.3
+```
+
 ## Macros
-* [Built-in macros](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch09s07.html)
+* Built-in macros - [API](http://rpm.org/api/4.4.2.2/config_macros.html)
+  * [Variable definition](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02.html)
+  * [Conditional](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02s02.html)
+  * [Built-in](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02s03.html)
+* [Built-in macros](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02.html)
 * [ref](http://www.rpm.org/max-rpm/s1-rpm-inside-macros.html)
