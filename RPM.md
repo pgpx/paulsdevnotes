@@ -6,6 +6,14 @@
 Books
 * [Fedora RPM Guide](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/index.html)
 * [Maximum RPM](http://www.rpm.org/max-rpm/)
+
+## Commands
+* [ref](http://www.rpm.org/max-rpm/s1-rpm-build-starting-build.html)
+```sh
+# -b build, -a 
+cd /usr/src/redhat/SPECS
+rpm -ba cdplayer-1.0.spec
+```
  
 ##  Creation
 
@@ -20,7 +28,7 @@ Directory structure ([ref](http://www.rpm.org/max-rpm/ch-rpm-build.html)), defau
 
 ### Preamble ([ref](http://www.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html)):
 Only `name`, `version`, `release`, and `source` actually affect the packaging process.
-```
+```sh
 #
 # Example spec file
 #
