@@ -130,7 +130,9 @@ make install
 ```
 
 ### %files
-List the files that are part of the package (full paths, which will also be their destination when installed)
+List the files that are part of the package (full paths, which will also be their destination when installed).
+
+Files can have [directives](http://www.rpm.org/max-rpm/s1-rpm-inside-files-list-directives.html)
 ```sh
 %files
 # Mark a file as docuemntation (placed in a package-specific directory
@@ -139,6 +141,17 @@ List the files that are part of the package (full paths, which will also be thei
 /usr/local/bin/cdp
 /usr/local/bin/cdplay
 /usr/local/man/man1/cdp.1
+
+# Set attributes: %attr (<mode>, <user>, <group) file
+%attr(755, root, root) foo.bar
+            
+# Use - to avoid changing an attribute, e.g. the file's user
+%attr(755, -, root) foo.bar
+
+# Only include the directory and not its contents
+%dir /usr/blather
+
+#Also: %docdir, %verify, %files -f <file>
 ```
 
 ### %clean
