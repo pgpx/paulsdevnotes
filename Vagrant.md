@@ -2,6 +2,7 @@
 
 * <https://www.vagrantup.com/>
 * [docs](https://docs.vagrantup.com/v2/)
+* [Public Vagrant box catalogue](https://atlas.hashicorp.com/boxes/search)
 
 ## Safari Books
 
