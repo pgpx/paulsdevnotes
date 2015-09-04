@@ -151,6 +151,10 @@ echo -e "Hello\nworld"
 echo -e 'Hello\nworld'
 echo Hello$'\n'world
 ```
+Or `printf` ([SO](http://stackoverflow.com/a/8467449/125246))
+```bash
+printf "hello\nworld\n"
+```
 
 ### tr
 [Convert string to lowercase](http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting)
