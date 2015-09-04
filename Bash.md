@@ -145,6 +145,13 @@ NATCO=$(remove_slash "$NATCO")    # Prefer to call functions using $(func_name .
 
 ## Strings
 
+### Newlines ([SO](http://stackoverflow.com/a/8467448/125246))
+```bash
+echo -e "Hello\nworld"
+echo -e 'Hello\nworld'
+echo Hello$'\n'world
+```
+
 ### tr
 [Convert string to lowercase](http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting)
 ```bash
