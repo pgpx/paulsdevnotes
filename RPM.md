@@ -157,6 +157,8 @@ Conflicts: playmidi = 2.3-1
 ```
 
 ### [Scripts](http://www.rpm.org/max-rpm/s1-rpm-inside-scripts.html)
+* [Fedora styleguide](http://fedoraproject.org/wiki/Packaging:SysVInitScript#Why_don.27t_we)
+
 Common variables:
 ```sh
 RPM_SOURCE_DIR="/usr/src/redhat/SOURCES"
