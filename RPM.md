@@ -62,7 +62,9 @@ rpm -qp -i /repo/Centos/5.9/APPS/jdk-7u7-linux-x64.rpm
 
 Add a file to a repo
 ```sh
-# Copy .rpm into repository directory, then:
+# Copy .rpm into repository directory
+# (Make sure it is readable by all, otherwise you'll get 403 Forbidden when accessing it!)
+# then:
 createrepo --update -s sha1 5.9/STABLE/
 ```
 
