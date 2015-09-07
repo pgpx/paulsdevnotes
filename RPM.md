@@ -55,6 +55,17 @@ Uninstalling packages  (incl. pre and post) ([ref](http://www.rpm.org/max-rpm/ch
 rpm -e pgk
 ```
 
+Viewing metadata in an .rpm file ([ref](http://www.cyberciti.biz/faq/rhel-list-package-specific-scriptlets/))
+```sh
+rpm -qp -i /repo/Centos/5.9/APPS/jdk-7u7-linux-x64.rpm 
+```
+
+Add a file to a repo
+```sh
+# Copy .rpm into repository directory, then:
+createrepo --update -s sha1 5.9/STABLE/
+```
+
 ##  Creation
 
 Directory structure ([ref](http://www.rpm.org/max-rpm/ch-rpm-build.html)), default parent of `/usr/src/redhat`:
