@@ -68,6 +68,13 @@ Add a file to a repo
 createrepo --update -s sha1 5.9/STABLE/
 ```
 
+## Yum
+
+Show available versions of a package ([SO](http://unix.stackexchange.com/a/151690/32390)):
+```sh
+yum --showduplicates list jdk
+```
+
 ##  Creation
 
 Directory structure ([ref](http://www.rpm.org/max-rpm/ch-rpm-build.html)), default parent of `/usr/src/redhat`:
