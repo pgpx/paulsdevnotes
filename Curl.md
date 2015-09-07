@@ -32,3 +32,14 @@ check 45 'http://myurlcom/test' 'JSESSIONID=abc.app1'
 ```bash
 curl -s -o /dev/null -w "%{http_code}" http://www.example.org/
 ```
+
+Don't check SSL certs (e.g. with self-signed)
+```bash
+curl -v --insecure https://my-url.com/
+```
+
+Use a SOCKS proxy (and get it to resolve hostnames) ([SO](http://stackoverflow.com/a/28598130/125246))
+```bash
+# (using just --socks5 will resolve the hostname locally) 
+curl -v --socks5-hostname <socks-proxy-ip/host:port> https://my-url.com/
+```
