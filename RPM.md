@@ -36,13 +36,22 @@ rpmbuild --clean my.spec
 
 # Use --define='MACRO EXPR' to define MACRO with value EXPR
 rpmbuild -bb --define "release ${ARTIFACT_BUILD_NO}" \
-  --define "%_topdir ${WORKSPACE}" SPECS/gateway.
+  --define "%_topdir ${WORKSPACE}" SPECS/my.spec
 
 # Check the %files list for missing files (because it is manually created and might be incorrect)
 rpmbuild -bl -vv cdplayer-1.0.spec
 
 # Check for files over 1 hour old (3600 seconds) 
 rpm -bl --timecheck 3600 cdplayer-1.0.spec
+```
+
+Short-circuiting builds (to speed up development of a spec file)
+```sh
+# Just run %build (skipping %prep) from specfile
+rpmbuild -bc --short-circuit SPECS/my.spec
+
+# Just run %install (skipping %prep and %build) from specfile
+rpmbuild -bi --short-circuit SPECS/my.spec
 ```
 
 Installing packages ([ref](http://www.rpm.org/max-rpm/ch-rpm-install.html))
