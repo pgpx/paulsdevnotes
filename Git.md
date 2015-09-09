@@ -77,6 +77,28 @@ git stash list # List stashes
 git stash branch "branch-name" "stash@{0}"  # Create a branch from a named stash
 ```
 
+## Setup/config
+
+Set your username and email ([ref](https://help.github.com/articles/setting-your-email-in-git/))
+```sh
+# Set email and username
+git config user.email "your_email@example.com"
+git config user.name "Your Name"
+
+# (also check that GIT_COMMITTER_EMAIL or GIT_AUTHOR_EMAIL environment variables are not set)
+
+# Set globally
+git config --global user.email "your_email@example.com"
+git config --global user.name "Your Name"
+
+# Get (to check)
+git config user.email
+git config user.name
+
+# View all settings
+git config --list
+```
+
 ## Tips
 
 * [Undo a commit and redo](http://stackoverflow.com/a/927386/125246)
