@@ -248,3 +248,7 @@ Run Docker containers using Puppet.
 
 * [Beaker](https://github.com/puppetlabs/beaker) - test framework.
 * [Serverspec](http://serverspec.org/resource_types.html) - RSpec tests for servers, used by Beaker
+
+## Hiera / Roles / Profiles
+
+* <http://rnelson0.com/2014/07/14/intro-to-roles-and-profiles-with-puppet-and-hiera/>
