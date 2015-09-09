@@ -68,6 +68,13 @@ git filter-branch --prune-empty --subdirectory-filter save
 git filter-branch -f --env-filter "GIT_AUTHOR_EMAIL='paul.martin@gmail.com'; GIT_COMMITTER_EMAIL='paul.martin@gmail.com';" -- --all
 ```
 
+Revert an uncommitted change to a file ([ref](http://www.norbauer.com/rails-consulting/notes/git-revert-reset-a-single-file.html))
+```bash
+# Checkout from HEAD, overwriting change
+# Use -- to avoid accidentally checking out a branch with the same name
+git checkout -- filename
+```
+
 ### [Stash](http://git-scm.com/docs/git-stash)
 ```bash
 git stash      # temporarily save local changes so they can be retrieved later
