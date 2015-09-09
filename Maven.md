@@ -80,6 +80,21 @@ Maven dependencies will by default try calling each repository to see if each de
   </plugins>
 </reporting>
 ```
+
+## Optimising POMs
+
+Analyse dependencies (look for unused)
+```sh
+# Output as XML
+mvn dependency:analyze -DoutputXML=true
+```
+
+Check for updated dependencies and plugins
+```sh
+mvn versions:display-dependency-updates
+mvn versions:display-plugin-updates
+```
+
 ## Client configuration
 
 * [Server password encryption](https://maven.apache.org/guides/mini/guide-encryption.html) (for repositories)
