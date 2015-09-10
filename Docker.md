@@ -156,6 +156,14 @@ Create a file called `Dockerfile` in a directory.
 That directory becomes the 'context' of the build (for source files, etc).
 
 `.dockerignore` - exclude files and directories (syntax: http://golang.org/pkg/path/filepath/#Match)
+```
+# Ignore a file in the same directory as the Dockerfile
+# (no leading /)
+run.sh
+
+# Ignore a directory (trailing /)
+BUILD/
+```
 
     sudo docker build -t myname/myapp .
 
