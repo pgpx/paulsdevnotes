@@ -98,6 +98,13 @@ gpgcheck=0\n\
 name=My yum repo" > /etc/yum.repos.d/my.repo && yum upgrade
 ```
 
+Expire the yum repo cache (to see newly added files) ([SO](http://superuser.com/a/341228/108786))
+```sh
+yum clean expire-cache
+```
+
+Or edit ` /etc/yum.conf` to say `metadata_expire=1m` (defaults to 90 mins) ([SO](http://superuser.com/a/414595/108786))
+
 ##  Creation
 
 Directory structure ([ref](http://www.rpm.org/max-rpm/ch-rpm-build.html)), default parent of `/usr/src/redhat`:
