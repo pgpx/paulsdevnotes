@@ -84,6 +84,20 @@ Show available versions of a package ([SO](http://unix.stackexchange.com/a/15169
 yum --showduplicates list jdk
 ```
 
+List available repositories
+```sh
+yum listrepos
+```
+
+Add a repository
+```sh
+echo -e "[apps]\n\
+enabled=1\n\
+baseurl=http://my-repo.com/\n\
+gpgcheck=0\n\
+name=My yum repo" > /etc/yum.repos.d/my.repo && yum upgrade
+```
+
 ##  Creation
 
 Directory structure ([ref](http://www.rpm.org/max-rpm/ch-rpm-build.html)), default parent of `/usr/src/redhat`:
