@@ -79,6 +79,11 @@ createrepo --update -s sha1 5.9/STABLE/
 
 ## Yum
 
+List installed packages ([ref](http://www.electrictoolbox.com/yum-list-installed-packages/))
+```sh
+yum list installed
+```
+
 Show available versions of a package ([SO](http://unix.stackexchange.com/a/151690/32390)):
 ```sh
 yum --showduplicates list jdk
