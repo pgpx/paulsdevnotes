@@ -169,6 +169,23 @@ a="$(tr [A-Z] [a-z] <<< "$a")"
 function abspath() { echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"; }
 ```
 
+## xargs
+
+Run the given command multiple times (once for each piped argument)
+```sh
+# -t - echo each command
+# -I {} - replace {} in the command with the argument
+find . -type d -depth 1 | xargs -tI {} git -C {} branch -avv
+```
+
+Multiple commands ([SO](http://stackoverflow.com/a/6958957/125246))
+```sh
+# Where commands can contain %
+cat a.txt | xargs -I % sh -c 'command1; command2; ...'
+# Or
+< a.txt xargs -I % sh -c 'command1; command2; ...'
+```
+
 * [Determine the path of the executing BASH script](http://stackoverflow.com/questions/630372/determine-the-path-of-the-executing-bash-script)
 ```bash
 #For the relative path (i.e. the direct equivalent of Windows' %~dp0):
