@@ -110,6 +110,11 @@ git config --list
 
 * [Undo a commit and redo](http://stackoverflow.com/a/927386/125246)
 
+* Undo a public commit ([SO](http://stackoverflow.com/a/6376039/125246))
+```bash
+git revert HEAD
+```
+
 * Output the contents of a single file from a remote repo [SO](http://stackoverflow.com/a/18331440/125246)
 ```bash
 FILE="my/filename.txt" && git archive --remote=git@myremote.co.uk/repo/name.git \
