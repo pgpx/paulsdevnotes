@@ -130,6 +130,11 @@ git rebase origin/master
 
 ## Remote management
 
+Show the status of a remote (which branches are tracking) ([SO](http://serverfault.com/a/175077/126442))
+```
+git remote show origin
+```
+
 Configure remotes for a repo
 ```bash
 # Add an 'origin' remote
