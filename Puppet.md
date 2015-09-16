@@ -254,7 +254,7 @@ Run Docker containers using Puppet.
 * [Hiera 1 documentation](https://docs.puppetlabs.com/hiera/1/index.html)
 * <http://rnelson0.com/2014/07/14/intro-to-roles-and-profiles-with-puppet-and-hiera/>
 
-Configuration in `hiera.yaml`
+### Configuration in `hiera.yaml`
 ```yaml
 ---
 :backends:
@@ -270,3 +270,87 @@ Configuration in `hiera.yaml`
 :yaml:
   :datadir: "data/development"
 ```
+
+### [Automatic parameter lookup](https://docs.puppetlabs.com/hiera/1/puppet.html#automatic-parameter-lookup)
+
+Define value for `myclass::parameter_one` 
+```yaml
+# /etc/puppet/hieradata/web01.example.com.yaml    ---
+myclass::parameter_one: "Node-specific value for the parameter"
+```
+
+For a class with a parameter:
+```puppet
+# In this example, $parameter's value gets set when `myclass` is eventually declared.
+# Class definition:
+class myclass ($parameter_one = "default text") {
+  file {'/tmp/foo':
+    ensure  => file,
+    content => $parameter_one,
+  }
+}
+```
+
+Then `include myclass` for every node, and the values will get injected.
+
+Parameter lookup order:
+1. Resource-like declaration/assignment, will always use any parameters that were explicitly set.
+2. Hiera lookup using `<CLASS NAME>::<PARAMETER NAME>` as the lookup key.
+3. Default value from the class's definition.
+4. Fail with compilation error.
+
+### [Lookup functions](https://docs.puppetlabs.com/hiera/1/puppet.html#hiera-lookup-functions)
+
+* `hiera(key, [default], [override-hierarchy-level-name])` - most specific value (standard priority lookup)
+* `hiera_array` - gets all string or array values across the hierarchy (into a single flat array)
+* `hiera_hash` - hash merge lookup.
+
+### [Structured data](https://docs.puppetlabs.com/hiera/1/puppet.html#interacting-with-structured-data-from-hiera)
+
+Hiera lookup functions and parameter lookup can only access the top-level key - cannot descend into deeploy nested data structures. e.g. for
+```yaml
+# /etc/puppet/hieradata/appservers.yaml
+---
+proxies:
+  - hostname: lb01.example.com
+    ipaddress: 192.168.22.21
+  - hostname: lb02.example.com
+    ipaddress: 192.168.22.28
+```
+Must use
+```puppet
+# Get the structured data:
+$proxies = hiera('proxies')
+# Index into the structure:
+$use_ip = $proxies[1]['ipaddress'] # will be 192.168.22.28
+```
+Not
+```puppet
+# Try to skip a step, and give Hiera something it doesn't understand:
+$use_ip = hiera( 'proxies'[1]['ipaddress'] ) # will explode
+```
+
+### [Assigning Classes to Nodes with hiera_include](https://docs.puppetlabs.com/hiera/1/puppet.html#assigning-classes-to-nodes-with-hiera-hierainclude)
+
+Add `hiera_include('classes')` to your main manifest (e.g. `site.pp`).  Then can add `classes` keys to Hiera files to include those classes for each node.  e.g. the Ubuntu node `web01.example.com.yaml` would get all classes defined below:
+```yaml
+# common.yaml
+---
+classes:
+  - base
+  - security
+  - mcollective
+
+# Debian.yaml
+---
+classes:
+  - base::linux
+  - localrepos::apt
+
+# web01.example.com.yaml
+---
+classes:
+  - apache
+  - apache::passenger
+```
+
