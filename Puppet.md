@@ -354,3 +354,20 @@ classes:
   - apache::passenger
 ```
 
+### Generating resources ([ref](https://ask.puppetlabs.com/question/1018/how-to-manage-users-account-using-hiera/?answer=1019#post-id-1019))
+
+Create a helper class to collect values from hiera and create resources, e.g.
+```puppet
+class profile::groups($groups){
+  create_resources(group, $groups)
+}
+```
+
+Then in hiera:
+```yaml
+profile::groups::groups:
+  content:
+    gid: 602
+  weblogic:
+    gid: 600
+```
