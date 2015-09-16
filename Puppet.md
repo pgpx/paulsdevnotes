@@ -251,4 +251,22 @@ Run Docker containers using Puppet.
 
 ## Hiera / Roles / Profiles
 
+* [Hiera 1 documentation](https://docs.puppetlabs.com/hiera/1/index.html)
 * <http://rnelson0.com/2014/07/14/intro-to-roles-and-profiles-with-puppet-and-hiera/>
+
+Configuration in `hiera.yaml`
+```yaml
+---
+:backends:
+  - yaml
+:hierarchy:
+  - "nodes/%{clientcert}"
+  - "nodes/%{fqdn}"
+  - "stack/%{stack_name}"
+  - "roles/%{puppet_role}"
+  - "%{environment}"
+  - common
+
+:yaml:
+  :datadir: "data/development"
+```
