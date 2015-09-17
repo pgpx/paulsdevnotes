@@ -1,4 +1,4 @@
-# Git Notes
+# Git Notes
 
 * [Homepage](https://git-scm.com/), [Docs](http://git-scm.com/docs)
 * [Pro Git Book](https://git-scm.com/book/en/v2/)
@@ -15,6 +15,10 @@
   * [Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet)
   * [Git Tips](https://github.com/git-tips/tips)
   * [Git Addons](https://github.com/stevemao/awesome-git-addons)
+
+## Read later
+
+* <http://rnelson0.com/2015/05/01/preventing-git-astrophe-judicious-use-of-the-force-flag/>
 
 ## Useful commands
 ```bash
