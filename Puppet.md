@@ -13,6 +13,17 @@
 * [Puppet Best Practices](https://www.safaribooksonline.com/library/view/puppet-best-practices/9781491922996/)
 * [Puppet Cookbook](http://www.puppetcookbook.com/)
 
+## Review later
+
+* <https://puppetlabs.com/blog/refactor-your-monolithic-code-repo-to-deploy-with-r10k>
+* <https://github.com/puppetlabs/r10k/blob/master/doc/dynamic-environments/quickstart.mkd>
+* <https://puppetlabs.com/webinars/git-workflow-best-practices-deploying-r10k>
+* <https://puppetlabs.com/blog/git-workflow-and-puppet-environments>
+* <https://docs.puppetlabs.com/pe/latest/r10k_run.html>
+* <https://docs.puppetlabs.com/pe/latest/quick_start_r10k.html>
+* <http://garylarizza.com/blog/2014/08/31/r10k-plus-directory-environments/>
+* <http://rnelson0.com/2015/04/15/improved-r10k-deployment-patterns/>
+
 ## Commands
 
 * `puppet`
