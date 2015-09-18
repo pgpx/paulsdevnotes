@@ -382,3 +382,9 @@ profile::groups::groups:
   weblogic:
     gid: 600
 ```
+
+## Modules
+
+### [apache](https://forge.puppetlabs.com/puppetlabs/apache)
+* [GitHub](https://github.com/puppetlabs/puppetlabs-apache)
+* [apache::vhost](https://forge.puppetlabs.com/puppetlabs/apache#defined-type-apachevhost) - [examples](https://forge.puppetlabs.com/puppetlabs/apache#virtual-host-examples)
