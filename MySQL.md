@@ -2,9 +2,10 @@
 
 ## [Grants](https://dev.mysql.com/doc/refman/5.1/en/grant.html)
 
+* [Syntax](https://dev.mysql.com/doc/refman/5.0/en/show-grants.html)
 * [Privileges provided by MySQL](https://dev.mysql.com/doc/refman/5.1/en/privileges-provided.html)
 
-* Show grants (access) for a user ([SO](http://stackoverflow.com/a/21744960/125246):
+* Show grants (access) for a user ([SO](http://stackoverflow.com/a/21744960/125246)):
 ```sql
 /* How you logged in */
 select user();
