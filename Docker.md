@@ -113,6 +113,10 @@ Inspect running container
 List images currently installed on host
 
     docker images
+    
+Show the size of each image layer ([ref](https://forums.docker.com/t/how-can-i-see-the-size-of-a-image-layer/3422))
+
+     docker history <image name>
 
 Push an image to DockerHub
 
