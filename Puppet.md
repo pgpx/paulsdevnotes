@@ -126,7 +126,19 @@ notify { 'resource title':
 }
 ```
 
-## Manifests
+### [User](https://docs.puppetlabs.com/references/latest/type.html#user)
+
+Set a password ([SO](http://stackoverflow.com/a/32034759/125246))
+```puppet
+user { 'username':
+  password => pw_hash('password', 'SHA-512', 'mysalt'),
+  home => '/home/username',
+  managehome => true,
+  groups => [ 'group1', 'group2' ]
+}
+```
+
+## Manifests
 
 ```bash
 puppet apply my-manifest.pp
