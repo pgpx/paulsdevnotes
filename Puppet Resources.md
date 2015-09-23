@@ -45,7 +45,7 @@ Attributes that apply to all resource types.
 puppet apply manifest.pp --tags package,mytag1  # At least one tag must match
 ```
 
-## Exec](https://docs.puppetlabs.com/references/latest/type.html#exec)
+## [Exec](https://docs.puppetlabs.com/references/latest/type.html#exec)
 Execute a command, _must_ be idempotent (able to run multiple times).
 ```puppet
 exec { 'resource title':
@@ -92,6 +92,23 @@ notify { 'resource title':
   message  => # The message to be sent to the...
   withpath => # Whether to show the full object path. Defaults...
   # ...plus any applicable metaparameters.
+}
+```
+
+## [sshd_config](https://forge.puppetlabs.com/herculesteam/augeasproviders_ssh#sshd_config-provider)
+
+In module `herculesteam/augeasproviders_ssh`
+
+Make changes to `/etc/ssh/sshd_config` ([see](http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/sshd_config.5?query=sshd_config) `man sshd_config` for options).
+
+```puppet
+# Increase the number of unauthenticated connections allowed (e.g. if automated tests are logging in)
+sshd_config { 'MaxStartups':
+  ensure => present,
+  value => 50
+} ~>
+service { 'sshd':
+  ensure => running
 }
 ```
 
