@@ -125,10 +125,13 @@ FILE="my/filename.txt" && git archive --remote=git@myremote.co.uk/repo/name.git 
     HEAD "$FILE" | tar -xO "$FILE"
 ```
 
-* [Rebase a commit (that wasn't pushed)](http://stackoverflow.com/a/846091/125246)
+* [Rebase a commit (that wasn't pushed)](http://stackoverflow.com/a/846091/125246) and ([SO](http://stackoverflow.com/a/927386/125246))
 ```bash
 # Reset to the commit before the merge
 git reset --hard HEAD^  # Maybe --hard to delete files?
+
+# or use soft to keep changes
+git reset --soft HEAD~1
 
 # Get the latest contents from the remote
 git fetch
