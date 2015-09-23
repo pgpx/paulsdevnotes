@@ -71,7 +71,6 @@ exec { 'resource title':
 }
 ```
 
-
 ## [File](https://docs.puppetlabs.com/references/latest/type.html#file)
 ```puppet
 file { '/my/file.txt':
@@ -81,6 +80,15 @@ file { '/my/file.txt':
   group => 'mygroup',
   owner => 'myowner',
   mode => '0644',
+}
+```
+
+## [Host](https://docs.puppetlabs.com/references/latest/type.html#host)
+Manage host entries (e.g. in `/etc/hosts`)
+```pupppet
+host { 'hostname':
+  ip           => '1.2.3.4',
+  host_aliases => 'host-alias',
 }
 ```
 
