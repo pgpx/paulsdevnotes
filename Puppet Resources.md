@@ -95,6 +95,22 @@ notify { 'resource title':
 }
 ```
 
+## [Package](https://docs.puppetlabs.com/references/latest/type.html#package)
+
+```puppet
+package { 'rsyslog':
+  ensure => present | absent
+}
+```
+
+## [Service](https://docs.puppetlabs.com/references/latest/type.html#service)
+
+```puppet
+service { 'rsyslog':
+  ensure => running | stopped
+}
+```
+
 ## [sshd_config](https://forge.puppetlabs.com/herculesteam/augeasproviders_ssh#sshd_config-provider)
 
 In module `herculesteam/augeasproviders_ssh`
