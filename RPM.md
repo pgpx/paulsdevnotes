@@ -69,6 +69,11 @@ Viewing metadata in an .rpm file ([ref](http://www.cyberciti.biz/faq/rhel-list-p
 rpm -qp -i /repo/Centos/5.9/APPS/jdk-7u7-linux-x64.rpm 
 ```
 
+Listing the files in an .rpm file ([SO](http://stackoverflow.com/a/104087/125246))
+```sh
+rpm -qlp firefox41-1.0-1.x86_64.rpm
+```
+
 Add a file to a repo
 ```sh
 # Copy .rpm into repository directory
