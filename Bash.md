@@ -169,6 +169,11 @@ a="$(tr [A-Z] [a-z] <<< "$a")"
 function abspath() { echo "$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"; }
 ```
 
+* [Directory containing the current script](http://stackoverflow.com/a/246128/125246)
+```bash
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+```
+
 ## xargs
 
 Run the given command multiple times (once for each piped argument)
