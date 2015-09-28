@@ -72,6 +72,12 @@ git filter-branch --prune-empty --subdirectory-filter save
 git filter-branch -f --env-filter "GIT_AUTHOR_EMAIL='paul.martin@gmail.com'; GIT_COMMITTER_EMAIL='paul.martin@gmail.com';" -- --all
 ```
 
+[rm](http://git-scm.com/docs/git-rm)
+```sh
+# Remove a file from Git, but keep the local file unchanged
+git rm --cached myfile
+```
+
 Revert an uncommitted change to a file ([ref](http://www.norbauer.com/rails-consulting/notes/git-revert-reset-a-single-file.html))
 ```bash
 # Checkout from HEAD, overwriting change
