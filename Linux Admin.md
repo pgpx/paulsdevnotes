@@ -31,3 +31,11 @@ Then to apply the changes:
 ```sh
 mount -a
 ```
+
+## Services
+
+Create symlinks in /etc/rc3.d to have services start on boot ([SO](http://unix.stackexchange.com/a/83753/32390)):
+```sh
+cd /etc/rc3.d
+ln -s ../init.d/httpd S100httpd
+```
