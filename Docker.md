@@ -15,7 +15,7 @@ Mac (with Brew and Cask):
 brew cask install dockertoolbox
 ```
 
-## Commands
+## Commands
 
 *  [`build`](https://docs.docker.com/reference/commandline/build/)
 *  [`run`](https://docs.docker.com/reference/run/) [(cmd-ref)](https://docs.docker.com/reference/commandline/run/)
@@ -47,6 +47,8 @@ Run arguments:
 * -t - allocate a pseudo tty
 ** --name <name> - choose a unique name for the container
 * --rm - delete the container once it is stopped
+* -w=<workdir> - override the working directory
+* -v=$(pwd)/dir:/containerdir - Mount a directory on the host as a volume
 
 Linking containers
 Secure and private - only linked containers can talk to each other.
