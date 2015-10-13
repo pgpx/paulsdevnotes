@@ -196,3 +196,6 @@ git clone <repository address>
 # Push selected changes to remote (not all)
 git push origin a7d640c4bc732826a2d074d2ef18371b34ae9306:develop
 ```
+
+### Tag naming convention
+`vX.Y.Z` can then co-exist with branches `X.Y.Z` ([SO](http://stackoverflow.com/a/21640164/125246)) and ([SO](http://stackoverflow.com/a/21639868/125246)) 
