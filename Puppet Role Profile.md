@@ -70,6 +70,7 @@ class profiles::wordpress {
 ```
 
 * Easier to debug (only one place where Hiera is used, component modules must be getting their values from parameters or defaults in ::params, not Hiera).
+* See Hiera as an internal datastore for bits of data that are specific to your organization that you don't want stored in the module.
 * Have no default values - don't want to forget to put data in Hiera when making a change (e.g. for other components that use it).
 * Use parameterized class declarations and explicitly pass values you care about (since profiles will be 'included' by roles, this is ok because classes will only get declared by profiles).
 * Watch out for relative namespacing: inside `profile::wordpress` have to use `::wordpress` to use a wordpress component (since `wordpress` would refer to `profile::wordpress`).
