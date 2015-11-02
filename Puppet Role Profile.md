@@ -19,3 +19,6 @@
 * <http://garylarizza.com/blog/2014/08/31/r10k-plus-directory-environments/>
 * <https://puppetlabs.com/webinars/git-workflow-best-practices-deploying-r10k>
 * <https://puppetlabs.com/blog/refactor-your-monolithic-code-repo-to-deploy-with-r10k>
+
+Component modules are the lowest level in your deployment, and are modules that configure specific pieces of technology (like apache, ntp, mysql, and etc…). Component modules are well-encapsulated, have a reasonable API, and focus on doing small, specific things really well (i.e. the *nix way).
+<https://www.devco.net/archives/2012/12/13/simple-puppet-module-structure-redux.php>
