@@ -26,6 +26,7 @@
 * <http://garylarizza.com/blog/2014/08/31/r10k-plus-directory-environments/>
 * <https://puppetlabs.com/webinars/git-workflow-best-practices-deploying-r10k>
 * <https://puppetlabs.com/blog/refactor-your-monolithic-code-repo-to-deploy-with-r10k>
+* [Beginner's Guide to Modules](http://docs.puppetlabs.com/guides/module_guides/bgtm.html)
 
 ## [Component modules](http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-1/)
 
