@@ -53,6 +53,11 @@ class apache (
   [params.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/params.pp),
   [service.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/service.pp)
 
+Also simiar [worked example](https://www.devco.net/archives/2012/12/13/simple-puppet-module-structure-redux.php):
+* Classes for each step (e.g. install, config, service, parent with params)
+* Parent defines dependencies between children.
+* Use classes for relationships, not resources (e.g. `require => Class["ntp::config"]` not one of its files `require => File["/etc/ntp.conf"]`).  Protects against future refactoring effectively requires all resources of that class.
+
 ### [Anchor pattern](https://blog.mayflower.de/4573-The-Puppet-Anchor-Pattern-in-Practice.html)
 * Be able to define dependency relationships on wrapped/contained resources (not just the container)
 ```puppet
