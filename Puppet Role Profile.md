@@ -46,6 +46,13 @@ class apache (
 * Keep modules generic (without company-specific info).
 * Smaller and more task specific (e.g. don't declare packages for shared libraries or other components).
 
+* See `ntp` for a good example:
+  [init.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/init.pp), 
+  [config.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/config.pp),
+  [install.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/install.pp),
+  [params.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/params.pp),
+  [service.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/service.pp)
+
 ## [Profiles](http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-2/)
 
 * Technology-specific wrapper class that groups Hiera lookups and class declarations into one functional unit.
