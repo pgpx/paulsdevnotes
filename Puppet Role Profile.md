@@ -84,3 +84,26 @@ Business-specific wrapper classes.
 * Every node is classified with exactly one role.
 * Can inherit from other roles, but lose visibility as to what is included (3am outage scenario).
 * Similar but different roles are different roles!
+
+## [Hiera](http://garylarizza.com/blog/2014/10/24/puppet-workflows-4-using-hiera-in-anger/)
+
+* Values common to all nores should be in the lowest level of the Hiera hierarchy.
+* All explicit hiera calls should omit the default second argument if that common value is expected to be found in the hierarchy.
+
+Puppet 3 introduced data bindings (for parameterised classes), so parameter assignment order is:
+* A value passed to the class via the parameterized class syntax
+* A Hiera lookup for `classname::parametername`
+* A default value provided by the class
+
+Debugging can be difficult, maybe performance hit for Hiera lookup, but simplified code.
+
+Store values in Hiera or profile?
+* Hiera is flexible, can be 'one source of truth'
+* Profile effectively hardcodes value, but keeps it with the code.
+
+What to store in Hiera:
+* The exact data values that need to be different conditionally (i.e. a different ntp server for different sites, different java versions in dev/prod, a password hash, etc.): `$password = hiera('mypassword')`
+* Dynamic data expressed in multiple levels of the hierarchy (i.e. a lookup for ‘packages’ that returns back an array of all the values that were found in all the levels of the hierarchy)
+* Resources as a hash ONLY WHEN ABSOLUTELY NECESSARY
+
+Don't use `create_resources` because breaks the role/profile model (another source of resources), hard to see what is created.  Similar for External Node Classifier (ENC) using `hiera_include()` (to create classes dynamically using Hiera).
