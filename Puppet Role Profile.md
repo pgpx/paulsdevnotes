@@ -38,3 +38,31 @@ class apache (
 * Do not use Hiera lookups in component modules (makes it hard to see where hiera values are used) - keep them to profiles.
 * Keep modules generic (without company-specific info).
 * Smaller and more task specific (e.g. don't declare packages for shared libraries or other components).
+
+## [Profiles](http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-2/)
+
+* Wrapper class that groups Hiera lookups and class declarations into one functional unit.
+  e.g. Install Wordpress = apache, apache::vhost, users, groups, MySQL db, etc.
+* Name according to the technology they setup (e.g. `profiles::ssh::server`), not org unit (because they should be reusable).
+
+Do all Hiera lookups in the profile:
+
+```puppet
+class profiles::wordpress {
+  ## Hiera lookups
+  $site_name               = hiera('profiles::wordpress::site_name')
+  ## ...
+  ## Create user
+  ## Configure mysql
+  ## Configure apache
+  ## Configure wordpress
+  class { '::wordpress':
+    install_dir => $wordpress_docroot,
+  }
+}
+```
+
+* Easier to debug (only one place where Hiera is used, component modules must be getting their values from parameters or defaults in ::params, not Hiera).
+* Have no default values - don't want to forget to put data in Hiera when making a change (e.g. for other components that use it).
+* Use parameterized class declarations and explicitly pass values you care about (since profiles will be 'included' by roles, this is ok because classes will only get declared by profiles).
+* Watch out for relative namespacing: inside `profile::wordpress` have to use `::wordpress` to use a wordpress component (since `wordpress` would refer to `profile::wordpress`).
