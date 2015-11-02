@@ -293,3 +293,14 @@ profile::groups::groups:
 ### [apache](https://forge.puppetlabs.com/puppetlabs/apache)
 * [GitHub](https://github.com/puppetlabs/puppetlabs-apache)
 * [apache::vhost](https://forge.puppetlabs.com/puppetlabs/apache#defined-type-apachevhost) - [examples](https://forge.puppetlabs.com/puppetlabs/apache#virtual-host-examples)
+
+## [Puppet dependencies and order](http://garylarizza.com/blog/2014/10/19/on-dependencies-and-order/)
+
+* Puppet's stance: if there are failures, try to get as much of the system into a working state as possible (e.g. set SSH keys even if other service fails).  Not really needed if can rebuild from scratch, but helpful if there is some manual config.
+* This is why order of resources without dependencies is important.  Now manifest ordering (top-to-bottom), but used to be title hash (but still predictable).
+
+* Use dependency metaparameters like ‘before’, ‘require’, ‘notify’, and ‘subscribe’ if resources in a catalog NEED to be evaluated in a particular order
+* Do not use Manifest Ordering as a substitute for explicitly setting dependencies (disable it if this is too tempting)
+* Use Roles and Profiles for a logical module layout (see: <http://bit.ly/puppetworkflows2> for information on Roles and Profiles)
+* Order individual components inside the Profile
+* Order Profiles (if necessary) inside the Role
