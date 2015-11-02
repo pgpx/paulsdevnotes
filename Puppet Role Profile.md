@@ -2,6 +2,7 @@
 
 ## Links
 
+* <http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-1/>
 * <http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-2/>
 * <http://garylarizza.com/blog/2013/12/08/when-to-hiera/>
 * <http://rnelson0.com/2014/10/20/rewriting-a-puppet-module-for-use-with-hiera/>
