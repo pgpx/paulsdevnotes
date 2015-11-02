@@ -81,6 +81,11 @@ class wrapper {
 }
 ```
 
+Sometimes could just do orderings against all uses, e.g.
+```puppet
+Class["repo"] -> Package <| |>
+````
+
 ## [Profiles](http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-2/)
 
 * Technology-specific wrapper class that groups Hiera lookups and class declarations into one functional unit.
