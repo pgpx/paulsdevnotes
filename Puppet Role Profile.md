@@ -48,7 +48,7 @@ class apache (
 
 ## [Profiles](http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-2/)
 
-* Wrapper class that groups Hiera lookups and class declarations into one functional unit.
+* Technology-specific wrapper class that groups Hiera lookups and class declarations into one functional unit.
   e.g. Install Wordpress = apache, apache::vhost, users, groups, MySQL db, etc.
 * Name according to the technology they setup (e.g. `profiles::ssh::server`), not org unit (because they should be reusable).
 
