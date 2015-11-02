@@ -1,5 +1,12 @@
 # Puppet Role and Profile pattern
 
+[ref](http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-2/)
+* Roles abstract profiles
+* Profiles abstract component modules
+* Hiera abstracts configuration data
+* Component modules abstract resources
+* Resources abstract the underlying OS implementation
+
 ## Links
 
 * <http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-1/>
@@ -66,3 +73,13 @@ class profiles::wordpress {
 * Have no default values - don't want to forget to put data in Hiera when making a change (e.g. for other components that use it).
 * Use parameterized class declarations and explicitly pass values you care about (since profiles will be 'included' by roles, this is ok because classes will only get declared by profiles).
 * Watch out for relative namespacing: inside `profile::wordpress` have to use `::wordpress` to use a wordpress component (since `wordpress` would refer to `profile::wordpress`).
+
+## Roles
+
+Business-specific wrapper classes.
+* How you refer to machines: App builder nodes, DMZ repo machine, ...
+* Mapping of machine's name to the technology that should be ON them.
+* *Only* `include` profiles (and nothing else).
+* Every node is classified with exactly one role.
+* Can inherit from other roles, but lose visibility as to what is included (3am outage scenario).
+* Similar but different roles are different roles!
