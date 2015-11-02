@@ -53,6 +53,29 @@ class apache (
   [params.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/params.pp),
   [service.pp](https://github.com/puppetlabs/puppetlabs-ntp/blob/master/manifests/service.pp)
 
+### [Anchor pattern](https://blog.mayflower.de/4573-The-Puppet-Anchor-Pattern-in-Practice.html)
+* Be able to define dependency relationships on wrapped/contained resources (not just the container)
+```puppet
+class wrapper {.
+  anchor { 'wrapper::begin': } ->
+  class { 'foo': }             ->
+  class { 'bar': }             ->
+  class { 'end': }             ->
+  anchor { 'wrapper::end': }
+}
+
+# or in Puppet 3.4
+class wrapper {
+  contain foo
+  contain bar
+  contain end
+ 
+  Class['foo'] ->
+  Class['bar'] ->
+  Class['end']
+}
+```
+
 ## [Profiles](http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-2/)
 
 * Technology-specific wrapper class that groups Hiera lookups and class declarations into one functional unit.
