@@ -5,6 +5,7 @@
 * [Type Ref](https://docs.puppetlabs.com/references/latest/type.html)
 * [Language Ref](https://docs.puppetlabs.com/puppet/latest/reference/lang_summary.html)
 * [Function Ref](http://docs.puppetlabs.com/references/4.2.latest/function.html)
+* [The Puppet Language Style Guide](http://docs.puppetlabs.com/guides/style_guide.html)
 
 ## Books / Videos / Websites
 
