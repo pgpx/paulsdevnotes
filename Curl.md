@@ -43,3 +43,13 @@ Use a SOCKS proxy (and get it to resolve hostnames) ([SO](http://stackoverflow.c
 # (using just --socks5 will resolve the hostname locally) 
 curl -v --socks5-hostname <socks-proxy-ip/host:port> https://my-url.com/
 ```
+
+Don't capture the response body (only output headers) ([SO](http://stackoverflow.com/questions/10060098/getting-only-response-header-from-http-post-using-curl))
+
+```bash
+# -D, --dump-header <file> Write the protocol headers to the specified file
+# -D - (write to stdout)
+# -s (silent, no progress bars)
+
+curl -s -D - www.acooke.org -o /dev/null
+```
