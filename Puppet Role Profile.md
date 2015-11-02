@@ -85,6 +85,10 @@ Business-specific wrapper classes.
 * Can inherit from other roles, but lose visibility as to what is included (3am outage scenario).
 * Similar but different roles are different roles!
 
+[ref](http://www.craigdunn.org/2012/05/239/)
+* Generally don't define resources directly from roles or profiles (do that in modules), but do realise virtualised resources and occasionally do resource chaining in profiles
+
+
 ## [Hiera](http://garylarizza.com/blog/2014/10/24/puppet-workflows-4-using-hiera-in-anger/)
 
 * Values common to all nores should be in the lowest level of the Hiera hierarchy.
