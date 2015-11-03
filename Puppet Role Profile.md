@@ -60,7 +60,7 @@ Also simiar [worked example](https://www.devco.net/archives/2012/12/13/simple-pu
 * Use classes for relationships, not resources (e.g. `require => Class["ntp::config"]` not one of its files `require => File["/etc/ntp.conf"]`).  Protects against future refactoring effectively requires all resources of that class.
 
 ### [Anchor pattern](https://blog.mayflower.de/4573-The-Puppet-Anchor-Pattern-in-Practice.html)
-* Be able to define dependency relationships on wrapped/contained resources (not just the container)
+* Classes do not automatically contain the classes they declare, so use the Anchor pattern (to be able to define dependency relationships on wrapped/contained classes of the parent):
 ```puppet
 class wrapper {.
   anchor { 'wrapper::begin': } ->
