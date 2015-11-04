@@ -221,6 +221,11 @@ sleep 5d # Waits 5 days.
 
 ## Processes
 
+Check whether a process is running:
+```bash
+if ps --pid $PID; then
+```
+
 List child process ids ([ps](http://linux.die.net/man/1/ps))
 ```bash
 # -o pid=     Output only the process id
