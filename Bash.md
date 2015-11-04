@@ -219,6 +219,23 @@ sleep 5h # Waits 5 hours.
 sleep 5d # Waits 5 days.
 ```
 
+## Processes
+
+List child process ids ([ps](http://linux.die.net/man/1/ps))
+```bash
+# -o pid=     Output only the process id
+# --ppid 423  Output only processes whose ppid (parent process id) is 423
+
+ps -o pid= --ppid 423
+```
+
+[pkill](http://linux.die.net/man/1/pkill) - kill all child processes of the specified process (if killing the parent won't work)
+```bash
+pkill -TERM -P $(cat appserver.pid)
+```
+
+Or maybe ([SO](http://stackoverflow.com/questions/392022/best-way-to-kill-all-child-processes))
+
 ## Functions
 ```
 read -  (e.g. ask user for input)
