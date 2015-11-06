@@ -75,6 +75,11 @@ Listing the files in an .rpm file ([SO](http://stackoverflow.com/a/104087/125246
 rpm -qlp firefox41-1.0-1.x86_64.rpm
 ```
 
+View the lifecycle scriplets within an RPM ([ref](http://www.cyberciti.biz/faq/rhel-list-package-specific-scriptlets/))
+```sh
+rpm -qp --scripts firefox41-1.0-1.x86_64.rpm
+```
+
 Add a file to a repo
 ```sh
 # Copy .rpm into repository directory
