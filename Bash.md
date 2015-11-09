@@ -15,6 +15,11 @@ Run a script from a pipe with arguments [SO](http://stackoverflow.com/a/14693303
 cat script | bash -s 5
 ```
 
+Run a command as another user using [runuser](http://linux.die.net/man/1/runuser):
+```bash
+runuser -s /bin/bash tomcat -c "$APP_HOME/startServer.sh"
+```
+
 ## Shell info
 ```bash
 # Bash version
