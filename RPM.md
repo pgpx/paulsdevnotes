@@ -335,3 +335,14 @@ Appears at the end of a spec file, listing significant changes:
   * [Built-in](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02s03.html)
 * [Built-in macros](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/ch22s02.html)
 * [ref](http://www.rpm.org/max-rpm/s1-rpm-inside-macros.html)
+
+## Services
+
+* [Runlevel](https://en.wikipedia.org/wiki/Runlevel) - state of the machine after boot (multiuser, GUI, etc.).  Used to define which services are run after boot.
+* [chkconfig](http://linux.die.net/man/8/chkconfig) - add etc/rc.d links (to run services after boot).
+* [install](http://linux.die.net/man/1/install) - copy program files with specified permissions.
+
+* <https://fedoraproject.org/wiki/Packaging:SysVInitScript>
+  * Look at `/etc/init.d/functions`
+* [Building Simple RPMs of Arbitrary Files](https://www.suse.com/communities/conversations/building-simple-rpms-arbitary-files/)
+* [How To Create RPMs and Init Scripts That Are Compatible On Both SUSE Linux and Red Hat Linux](https://www.novell.com/coolsolutions/feature/11256.html)
