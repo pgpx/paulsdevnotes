@@ -100,6 +100,11 @@ Show available versions of a package ([SO](http://unix.stackexchange.com/a/15169
 yum --showduplicates list jdk
 ```
 
+Show the packages that provide a given file ([ref](https://www.centos.org/forums/viewtopic.php?t=9303))
+```sh
+yum provides /sbin/service
+```
+
 List available repositories
 ```sh
 yum listrepos
