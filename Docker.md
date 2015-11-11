@@ -270,7 +270,7 @@ boot2docker ip # Docker’s IP
 
 Docker will create files with a uid/gid based on the user in the container, which might not match those in the host.
 
-Possible solutions ([SO]()):
+Possible solutions ([SO](http://stackoverflow.com/questions/26500270/understanding-user-file-ownership-in-docker-how-to-avoid-changing-permissions-o)):
 
 * Change the permissions of files in the container to match those of the root directory of the volume, e.g.
 
