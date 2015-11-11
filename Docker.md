@@ -263,3 +263,23 @@ boot2docker up
 boot2docker status
 boot2docker ip # Docker’s IP
 ```
+
+## Tips
+
+### Permissions on files created in mounted volumes
+
+Docker will create files with a uid/gid based on the user in the container, which might not match those in the host.
+
+Possible solutions ([SO]()):
+
+* Change the permissions of files in the container to match those of the root directory of the volume, e.g.
+
+```bash
+chown -R `stat -c "%u:%g" /shared` /shared
+```
+
+* `run -u` so all files created will automatically have the correct owner (but you won't be running as root in the container, unless you add that user to the root group)
+
+```bash
+docker run -v `pwd`/shared:/shared -u `stat -c "%u:%g /shared` ubuntu bash
+```
