@@ -9,6 +9,7 @@
 
 ## Links
 
+* <http://garylarizza.com/blog/2015/11/16/workflows-evolved-even-besterer-practices/>
 * <http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-1/>
 * <http://garylarizza.com/blog/2014/02/17/puppet-workflow-part-2/>
 * <http://garylarizza.com/blog/2013/12/08/when-to-hiera/>
