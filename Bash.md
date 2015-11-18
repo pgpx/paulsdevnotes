@@ -229,6 +229,10 @@ sleep 5d # Waits 5 days.
 Check whether a process is running:
 ```bash
 if ps --pid $PID; then
+
+# Or look for command
+# (Just executable name, but not full path of executable)
+ps -C httpd -o pid= | xargs kill
 ```
 
 List child process ids ([ps](http://linux.die.net/man/1/ps))
