@@ -48,6 +48,7 @@ git checkout --track origin/develop
 git branch --list          # show branches
 git branch <branch-name>   # Create a branch
 git checkout <branch-name> # Change to a branch
+git checkout [revision] .  # Change to a revision [SO](http://stackoverflow.com/a/2007704/125246)
 
 # Can potentially squash / rename all un-pushed commits
 # http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
@@ -133,6 +134,10 @@ FILE="my/filename.txt" && git archive --remote=git@myremote.co.uk/repo/name.git 
 
 * [Rebase a commit (that wasn't pushed)](http://stackoverflow.com/a/846091/125246) and ([SO](http://stackoverflow.com/a/927386/125246))
 ```bash
+
+# Reset to the last commit
+git reset --hard; 
+
 # Reset to the commit before the merge
 git reset --hard HEAD^  # Maybe --hard to delete files?
 
