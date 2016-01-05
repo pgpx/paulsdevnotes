@@ -136,6 +136,9 @@ FILE="my/filename.txt" && git archive --remote=git@myremote.co.uk/repo/name.git 
 # Reset to the commit before the merge
 git reset --hard HEAD^  # Maybe --hard to delete files?
 
+# Reset to the status of the remote [SO](http://stackoverflow.com/a/12845541/125246)
+git reset --hard origin/master
+
 # or use soft to keep changes
 git reset --soft HEAD~1
 
