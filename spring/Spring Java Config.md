@@ -54,9 +54,15 @@ Scope:
 * `@Scope("prototype")` - change the scope of the bean, defaults to `singleton`.
 * `@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)` - Scoped proxies.  Default is `NO`, but can specify `TARGET_CLASS` or `INTERFACES`.
 
+Import:
+
+* `@Import(ConfigA.class)` - imports other classes, so only parent needs to be supplied to the context directly.
+
 Dependency injection:
 
 * One bean can inject another by calling its `@Bean` method (as long as both are in `Configuration` classes).
+  * For singletons, CGLIB intercepts these method calls so only one instance is actually created.
+    * `@Configuration` classes must not be final and must have a no-arg constructor.
 
 ```java
 @Bean
@@ -68,6 +74,28 @@ Dependency injection:
 public Bar bar() { return new Bar(); }
 ```
 
+* Method parameters.
+* `@Autowired` - declare autowired members that can then be used in `@Bean` methods.
+  * Better to use parameter-based injection, becasue `@Configuration` classes are processed quite early,
+  * `BeanPostProcessor` and `BeanFactoryPostProcessor` created via @Bean should usually be declared as static `@Bean` methods, not triggering the instantiation of their containing configuration class. Otherwise, `@Autowired` and `@Value` won’t work on the configuration class itself since it is being created as a bean instance too early.
+  * Can use `@Autowired` to include a `@Configuration` class, and then access its `@Bean` methods directly.
+    * Use interfaces and implementations of `@Configuration` classes, so that the implementation can be switched.
+
+```java
+@Configuration
+public class ServiceConfig {
+  @Autowired
+  private RepositoryConfig repositoryConfig;
+
+  @Bean
+  public TransferService transferService() {
+    // navigate 'through' the config class to the @Bean method!
+    return new TransferServiceImpl(repositoryConfig.accountRepository());
+  }
+}
+```
+ 
+* `@Value`
 * Lookup method injection, used when a singleton-scoped bean has a dependency on a prototype-scoped bean (and wants
   a new instance for each call).
 
@@ -99,4 +127,5 @@ public CommandManager commandManager() {
     protected Command createCommand() { return asyncCommand(); }
   }
 }
+
 ```
