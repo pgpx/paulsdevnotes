@@ -21,9 +21,13 @@ public class AppConfig {
     then will be instantiated in a 'lite' mode without inter-bean dependencies.
 * `@ComponentScan` - look for classes meta-annotated with `@Component` in the specified package (and sub-packages).
   This includes further `@Configuration` classes.
-
+* `@ImportResource("classpath:/com/acme/properties-config.xml")` - import XML-based config.
+* 
 Use `AnnotatedConfigWebApplicationContext` for Spring MVC to use Java config - see
 [example `web.xml`](http://docs.spring.io/spring/docs/4.3.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#beans-java-instantiating-container-web)
+
+To use in XML-based config, just define the `@Configuration` class as a `<bean>`.  Alternatively, just use component scanning.
+
 
 ## @Bean
 
@@ -95,7 +99,7 @@ public class ServiceConfig {
 }
 ```
  
-* `@Value`
+* `@Value("${jdbc.username}")`.
 * Lookup method injection, used when a singleton-scoped bean has a dependency on a prototype-scoped bean (and wants
   a new instance for each call).
 
@@ -127,5 +131,9 @@ public CommandManager commandManager() {
     protected Command createCommand() { return asyncCommand(); }
   }
 }
-
 ```
+
+## Profiles and conditionals
+
+* `@Profile` - activate beans only where a specific profile has been enabled.
+* `@Conditional` - more flexible version of that.
