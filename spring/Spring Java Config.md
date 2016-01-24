@@ -31,6 +31,9 @@ Annotate a method to declare a bean.
 
 Parameters:
 
+* `name = "myFoo"` - customise bean name.
+  * `name = { "dataSource", "subsystemA-dataSource", "subsystemB-dataSource" }` - multiple names/aliasing.
+* `@Description("Provides a basic example of a bean")` - textual description - documentation/JMX.
 * `initMethod = "init"` - initialisation callback method.
 * `destroyMethod = "cleanup"` - destruction callback method.
   * Automatically calls public `close` or `shutdown` methods on the class unless `@Bean(destroyMethod="")` is used.
@@ -49,4 +52,4 @@ Notes
 Scope:
 
 * `@Scope("prototype")` - change the scope of the bean, defaults to `singleton`.
-* `@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)` - 
+* `@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)` - Scoped proxies.  Default is `NO`, but can specify `TARGET_CLASS` or `INTERFACES`.
