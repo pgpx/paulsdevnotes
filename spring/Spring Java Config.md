@@ -53,3 +53,50 @@ Scope:
 
 * `@Scope("prototype")` - change the scope of the bean, defaults to `singleton`.
 * `@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)` - Scoped proxies.  Default is `NO`, but can specify `TARGET_CLASS` or `INTERFACES`.
+
+Dependency injection:
+
+* One bean can inject another by calling its `@Bean` method (as long as both are in `Configuration` classes).
+
+```java
+@Bean
+  public Foo foo() {
+  return new Foo(bar());
+}
+
+@Bean
+public Bar bar() { return new Bar(); }
+```
+
+* Lookup method injection, used when a singleton-scoped bean has a dependency on a prototype-scoped bean (and wants
+  a new instance for each call).
+
+```java
+public abstract class CommandManager {
+  public Object process(Object commandState) {
+    // grab a new instance of the appropriate Command interface
+    Command command = createCommand();
+    // set the state on the (hopefully brand new) Command instance
+    command.setState(commandState);
+    return command.execute();
+  }
+
+  // okay... but where is the implementation of this method?
+  protected abstract Command createCommand();
+}
+
+@Bean
+@Scope("prototype")
+public AsyncCommand asyncCommand() {
+  AsyncCommand command = new AsyncCommand(); // inject dependencies here as required return command;
+}
+
+@Bean
+public CommandManager commandManager() {
+  // return new anonymous implementation of CommandManager with command() overridden
+  // to return a new prototype Command object
+  return new CommandManager() {
+    protected Command createCommand() { return asyncCommand(); }
+  }
+}
+```
