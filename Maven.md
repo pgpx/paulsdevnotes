@@ -87,12 +87,15 @@ Analyse dependencies (look for unused)
 ```sh
 # Output as XML
 mvn dependency:analyze -DoutputXML=true
+mvn dependency:analyze-duplicate
 ```
 
 Check for updated dependencies and plugins
 ```sh
 mvn versions:display-dependency-updates
 mvn versions:display-plugin-updates
+mvn versions:display-property-updates
+mvn versions:use-latest-releases
 ```
 
 ## Client configuration
