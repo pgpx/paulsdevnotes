@@ -1,0 +1,12 @@
+# Spring AOP
+
+## Scoped proxy
+
+```java
+@Bean(scope = "myScope")
+// true (default)=CGLib-based class proxy, false=JDK interface-based proxy
+@ScopedProxy(proxyTargetClass=true) 
+public SomeBean someBean() {
+  return new SomeBean();
+}
+```
