@@ -36,6 +36,9 @@ git log origin/develop
 # Look at local status
 git status
 
+# Hash of the current commit - http://stackoverflow.com/a/949391/125246
+git rev-parse HEAD
+
 # List of local and remote branches:
 git diff -a
 
