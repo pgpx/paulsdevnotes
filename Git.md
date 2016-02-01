@@ -19,6 +19,11 @@
 ## Read later
 
 * <http://rnelson0.com/2015/05/01/preventing-git-astrophe-judicious-use-of-the-force-flag/>
+* <http://www.gitguys.com/topics/creating-and-playing-with-branches/>
+
+## Concepts
+
+* `HEAD` is the name given to commit from which the working tree's current state was initialised (often a branch, but can be a detached head) [SO](http://stackoverflow.com/a/2304106/125246)
 
 ## Useful commands
 ```bash
