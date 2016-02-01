@@ -3,9 +3,9 @@
 ## Scoped proxy
 
 ```java
-@Bean(scope = "myScope")
+@Bean
 // true (default)=CGLib-based class proxy, false=JDK interface-based proxy
-@ScopedProxy(proxyTargetClass=true) 
+@Scope(value = "session", proxyMode = ScopedProxyMode.INTERFACES
 public SomeBean someBean() {
   return new SomeBean();
 }
