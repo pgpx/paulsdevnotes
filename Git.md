@@ -117,6 +117,15 @@ git config user.name
 git config --list
 ```
 
+## Tags
+
+Delete a (remote) tag ([ref])(https://nathanhoad.net/how-to-delete-a-remote-git-tag))
+
+```sh
+git tag -d 12345
+git push origin :refs/tags/12345
+```
+
 ## Tips
 
 * [Undo a commit and redo](http://stackoverflow.com/a/927386/125246)
