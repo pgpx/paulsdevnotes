@@ -168,6 +168,14 @@ echo $a | tr '[A-Z]' '[a-z]'
 a="$(tr [A-Z] [a-z] <<< "$a")"
 ```
 
+### Regex
+
+[Linux Journal ref](http://www.linuxjournal.com/content/bash-regular-expressions)
+
+```bash
+if [[ ! "$instance" =~ ^ebd0[0-9]ee$ ]]; then
+```
+
 ## Paths
 * [Absolute path](http://stackoverflow.com/a/3915420/125246)
 ```bash
