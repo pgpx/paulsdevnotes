@@ -44,6 +44,11 @@ git config --get remote.origin.url
 # http://stackoverflow.com/a/32991784/125246
 git remote get-url origin # For Git >= 2.7
 
+# Timestamp of the latest commit - http://stackoverflow.com/a/3815007/125246
+git show -s --format=%ci HEAD
+# or author commit (when the commit first happened, ignoring merges)
+git show -s --format=%ai HEAD
+
 # List of local and remote branches:
 git diff -a
 
