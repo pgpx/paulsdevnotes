@@ -39,6 +39,11 @@ git status
 # Hash of the current commit - http://stackoverflow.com/a/949391/125246
 git rev-parse HEAD
 
+# URL of the origin remote - http://stackoverflow.com/a/4089452/125246
+git config --get remote.origin.url
+# http://stackoverflow.com/a/32991784/125246
+git remote get-url origin # For Git >= 2.7
+
 # List of local and remote branches:
 git diff -a
 
