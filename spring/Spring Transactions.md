@@ -1,6 +1,6 @@
 # Spring Transactions
 
-## Java config
+## [Java config](http://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/htmlsingle/#transaction-declarative-annotations)
 
 ```java
 @Configuration
