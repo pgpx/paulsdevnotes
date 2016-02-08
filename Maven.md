@@ -105,3 +105,17 @@ mvn versions:use-latest-releases
 ## Nexus Notes
 
 * [2.11 docs](http://books.sonatype.com/nexus-book/2.11/reference/index.html)
+
+## Maven site errors
+
+Cannot download parent POM's site descriptor:
+
+```
+Failed to execute goal org.apache.maven.plugins:maven-site-plugin:3.4:effective-site (default-cli) on project ...
+Unable to locate site descriptor: Could not transfer artifact org.springframework.boot:spring-boot-starter-parent:xml:site_en:1.2.5.RELEASE from/to internal.repo 
+...
+Return code is: 500 , ReasonPhrase:Unable to fetch artifact resource..
+```
+
+Check that the site descriptor is actually being retrieved.
+Try disabling the use of an internal repository, and access Maven Central directly (worked for me - Archiva v1.3.5 does not seem to fetch site descriptors).
