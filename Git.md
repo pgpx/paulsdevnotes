@@ -66,7 +66,8 @@ git checkout --track origin/develop
 git branch --list          # show branches
 git branch <branch-name>   # Create a branch
 git checkout <branch-name> # Change to a branch
-git checkout [revision] .  # Change to a revision [SO](http://stackoverflow.com/a/2007704/125246)
+git checkout [revision] .  # Change to a revision and see differences as modified files [SO](http://stackoverflow.com/a/2007704/125246)
+git checkout [revision]    # Change to a revision as a detached head
 
 # Can potentially squash / rename all un-pushed commits
 # http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
