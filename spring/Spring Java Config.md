@@ -133,6 +133,18 @@ public CommandManager commandManager() {
 }
 ```
 
+Also see [SO](http://stackoverflow.com/a/6447089/125246) - define a `@Resource` to extract a value from a `FactoryBean`:
+
+```java
+@Resource
+private Mongo mongo;
+
+@Bean
+MongoFactoryBean mongo() {
+     return new MongoFactoryBean();
+}
+```
+
 ## Profiles and conditionals
 
 * `@Profile` - activate beans only where a specific profile has been enabled.
