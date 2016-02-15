@@ -43,20 +43,28 @@ public void mymethod(@PathVariable @DateTimeFormat(iso=ISO.DATE) Date day) {
 * `path = "/{day}"`
 * `consumes =` [`MediaType.APPLICATION_JSON_VALUE`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/MediaType.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-consumes)
 * `produces =` [`MediaType.APPLICATION_JSON_VALUE`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/MediaType.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-produces)
-* `params="myParam=myValue"`, `headers="myHeader=myValue"` - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-params-and-headers)
+* `params=myParam`, `params="myParam=myValue"`, `headers="myHeader=!myValue"` - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-params-and-headers)
 
-Method parameters:
+[Method argument types](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-arguments):
 
 * [`@PathVariable`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/PathVariable.html) `@DateTimeFormat(iso=ISO.DATE) Date day` - value extracted from the URI template.
   * If the value is a Map, then it gets all URI template variables.
+* [`@RequestBody`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestBody.html) - request body is parsed using an [`HttpMessageConverter<T>`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html)
 * `Model`
 * [`@MatrixVariable`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/MatrixVariable.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-matrix-variables)
+* ...
 
-Method return values:
+[Method return types](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-return-types):
 
+* [`@ResponseBody`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/ResponseBody.html) - return value is output using an [`HttpMessageConverter<T>`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html).
 * Map
 * Form object
+* ...
 
 Support classes:
 
 * `RequestMappingHandlerMapping`, `RequestMappingHandlerAdapter` - enabled by default using MVC Java config/namespace.
+
+## [HTTP Message Conversion](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#rest-message-conversion)
+
+* Use [`HttpMessageConverter<T>`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html) for `@ResponseBody` and `@RequestBody`.
