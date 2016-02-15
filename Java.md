@@ -1,5 +1,7 @@
 # Java
 
+* Java 8 [Docs](http://docs.oracle.com/javase/8/docs/), [API](http://docs.oracle.com/javase/8/docs/api/index.html)
+
 ## Generics
 
 ### PECS - Producer-extends, consumer-super
@@ -29,3 +31,7 @@ private static <E> void swapHelper(List<E> list, int i, int j) {
     list.set(i, list.set(j, list.get(i)));
 }
 ```
+
+## Lambdas
+
+* [Java Tutorial](http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
