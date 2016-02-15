@@ -37,22 +37,25 @@ public void mymethod(@PathVariable @DateTimeFormat(iso=ISO.DATE) Date day) {
   * Most specific path match wins (fewer wildcards and URI variables, with `**` wildcards the lowest).
   * By default all suffixes are matched (to allow URL extensions to easily map to resource types).  Can turn this off.  Watch out for Reflected File Download (RFD) attaches - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-rfd)
 
-Annotation parameters:
+[`@RequestMapping`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html) annotation parameters:
 
 * `method = RequestMethod.GET`
 * `path = "/{day}"`
+* `consumes =` [`MediaType.APPLICATION_JSON_VALUE`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/MediaType.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-consumes)
+* `produces =` [`MediaType.APPLICATION_JSON_VALUE`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/MediaType.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-produces)
+* `params="myParam=myValue"`, `headers="myHeader=myValue"` - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-params-and-headers)
 
 Method parameters:
 
-* `@PathVariable @DateTimeFormat(iso=ISO.DATE) Date day` - value extracted from the URI template.
+* [`@PathVariable`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/PathVariable.html) `@DateTimeFormat(iso=ISO.DATE) Date day` - value extracted from the URI template.
   * If the value is a Map, then it gets all URI template variables.
 * `Model`
+* [`@MatrixVariable`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/MatrixVariable.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-matrix-variables)
 
 Method return values:
 
 * Map
 * Form object
-* 
 
 Support classes:
 
