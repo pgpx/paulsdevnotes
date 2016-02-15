@@ -35,7 +35,7 @@ public void mymethod(@PathVariable @DateTimeFormat(iso=ISO.DATE) Date day) {
   * Can use a regex in the mapping's URI template: `{varName:regex}`
   * Can use Ant-style path patterns, e.g. `/myPath/*.do`, `/owners/*/pets{petId}`, `/hotels/{hotel}/**`
   * Most specific path match wins (fewer wildcards and URI variables, with `**` wildcards the lowest).
-  * By default all suffixes are matched (to allow URL extensions to easily map to resource types).  Can turn this off *FIXME REF*
+  * By default all suffixes are matched (to allow URL extensions to easily map to resource types).  Can turn this off.  Watch out for Reflected File Download (RFD) attaches - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-rfd)
 
 Annotation parameters:
 
