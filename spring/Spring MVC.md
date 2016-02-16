@@ -142,3 +142,11 @@ Configure async:
 Alternative to `web.xml` for Servlet 3.0+.  Implement a [`WebApplicationInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/WebApplicationInitializer.html) or extend an [`AbstractAnnotationConfigDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractAnnotationConfigDispatcherServletInitializer.html) or [`AbstractDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.html), to register the application context, filters, etc.
 
 ## [Configuration](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config)
+
+[`@EnableWebMvc`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html) added to a [`@Configuration`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html) class ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config-enable)):
+* Base config from [`WebMvcConfigurationSupport`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.html)
+  * `@Valid` (with JSR-303 Provider), XML (JAXB), JSON (Jackson 2), Atom and RSS (Rome)
+* Can be overridden using a [`WebMvcConfigurer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html) or [`WebMvcConfigurerAdapter`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurerAdapter.html] ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config-customize))
+
+* Default formatters for `Number` and `Date` installed, including `@NumberFormat` and `@DateTimeFormat` (even with Joda Time if found).  Other formatters can be registered with `addFormatters` ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config-conversion))
+* 
