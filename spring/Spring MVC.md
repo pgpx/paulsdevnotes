@@ -86,3 +86,35 @@ Support classes:
 
 * [`WebDataBinder`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/WebDataBinder.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-webdatabinder)
 * [`Formatters`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/format/Formatter.html) registered with the [`FormattingConversionService`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/format/support/FormattingConversionService.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#format)
+
+Use `@InitBinder`-annotated methods in a controller - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-webdatabinder):
+
+```java
+@InitBinder
+public void initBinder(WebDataBinder binder) {
+    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+    binder.addCustomFormatter(new DateFormatter("yyyy-MM-dd")); // preferred
+}
+```
+
+Use a custom [`WebBindingInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/support/WebBindingInitializer.html) and add it to a [`RequestMappingHandlerAdapter`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-webbindinginitializer)
+
+
+[`@ControllerAdvice`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/ControllerAdvice.html) classes with `@ExceptionHandler`, `@InitBinder`, and `@ModelAttribute` annotated-mehtods to apply to selected classes - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-controller-advice)
+
+```java
+@ControllerAdvice(annotations = RestController.class)
+@ControllerAdvice("org.example.controllers")
+@ControllerAdvice(assignableTypes = {ControllerInterface.class, AbstractController.class})
+```
+
+Jackson's [Serialization Views](http://wiki.fasterxml.com/JacksonJsonViews) ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-jsonview))
+and [JSONP](http://en.wikipedia.org/wiki/JSONP) support ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-jsonp))
+
+## [Asynchronous Request Processing](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-async)
+
+Controller methods can return a [`Callable`] to then use a Spring-managed thread, or a `DeferredResult` to use a user-defined thread.
+
+[`HandlerInterceptors`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/HandlerInterceptor.html) can also implement [`AsyncHandlerInterceptor`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/AsyncHandlerInterceptor.html) and register [`CallableProcessingInterceptor`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/context/request/async/CallableProcessingInterceptor.html) and [`DeferredResultProcessingInterceptor`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/context/request/async/DeferredResultProcessingInterceptor.html) to integrate more deeply into the lifecycle (e.g. for timeout) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-async-interception)
+
+[`ResponseBodyEmitter`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/ResponseBodyEmitter.html) return value can be used to push multiple events on a single HTTP response, to support "Long Polling" aka "HTTP Streaming" ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-async-http-streaming))
