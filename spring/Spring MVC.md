@@ -74,6 +74,15 @@ Support classes:
 
 * `RequestMappingHandlerMapping`, `RequestMappingHandlerAdapter` - enabled by default using MVC Java config/namespace.
 
-## [HTTP Message Conversion](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#rest-message-conversion)
+## Binding/Conversion
 
-* Use [`HttpMessageConverter<T>`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html) for `@ResponseBody` and `@RequestBody`.
+### For `@ResponseBody` and `@RequestBody`:
+
+[HTTP Message Conversion](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#rest-message-conversion)
+
+* Use [`HttpMessageConverter<T>`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html) 
+
+### For parameters, path variables, request headers, cookie values - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-typeconversion)
+
+* [`WebDataBinder`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/WebDataBinder.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-webdatabinder)
+* [`Formatters`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/format/Formatter.html) registered with the [`FormattingConversionService`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/format/support/FormattingConversionService.html) - [ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#format)
