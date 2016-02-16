@@ -124,3 +124,21 @@ Controller methods can return a `Callable` (wrapped in a [`WebAsyncTask`](http:/
 Configure async:
 * Set `asyncSupported` in a [`WebApplicationInitialzer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/WebApplicationInitializer.html), or extend [`AbstractDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.html) or [`AbstractAnnotationConfigDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractAnnotationConfigDispatcherServletInitializer.html) ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-async-configuration))
 * [`WebMvcConfigurer.configureAsyncSupport`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html#configureAsyncSupport-org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer-) - can set default async request timeout (10 seconds on Tomcat), and set the `Executor` and interceptors ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-async-configuration-spring-mvc))
+
+## [Handler mappings](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-handlermapping)
+## [Resolving views](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-viewresolver)
+## [Flash attributes](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-flash-attributes)
+## [Building URIs](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-uri-building)
+## [Locales](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-localeresolver)
+## [Themes](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-themeresolver)
+## [Multipart (file upload) support](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-multipart)
+## [Handling exceptions](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-exceptionhandlers)
+## [Web security](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-web-security)
+## [Convention over configuration](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-coc)
+## [HTTP caching](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-caching)
+
+## [Code-based Servlet container initialisation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-container-config)
+
+Alternative to `web.xml` for Servlet 3.0+.  Implement a [`WebApplicationInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/WebApplicationInitializer.html) or extend an [`AbstractAnnotationConfigDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractAnnotationConfigDispatcherServletInitializer.html] or [`AbstractDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.html), to register the application context, filters, etc.
+
+## [Configuration](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config)
