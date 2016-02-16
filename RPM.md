@@ -3,6 +3,8 @@
 * <http://www.rpm.org/> - [Docs](http://www.rpm.org/wiki/Docs)
 * [RPM Maven Plugin](http://www.mojohaus.org/rpm-maven-plugin/index.html)
 * [FPM](https://github.com/jordansissel/fpm) - Simple alternative to building RPMs
+* [pleaserun](https://github.com/jordansissel/pleaserun) - Simple way to generate servicce startup scripts
+  * Issue discussing [using FPM and pleaserun together](https://github.com/jordansissel/pleaserun/issues/63)
 
 Books
 * [Fedora RPM Guide](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/RPM_Guide/index.html)
