@@ -164,13 +164,13 @@ registry.addInterceptor(new SecurityInterceptor()).addPathPatterns("/secure/*");
 * [View resolvers](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config-view-resolvers) - configure content negotiation view resolution by overriding [`configureViewResolvers`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html#configureViewResolvers-org.springframework.web.servlet.config.annotation.ViewResolverRegistry-) - might also need to add a configurer class (e.g. [`FreeMarkerConfigurer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/view/freemarker/FreeMarkerConfigurer.html))
 * [Serve static resources](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config-static-resources) from locations other than the webapp root (including classpath).  Can define a cache period, and automatically sets `Last-Modified`.  Override [`addResourceHandlers`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.html#addResourceHandlers-org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry-).  Mapping must be an Ant pattern (used by [`SimpleUrlHandlerMapping`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/handler/SimpleUrlHandlerMapping.html)).  e.g. for 1 year expiration with a [`VersionResourceResolver`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/resource/VersionResourceResolver.html) to create a filename with a hash of the contents (in a chain so that this is cached):
 
-```java
-registry.addResourceHandler("/resources/**")
-  .addResourceLocations("/public-resources/", "classpath:/META-INFI/public-web-resources)
-  .setCachePeriod(31556926)
-  .resourceChain(true).addResolver(
-    new VersionResourceResolver().addContentVersionStrategy("/**"));
-```
+  ```java
+  registry.addResourceHandler("/resources/**")
+    .addResourceLocations("/public-resources/", "classpath:/META-INFI/public-web-resources)
+    .setCachePeriod(31556926)
+    .resourceChain(true).addResolver(
+      new VersionResourceResolver().addContentVersionStrategy("/**"));
+  ```
 
   * May need to add a [`ResouceUrlEncodingFilter`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/resource/ResourceUrlEncodingFilter.html) or [`ResourceUrlProvider`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/resource/ResourceUrlProvider.html) and [`CssLinkResourceTransformer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/resource/CssLinkResourceTransformer.html)
   * Can support [WebJars](http://www.webjars.org/) using a [`WebJarsResourceResolver`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/resource/WebJarsResourceResolver.html)
