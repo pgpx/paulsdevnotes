@@ -141,6 +141,10 @@ Configure async:
 
 Alternative to `web.xml` for Servlet 3.0+.  Implement a [`WebApplicationInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/WebApplicationInitializer.html) or extend an [`AbstractAnnotationConfigDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractAnnotationConfigDispatcherServletInitializer.html) or [`AbstractDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.html), to register the application context, filters, etc.
 
+You can still use a `version="3.0"` web.xml as well, and `context-param` will be used from there.
+
+* Override [`onStartup`]() to customise the [`ServletContext`](), e.g. setting:
+
 ## [Configuration](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config)
 
 [`@EnableWebMvc`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html) added to a [`@Configuration`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html) class ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config-enable)):
