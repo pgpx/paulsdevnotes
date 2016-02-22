@@ -203,3 +203,13 @@ registry.addInterceptor(new SecurityInterceptor()).addPathPatterns("/secure/*");
   * Override [`requestMappingHandlerMapping`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.html#requestMappingHandlerMapping--) to customise the [`RequestMappingHandlerMapping`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerMapping.html):
     * [`setAlwaysUseFullPath(true)`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/handler/AbstractHandlerMapping.html#setAlwaysUseFullPath-boolean-) (so that `/admin/*` mappings in web.xml get passed through as `/admin/mypath` instead of just the part that matches the wildcard `/mypath`)
     * [`setDetectHandlerMethodsInAncestorContexts(true)`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/handler/AbstractHandlerMethodMapping.html#setDetectHandlerMethodsInAncestorContexts-boolean-) otherwise controllers in ancestor contexts will be ignored.
+
+## Troubleshooting
+
+### Server will not shut down completely
+
+Check for dangling threads (particularly from `ExcecutorService`s), and make sure that you `shutdown` and `close` all required objects (via [`@Bean(destroyMethod = "shutdown")`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html) - though `shutdown` and `close` will be called automatically)
+
+### [`@Configuration`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html) classes are not being autowired
+
+Make sure that [`BeanFactoryPostProcessor`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/config/BeanFactoryPostProcessor.html)-returning [`@Bean`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html) methods (e.g. [`PropertySourcesPlaceholderConfigurer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.html)) in a [`@Configuration`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html) must be `static`, otherwise `@Autowired`, `@Resource`, etc. won't work (because they must be instantiated very early in the container lifecycle and interfere with other annotations).  You'll get a `WARN`-level log message if you forget ([ref](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html))
