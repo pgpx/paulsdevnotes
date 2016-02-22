@@ -143,7 +143,13 @@ Alternative to `web.xml` for Servlet 3.0+.  Implement a [`WebApplicationInitiali
 
 You can still use a `version="3.0"` web.xml as well, and `context-param` will be used from there.
 
-* Override [`onStartup`]() to customise the [`ServletContext`](), e.g. setting:
+Override methods in [`AbstractAnnotationConfigDispatcherServletInitializer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractAnnotationConfigDispatcherServletInitializer.html):
+
+* [`getRootConfigClasses`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractAnnotationConfigDispatcherServletInitializer.html#getRootConfigClasses--) and [`getServletConfigClasses`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractAnnotationConfigDispatcherServletInitializer.html#getServletConfigClasses--) to setup the context
+* [`getServletMappings`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.html#getServletMappings--) for the URLs to map to the servlet
+* [`getServletFilters`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.html#getServletFilters--) to register servlet [`Filter`](http://docs.oracle.com/javaee/7/api/javax/servlet/Filter.html?is-external=true)s
+* [`onStartup`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.html#onStartup-javax.servlet.ServletContext-) to customise the [`ServletContext`](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletContext.html?is-external=true), e.g. setting the [`SessionCookieConfig`](http://docs.oracle.com/javaee/7/api/javax/servlet/SessionCookieConfig.html), [`initParameters`](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletContext.html#setInitParameter-java.lang.String-java.lang.String-), and [`sessionTrackingModes`](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletContext.html#setSessionTrackingModes-java.util.Set-).
+* [`customizeRegistration`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.html#customizeRegistration-javax.servlet.ServletRegistration.Dynamic-) to set [`loadOnStartup`](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRegistration.Dynamic.html#setLoadOnStartup-int-) and [`initParameters`](http://docs.oracle.com/javaee/7/api/javax/servlet/Registration.html#setInitParameter-java.lang.String-java.lang.String-) (and others via [`ServletRegistration.Dynamic`](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRegistration.Dynamic.html?is-external=true))
 
 ## [Configuration](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-config)
 
