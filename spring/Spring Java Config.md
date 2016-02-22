@@ -52,6 +52,7 @@ Notes
   * JSR-250 annotations: `@PostConstruct` and `@PreDestroy`.
   * `InitializingBean`, `DisposableBean`, or `Lifecycle`.
   * `*Aware` interfaces such as `BeanFactoryAware`, `BeanNameAware`, `MessageSourceAware`, `ApplicationContextAware`.
+* [`BeanFactoryPostProcessor`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/config/BeanFactoryPostProcessor.html)-returning [`@Bean`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html) methods (e.g. [`PropertySourcesPlaceholderConfigurer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.html)) in a [`@Configuration`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html) must be `static`, otherwise `@Autowired`, `@Resource`, etc. won't work (because they must be instantiated very early in the container lifecycle and interfere with other annotations).  You'll get a `WARN`-level log message if you forget ([ref](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html))
 
 Scope:
 
