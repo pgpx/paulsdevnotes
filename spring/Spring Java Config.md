@@ -150,3 +150,15 @@ MongoFactoryBean mongo() {
 
 * `@Profile` - activate beans only where a specific profile has been enabled.
 * `@Conditional` - more flexible version of that.
+
+## [`PropertySource`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySource.html) ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-property-source-abstraction))
+
+The [`Environment`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/Environment.html) provides a configurable hierarchy of [`PropertySource`]() (which is a source of key-value pairs).
+* [`StandardEnvironment`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/StandardEnvironment.html) contains two: JVM system properties (`System.getProperties()`]() and environment variables [`System.getenv()`]()
+* [`StandardServletEnvironment`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/context/support/StandardServletEnvironment.html) also has servlet config and context parameters.
+* [`MockEnvironment`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/mock/env/MockEnvironment.html) for testing.
+* `env.getRequiredProperty("myprop", Integer.class)`
+* [`@PropertySource("classpath:/com/my.properties")](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/PropertySource.html) on a [`@Configuration`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html) to define [`PropertySource`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySource.html) ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-property-source-abstraction)) for the [`Environment`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/Environment.html) ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#__propertysource))
+* Placeholder resolution via `${property-key}` ([ref](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#_placeholder_resolution_in_statements))
+  * Will need a [`PropertySourcesPlaceholderConfigurer`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.html) to support [`@Value`]() (and it must be defined in a `static` [`@Bean`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html) method because it is a [`BeanFactoryPostProcessor`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/config/BeanFactoryPostProcessor.html))
+  * Can use SPEL, e.g. `@Value("#{'${http.passThroughHeaders}'.split(',')}")`
