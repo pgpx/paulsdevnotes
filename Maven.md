@@ -4,6 +4,19 @@
 * [Maven Central search](http://search.maven.org/)
 * [Lifecycle Reference](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference)
 
+## Multi-module
+
+```bash
+#Run a single goal with debug (-X)
+mvn assembly:single -X
+
+#Run a single execution (@)
+mvn dependency:unpack@unpack-tomcat
+
+#Run against a single submodule
+mvn package -pl henry-ee-database -am
+```
+
 ## Plugins
 
 * [Main Index](http://maven.apache.org/plugins/index.html),
