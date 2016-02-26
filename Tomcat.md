@@ -1,13 +1,15 @@
 # Tomcat
 
+* [API](http://tomcat.apache.org/tomcat-8.0-doc/api/index.html)
+
 ## Pre-compiling JSPs
 
 ### At server start time
 
 Use [`ServletRegistration.Dynamic`](http://docs.oracle.com/javaee/7/api/index.html?javax/servlet/ServletRegistration.Dynamic.html) to register a [`JSP_SERVLET_CLASS`] for each JSP.
-Use the [`initParameter`](http://docs.oracle.com/javaee/7/api/javax/servlet/Registration.html#setInitParameter-java.lang.String-java.lang.String-) `jspFile` to set the JSP filename ([ref])(http://tomcat.markmail.org/thread/pg65fgqhfra7czy5)
+Use the [`initParameter`](http://docs.oracle.com/javaee/7/api/javax/servlet/Registration.html#setInitParameter-java.lang.String-java.lang.String-) `jspFile` to set the JSP filename ([ref](http://tomcat.markmail.org/thread/pg65fgqhfra7czy5))
 
-e.g. for SpringBoot:
+e.g. for SpringBoot in a [`ServletContextInitializer`](http://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/embedded/ServletContextInitializer.html) ([ref](http://www.leveluplunch.com/blog/2014/04/01/spring-boot-configure-servlet-mapping-filters/):
 
 ```java
 @Bean
@@ -31,8 +33,9 @@ private static Stream<String> getDeepResourcePaths(ServletContext servletContext
 
 ### At build time
 
-Generate Java source files for each JSP and a [web.xml](http://docs.oracle.com/cd/E13222_01/wls/docs81/webapp/web_xml.html#1039287) with their servlet mappings using [JspC]().
-This seems faster (to compile+run) vs the start-time method
+Generate Java source files for each JSP and a [web.xml](http://docs.oracle.com/cd/E13222_01/wls/docs81/webapp/web_xml.html#1039287) with their servlet mappings using [JspC](http://tomcat.apache.org/tomcat-8.0-doc/api/org/apache/jasper/JspC.html) ([ref](https://tomcat.apache.org/tomcat-8.0-doc/jasper-howto.html)).
+This seems faster (to compile+run) vs the start-time method.
+
 e.g. in Maven;
 
 ```xml
@@ -123,7 +126,7 @@ e.g. in Maven;
 </plugin>
 ```
 
-Then register these with the [`ServletContext`](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletContext.html) (by parsing the `web.xml` with Tomcat's [`WebXmlParser`](), e.g. for SpringBoot:
+Then register these with the [`ServletContext`](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletContext.html) (by parsing the `web.xml` with Tomcat's [`WebXmlParser`](http://tomcat.apache.org/tomcat-8.0-doc/api/org/apache/tomcat/util/descriptor/web/WebXmlParser.html), e.g. for SpringBoot:
 
 ```java
 @Value("classpath:precompiled-jsp-web.xml")
