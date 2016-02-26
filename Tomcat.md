@@ -6,10 +6,10 @@
 
 ### At server start time
 
-Use [`ServletRegistration.Dynamic`](http://docs.oracle.com/javaee/7/api/index.html?javax/servlet/ServletRegistration.Dynamic.html) to register a [`JSP_SERVLET_CLASS`] for each JSP.
+Use [`ServletRegistration.Dynamic`](http://docs.oracle.com/javaee/7/api/index.html?javax/servlet/ServletRegistration.Dynamic.html) to register a [`JSP_SERVLET_CLASS`](http://tomcat.apache.org/tomcat-8.0-doc/api/org/apache/catalina/core/Constants.html#JSP_SERVLET_CLASS) Servlet for each JSP.
 Use the [`initParameter`](http://docs.oracle.com/javaee/7/api/javax/servlet/Registration.html#setInitParameter-java.lang.String-java.lang.String-) `jspFile` to set the JSP filename ([ref](http://tomcat.markmail.org/thread/pg65fgqhfra7czy5))
 
-e.g. for SpringBoot in a [`ServletContextInitializer`](http://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/embedded/ServletContextInitializer.html) ([ref](http://www.leveluplunch.com/blog/2014/04/01/spring-boot-configure-servlet-mapping-filters/):
+e.g. for SpringBoot in a [`ServletContextInitializer`](http://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/embedded/ServletContextInitializer.html) ([ref](http://www.leveluplunch.com/blog/2014/04/01/spring-boot-configure-servlet-mapping-filters/)):
 
 ```java
 @Bean
