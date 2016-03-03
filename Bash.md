@@ -25,6 +25,11 @@ Run a string as a command using `eval` ([SO](http://stackoverflow.com/a/2355242/
 eval $mycommand
 ```
 
+Ignore `STDERR` with `2>/dev/null` ([ref](http://ubuntuforums.org/showthread.php?t=336696))
+```bash
+ls something_you_wont_find 2>/dev/null
+```
+
 ## Shell info
 ```bash
 # Bash version
