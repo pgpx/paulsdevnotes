@@ -20,6 +20,11 @@ Run a command as another user using [runuser](http://linux.die.net/man/1/runuser
 runuser -s /bin/bash tomcat -c "$APP_HOME/startServer.sh"
 ```
 
+Run a string as a command using `eval` ([SO](http://stackoverflow.com/a/2355242/125246))
+```bash
+eval $mycommand
+```
+
 ## Shell info
 ```bash
 # Bash version
