@@ -31,7 +31,7 @@ mvn compile -Pprofile1,profile2
 List active profiles ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-listing-active-profiles.html):
 
 ```bash
-mvn help:active-profiles`
+mvn help:active-profiles
 ```
 
 Elements allowed in a profile ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-maven-profiles.html)
