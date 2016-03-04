@@ -81,6 +81,9 @@ Elements allowed in a profile ([ref](https://books.sonatype.com/mvnref-book/refe
 </file>
 ```
 
+* `activeByDefault=true` only enabled if no other profiles are active.
+  * An alternative would be to set a property and use that to select profiles ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-tips-tricks.html))
+
 ## Plugins
 
 * [Main Index](http://maven.apache.org/plugins/index.html),
