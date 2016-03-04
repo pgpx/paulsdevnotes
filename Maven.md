@@ -77,9 +77,18 @@ Elements allowed in a profile ([ref](https://books.sonatype.com/mvnref-book/refe
   <arch>x86</arch>
   <version>5.1.2600</version>
 </os>
+<!-- System properties -Dsysprop=value, not Maven properties -->
 <property>
   <name>sparrow-type</name>
   <value>African</value>
+</property>
+<!-- System property defined (any value) -->
+<property>
+  <name>my-prop</value>
+</property>
+<!-- System property not defined -->
+<property>
+  <name>!my-prop</value>
 </property>
 <file>
   <exists>${basedir}/file2.properties</exists>
@@ -88,7 +97,8 @@ Elements allowed in a profile ([ref](https://books.sonatype.com/mvnref-book/refe
 ```
 
 * `activeByDefault=true` only enabled if no other profiles are active.
-  * An alternative would be to set a property and use that to select profiles ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-tips-tricks.html))
+  * An alternative would be to set a system property and use that to select profiles ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-tips-tricks.html))
+* `property/name=!my-prop` activated if property is *not* set ([ref](https://earlyandoften.wordpress.com/2011/02/09/disable-maven-profile/)
 
 ## Plugins
 
