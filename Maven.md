@@ -28,6 +28,12 @@ Run with selected profiles:
 mvn compile -Pprofile1,profile2
 ```
 
+Disable profiles with a `!` prefix ([SO](http://stackoverflow.com/a/21991718/125246)):
+
+```bash
+mvn compile -P\!profile1,profile2  # disable profile1, enable profile2, have to escape !
+```
+
 List active profiles ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-listing-active-profiles.html):
 
 ```bash
