@@ -22,9 +22,16 @@ mvn package -pl henry-ee-database -am
 
 * [Maven reference](https://books.sonatype.com/mvnref-book/reference/profiles.html)
 
+Run with selected profiles:
+
 ```bash
-# Run with selected profiles
 mvn compile -Pprofile1,profile2
+```
+
+List active profiles ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-listing-active-profiles.html):
+
+```bash
+mvn help:active-profiles`
 ```
 
 Elements allowed in a profile ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-maven-profiles.html)
