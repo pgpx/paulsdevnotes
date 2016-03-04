@@ -2,6 +2,7 @@
 
 * [POM descriptor reference](http://maven.apache.org/ref/3-LATEST/maven-model/maven.html)
 * [Maven Central search](http://search.maven.org/)
+* [Maven: The Complete Reference](https://books.sonatype.com/mvnref-book/reference/) (book)
 * [Lifecycle Reference](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference)
 
 ## Multi-module
@@ -15,6 +16,62 @@ mvn dependency:unpack@unpack-tomcat
 
 #Run against a single submodule
 mvn package -pl henry-ee-database -am
+```
+
+## Profiles
+
+* [Maven reference](https://books.sonatype.com/mvnref-book/reference/profiles.html)
+
+```bash
+# Run with selected profiles
+mvn compile -Pprofile1,profile2
+```
+
+Elements allowed in a profile ([ref](https://books.sonatype.com/mvnref-book/reference/profiles-sect-maven-profiles.html)
+
+```xml
+<profiles>
+	<profile>
+	    <id>my-profile-id</id>
+	    <activation>...</activation>
+	    <build>
+	        <defaultGoal>...</defaultGoal>
+	        <finalName>...</finalName>
+	        <resources>...</resources>
+	        <testResources>...</testResources>
+	        <plugins>...</plugins>
+	    </build>
+	    <reporting>...</reporting>
+	    <modules>...</modules>
+	    <dependencies>...</dependencies>
+	    <dependencyManagement>...</dependencyManagement>
+	    <distributionManagement>...</distributionManagement>
+	    <repositories>...</repositories>
+	    <pluginRepositories>...</pluginRepositories>
+	    <properties>...</properties>
+	</profile>
+</profiles>
+```
+
+[Activation](http://maven.apache.org/pom.html#Activation):
+
+```xml
+<activeByDefault>false</activeByDefault>
+<jdk>1.5</jdk>
+<os>
+  <name>Windows XP</name>
+  <family>Windows</family>
+  <arch>x86</arch>
+  <version>5.1.2600</version>
+</os>
+<property>
+  <name>sparrow-type</name>
+  <value>African</value>
+</property>
+<file>
+  <exists>${basedir}/file2.properties</exists>
+  <missing>${basedir}/file1.properties</missing>
+</file>
 ```
 
 ## Plugins
