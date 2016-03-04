@@ -56,6 +56,16 @@ for FILE in "$@"; do     # Does not lose whitespace in arguments
 output=${1-text}
 output=${1:-text}
 ```
+
+## Globbing
+
+[linuxjournal](http://www.linuxjournal.com/content/bash-extended-globbing) 
+
+* `ls *.jpg` - `*` match 0-many chars (`*` doesn't match filenames that start with `.`)
+* `ls ?.jpg` - `?` match 1 char   # List JPEG files with 1 char names (eg a.jpg, 1.jpg)
+* `rm [A-Z]*.jpg` - `[]` match a range of chars (once).
+* `shopt -s extglob` - enable extended globbing.
+
 ## Syntax
 
 If/else ([Introduction to if](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html))
