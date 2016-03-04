@@ -105,6 +105,15 @@ Revert an uncommitted change to a file ([ref](http://www.norbauer.com/rails-cons
 git checkout -- filename
 ```
 
+Squash the last un-pushed 2 commits together ([ref](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html))
+
+```bash
+git rebase -i HEAD~2
+
+# Then change squash to pick for the 2nd commit, save,
+# then #-out the second comment, save again.
+```
+
 ### [Stash](http://git-scm.com/docs/git-stash)
 ```bash
 git stash      # temporarily save local changes so they can be retrieved later
