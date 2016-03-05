@@ -92,7 +92,7 @@ git filter-branch --prune-empty --subdirectory-filter save
 git filter-branch -f --env-filter "GIT_AUTHOR_EMAIL='paul.martin@gmail.com'; GIT_COMMITTER_EMAIL='paul.martin@gmail.com';" -- --all
 ```
 
-Show file change log (following renames/moves) ([SO](http://stackoverflow.com/a/4303877/125246)):
+Show file change [`log`](https://git-scm.com/docs/git-log) (following renames/moves) ([SO](http://stackoverflow.com/a/4303877/125246)):
 
 ```bash
 git log --follow some_file.cpp
