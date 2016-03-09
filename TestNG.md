@@ -47,7 +47,7 @@
   * [`enabled = true`](http://testng.org/javadocs/org/testng/annotations/Test.html#enabled--) - don't run if false.
   * [`expectedExceptions`](http://testng.org/javadocs/org/testng/annotations/Test.html#expectedExceptions--) - fail if no excpetion is thrown or isn't one of these.
     * [`expectedExceptionsMessageRegExp`](http://testng.org/javadocs/org/testng/annotations/Test.html#expectedExceptionsMessageRegExp--)
-  * [`groups`](http://testng.org/javadocs/org/testng/annotations/Test.html#groups--) - list of groups that this class/method belongs to.
+  * [`groups`](http://testng.org/javadocs/org/testng/annotations/Test.html#groups--) - list of groups that this class/method belongs to.  Tests can select which groups to run ([ref](http://testng.org/doc/documentation-main.html#test-groups))
   * [`ignoreMissingDependencies`](http://testng.org/javadocs/org/testng/annotations/Test.html#ignoreMissingDependencies--)
   * [`invocationCount = 1`](http://testng.org/javadocs/org/testng/annotations/Test.html#invocationCount--) - repeat the test.
   * [`invocationTimeout = 0L`](http://testng.org/javadocs/org/testng/annotations/Test.html#invocationTimeOut--) - maximum total time (ms) for all invocations in `invocationCount`.
@@ -68,9 +68,15 @@
   <test name="Nopackage" preserve-order="false">
     <!-- Select groups -->
     <groups>
+      <!-- Groups can include groups -->
+      <define name="functest">
+        <include name="windows"/>
+        <include name="linux"/>
+      </define>
       <run>
         <exclude name="brokenTests"  />
         <include name="checkinTests"  />
+        <include name="functest"  />
       </run>
     </groups>
     <!-- Specify class names -->
