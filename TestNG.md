@@ -114,6 +114,13 @@
 </suite>
 ```
 
+Run tests in parallel ([ref](http://testng.org/doc/documentation-main.html#parallel-tests)):
+
+```xml
+<!-- methods|tests|classes|instances -->
+<suite name="My suite" parallel="methods" thread-count="5">
+```
+
 ## [Running TestNG](http://testng.org/doc/documentation-main.html#running-testng)
 
 `java org.testng.TestNG testng1.xml [testng2.xml testng3.xml ...]`
@@ -121,5 +128,12 @@
 * `-groups=group1,group2` - which groups to run.
 * `-methods=method1,method2` - which methods to run.
 * `-testnames=test1,test2` - names of tests to run (from `testng.xml`).
+
+Re-run failed tests (using `testng-failed.xml`) ([ref](http://testng.org/doc/documentation-main.html#rerunning)):
+
+```sh
+java -classpath testng.jar;%CLASSPATH% org.testng.TestNG -d test-outputs testng.xml
+java -classpath testng.jar;%CLASSPATH% org.testng.TestNG -d test-outputs test-outputs\testng-failed.xml
+```
 
 ## [Test methods, Test classes and Test groups](http://testng.org/doc/documentation-main.html#methods)
