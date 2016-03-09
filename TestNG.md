@@ -97,3 +97,13 @@
   </test>
 </suite>
 ```
+
+## [Running TestNG](http://testng.org/doc/documentation-main.html#running-testng)
+
+`java org.testng.TestNG testng1.xml [testng2.xml testng3.xml ...]`
+
+* `-groups=group1,group2` - which groups to run.
+* `-methods=method1,method2` - which methods to run.
+* `-testnames=test1,test2` - names of tests to run (from `testng.xml`).
+
+## [Test methods, Test classes and Test groups](http://testng.org/doc/documentation-main.html#methods)
