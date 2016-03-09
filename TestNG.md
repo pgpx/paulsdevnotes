@@ -56,3 +56,44 @@
   * [`singleThreaded = true`](http://testng.org/javadocs/org/testng/annotations/Test.html#singleThreaded--) - all methods in this class wil execute on the same thread, even if tests are run with `parallel="methods"`.
   * [`timeout = 0L`](http://testng.org/javadocs/org/testng/annotations/Test.html#threadPoolSize--) - fail the test after milliseconds.
   * [`threadPoolSize = 0`](http://testng.org/javadocs/org/testng/annotations/Test.html#timeOut--) - size of the thread pool used for `invocationCount`.
+
+## [`testng.xml`](http://testng.org/doc/documentation-main.html#testng-xml)
+
+* [DTD](http://testng.org/testng-1.0.dtd) ([HTML](http://testng.org/testng-1.0.dtd.html))
+
+```xml
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Suite1" verbose="1" >
+  <test name="Nopackage" preserve-order="false">
+    <!-- Select groups -->
+    <groups>
+      <run>
+        <exclude name="brokenTests"  />
+        <include name="checkinTests"  />
+      </run>
+    </groups>
+    <!-- Specify class names -->
+    <classes>
+      <class name="NoPackageTest" />
+      <class name="test.IndividualMethodsTest">
+        <methods>
+          <include name="testMethod" />
+        </methods>
+      </class>
+    </classes>
+    <!-- or packages -->
+    <packages>
+      <package name="test.sample" />
+    </packages>
+  </test>
+ 
+  <!-- Multiple tests -->
+  <test name="Regression1">
+    <classes>
+      
+      <class name="test.sample.ParameterTest"/>
+    </classes>
+  </test>
+</suite>
+```
