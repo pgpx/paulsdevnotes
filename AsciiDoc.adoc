@@ -9,4 +9,4 @@ toc::[]
 * http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[Live Preview]
 
 == GitHub
-* [Defining a table of contents](http://asciidoctor.org/news/2014/02/04/github-asciidoctor-0.1.4-upgrade-5-things-to-know/#5-table-of-contents)
+* http://asciidoctor.org/news/2014/02/04/github-asciidoctor-0.1.4-upgrade-5-things-to-know/#5-table-of-contents[Defining a table of contents]
