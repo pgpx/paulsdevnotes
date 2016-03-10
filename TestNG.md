@@ -75,6 +75,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
   
 <suite name="Suite1" verbose="1" >
+  <listeners>
+    <listener class-name="com.example.MyListener" />
+    <listener class-name="com.example.MyMethodInterceptor" />
+  </listeners>
+
   <test name="Nopackage" preserve-order="false">
     <!-- Select groups -->
     <groups>
@@ -137,3 +142,19 @@ java -classpath testng.jar;%CLASSPATH% org.testng.TestNG -d test-outputs test-ou
 ```
 
 ## [Test methods, Test classes and Test groups](http://testng.org/doc/documentation-main.html#methods)
+
+### [Annotation Transformers](http://testng.org/doc/documentation-main.html#annotations)
+
+Modify the contents of annotations at runtime (e.g. if you sometimes want to override values).  Use [`IAnnotationTransformer`](http://testng.org/javadocs/org/testng/IAnnotationTransformer.html), [`IAnnotationTransformer2`](http://testng.org/javadocs/org/testng/IAnnotationTransformer2.html), and [`IAnnotationTransformer3`](http://testng.org/javadocs/org/testng/IAnnotationTransformer3.html).
+
+### [Method Interceptors](http://testng.org/doc/documentation-main.html#methodinterceptors)
+
+Change the order of test methods run (when they don't have dependencies or dependents) using an [`IMethodInterceptor`](http://testng.org/javadocs/org/testng/IMethodInterceptor.html)
+
+### [TestNG Listeners](http://testng.org/doc/documentation-main.html#testng-listeners)
+
+[`ITestNGListener`](http://testng.org/javadocs/org/testng/ITestNGListener.html) can be used to modify behaviour:
+* [`IAnnotationTransformer`](http://testng.org/javadocs/org/testng/IAnnotationTransformer.html), [`IAnnotationTransformer2`](http://testng.org/javadocs/org/testng/IAnnotationTransformer2.html), [`IHookable`](http://testng.org/javadocs/org/testng/IHookable.html), [`IInvokedMethodListener`](http://testng.org/javadocs/org/testng/IInvokedMethodListener.html), [`IMethodInterceptor`](http://testng.org/javadocs/org/testng/IMethodInterceptor.html), [`IReporter`](http://testng.org/javadocs/org/testng/IReporter.html), [`ISuiteListener`](http://testng.org/javadocs/org/testng/ISuiteListener.html), [`ITestListener`](http://testng.org/javadocs/org/testng/ITestListener.html)
+* Add to `testng.xml` or using the [`@Listeners({ MyListener.class })`](http://testng.org/javadocs/org/testng/annotations/Listeners.html) annotation, or use a [`ServiceLoader`](http://download.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html) to put the listeners in a JAR on the classpath.
+
+### [Dependency Injection](http://testng.org/doc/documentation-main.html#dependency-injection)
