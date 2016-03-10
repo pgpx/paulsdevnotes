@@ -1,7 +1,7 @@
 # [TestNG](http://www.testng.org)
 
 * [Documentation](http://testng.org/doc/documentation-main.html), [JavaDocs](http://testng.org/javadocs/index.html), [GitHub](https://github.com/cbeust/testng)
-* Book: "Next Generation Java Testing: TestNG and Advanced Concepts" ([Safari](https://www.safaribooksonline.com/library/view/next-generation-javatm/9780321503107/))
+* Book: "Next Generation Java Testing: TestNG and Advanced Concepts" ([Safari](https://www.safaribooksonline.com/library/view/next-generation-javatm/9780321503107/)) - entertaining rants ([chapter 7](https://www.safaribooksonline.com/library/view/next-generation-javatm/9780321503107/ch07.html))
 
 ## Configuration
 
