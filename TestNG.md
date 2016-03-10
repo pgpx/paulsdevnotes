@@ -126,6 +126,8 @@ Run tests in parallel ([ref](http://testng.org/doc/documentation-main.html#paral
 <suite name="My suite" parallel="methods" thread-count="5">
 ```
 
+Can use [YAML](http://www.yaml.org/) instead ([ref](http://testng.org/doc/documentation-main.html#yaml)).
+
 ## [Running TestNG](http://testng.org/doc/documentation-main.html#running-testng)
 
 `java org.testng.TestNG testng1.xml [testng2.xml testng3.xml ...]`
@@ -154,8 +156,16 @@ Change the order of test methods run (when they don't have dependencies or depen
 ### [TestNG Listeners](http://testng.org/doc/documentation-main.html#testng-listeners)
 
 [`ITestNGListener`](http://testng.org/javadocs/org/testng/ITestNGListener.html) can be used to modify behaviour:
-* [`IAnnotationTransformer`](http://testng.org/javadocs/org/testng/IAnnotationTransformer.html), [`IAnnotationTransformer2`](http://testng.org/javadocs/org/testng/IAnnotationTransformer2.html), [`IHookable`](http://testng.org/javadocs/org/testng/IHookable.html) - optionally skip methods, [`IInvokedMethodListener`](http://testng.org/javadocs/org/testng/IInvokedMethodListener.html) - before and after each method, [`IMethodInterceptor`](http://testng.org/javadocs/org/testng/IMethodInterceptor.html), [`IReporter`](http://testng.org/javadocs/org/testng/IReporter.html), [`ISuiteListener`](http://testng.org/javadocs/org/testng/ISuiteListener.html), [`ITestListener`](http://testng.org/javadocs/org/testng/ITestListener.html)
-* Add to `testng.xml` or using the [`@Listeners({ MyListener.class })`](http://testng.org/javadocs/org/testng/annotations/Listeners.html) annotation, or use a [`ServiceLoader`](http://download.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html) to put the listeners in a JAR on the classpath.
+* [`IAnnotationTransformer`](http://testng.org/javadocs/org/testng/IAnnotationTransformer.html)
+* [`IAnnotationTransformer2`](http://testng.org/javadocs/org/testng/IAnnotationTransformer2.html)
+* [`IHookable`](http://testng.org/javadocs/org/testng/IHookable.html) - optionally skip methods
+* [`IInvokedMethodListener`](http://testng.org/javadocs/org/testng/IInvokedMethodListener.html) - before and after each method.
+* [`IMethodInterceptor`](http://testng.org/javadocs/org/testng/IMethodInterceptor.html)
+* [`IReporter`](http://testng.org/javadocs/org/testng/IReporter.html) - generates reports when all the suites have been run ([ref](http://testng.org/doc/documentation-main.html#logging-reporters)).  [`JUnitReportRunner`](http://testng.org/javadocs/org/testng/reporters/JUnitReportReporter.html)
+* [`ISuiteListener`](http://testng.org/javadocs/org/testng/ISuiteListener.html)
+* [`ITestListener`](http://testng.org/javadocs/org/testng/ITestListener.html) - notified when test starts, passes, fails, etc.  Extend [`TestListenerAdapter`](http://testng.org/javadocs/org/testng/TestListenerAdapter.html) ([ref](http://testng.org/doc/documentation-main.html#logging-listeners)).
+
+Add to `testng.xml` or using the [`@Listeners({ MyListener.class })`](http://testng.org/javadocs/org/testng/annotations/Listeners.html) annotation, or use a [`ServiceLoader`](http://download.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html) to put the listeners in a JAR on the classpath.
 
 ### [Dependency Injection](http://testng.org/doc/documentation-main.html#dependency-injection)
 
@@ -164,3 +174,9 @@ TestNG can automatically pass variables to test methods:
 * Turn off for a parameter with [`@NoInjection Method m`](http://testng.org/javadocs/org/testng/annotations/NoInjection.html)
 * Can use Guice ([ref](http://testng.org/doc/documentation-main.html#guice-dependency-injection))
 
+### [Test results](http://testng.org/doc/documentation-main.html#test-results)
+
+Implement [`IReporter`](http://testng.org/javadocs/org/testng/IReporter.html).
+
+* Log messages to include in the report: [`Reporter.log("test message");`](http://testng.org/javadocs/org/testng/Reporter.html#log-java.lang.String-) ([ref](http://testng.org/doc/documentation-main.html#logging-reporter-api))
+* Generate XML reports ([ref](http://testng.org/doc/documentation-main.html#logging-xml-reports))
