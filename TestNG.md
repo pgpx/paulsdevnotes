@@ -154,7 +154,13 @@ Change the order of test methods run (when they don't have dependencies or depen
 ### [TestNG Listeners](http://testng.org/doc/documentation-main.html#testng-listeners)
 
 [`ITestNGListener`](http://testng.org/javadocs/org/testng/ITestNGListener.html) can be used to modify behaviour:
-* [`IAnnotationTransformer`](http://testng.org/javadocs/org/testng/IAnnotationTransformer.html), [`IAnnotationTransformer2`](http://testng.org/javadocs/org/testng/IAnnotationTransformer2.html), [`IHookable`](http://testng.org/javadocs/org/testng/IHookable.html), [`IInvokedMethodListener`](http://testng.org/javadocs/org/testng/IInvokedMethodListener.html), [`IMethodInterceptor`](http://testng.org/javadocs/org/testng/IMethodInterceptor.html), [`IReporter`](http://testng.org/javadocs/org/testng/IReporter.html), [`ISuiteListener`](http://testng.org/javadocs/org/testng/ISuiteListener.html), [`ITestListener`](http://testng.org/javadocs/org/testng/ITestListener.html)
+* [`IAnnotationTransformer`](http://testng.org/javadocs/org/testng/IAnnotationTransformer.html), [`IAnnotationTransformer2`](http://testng.org/javadocs/org/testng/IAnnotationTransformer2.html), [`IHookable`](http://testng.org/javadocs/org/testng/IHookable.html) - optionally skip methods, [`IInvokedMethodListener`](http://testng.org/javadocs/org/testng/IInvokedMethodListener.html) - before and after each method, [`IMethodInterceptor`](http://testng.org/javadocs/org/testng/IMethodInterceptor.html), [`IReporter`](http://testng.org/javadocs/org/testng/IReporter.html), [`ISuiteListener`](http://testng.org/javadocs/org/testng/ISuiteListener.html), [`ITestListener`](http://testng.org/javadocs/org/testng/ITestListener.html)
 * Add to `testng.xml` or using the [`@Listeners({ MyListener.class })`](http://testng.org/javadocs/org/testng/annotations/Listeners.html) annotation, or use a [`ServiceLoader`](http://download.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html) to put the listeners in a JAR on the classpath.
 
 ### [Dependency Injection](http://testng.org/doc/documentation-main.html#dependency-injection)
+
+TestNG can automatically pass variables to test methods:
+* [`ITestContext`](http://testng.org/javadocs/org/testng/ITestContext.html) - all information for a test run, [`ITestResult`](http://testng.org/javadocs/org/testng/ITestResult.html), [`XmlTest`](http://testng.org/javadocs/org/testng/xml/XmlTest.html) - current `<test`> tag, [`java.lang.reflect.Method`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Method.html) - test method about to be called, `Object[]` - parameters about to be used.
+* Turn off for a parameter with [`@NoInjection Method m`](http://testng.org/javadocs/org/testng/annotations/NoInjection.html)
+* Can use Guice ([ref](http://testng.org/doc/documentation-main.html#guice-dependency-injection))
+
