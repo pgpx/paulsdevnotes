@@ -6,6 +6,7 @@ toc::[]
 
 == Links
 * http://asciidoctor.org/[AsciiDoc homepage], http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[Quick Reference]
+* https://github.com/asciidoctor/asciidoctor.org[Asciidoctor GitHub]
 * http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[Live Preview]
 
 == GitHub
