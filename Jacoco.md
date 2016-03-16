@@ -6,3 +6,4 @@ Code coverage tool
 * [Maven plugin](http://eclemma.org/jacoco/trunk/doc/maven.html)
 * <http://eclemma.org/jacoco/trunk/doc/prepare-agent-mojo.html>
 * <https://dzone.com/articles/separating-code-coverage-maven>
+* <http://www.foreach.be/blog/code-coverage-acceptance-tests>
