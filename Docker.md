@@ -156,6 +156,22 @@ Examples
         -e MYSQL_PASSWORD=henrypwd -e MYSQL_DATABASE=henryee \
         -d mysql:5.6
 
+Run commands in a container using a user/group with the same uid:gid as the host, by dynamically creating that user:
+
+```sh
+docker run --rm -v $(pwd)/build/jenkins:/home/jenkins my-image \
+    bash -c "addgroup --gid $(id -g $USER) $USER ;
+        useradd --uid $(id -u $USER) --gid $(id -g $USER) jenkins ;
+        su jenkins -c 'mvn  clean compile test source:jar javadoc:jar deploy'"
+```
+
+Add a host mapping when running a container:
+
+```sh
+docker run --add-host my-host:10.40.200.123 ...
+```
+
+
 ## [Dockerfile](https://docs.docker.com/reference/builder/)
 
 Create a file called `Dockerfile` in a directory.
