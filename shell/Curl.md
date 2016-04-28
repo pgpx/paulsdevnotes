@@ -53,3 +53,23 @@ Don't capture the response body (only output headers) ([SO](http://stackoverflow
 
 curl -s -D - www.acooke.org -o /dev/null
 ```
+
+Capture the raw POST data (and rest of the request/response) ([SO](http://superuser.com/a/291456/108786))
+```bash
+curl --trace-ascii -   # instead of -v
+```
+
+Follow redirects and maintain cookies in a cookie jar across the redirect ([SO](http://stackoverflow.com/a/18474746/125246)):
+```bash
+curl --location --cookie-jar cookiejar http://myurl ; rm cookiejar
+```
+
+POST data (`application/x-www-form-urlencoded`):
+```bash
+curl --trace-ascii - --data param=value --data param2=value --data-urlencode param3='base64-encoded-value' http://myurl
+
+# Content-Type: application/x-www-form-urlencoded
+# ...
+# => Send data, 4312 bytes (0x10d8)
+# 0000: pass=HS100&transactionId=b3ad500d-4f98-475d-a10a-31117337ec54&re
+```
