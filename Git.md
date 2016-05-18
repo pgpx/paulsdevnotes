@@ -255,5 +255,15 @@ Merge changes from another branch (but don't autocommit, so that you can review 
 git merge --no-commit my-other-branch
 ```
 
+[Undoing merges](https://git-scm.com/blog/2010/03/02/undoing-merges.html)
+
+Revert a branch (master) back to an earlier commit (`git reset` changes the branch, `--hard`
+
+```bash
+git checkout master
+# Set branch to sha, also modifies index and working tree to match
+git reset --hard [sha_of_earlier_commit]
+```
+
 ### Tag naming convention
 `vX.Y.Z` can then co-exist with branches `X.Y.Z` ([SO](http://stackoverflow.com/a/21640164/125246)) and ([SO](http://stackoverflow.com/a/21639868/125246)) 
