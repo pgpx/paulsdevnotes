@@ -32,7 +32,7 @@ ls something_you_wont_find 2>/dev/null
 
 ## Shell info
 ```bash
-# Bash version
+# Bash version
 echo $BASH_VERSION
 
 # Current shell
@@ -88,6 +88,15 @@ Logical operators: [ condition ] && [condition] || ... ! ... \( \)
 String comparisons: [str1 = str2]  [str1 != str2] [str1 < str2] [str1 > str2]
      [-n str1] # Not null (length > 0)
      [-z str1] # Null (length = 0)
+```
+
+Case: ([SO](http://stackoverflow.com/a/25482040/125246))
+```bash
+case $i in
+  1|2|5) echo "Not OK"; ;;
+  9|10|12) echo "may be ok"; ;;
+  *) echo "no clue - $i"; ;;
+esac;
 ```
 
 Exit status `$?` ([SO](http://stackoverflow.com/a/31348007/125246)):
