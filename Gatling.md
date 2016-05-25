@@ -1,7 +1,7 @@
 # Gatling
 
 * <http://gatling.io/>, [Ref](http://gatling.io/docs/2.2.1/),
-  [Cheat sheet](http://gatling.io/#/cheat-sheet/2.2.1)
+  [Cheat sheet](http://gatling.io/#/cheat-sheet/2.2.1), [GitHub](https://github.com/gatling/gatling)
 
 ## Simulations
 
@@ -21,4 +21,31 @@ Combine common and specific headers with `++` with 2 maps of headers:
 ```scala
 val commonHeaders = Map("X-CDB-CLIENT-ID" -> cfg.getString("gateway.headers.client-id"), ...)
 protected val mediencenterHeaders: Map[String, String] = Map("X-CDB-USER-TOKEN"->cfg.getString("gateway.token.user")) ++ commonHeaders
+```
+
+## Checks
+
+### CSS:
+
+Uses [CSSelly](http://jodd.org/doc/csselly/), which is an implementation of the [W3C Selectors Level 3 specification](https://www.w3.org/TR/css3-selectors/)
+
+```scala
+.check(css("html:root > body.purchase").exists
+```
+
+### Nodes
+
+Uses Jodd [Lagarto](http://jodd.org/doc/lagarto/) [`Node`](http://jodd.org/api/jodd/lagarto/dom/Node.html) objects
+
+Extract form inputs (to be resubmitted later):
+
+```scala
+.check(css("""div.myform input""").ofType[Node].findAll
+  .transform(inputNodes => inputNodes.map(n => (n.getAttribute("name"), n.getAttribute("value"))))
+  .saveAs("purchaseForm")))
+
+// ...
+
+.exec(http("Make purchase")
+  .formParamSeq("${purchaseForm}")
 ```
