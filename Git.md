@@ -267,3 +267,47 @@ git reset --hard [sha_of_earlier_commit]
 
 ### Tag naming convention
 `vX.Y.Z` can then co-exist with branches `X.Y.Z` ([SO](http://stackoverflow.com/a/21640164/125246)) and ([SO](http://stackoverflow.com/a/21639868/125246)) 
+
+## Maven Git plugin
+
+* <https://github.com/ktoso/maven-git-commit-id-plugin>
+ * Available in SpringBoot ([ref](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-git-commit-information))
+
+Can add Git commit information when filtering resources:
+
+```xml
+<!-- Generate git properties (to be used when filtering build-number.properties)
+     See: https://github.com/ktoso/maven-git-commit-id-plugin -->
+<plugin>
+    <groupId>pl.project13.maven</groupId>
+    <artifactId>git-commit-id-plugin</artifactId>
+    <version>2.2.1</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>revision</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+        <gitDescribe>
+            <always>true</always>
+        </gitDescribe>
+    </configuration>
+</plugin>
+```
+
+And create a file that will be filtered such as:
+```properties
+git.tags=${git.tags}
+git.branch=${git.branch}
+git.dirty=${git.dirty}
+git.commit.id=${git.commit.id}
+git.commit.id.describe=${git.commit.id.describe}
+git.commit.message.full=${git.commit.message.full}
+git.commit.time=${git.commit.time}
+git.closest.tag.name=${git.closest.tag.name}
+git.build.time=${git.build.time}
+git.build.version=${git.build.version}
+```
