@@ -1,6 +1,7 @@
 # Maven Notes
 
 * [POM descriptor reference](http://maven.apache.org/ref/3-LATEST/maven-model/maven.html)
+* [Plugins](http://maven.apache.org/plugins/)
 * [Maven Central search](http://search.maven.org/)
 * [Maven: The Complete Reference](https://books.sonatype.com/mvnref-book/reference/) (book)
 * [Lifecycle Reference](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference)
@@ -225,3 +226,27 @@ Return code is: 500 , ReasonPhrase:Unable to fetch artifact resource..
 
 Check that the site descriptor is actually being retrieved.
 Try disabling the use of an internal repository, and access Maven Central directly (worked for me - Archiva v1.3.5 does not seem to fetch site descriptors).
+
+## Run Ant tasks in a Maven build with [antrun](http://maven.apache.org/plugins/maven-antrun-plugin/)
+
+```xml
+<plugin>
+	<artifactId>maven-antrun-plugin</artifactId>
+	<version>1.8</version>
+	<executions>
+	    <!-- Generate configuration for all environments -->
+	    <execution>
+	        <id>generate-config</id>
+	        <phase>compile</phase>
+	        <goals>
+	            <goal>run</goal>
+	        </goals>
+	        <configuration>
+	            <tasks>
+	                <ant dir="${project.basedir}/src/config" useNativeBasedir="true"/>
+	            </tasks>
+	        </configuration>
+	    </execution>
+	</executions>
+</plugin>
+```
