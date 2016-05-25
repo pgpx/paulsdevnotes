@@ -18,6 +18,16 @@ mvn dependency:unpack@unpack-tomcat
 mvn package -pl henry-ee-database -am
 ```
 
+## FAQ
+
+* [How does Maven handle multiple use of the same plugin in one POM?](https://mail-archives.apache.org/mod_mbox/maven-users/200908.mbox/%3C88c1b40908200129h29745c6ft82c3340a151caf32@mail.gmail.com%3E)
+
+	In any one build section, you should only ever list a plugin once.
+	When profiles are activated, the configurations for each profile are
+	merged with the main build... which is why you put id's on executions,
+	if the id is the same then it will merge the execution details, if the
+	id's are different, then you get two executions
+
 ## Profiles
 
 * [Maven reference](https://books.sonatype.com/mvnref-book/reference/profiles.html)
