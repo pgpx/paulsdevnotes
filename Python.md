@@ -19,6 +19,37 @@ dir(L)    // Lists all members of arary
 help(L.append)  // Documentation for append method
 ```
 
+## Basics
+
+Strings
+
+```python
+"a"
+'a'
+'''multi
+line'''
+```
+Remove commont leading whitespace with [`textwrap.dedent`](https://docs.python.org/3/library/textwrap.html):
+
+```python
+# end first line with \ to avoid the empty line!
+from textwrap import dedent
+dedent("""\
+   multiline
+   remove common leading whitespace
+""")
+```
+
+Import modules ([ref](https://docs.python.org/3/reference/simple_stmts.html#import)):
+
+```python
+import foo                 # foo imported and bound locally
+import foo.bar.baz         # foo.bar.baz imported, foo bound locally
+import foo.bar.baz as fbb  # foo.bar.baz imported and bound as fbb
+from foo.bar import baz    # foo.bar.baz imported and bound as baz
+from foo import attr       # foo imported and foo.attr bound as attr
+```
+
 ## Scripting
 
 ```python
