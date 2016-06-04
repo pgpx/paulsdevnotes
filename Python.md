@@ -48,7 +48,7 @@ import foo.bar.baz         # foo.bar.baz imported, foo bound locally
 import foo.bar.baz as fbb  # foo.bar.baz imported and bound as fbb
 from foo.bar import baz    # foo.bar.baz imported and bound as baz
 from foo import attr       # foo imported and foo.attr bound as attr
-from foo import *          # foo imported and all in foo bound to local namespace
+from foo import *          # foo imported and all pulbic names in foo bound to local namespace
 ```
 
 ## Scripting
