@@ -10,6 +10,7 @@ Books:
 
 ## Interpreter
 
+Use the interpreter to list methods ([ref](https://docs.python.org/3/faq/general.html#is-python-a-good-language-for-beginning-programmers))
 ```python
 python3
 L=[]
