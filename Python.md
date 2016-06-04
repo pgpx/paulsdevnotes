@@ -1,7 +1,7 @@
 # Python
 
 * <https://www.python.org/>
-  * [Docs](https://www.python.org/doc/)
+  * [Docs Main Page](https://www.python.org/doc/), [v3 docs](https://docs.python.org/3/), [v3 modules](https://docs.python.org/3/py-modindex.html)
 
 
 Books:
@@ -45,6 +45,10 @@ log = open("name.log", "a")
 log.write("Hello")
 log.close()
 ```
+
+## System calls
+
+Use the [`subprocess`](https://docs.python.org/3/library/subprocess.html#module-subprocess) module.
 
 ## WSGI Web Server
 * [wsgiref](https://docs.python.org/2/library/wsgiref.html)
