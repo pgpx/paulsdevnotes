@@ -10,3 +10,28 @@
 * [sbtenv](https://github.com/mazgi/sbtenv) - control the sbt version
 * [Scala By Example](http://www.scala-lang.org/docu/files/ScalaByExample.pdf) PDF
 * [Scalacheat](http://docs.scala-lang.org/cheatsheets/) - Scala cheat sheet
+
+## Basics
+
+REPL (Read Evaluate Print Loop):
+
+```sh
+scala
+```
+
+or SBT REPL (same repl):
+
+```sh
+sbt
+console
+
+> def radius = 10
+> 34+65
+```
+
+## Definitions
+
+```scala
+def radius = 10
+def square(x: Double) = x * x
+```
