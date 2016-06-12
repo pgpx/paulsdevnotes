@@ -49,6 +49,12 @@ git show -s --format=%ci HEAD
 # or author commit (when the commit first happened, ignoring merges)
 git show -s --format=%ai HEAD
 
+# List files modified as part of the commit - http://stackoverflow.com/a/424142/125246
+git show --pretty="" --name-only bd61ad98
+
+# or
+git diff-tree --no-commit-id --name-only -r bd61ad98
+
 # List of local and remote branches:
 git diff -a
 
