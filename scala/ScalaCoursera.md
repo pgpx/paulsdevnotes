@@ -17,3 +17,8 @@ So: want functions (theories), no place for mutation, powerful ways to abstract 
 * More general: focusing on the functions (particularly functions can be values that are produced, consumed, composed)
 
 *Structure and Interpretation of Computer Programs. Abelson and Sussman* [MIT ebook](https://mitpress.mit.edu/sicp/)
+
+Evaluation of function applications (substitution model - evaluation _reduces an expression to a value_, formalised in lambda-calculus - cannot be applied if expressions have side effects):
+
+1. Evaluate all function args left to right
+2. Replace function application by function's right-hand side and at the same time replace formal parameters of the function by the actual arguments.
