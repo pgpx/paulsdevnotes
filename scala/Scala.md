@@ -35,3 +35,7 @@ console
 def radius = 10
 def square(x: Double) = x * x
 ```
+
+## Types
+
+Primitive are capitalised: `Int`, `Double`, `Boolean`
