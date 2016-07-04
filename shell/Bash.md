@@ -197,6 +197,14 @@ echo $a | tr '[A-Z]' '[a-z]'
 a="$(tr [A-Z] [a-z] <<< "$a")"
 ```
 
+### awk
+
+Get a value from a properties file (key=value) (assuming value doesn't contain another =) [SO](http://stackoverflow.com/a/20378117/125246)
+
+```bash
+my_value=$(awk -F= '$1=="my.key" {print $2}' my_file.properties)
+```
+
 ### Regex
 
 [Linux Journal ref](http://www.linuxjournal.com/content/bash-regular-expressions)
