@@ -157,6 +157,18 @@ git config user.name
 git config --list
 ```
 
+## Branches
+
+Change the commit that a branch points to (to an earlier one) ([SO](http://stackoverflow.com/a/7310222/125246))
+
+```sh
+git checkout some-other-branch
+git branch -f my-branch my-rev
+# Have to force-push the branch!
+git push -f origin my-branch
+git checkout my-branch
+```
+
 ## Tags
 
 Delete a (remote) tag ([ref])(https://nathanhoad.net/how-to-delete-a-remote-git-tag))
@@ -323,4 +335,5 @@ git.commit.time=${git.commit.time}
 git.closest.tag.name=${git.closest.tag.name}
 git.build.time=${git.build.time}
 git.build.version=${git.build.version}
+
 ```
