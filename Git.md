@@ -126,6 +126,16 @@ git rebase -i HEAD~2
 # then #-out the second comment, save again.
 ```
 
+Use [`archive`](https://git-scm.com/docs/git-archive) to extract the files from a revision as a tar.gz (instead of cloning the whole repository) ([SO])(http://stackoverflow.com/a/2467629/125246)
+
+```sh
+# Only get the files in subdir from a tag
+git archive --format=tar.gz --output=extract.tar.gz --remote=git@my-git-remote.com:my-repo.git refs/tags/my-tag subdir
+
+# Only get the files in subdir from a branch
+git archive --format=tar.gz --output=extract.tar.gz --remote=git@my-git-remote.com:my-repo.git refs/heads/my-branch subdir
+```
+
 ### [Stash](http://git-scm.com/docs/git-stash)
 ```bash
 git stash      # temporarily save local changes so they can be retrieved later
