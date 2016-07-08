@@ -205,6 +205,27 @@ mvn versions:display-property-updates
 mvn versions:use-latest-releases
 ```
 
+## Maven project versions
+
+[POM Syntax](http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-syntax.html):
+
+```
+<major version>.<minor version>.<incremental version>-<qualifier>
+# or
+<major version>.<minor version>.<incremental version>-<qualifier>-<build number>
+```
+
+Use [`build-helper:parse-version`](http://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html) to get parts of the version:
+
+```sh
+POM_VERSION_QUALIFIER=$(mvn org.codehaus.mojo:build-helper-maven-plugin:1.11:parse-version \
+  org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate \
+    -Dexpression=parsedVersion.qualifier|grep -Ev '(^\[|Download\w+:|^Picked)' 2>/dev/null)
+```
+
+* `[propertyPrefix].majorVersion`, `[propertyPrefix].minorVersion`, `[propertyPrefix].incrementalVersion`,
+  `[propertyPrefix].qualifier`, `[propertyPrefix].buildNumber`
+
 ## Client configuration
 
 * [Server password encryption](https://maven.apache.org/guides/mini/guide-encryption.html) (for repositories)
