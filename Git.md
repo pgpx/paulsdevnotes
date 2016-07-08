@@ -136,6 +136,16 @@ git archive --format=tar.gz --output=extract.tar.gz --remote=git@my-git-remote.c
 git archive --format=tar.gz --output=extract.tar.gz --remote=git@my-git-remote.com:my-repo.git refs/heads/my-branch subdir
 ```
 
+Metadata about the last commit ([SO](http://stackoverflow.com/a/7293026/125246))
+
+```sh
+# Commit message subject (before the blank line in the message)
+git log -1 --pretty=%s
+
+# Author (in the format: Name <email-address>)
+git log -1 --pretty='%an <%ae>'
+```
+
 ### [Stash](http://git-scm.com/docs/git-stash)
 ```bash
 git stash      # temporarily save local changes so they can be retrieved later
