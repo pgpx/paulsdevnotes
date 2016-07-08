@@ -169,6 +169,12 @@ git push -f origin my-branch
 git checkout my-branch
 ```
 
+Show the current branch ([SO](http://stackoverflow.com/a/1418022/125246))
+
+``sh
+git rev-parse --abbrev-ref HEAD
+```
+
 ## Tags
 
 Delete a (remote) tag ([ref])(https://nathanhoad.net/how-to-delete-a-remote-git-tag))
