@@ -215,12 +215,13 @@ mvn versions:use-latest-releases
 <major version>.<minor version>.<incremental version>-<qualifier>-<build number>
 ```
 
-Use [`build-helper:parse-version`](http://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html) to get parts of the version:
+Use [`build-helper:parse-version`](http://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html) to get parts of the version ([SO](http://stackoverflow.com/a/38223890/125246)):
 
 ```sh
-POM_VERSION_QUALIFIER=$(mvn org.codehaus.mojo:build-helper-maven-plugin:1.11:parse-version \
-  org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate \
-    -Dexpression=parsedVersion.qualifier|grep -Ev '(^\[|Download\w+:|^Picked)' 2>/dev/null)
+POM_VERSION_QUALIFIER=version=$(printf 'VER\t${parsedVersion.qualifier}\n' | \
+    mvn org.codehaus.mojo:build-helper-maven-plugin:1.11:parse-version \
+        org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate | \
+    grep '^VER' | cut -f2)
 ```
 
 * `[propertyPrefix].majorVersion`, `[propertyPrefix].minorVersion`, `[propertyPrefix].incrementalVersion`,
