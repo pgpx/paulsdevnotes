@@ -226,6 +226,13 @@ POM_VERSION_QUALIFIER=$(mvn org.codehaus.mojo:build-helper-maven-plugin:1.11:par
 * `[propertyPrefix].majorVersion`, `[propertyPrefix].minorVersion`, `[propertyPrefix].incrementalVersion`,
   `[propertyPrefix].qualifier`, `[propertyPrefix].buildNumber`
 
+From Maven 3.2, [ComparableVersions](https://maven.apache.org/ref/3.3.3/maven-artifact/apidocs/org/apache/maven/artifact/versioning/ComparableVersion.html) are used which are looser ([SO](http://stackoverflow.com/a/31482463/125246)):
+
+* Separators can be '-', '.', and transition between characters and digits (but are ignored when comparing for equality)
+* Unlimited number of version components (text or strings)
+* Well-known qualifiers come before custom: `alpha` or `a`, `beta` or `b`, `milestone` or `m`, `rc` or `cr`, `snapshot`, empty string or `ga` or `final`, `sp`
+* A dash usually precedes a qualifier and is always less important that something preceded with a dot (creates a sublist).
+
 ## Client configuration
 
 * [Server password encryption](https://maven.apache.org/guides/mini/guide-encryption.html) (for repositories)
