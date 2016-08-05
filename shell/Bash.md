@@ -177,6 +177,10 @@ function my_func() {
 NATCO=$(remove_slash "$NATCO")    # Prefer to call functions using $(func_name ...)
 ```
 
+## Handling arguments
+
+Raw or with `getopts` ([SO](http://stackoverflow.com/a/14203146/125246))
+
 ## Strings
 
 ### Newlines ([SO](http://stackoverflow.com/a/8467448/125246))
