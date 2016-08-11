@@ -137,6 +137,54 @@ Elements allowed in a profile ([ref](https://books.sonatype.com/mvnref-book/refe
 * [org.codehaus.mojo:exec-maven-plugin](http://www.mojohaus.org/exec-maven-plugin/)
 * `mvn help:system` - show system properties and environment variables that Maven will use.
 
+## Copy a dependency locally
+
+[mvn:dependency-copy](http://maven.apache.org/plugins/maven-dependency-plugin/copy-mojo.html) ([SO](http://stackoverflow.com/a/26676996/125246)):
+
+```sh
+mvn dependency:copy "-Dartifact=${ARTIFACT_COORD}" \
+    -Dmdep.overWriteSnapshots=true \
+    -Dmdep.overWriteReleases=true \
+    -Dmdep.useBaseVersion=true \
+    -Dmdep.stripVersion=flase \
+    -Dmdep.stripClassifier=true \
+    "-DoutputDirectory=${TEMP_DIR}"
+```
+
+or unpack using [mvn:dependency-unpack](http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html) ([usage](https://maven.apache.org/plugins/maven-dependency-plugin/usage.html), [examples](https://maven.apache.org/plugins/maven-dependency-plugin/examples/unpacking-artifacts.html)):
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-dependency-plugin</artifactId>
+    <version>2.10</version>
+    <executions>
+        <execution>
+            <id>unpack-ebdc-mc-content</id>
+            <phase>generate-resources</phase>
+            <goals>
+                <goal>unpack</goal>
+            </goals>
+            <configuration>
+                <artifactItems>
+                    <artifactItem>
+                        <groupId>my.groupid</groupId>
+                        <artifactId>my-artifactid</artifactId>
+                        <version>1.2.3-SNAPSHOT</version>
+                        <type>jar</type>
+                        <overWrite>false</overWrite>
+                        <outputDirectory>src/main/webapp/WEB-INF</outputDirectory>
+                        <excludes>META-INF/**</excludes>
+                    </artifactItem>
+                </artifactItems>
+                <overWriteReleases>false</overWriteReleases>
+                <overWriteSnapshots>true</overWriteSnapshots>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
+
 ## Workarounds
 
 ### Don't fail if there are Java 8 Javadoc errors
