@@ -57,6 +57,16 @@ output=${1-text}
 output=${1:-text}
 ```
 
+## Get the full path to the current script ([SO](http://stackoverflow.com/a/9107028/125246), [SO](http://stackoverflow.com/a/4774063/125246))
+
+```bash
+SCRIPT_DIR_PATH=$( cd "$(dirname "$0")" ; pwd -P )
+# or
+ABSOLUTE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
+```
+
+Won't work if the file is a symlink or found in the `$PATH`.
+
 ## Globbing
 
 [linuxjournal](http://www.linuxjournal.com/content/bash-extended-globbing) 
