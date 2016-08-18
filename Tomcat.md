@@ -159,3 +159,9 @@ public ServletContextInitializer registerPreCompiledJsps() {
     };
 }
 ```
+
+Note that you can see when JSPs are (pre)compiled if you add the following entry to the Tomcat’s `conf/logging.properties`:
+
+``` 
+org.apache.jasper.compiler.Compiler.level = ALL
+```
