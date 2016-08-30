@@ -3,6 +3,7 @@
 * [Official FAQ](http://tiswww.case.edu/php/chet/bash/FAQ)
 * [BashFAQ](http://mywiki.wooledge.org/BashFAQ/), [Bash Pitfalls](http://mywiki.wooledge.org/BashPitfalls)
 * [Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
+* [Use the Unofficial Bash Strict Mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
 
 ## Books
 * [Learning the Bash Shell, 3rd Ed. O'Reilly](https://www.safaribooksonline.com/library/view/learning-the-bash/0596009658/)
@@ -164,6 +165,22 @@ for CC in ${natcos[@]:-AT AL BK BU CS DE HR HY CZ GR HU MK ME NL PL RO SK TE ZZ}
 * -gt Greater than
 * -ne Not equal
 
+## [set](http://ss64.com/bash/set.html)
+
+```
+# Use + instead of - to turn off the option
+-e  Exit immediately if a simple command exits with a non-zero status, unless
+       the command that fails is part of an until or  while loop, part of an
+       if statement, part of a && or || list, or if the command's return status
+       is being inverted using !.  -o errexit
+-u  Treat unset variables as an error when performing 
+       parameter expansion. An error message will be written 
+       to the standard error, and a non-interactive shell will exit. -o nounset
+--  If no arguments follow this option, then the positional parameters are unset. 
+       Otherwise, the positional parameters are set to the arguments, 
+       even if some of them begin with a `-'. 
+```
+
 ## For loop
 ```bash
 for variable in value1 value2; do
@@ -172,6 +189,20 @@ done
 
 for NATCO in `svn ls file://$REPO/editions`; do
 ```
+
+To loop over script arguments, first use shift to remove the first argument(s) and then loop over the rest ([ref](http://stackoverflow.com/a/2701429/125246)):
+
+```bash
+fistitem=$1
+shift;
+for item in "$@" ; do
+  #process item
+done
+```
+
+## [shift](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
+
+Shift the positional parameters 'to the left' by its argument (defaults to 1).
 
 ## String manipulation with sed
 ```bash
