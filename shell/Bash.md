@@ -46,6 +46,19 @@ echo $SHELL
 * Any character in set - `[set]`
 * Any character not in set - `[!set]`
 
+## ['strict mode'](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+```
+
+* `-e` - halt if any command has a non-zero exit status (unless combined in a boolean expression)
+* `-u` - halt if accessing any undefined variable (except `$*` and `$@`)
+* `-o pipefail` - halt if any step in a pipeline fails
+* `IFS=$'\n\t'` - separate words with tabs and newlines (not spaces, for better loop iteration)
+
 ## Arguments
 [Iterate over arguments passed to script](http://stackoverflow.com/a/4528563/125246)
 ```bash
