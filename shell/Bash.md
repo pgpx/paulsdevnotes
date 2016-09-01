@@ -155,6 +155,25 @@ contains() {
 for CC in ${natcos[@]:-AT AL BK BU CS DE HR HY CZ GR HU MK ME NL PL RO SK TE ZZ}; do
 ```
 
+Split a single comma-separated line into an array ([SO](http://stackoverflow.com/a/918931/125246)):
+
+```bash
+IFS=';' read -ra ADDR <<< "$IN"
+for i in "${ADDR[@]}"; do
+    # process "$i"
+done
+```
+
+Or multiple lines (;-separated):
+
+```bash
+while IFS=';' read -ra ADDR; do
+      for i in "${ADDR[@]}"; do
+          # process "$i"
+      done
+done <<< "$IN"
+```
+
 ## File checks
 * -a file file exists
 * -d file file exists and is a directory
