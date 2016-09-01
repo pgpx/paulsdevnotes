@@ -155,6 +155,12 @@ contains() {
 for CC in ${natcos[@]:-AT AL BK BU CS DE HR HY CZ GR HU MK ME NL PL RO SK TE ZZ}; do
 ```
 
+Array length ([ref](http://www.cyberciti.biz/faq/finding-bash-shell-array-length-elements/)):
+
+```bash
+${#ArrayName[#]}
+```
+
 Split a single comma-separated line into an array ([SO](http://stackoverflow.com/a/918931/125246)):
 
 ```bash
