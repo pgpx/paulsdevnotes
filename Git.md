@@ -191,7 +191,7 @@ git checkout my-branch
 
 Show the current branch ([SO](http://stackoverflow.com/a/1418022/125246))
 
-``sh
+```sh
 git rev-parse --abbrev-ref HEAD
 ```
 
@@ -209,6 +209,13 @@ git fetch --tags
 # Does a Git tag exist?
 # http://stackoverflow.com/a/36942600/125246
 if git rev-parse -q --verify "refs/tags/${TAG}" >/dev/null; then
+```
+
+Delete all local tags that aren't on the remote ([SO](http://stackoverflow.com/a/5373319/125246)):
+
+```sh
+git tag -l | xargs git tag -d
+git fetch --tags
 ```
 
 ## Tips
