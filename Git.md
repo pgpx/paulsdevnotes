@@ -323,6 +323,20 @@ git checkout master
 git reset --hard [sha_of_earlier_commit]
 ```
 
+(Nicely) revert a merge (by reverting the merge commit, which can be much earlier), then later replayign the merge (by reverting the revert):
+
+* Revert the merge  (`-m 1` means keep 1st parent, since a merge commit has 2 parents, use `git show <commit>` to view parents) ([ref](https://github.com/git/git/blob/master/Documentation/howto/revert-a-faulty-merge.txt))
+
+  ```sh
+  git revert -m 1 <merge-commit-id>
+  ```
+  
+* (Later) undo/revert the revert of the merge
+
+ ```sh
+ git revert <revert-commit-id>
+ ```
+
 ### Tag naming convention
 `vX.Y.Z` can then co-exist with branches `X.Y.Z` ([SO](http://stackoverflow.com/a/21640164/125246)) and ([SO](http://stackoverflow.com/a/21639868/125246)) 
 
