@@ -195,6 +195,30 @@ Show the current branch ([SO](http://stackoverflow.com/a/1418022/125246))
 git rev-parse --abbrev-ref HEAD
 ```
 
+Safely force-[push](https://git-scm.com/docs/git-push) changes (e.g. remove the last couple of commits on a branch)
+
+* Reset the branch pointer to an older/another commit:
+
+```sh
+git reset <commit-id>  # Use --hard to delete changes from the working copy
+```
+
+* Safely force push the change to the remote origin (will fail if the remote's branch pointer has changed in the meantime) ([SO](http://stackoverflow.com/a/10510482/125246)):
+
+```sh
+git push --force-with-lease origin develop
+```
+
+* Fetch changes on all other repo clones (otherwise their changes will become orphaned) ([SO](http://stackoverflow.com/a/9813888/125246)):
+
+```sh
+git fetch
+
+# Or to keep local changes
+git reset origin/master --hard
+```
+
+
 ## Tags
 
 Delete a (remote) tag ([ref])(https://nathanhoad.net/how-to-delete-a-remote-git-tag))
