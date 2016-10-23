@@ -30,3 +30,9 @@ private Object[] adultValues() {
                  new Object[]{13, false},
                  new Object[]{17, false}, ...
 ```
+
+It can't:
+
+* Use parameter arrays in-line with @Parameters - you can only have an array of CSV values.
+* Use method references instead of method names (in @Parameters(method=))  e.g. could do MyEnum.values(), but can't do that in Java 8 ([no method references in annotations in Java 8](http://mail.openjdk.java.net/pipermail/lambda-dev/2011-August/003833.html))
+* Use Iterables or Stream as return values for parameter methods.
