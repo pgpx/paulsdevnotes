@@ -1,6 +1,7 @@
 # Tomcat
 
-* [API](http://tomcat.apache.org/tomcat-8.0-doc/api/index.html)
+* Tomcat 8 [Docs](https://tomcat.apache.org/tomcat-8.0-doc/index.html), [API](http://tomcat.apache.org/tomcat-8.0-doc/api/index.html), [Configuration](https://tomcat.apache.org/tomcat-8.0-doc/config/index.html)
+* [FAQ](http://wiki.apache.org/tomcat/FAQ), 
 
 ## Pre-compiling JSPs
 
