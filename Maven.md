@@ -327,3 +327,30 @@ Try disabling the use of an internal repository, and access Maven Central direct
 	</executions>
 </plugin>
 ```
+
+## Copy and unpack a file and verify its signature
+
+[download-maven-plugin](http://maven-download-plugin.github.io/maven-download-plugin/docsite/1.3.0/wget-mojo.html) Also caches downloaded files. ([SO](http://stackoverflow.com/a/19152358/125246))
+
+```xml
+<plugin>
+  <groupId>com.googlecode.maven-download-plugin</groupId>
+  <artifactId>download-maven-plugin</artifactId>
+  <version>1.3.0</version>
+  <executions>
+    <execution>
+	<id>download-tomcat</id>
+	<phase>prepare-package</phase>
+	<goals>
+	    <goal>wget</goal>
+	</goals>
+	<configuration>
+	    <url>${tomcat.url}</url>
+	    <unpack>true</unpack>
+	    <outputDirectory>${project.build.directory}/tomcat-raw</outputDirectory>
+	    <sha1>${tomcat.sha1}</sha1>
+	</configuration>
+    </execution>
+  </executions>
+</plugin>
+```
