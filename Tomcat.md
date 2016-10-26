@@ -165,3 +165,9 @@ Note that you can see when JSPs are (pre)compiled if you add the following entry
 ``` 
 org.apache.jasper.compiler.Compiler.level = ALL
 ```
+
+# Troubleshooting
+
+## Slow JSP tag performance on Tomcat 8
+
+Orders of magnitude slower!  Fixed in 8.0.33 - [bug report](https://bz.apache.org/bugzilla/show_bug.cgi?id=57583), [blog post](http://blog.nortal.com/tomcat-8-performance-issue-tagx-usage/)
