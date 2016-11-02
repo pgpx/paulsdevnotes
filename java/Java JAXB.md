@@ -1,18 +1,21 @@
 # Java JAXB
 
+* [JAXB Website](https://jaxb.java.net/)
+* [JSR 222 - JAXB Specification](https://jcp.org/en/jsr/detail?id=222)
 * [JAXB blog by MoXy dev](http://blog.bdoughan.com/)
-
-Stackoverflow questions:
-* <http://stackoverflow.com/questions/6790168/can-should-i-list-inherited-properties-for-a-jaxb-mapped-bean-in-the-proporder>
-* <http://stackoverflow.com/questions/10065013/when-serializing-a-generic-list-using-jaxb-how-do-i-add-position-information-to>
-* <http://stackoverflow.com/questions/3549334/java-generic-jaxb-serialization>
-* <http://stackoverflow.com/questions/3549334/java-generic-jaxb-serialization/3549916#3549916>
-* <http://stackoverflow.com/questions/10052484/jaxb-unmarshalling-non-wrapped-elements>
 
 API:
 
 * [`javax.xml.bind`](http://docs.oracle.com/javase/8/docs/api/javax/xml/bind/package-summary.html), [`javax.xml.bind.annotation`](http://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/package-summary.html), [`javax.xml.bind.annotation.adapters`](http://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/adapters/package-summary.html)
     * [`XmlAdapter`](http://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/adapters/XmlAdapter.html)
+
+Stackoverflow questions:
+
+* <http://stackoverflow.com/questions/6790168/can-should-i-list-inherited-properties-for-a-jaxb-mapped-bean-in-the-proporder>
+* <http://stackoverflow.com/questions/10065013/when-serializing-a-generic-list-using-jaxb-how-do-i-add-position-information-to>
+* <http://stackoverflow.com/questions/3549334/java-generic-jaxb-serialization>
+* <http://stackoverflow.com/questions/3549334/java-generic-jaxb-serialization/3549916#3549916>
+* <http://stackoverflow.com/questions/10052484/jaxb-unmarshalling-non-wrapped-elements>
 
 ## MOXy
 
