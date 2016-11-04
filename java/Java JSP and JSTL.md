@@ -42,6 +42,7 @@ This will under the covers be imported via ImportHandler#importClass() and be av
 
 ```
 ${YourConstants.FOO}
+${YourConstants.staticFunction(args)}
 ```
 
 # Troubleshooting

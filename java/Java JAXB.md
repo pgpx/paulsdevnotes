@@ -17,6 +17,42 @@ Stackoverflow questions:
 * <http://stackoverflow.com/questions/3549334/java-generic-jaxb-serialization/3549916#3549916>
 * <http://stackoverflow.com/questions/10052484/jaxb-unmarshalling-non-wrapped-elements>
 
+## Anotations
+
+```java
+@XmlAccessorType(XmlAccessType.FIELD)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@XmlType(name = "Prop", namespace = "http://myns", propOrder = {"propA", "propB"})
+public class MyClass { }
+
+@XmlElement(namespace = "http://myns")
+@JsonInclude(NON_EMPTY)
+protected List<String> myAttr = new ArrayList<>();
+
+@XmlTransient
+private String myAttr;
+```
+
+## Type conversions
+
+Crate an [`XmlAdapter`](http://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/adapters/XmlAdapter.html) to map types that JAXB knows how to map (ValueType) to other types (BoundType).
+
+```java
+public class MyXmlAdapter extends XmlAdapter<ValueType, BoundType> {
+    @Override
+    public BoundType unmarshal(ValueType v) throws Exception { ... }
+    @Override
+    public ValueType marshal(BoundType v) throws Exception { ... }
+}
+```
+
+Then use it via the [`@XmlJavaTypeAdapter`](http://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/adapters/XmlJavaTypeAdapter.html) annotation on a property/class/package.
+
+```java
+  @XmlJavaTypeAdapter(MyXmlAdapter.class)
+  protected BoundType prop;
+```
+
 ## MOXy
 
 * [Homepage](http://www.eclipse.org/eclipselink/moxy.php)
