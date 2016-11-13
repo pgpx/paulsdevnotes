@@ -13,6 +13,8 @@
 
 ## [Google Auto](https://github.com/google/auto)
 
+* [AutoValue ... what, why and how?](https://docs.google.com/presentation/d/14u_h-lMn7f1rXE1nDiLX0azS3IkgjGl5uxp5jGJ75RE/edit#slide=id.g2a5e9c4a8_00) - presentation.
+
 ## [Java Poet](https://github.com/square/javapoet) - Java code generator
 
 ## [Joda-Beans](http://www.joda.org/joda-beans/)

@@ -34,6 +34,8 @@
 * [GitHub](https://github.com/google/truth), [Javadoc](http://google.github.io/truth/api/0.30/)
 * Google's version of AssertJ/Fest
 * [Utility scripts](https://github.com/google/truth/tree/master/util) to publish Javadoc pages to GitHub pages.
+* [Reddit team AMA](https://www.reddit.com/r/java/comments/1y9e6t/ama_were_the_google_team_behind_guava_dagger/)
+
 ### [Hamcrest](http://hamcrest.org/)
 
 * [Java](http://hamcrest.org/JavaHamcrest/), [GitHub](https://github.com/hamcrest/JavaHamcrest)
