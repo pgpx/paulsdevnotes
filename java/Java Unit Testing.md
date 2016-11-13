@@ -29,6 +29,11 @@
 * [Comparison with Fest and Hamcrest](https://www.javacodegeeks.com/2014/10/assertj-fest-hamcrest.html)
 * [Turning Assertions Into a Domain-Specific Language](https://www.petrikainulainen.net/programming/unit-testing/turning-assertions-into-a-domain-specific-language/)
 
+### [Truth](http://google.github.io/truth/)
+
+* [GitHub](https://github.com/google/truth), [Javadoc](http://google.github.io/truth/api/0.30/)
+* Google's version of AssertJ/Fest
+* [Utility scripts](https://github.com/google/truth/tree/master/util) to publish Javadoc pages to GitHub pages.
 ### [Hamcrest](http://hamcrest.org/)
 
 * [Java](http://hamcrest.org/JavaHamcrest/), [GitHub](https://github.com/hamcrest/JavaHamcrest)
