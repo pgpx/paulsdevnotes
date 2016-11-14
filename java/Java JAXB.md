@@ -3,6 +3,8 @@
 * [JAXB Website](https://jaxb.java.net/)
 * [JSR 222 - JAXB Specification](https://jcp.org/en/jsr/detail?id=222)
 * [JAXB blog by MoXy dev](http://blog.bdoughan.com/)
+* [Unofficial JAXB Guide](https://jaxb.java.net/guide/index.html) - Glassfish / [jaxb.java.net](https://jaxb.java.net)
+    * [JAXB Tutorial](https://jaxb.java.net/tutorial/)
 
 API:
 
