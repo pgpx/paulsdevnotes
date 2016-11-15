@@ -2,6 +2,10 @@
 
 * Java 8 [Docs](http://docs.oracle.com/javase/8/docs/), [API](http://docs.oracle.com/javase/8/docs/api/index.html)
 
+## Garbage Collection Tuning
+
+* [HotSpot Virtual Machine Garbage Collection Tuning Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html)
+
 ## JVM analysis tools
 
 [`jmap`](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jmap.html) - heap/thread dump ([ref](https://blog.codecentric.de/en/2011/08/create-and-understand-java-heapdumps-act-4/))
