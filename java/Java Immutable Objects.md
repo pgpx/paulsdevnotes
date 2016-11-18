@@ -40,6 +40,10 @@ public interface Link {
 
 Generates code in the main source file (that is cheked in to your VCS) instead of in an auxiliary file (that is not checked in) - easier for others to work with.
 
+## [FreeBuilder](http://freebuilder.inferred.org/)
+
+* [GitHub](https://github.com/google/FreeBuilder)
+
 ## [Project Lombok](https://projectlombok.org/)
 
 ## [VALJOGen](http://valjogen.41concepts.com/)
