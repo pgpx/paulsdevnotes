@@ -238,6 +238,32 @@ for item in "$@" ; do
 done
 ```
 
+[Loop control](http://www.tldp.org/LDP/abs/html/loopcontrol.html), e.g. `break` and `continue`.
+
+## Loop through the contents of a file ([SO](http://stackoverflow.com/questions/1521462/looping-through-the-content-of-a-file-in-bash))
+
+```bash
+while read p; do
+  echo $p
+done <peptides.txt
+```
+
+Exceptionally, if the loop body may read from standard input, you can open the file using a different file descriptor:
+
+```bash
+while read -u 10 p; do
+  ...
+done 10<peptides.txt
+```
+
+Or?
+
+```bash
+while IFS= read -r line; do
+   echo "$line"
+done <file
+```
+
 ## [shift](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
 
 Shift the positional parameters 'to the left' by its argument (defaults to 1).
