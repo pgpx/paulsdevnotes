@@ -146,6 +146,19 @@ git log -1 --pretty=%s
 git log -1 --pretty='%an <%ae>'
 ```
 
+Remove untracked files from the working tree ([SO](http://stackoverflow.com/a/64966/125246)
+
+```sh
+# Show what will be deleted / dry-run
+git clean -n
+
+# Delete files and directories
+git clean -f -d
+
+# Delete ignored files
+git clean -f -X
+```
+
 ### [Stash](http://git-scm.com/docs/git-stash)
 ```bash
 git stash      # temporarily save local changes so they can be retrieved later
