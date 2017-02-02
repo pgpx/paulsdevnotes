@@ -21,7 +21,18 @@ help(L.append)  // Documentation for append method
 
 ## Basics
 
-Strings
+### Conditionals
+
+```python
+if res is None:
+    # 
+elif res > 3:
+    #
+else:
+    #
+```
+
+### Strings
 
 ```python
 "a"
@@ -29,7 +40,7 @@ Strings
 '''multi
 line'''
 ```
-Remove commont leading whitespace with [`textwrap.dedent`](https://docs.python.org/3/library/textwrap.html):
+Remove common leading whitespace with [`textwrap.dedent`](https://docs.python.org/3/library/textwrap.html):
 
 ```python
 # end first line with \ to avoid the empty line!
@@ -39,6 +50,53 @@ dedent("""\
    remove common leading whitespace
 """)
 ```
+
+Concatenate strings
+
+```python
+str = 'hello ' + 'there'
+str2 = 'pattern %s substitution %s' % (val1, val2)
+str2 = 'pattern %s substitution %s' % tuple([val1, val2])
+str3 = '.'.join(list)
+```
+
+Regex
+
+```python
+# Substitute, returning the result
+import re
+res = re.sub(r'^.*z', 'repl')
+```
+
+### Tuples
+
+```python
+t = (val1, val2)
+t = tuple([val1, val2])
+```
+
+### Lists
+
+```python
+l = [val1, val2]
+for key in l:
+    print key
+    
+res = map(lambda i: i + 1, l)
+```
+
+### Dictionaries/Maps
+
+```python
+# Test for key
+if key in obj:
+# Get value (error if not found)
+obj[key]
+# Get value or default if not found
+obj.get(key, default)
+```
+
+### Modules
 
 Import modules ([ref](https://docs.python.org/3/reference/simple_stmts.html#import)):
 
@@ -51,9 +109,22 @@ from foo import attr       # foo imported and foo.attr bound as attr
 from foo import *          # foo imported and all pulbic names in foo bound to local namespace
 ```
 
-## Scripting
+### Functions
 
 ```python
+def my_fund_name(arg1, arg2, arg3):
+    return arg1 + arg2 + arg3
+```
+
+### Exceptions
+
+```python
+raise ValueError('my error message')
+```
+
+## Scripting
+
+```bash
 #!/usr/bin/env python3
 ```
 
@@ -69,13 +140,19 @@ Print to STDOUT (arguments separated by spaces) ([ref](https://www.safaribookson
 print("Hello", "World!")
 ```
 
-
 Write to a file:
 
 ```python
 log = open("name.log", "a")
 log.write("Hello")
 log.close()
+```
+
+## JSON
+
+```python
+import json
+parsed = json.loads(payload)
 ```
 
 ## System calls
