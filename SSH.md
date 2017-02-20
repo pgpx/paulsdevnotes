@@ -16,3 +16,63 @@ lsof -P -n | grep 2222
 
 * Add public key to `~/.ssh/authorized_keys`
 * Check that `~/.ssh` and `~/.ssh/authorized_keys` is writable only by you (otherwise user will need to enter a password)
+
+## ssh-keygen
+
+Change the password on an existing key ([SO](http://stackoverflow.com/a/112409/125246)):
+
+```bash
+ssh-keygen -p
+```
+
+Adding a private key to the Mac OS/X keychain ([ref](https://wiki.hpcc.msu.edu/display/hpccdocs/Adding+a+Private+Key+to+Your+Mac+OSX+Keychain)):
+
+```bash
+ssh-add -K /path/of/private/key
+```
+
+List all loaded keys ([SO](https://github.com/lionheart/openradar-mirror/issues/15361)):
+
+```bash
+ssh-add -l
+```
+
+OS/X Sierra changed config so that keys are not automatically stored in/loaded from keychain.  To change this ([ref](https://developer.apple.com/library/content/technotes/tn2449/_index.html#//apple_ref/doc/uid/DTS40017589)):
+
+```
+Host server.example.com
+    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes
+```
+
+or ([SO](http://superuser.com/a/1163862/108786)), using [note](https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain):
+
+```bash
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+
+```
+
+Might have to re-add/change config in OS/X Sierra ([ref](https://github.com/lionheart/openradar-mirror/issues/15361))
+
+To view the password for a key on the OS/X keychain:
+
+* `Keychain Access -> Category: Passwords`, select the password then `Get Info -> Show password` or `Copy Password to Clipboard`
+
+## Decrypt encrypted private keys
+
+Encrypted private keys look something like ([SO](http://unix.stackexchange.com/a/528/32390)):
+
+```bash
+> cat ~/.ssh/id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+```
+
+To decrypt (enter password, outputs to console) ([ref](https://support.citrix.com/article/CTX122930/))
+
+```bash
+openssl rsa -in ~/.ssh/id_rsa
+```
