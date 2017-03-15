@@ -16,3 +16,7 @@ echo "CONTENT_VERSION=$(src/jenkins/content_version.sh)" > target/jenkins-env.pr
 ```
 
 Then specify `target/jenkins-env.properties` in a `Parameters from properties file` parameters option.
+
+## Use local branch names in Git
+
+From [ref](https://issues.jenkins-ci.org/browse/JENKINS-33202) and [ref](https://github.com/jenkinsci/git-plugin/pull/381), in the Git configuration for a job, add `Additional Behaviours -> Check out to specific local branch` with a value of `**` or empty.  This will mean that Git will attempt to give the checked-out branches the same branch name as in the remote repository (instead of having just a commit id).
