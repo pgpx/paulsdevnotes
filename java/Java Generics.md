@@ -1,6 +1,7 @@
 # Java Generics
 
 * Java 8 [Docs](http://docs.oracle.com/javase/8/docs/), [API](http://docs.oracle.com/javase/8/docs/api/index.html)
+* []Angelika Langer's Generics FAQ](http://www.angelikalanger.com/GenericsFAQ/JavaGenericsFAQ.html)
 
 ## PECS - Producer-extends, consumer-super
 

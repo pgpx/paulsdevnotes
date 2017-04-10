@@ -28,3 +28,7 @@ OS/X:
 ```sh
 less ~/Library/Logs/IntelliJIdea2016.1/idea.log
 ```
+
+## Useful plugins
+
+* [StringManipulation](https://plugins.jetbrains.com/plugin/2162-string-manipulation) - `Alt/Option+M` - lets you change case, escape/unescape XML/JSON/Java strings, etc.
