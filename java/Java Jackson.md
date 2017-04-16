@@ -13,3 +13,10 @@ Don't output empty collections:
 @JsonInclude(NON_EMPTY)
 protected List<String> myList = new ArrayList<>();
 ```
+
+Ignore unknown properties ([SO](http://stackoverflow.com/a/5455563/125246))
+
+```java
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Foo {
+```
