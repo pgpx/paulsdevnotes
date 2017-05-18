@@ -46,6 +46,12 @@ or use `data-th-` attributes (such as `data-th-text`) if you want the templates 
     * Selector is optional, to include the complete template: `~{templatename}`
     * Selector can be a markup selector (so doesn't need a `th:fragment`), e.g. `~{footer :: #copy-section}`
 
+* Literal substitutions (to avoid having to concatenate strings) - surround with `|`
+
+    ```html
+    <span th:text="|Welcome to our application, ${user.name}!|">
+    ```
+
 Inside an expression, operators and values can be used:
 
 * Strings are `'single quoted'`
@@ -207,7 +213,7 @@ Inside an expression, operators and values can be used:
 
 * `th:block` is a container that can be used to hold Thymeleaf commands (e.g. `th:each`) but will not be output.
 
-### Inline expressoins ([ref](http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#expression-inlining))
+### Inline expressions ([ref](http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#expression-inlining))
 
 * `[[...]]` - outputs value in-line, doesn't need to be part of an element.
 
