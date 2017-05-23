@@ -32,6 +32,14 @@
 * `hiera` - provides a configurable hierarchy of data used by manifests and moudles.
 * `mco` (Marionette Collective) - orchestration.
 
+
+```bash
+ssh  -o UserKnownHostsFile=/dev/null \
+    -o StrictHostKeyChecking=no \
+    root@myhost.com \
+    -C "/root/stopallcontainers.sh; puppet agent --test; exit 0"
+```
+
 ## Manifests
 
 ```bash
