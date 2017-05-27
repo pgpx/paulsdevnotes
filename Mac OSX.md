@@ -31,3 +31,7 @@ pv FreeNAS-9.3-STABLE-201602031011.iso | sudo dd of=/dev/rdisk2 bs=1048576
 ```
 killall Dock
 ```
+
+## Character map
+
+`Ctrl + Cmd⌘ + Space` ([ref](https://support.apple.com/en-gb/HT201586))
