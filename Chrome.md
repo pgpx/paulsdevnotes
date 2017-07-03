@@ -12,7 +12,7 @@ Go to <chrome://net-internals/#hsts> and query/delete the problematic domain.
     * Effective proxy settings: `chrome://net-internals/proxyservice.config#proxy` (re-apply will update them immediately, e.g. if PAC file has changed)
     * Events: `chrome://net-internals/proxyservice.config#events` - capture traffic, logging evaluation of PAC files, etc.
 
-### Clear invalid DNS entries
+### Clear invalid DNS entries
 
 e.g. if unexpectedly getting Cert/authentication requests from sites usually visited over a VPN:
 
