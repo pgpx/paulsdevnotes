@@ -33,6 +33,12 @@ Uses [CSSelly](http://jodd.org/doc/csselly/), which is an implementation of the 
 .check(css("html:root > body.purchase").exists
 ```
 
+### HTML
+
+```scala
+    .protocols(HttpConfig.httpConf.inferHtmlResources(WhiteList(".*")))
+```
+
 ### Nodes
 
 Uses Jodd [Lagarto](http://jodd.org/doc/lagarto/) [`Node`](http://jodd.org/api/jodd/lagarto/dom/Node.html) objects
