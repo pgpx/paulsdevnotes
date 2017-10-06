@@ -241,6 +241,12 @@ from dateutil.parser import parse
 d = parse('2009/05/13 19:19:30 -0400')
 ```
 
+Epoch second to string ([SO](https://stackoverflow.com/a/12400584/125246)):
+
+```python
+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epoch_seconds))
+```
+
 ## System calls
 
 Use the [`subprocess`](https://docs.python.org/3/library/subprocess.html#module-subprocess) module.
