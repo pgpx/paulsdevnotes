@@ -12,3 +12,5 @@ Which shell am I using? ([SO](How to check which shell am I using?))
 echo $0
 # Will return -bash (for example)
 ```
+
+[pv](https://linux.die.net/man/1/pv) - progress monitor
