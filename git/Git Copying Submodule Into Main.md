@@ -5,6 +5,15 @@
 * <https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories>
 
 1. Clone the module to merge into a new directory, and checkout the branch to merge.
+
+    * Optionally prune the directory tree, e.g.
+    
+        ```bash
+        git filter-branch --tree-filter \
+          "find src/ -mindepth 1 -maxdepth 1 \! \( -name 'main' -o -name 'test' \) -exec rm -rf '{}' \;" \
+          --prune-empty HEAD
+        ```
+    
 2. `git mv` all of the files in the root to a new subdirectory (e.g. `libs/mymodule`) so that they won't conflict with any files in the target (including `.gitignore`)
 
     ```bash
