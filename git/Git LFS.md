@@ -31,6 +31,8 @@ java -jar git-lfs-migrate.jar \
      "*.md" \
      "*.jar"
  ```
+ 
+ Note that the version 0.2.5 of this tool has a bug whereby spaces in patterns are not correctly handled, so use wildcards (*) instead of each space. 
 
 ## Identifying large files ()that need to be added to Git LFS)
 
