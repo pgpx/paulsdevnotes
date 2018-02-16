@@ -282,6 +282,20 @@ function my_func() {
 NATCO=$(remove_slash "$NATCO")    # Prefer to call functions using $(func_name ...)
 ```
 
+## Run a command before the script exits ([SO](https://stackoverflow.com/a/2130323/125246))
+
+```bash
+#!/bin/bash
+set -e
+function cleanup {
+  echo "Removing /tmp/foo"
+  rm  -r /tmp/foo
+}
+trap cleanup EXIT
+mkdir /tmp/foo
+asdffdsa #Fails
+```
+
 ## Handling arguments
 
 Raw or with `getopts` ([SO](http://stackoverflow.com/a/14203146/125246))
