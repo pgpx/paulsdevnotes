@@ -275,6 +275,15 @@ POM_VERSION_QUALIFIER=version=$(printf 'VER\t${parsedVersion.qualifier}\n' | \
 * `[propertyPrefix].majorVersion`, `[propertyPrefix].minorVersion`, `[propertyPrefix].incrementalVersion`,
   `[propertyPrefix].qualifier`, `[propertyPrefix].buildNumber`
 
+Or for the project version:
+
+```bash
+printf 'VERSION\t${project.version}\n0\n' | \
+        mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate | \
+        grep '^VERSION' | \
+        cut -f2 > target/maven.version
+```
+
 From Maven 3.2, [ComparableVersions](https://maven.apache.org/ref/3.3.3/maven-artifact/apidocs/org/apache/maven/artifact/versioning/ComparableVersion.html) are used which are looser ([SO](http://stackoverflow.com/a/31482463/125246)):
 
 * Separators can be '-', '.', and transition between characters and digits (but are ignored when comparing for equality)
