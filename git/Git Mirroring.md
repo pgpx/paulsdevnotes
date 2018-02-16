@@ -36,7 +36,9 @@ Might be due to a bug: https://gitlab.com/gitlab-org/gitlab-ce/issues/41022
 So push each ref individually (adapted from https://gitlab.com/gitlab-org/gitlab-ce/issues/41022#note_55696539):
 
 ```bash
-for': for REF in $(git show-ref |\
+git remote set-url origin "$TARGET_REPO"    # Probably not needed
+git config --replace-all remote.origin.mirror false # Otherwise errors
+for REF in $(git show-ref |\
     sed 's|.*refs/heads/\(.*\)|\1|' | \
     sed 's|.*refs/tags/\(.*\)|\1|'); \
     do git push --force origin ${REF}; done
