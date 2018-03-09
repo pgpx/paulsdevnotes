@@ -1,5 +1,9 @@
 # SSH
 
+* <http://en.wikipedia.org/wiki/Ssh-keygen>
+* <https://utcc.utoronto.ca/~cks/space/blog/sysadmin/SSHKeyTypes>
+* <https://stribika.github.io/2015/01/04/secure-secure-shell.html>
+
 ## Port forwarding
 
 `-R [bind_address:]port:host:hostport`
@@ -18,6 +22,12 @@ lsof -P -n | grep 2222
 * Check that `~/.ssh` and `~/.ssh/authorized_keys` is writable only by you (otherwise user will need to enter a password)
 
 ## ssh-keygen
+
+Create a new RSA key:
+
+```bash
+ssh-keygen -t rsa -b 3072 -f mykey
+```
 
 Change the password on an existing key ([SO](http://stackoverflow.com/a/112409/125246)):
 
