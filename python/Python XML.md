@@ -13,6 +13,8 @@ ET.dump(root)
 ```
 
 ### [XPath](https://docs.python.org/3/library/xml.etree.elementtree.html#xpath-support)
+
+```python
 location = root.find(".//header[@name='location']")
 locations = root.findall(".//header[@name='location']")
 ```

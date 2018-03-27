@@ -2,6 +2,21 @@
 
 * Ref: [Lists (introduction)](https://docs.python.org/3/tutorial/introduction.html#lists)
 * Ref: [More on Lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
+
+```python
+l = [val1, val2]
+for key in l:
+    print key
+    
+res = map(lambda i: i + 1, l)
+```
+
+in ([SO](https://stackoverflow.com/a/12934223/125246))
+
+```python
+if myItem in list:
+```
+
 ## Iteration
 
 Capture index and element ([SO](https://stackoverflow.com/a/14532900/125246))
