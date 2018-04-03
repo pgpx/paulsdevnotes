@@ -15,3 +15,11 @@ Get current script's directory ([SO](https://stackoverflow.com/q/4934806/125246)
 import os
 print os.getcwd()
 ```
+
+## Argument parser
+
+TODO complete this!
+
+```python
+parser = argparse.ArgumentParser(...)
+```

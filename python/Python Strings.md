@@ -43,7 +43,15 @@ Length (in bytes for Python 2) ([SO](https://stackoverflow.com/a/37262373/125246
 print(len('abc'))       # 3
 ```
 
-## Regular Expressions
+## String Formatting
+
+Python 2:
+
+```python
+print "my str {:} {:}".format(val1, val2)
+```
+
+## [Regular Expressions](https://docs.python.org/3/library/re.html)
 
 ```python
 import re
@@ -65,5 +73,5 @@ if my_match:
 
 Substitute (returning the result):
 ```python
-res = re.sub(r'^.*z', 'repl')
+res = re.sub(r'^(.*)z', r'\1y', string_to_apply_replacement_to)
 ```
