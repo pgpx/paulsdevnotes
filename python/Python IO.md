@@ -16,6 +16,22 @@ log.close()
 
 * Read from stdin ([SO](https://stackoverflow.com/questions/1450393/how-do-you-read-from-stdin-in-python))
 
+Read from a gzip file: ([SO](https://stackoverflow.com/a/30062604/125246))
+
+```python
+import gzip
+fd = gzip.open(path, 'r', encoding='utf-8')
+```
+
+## Progress bar
+
+[tqdm](https://github.com/tqdm/tqdm) ([SO](https://stackoverflow.com/a/26394657/125246))
+
+```python
+from tqdm import tqdm
+for v in tqdm(fd, desc='File entries processed', unit=' entries'):
+```
+
 ## File and Directory Access
 
 * Python Reference: [File and Directory Access](https://docs.python.org/3/library/filesys.html)
