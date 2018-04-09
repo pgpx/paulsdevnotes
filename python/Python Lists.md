@@ -36,7 +36,7 @@ for index, el in enumerate(list):
 
 [Chain](https://docs.python.org/2/library/itertools.html#itertools.chain) multiple lists together:
 
-`s``python
+```python
 from itertools import chain
 for i in chain(list_1, list_2)
 ```
