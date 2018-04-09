@@ -1,5 +1,8 @@
 ### Python Dictionaries/Maps
 
+* <https://docs.python.org/2.7/tutorial/datastructures.html#dictionaries>
+* <https://docs.python.org/2.7/library/stdtypes.html#dict>
+
 ```python
 # Test for key
 if key in obj:

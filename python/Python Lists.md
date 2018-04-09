@@ -17,12 +17,28 @@ in ([SO](https://stackoverflow.com/a/12934223/125246))
 if myItem in list:
 ```
 
+Is a list empty? ([SO](https://stackoverflow.com/a/53522/125246))
+```python
+
+if my_list:
+    print("List is not empty")
+elif not my_list:
+    print("List is empty")
+```
+
 ## Iteration
 
 Capture index and element ([SO](https://stackoverflow.com/a/14532900/125246))
 
 ```python
 for index, el in enumerate(list):
+```
+
+[Chain](https://docs.python.org/2/library/itertools.html#itertools.chain) multiple lists together:
+
+`s``python
+from itertools import chain
+for i in chain(list_1, list_2)
 ```
 
 ## [List comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
