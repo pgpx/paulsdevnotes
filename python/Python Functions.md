@@ -12,7 +12,15 @@ def manyArgs(*arg):
   print "I was called with", len(arg), "arguments:", arg
 ```
 
-* Lambda expressions ([ref](https://docs.python.org/2.7/tutorial/controlflow.html#lambda-expressions))
+## Lambda functions
+
+* ([ref](https://docs.python.org/2.7/tutorial/controlflow.html#lambda-expressions))
+* <http://www.secnetix.de/olli/Python/lambda_functions.hawk>
+
+```python
+def f(x): return x**2
+g = lambda x: x**2
+```
 
 ## Partial functions
 

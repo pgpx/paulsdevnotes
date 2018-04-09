@@ -4,6 +4,23 @@
 * <https://utcc.utoronto.ca/~cks/space/blog/sysadmin/SSHKeyTypes>
 * <https://stribika.github.io/2015/01/04/secure-secure-shell.html>
 
+## ssh options
+
+* <https://www.ssh.com/ssh/command/>
+* <https://man.openbsd.org/ssh_config>
+
+* ConnectTimeout=<seconds>
+* `BatchMode=yes` - don't ask for confirmations
+* `-C` - Compress I/O
+* `-q` - quiet mode
+
+```bash
+set -e
+ssh -o ConnectTimeout=5 -o BatchMode=yes -Cq \
+    myserver "cd $(date +/data/logs/%Y/%m/%d); tail -$LINES server.log" | \
+    pv --progress --timer --eta --rate --bytes --line-mode --size $LINES > testdata/prod.log
+```
+
 ## Port forwarding
 
 `-R [bind_address:]port:host:hostport`
