@@ -40,3 +40,27 @@ time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epoch_seconds))
 import pytz
 utz = pytz.utc
 ```
+
+## Pendulum
+
+* <https://pendulum.eustace.io/>
+* <https://github.com/sdispater/pendulum>
+* <https://stackoverflow.com/a/25427822/125246>
+
+Subclass of `datetime` with some helper functions and constructors.
+
+```bash
+import pendulum
+import pytz
+utc_hour = pendulum.from_timestamp(timestamp, pytz.utc).hour
+
+london_tz = pytz.timezone('Europe/London')
+pendulum.from_timestamp(timestamp, london_tz).replace(hour=0, minute=0, second=0)
+```
+
+Add periods, respecting summer time (so adding one day might add 23, 24, or 25 hours):
+
+```bash
+df = pendulum.from_timestamp(timestamp, london_tz)
+dt.copy().add(days=1)
+```

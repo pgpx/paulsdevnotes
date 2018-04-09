@@ -17,6 +17,12 @@ Other links:
 * <https://varrette.gforge.uni.lu/blog/2017/11/22/using-pyenv-virtualenv-direnv/>
 * <https://varrette.gforge.uni.lu/blog/2014/03/20/create-a-sandboxed-python-slash-ruby-environment/>
 
+Install a Python version:
+
+```bash
+pyenv install 2.7.10
+```
+
 ## pyenv-virtualenv
 
 Create a new virtual environment:
