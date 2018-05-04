@@ -363,3 +363,7 @@ Try disabling the use of an internal repository, and access Maven Central direct
   </executions>
 </plugin>
 ```
+
+## Use a different JDK to compile
+
+* <https://maven.apache.org/plugins/maven-compiler-plugin/examples/compile-using-different-jdk.html>
