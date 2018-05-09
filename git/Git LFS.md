@@ -3,6 +3,7 @@
 Manage large files outside of the main Git repo
 
 * [Tutorial](https://github.com/git-lfs/git-lfs/wiki/Tutorial)
+* [git lfs config](https://github.com/git-lfs/git-lfs/blob/master/docs/man/git-lfs-config.5.ronn)
 
 ## Installation
 
@@ -49,3 +50,18 @@ git rev-list --objects --all \
 
 Mac users can either brew install coreutils and replace cut with gcut and numfmt with gnumfmt or just omit the last two lines which results in Output for Computers.
 
+## Don't download some LFS files automatically after a clone
+
+Exclude some files ([related GitHub issue](https://github.com/git-lfs/git-lfs/issues/950) and [GitLab issue](https://gitlab.com/gitlab-org/gitlab-ce/issues/44993)):
+
+```bash
+git config -f .lfsconfig 'My directory'
+git add .lfsconfig
+```
+
+Pull all LFS files later ([related GitHub issue](https://github.com/git-lfs/git-lfs/issues/1249)):
+
+```bash
+# -X means temporarily set lfs.fetchexclude
+git lfs pull -X ""
+```
