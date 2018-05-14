@@ -83,3 +83,41 @@ git lfs fetch --all
 git push --mirror https://hostname/exampleuser/new-repository.git
 git lfs push --all https://github.com/exampleuser/new-repository.git
 ```
+
+## Remove LFS from a repo
+
+Use filter-branch to remove the lfs-related files (index-filter is faster than tree-filter, but you can't use find because the repo is not checked out) ([ref](https://git-scm.com/docs/git-filter-branch#_examples)):
+
+```bash
+git filter-branch --index-filter '
+          git rm -q --cached --ignore-unmatch -rf data
+          git rm -q --cached --ignore-unmatch -rf .gitattributes
+          git rm -q --cached --ignore-unmatch -rf .lfsconfig
+          ' --prune-empty --tag-name-filter cat -- --all
+```
+
+Cleanup unused refs ([Checklist for Shrinking a Repository](https://git-scm.com/docs/git-filter-branch#_checklist_for_shrinking_a_repository), though could also use [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/)):
+
+```bash
+git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+git reflog expire --expire=now --all
+git gc --prune=now
+
+```
+
+* Or ([SO](https://stackoverflow.com/a/14728706/125246)):
+    
+    ```bash
+    git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 -c gc.rerereresolved=0 \
+        -c gc.rerereunresolved=0 -c gc.pruneExpire=now gc "$@"
+    ```
+
+Uninstall LFS (locally) and delete the lfs directory:
+
+```bash
+rm -rf lfs
+
+# And remove [lfs] entries from config
+```
+
+* <https://github.com/git-lfs/git-lfs/issues/326#issuecomment-105130763>
