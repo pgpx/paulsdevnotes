@@ -59,6 +59,40 @@ IFS=$'\n\t'
 * `-o pipefail` - halt if any step in a pipeline fails
 * `IFS=$'\n\t'` - separate words with tabs and newlines (not spaces, for better loop iteration)
 
+## Variables
+
+
+Default values: [ref](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html)
+
+```bash
+# Don't change the variable, but return the default if not set
+var=${parameter:-defaultValue}
+
+# e.g. if $1 is not set or passed
+arg1=${1:-myDefaultValue}
+
+# Update the variable (doesn't work with positional arguments like $1)
+${var:=defaultValue}
+```
+
+unset - delete a variable ([ref](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html))
+
+```bash
+unset foo
+
+# Will output default
+echo ${foo:-default}
+```
+
+Exit with error if missing a value: ([ref](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html))
+
+```bash
+${varName?Error varName is not defined}
+${varName:?Error varName is not defined or is empty}
+${1:?"Missing operand"}
+```
+
+
 ## Arguments
 [Iterate over arguments passed to script](http://stackoverflow.com/a/4528563/125246)
 ```bash

@@ -20,6 +20,10 @@ git lfs clone <repo>
 git lfs pull
 ```
 
+## FileLocking
+
+* https://github.com/git-lfs/git-lfs/wiki/File-Locking
+
 ## Migrate an existing repository to use LFS
 
 * https://github.com/bozaro/git-lfs-migrate
@@ -64,4 +68,18 @@ Pull all LFS files later ([related GitHub issue](https://github.com/git-lfs/git-
 ```bash
 # -X means temporarily set lfs.fetchexclude
 git lfs pull -X ""
+```
+
+## Properly mirror an LFS repo
+
+* [GitHUB](https://help.github.com/enterprise/2.8/user/articles/duplicating-a-repository/#mirroring-a-repository-that-contains-git-large-file-storage-objects) - [SO](https://stackoverflow.com/a/41789052/125246)
+
+```bash
+git clone --bare https://hostname/exampleuser/old-repository.git
+cd old-repository.git
+git lfs fetch --all
+
+# Might need to swap the next 2 steps
+git push --mirror https://hostname/exampleuser/new-repository.git
+git lfs push --all https://github.com/exampleuser/new-repository.git
 ```
