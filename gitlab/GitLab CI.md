@@ -30,3 +30,20 @@ Possible issues:
 * [Building Docker images with GitLab CI/CD](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html)
     * Shows different runner configurations (shell, docker-in-docker, docker socket binding)
     * Docker layer caching
+    
+## Triggering other pipelines
+
+* <https://docs.gitlab.com/ee/ci/triggers/>
+
+## Debugging jobs locally
+
+Can run individual jobs local;y, but cannot yet run multiple jobs or use artifacts.
+
+```bash
+brew install gitlab-runner
+gitlab-runner exec docker job-name
+```
+
+* [How to: Debug GitLab CI Builds Locally](https://substrakt.com/how-to-debug-gitlab-ci-builds-locally/)
+* [GitLab Runner Commands](https://docs.gitlab.com/runner/commands/README.html)
+* Improvements will come soon: <https://gitlab.com/gitlab-org/gitlab-runner/issues/2797#note_51070788>
