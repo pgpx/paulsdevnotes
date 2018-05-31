@@ -31,6 +31,27 @@ Possible issues:
     * Shows different runner configurations (shell, docker-in-docker, docker socket binding)
     * Docker layer caching
     
+## Registering a runner
+
+```bash
+docker exec -it gitlab-runner gitlab-runner register
+```
+
+Then to configure it to be able to run Docker commands:
+
+```bash
+docker exec -it gitlab-runner bash
+vi /etc/gitlab-runner/config.toml
+gitlab-runner restart
+```
+
+And change the following entries for your new runner:
+
+```yaml
+privileged = true
+volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/cache"]
+```
+
 ## Triggering other pipelines
 
 * <https://docs.gitlab.com/ee/ci/triggers/>
