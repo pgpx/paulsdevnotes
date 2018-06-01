@@ -21,6 +21,12 @@ ssh -o ConnectTimeout=5 -o BatchMode=yes -Cq \
     pv --progress --timer --eta --rate --bytes --line-mode --size $LINES > testdata/prod.log
 ```
 
+## Keyboard shortcuts ([SO](https://apple.stackexchange.com/a/35543/109323))
+
+* `~.` - terminate the connection
+* `~^Z` (press ~ then Ctrl+Z) to suspend the connection and type a command locally (run the command `fg` to return to the SSH session)
+* `~~` if you want a tilde at the beginning of a line
+
 ## Port forwarding
 
 `-R [bind_address:]port:host:hostport`
