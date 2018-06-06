@@ -68,3 +68,28 @@ gitlab-runner exec docker job-name
 * [How to: Debug GitLab CI Builds Locally](https://substrakt.com/how-to-debug-gitlab-ci-builds-locally/)
 * [GitLab Runner Commands](https://docs.gitlab.com/runner/commands/README.html)
 * Improvements will come soon: <https://gitlab.com/gitlab-org/gitlab-runner/issues/2797#note_51070788>
+
+## config.toml
+
+Additional configuration for GitLab CI runners.
+
+* [Reference](https://docs.gitlab.com/runner/configuration/advanced-configuration.html)
+
+### Environment variables
+
+Can define environment variables that are accessible by each build (though the builds will overwrite them if they define their own `variables`).
+* In the `[[runners]]` section: `environment = ["ENV=value", "LC_ALL=en_US.UTF-8"]`
+** Cannot interpolate values here though (e.g. can't do `PATH=$PATH;/other/dir`)
+* To append values to a variable, add to the `pre_build_script` in `[[runners]]` ([related issue](https://gitlab.com/gitlab-org/gitlab-runner/issues/1249)), e.g.
+
+    ```
+    pre_build_script = "export MAVEN_OPTS=\"$MAVEN_OPTS -Dmaven.repo.local=/var/cache/ci-repository-cache/maven
+    ```
+
+### Docker runner configuration
+
+In the `[runners.docker]` section of `config.toml`:
+
+    ```
+    volumes = ["/cache","ci-repository-cache:/var/cache/ci-repository-cache", ...]
+    ```
