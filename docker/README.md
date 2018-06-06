@@ -171,6 +171,16 @@ Add a host mapping when running a container:
 docker run --add-host my-host:10.40.200.123 ...
 ```
 
+Show Docker disk usage with [docker system df](https://docs.docker.com/engine/reference/commandline/system_df/):
+
+```sh
+# Aggregated
+docker system df
+
+# Verbose (per-container, image, and volume)
+docker system df --verbose
+```
+
 
 ## [Dockerfile](https://docs.docker.com/reference/builder/)
 
