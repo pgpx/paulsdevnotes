@@ -86,6 +86,8 @@ Can define environment variables that are accessible by each build (though the b
     pre_build_script = "export MAVEN_OPTS=\"$MAVEN_OPTS -Dmaven.repo.local=/var/cache/ci-repository-cache/maven
     ```
 
+Could expose common package manager directory cache directories in this way: <https://www.colinodell.com/blog/201704/optimizing-dockerbased-ci-runners-shared-package-caches>
+
 ### Docker runner configuration
 
 In the `[runners.docker]` section of `config.toml`:
