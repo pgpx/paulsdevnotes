@@ -92,6 +92,11 @@ ${varName:?Error varName is not defined or is empty}
 ${1:?"Missing operand"}
 ```
 
+How to check if a variable is set in Bash? ([SO](https://stackoverflow.com/a/13864829/125246))
+
+```bash
+if [ -z ${var+x} ]; then echo "var is unset"; else echo "var is set to '$var'"; fi
+```
 
 ## Arguments
 [Iterate over arguments passed to script](http://stackoverflow.com/a/4528563/125246)
