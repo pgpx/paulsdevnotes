@@ -17,6 +17,14 @@ dedent("""\
 """)
 ```
 
+Remove leading/trailing/both whitespace ([SO](https://stackoverflow.com/a/275025/125246)):
+
+```python
+my_string.lstrip()
+my_string.rstrip()
+my_string.strip()
+```
+
 Concatenate strings
 
 ```python
