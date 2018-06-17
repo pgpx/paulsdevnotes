@@ -139,6 +139,12 @@ Delete a container
 
     docker rm <container-id> 
 
+Delete stopped containers with the specfied name prefix:
+
+    ```bash
+    docker container ls -a --filter "name=runner-.*" --filter "status=exited" -q | xargs docker rm
+    ```
+
 Create a new image
 
     docker commit -m=“Comment" -a=“Author” <container-id> <username>/<image-name>:v<version-number>
