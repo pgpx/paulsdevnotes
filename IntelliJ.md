@@ -21,6 +21,12 @@ and
 <!-- @formatter:on -->
 ```
 
+## Turn off import wildcards
+
+[SO](https://stackoverflow.com/a/3348855/125246) Go to Preferences (⌘ + , on macOS / Ctrl + Alt + S on Windows) > Editor > Code Style > Java > Imports tab set Class count to use import with '*' and Names count to use static import with '*' to a higher value. Any value over 99 seems to work fine.
+
+Do the same for Groovy.
+
 ## Logs
 
 OS/X:
