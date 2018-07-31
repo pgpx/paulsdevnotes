@@ -146,6 +146,18 @@ do
 done
 ```
 
+## Exit with an error message
+
+Echo then exit ([SO](https://stackoverflow.com/a/24597890))
+
+```bash
+[[ $TRESHOLD =~ ^[0-9]+$ ]] || { echo 1>&2 "Threshold must be an integer value!"; exit $ERRCODE; }
+```
+
+Also see [Why doesn't set -e (or set -o errexit, or trap ERR) do what I expected?](http://mywiki.wooledge.org/BashFAQ/105)
+
+Prefer to use: `trap 'do_something' ERR` instead of `set -e` ([SO](https://stackoverflow.com/a/19622569/125246))
+
 ## Get the full path to the current script ([SO](http://stackoverflow.com/a/9107028/125246), [SO](http://stackoverflow.com/a/4774063/125246))
 
 ```bash
