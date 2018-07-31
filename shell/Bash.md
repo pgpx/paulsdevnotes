@@ -110,6 +110,42 @@ output=${1-text}
 output=${1:-text}
 ```
 
+## Case statements
+
+For example ([SO](https://stackoverflow.com/q/4554718/125246)):
+
+```bash
+case $1 in
+    req|reqs|requirements) TASK="Functional Requirements";;
+    met|meet|meetings) TASK="Meetings with the client";;
+esac
+```
+
+([SO](https://stackoverflow.com/a/4555979/125246)) Brace expansion doesn't work, but *, ? and [] do. If you set shopt -s extglob then you can also use extended pattern matching:
+   
+* `?()` - zero or one occurrences of pattern
+* `*()` - zero or more occurrences of pattern
+* `+()` - one or more occurrences of pattern
+* `@()` - one occurrence of pattern
+* `!()` - anything except the pattern
+   
+```bash   
+shopt -s extglob
+for arg in apple be cd meet o mississippi
+do
+   # call functions based on arguments
+   case "$arg" in
+       a*             ) foo;;    # matches anything starting with "a"
+       b?             ) bar;;    # matches any two-character string starting with "b"
+       c[de]          ) baz;;    # matches "cd" or "ce"
+       me?(e)t        ) qux;;    # matches "met" or "meet"
+       @(a|e|i|o|u)   ) fuzz;;   # matches one vowel
+       m+(iss)?(ippi) ) fizz;;   # matches "miss" or "mississippi" or others
+       *              ) bazinga;; # catchall, matches anything not matched above
+   esac
+done
+```
+
 ## Get the full path to the current script ([SO](http://stackoverflow.com/a/9107028/125246), [SO](http://stackoverflow.com/a/4774063/125246))
 
 ```bash
