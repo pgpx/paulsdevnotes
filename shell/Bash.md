@@ -4,6 +4,7 @@
 * [BashFAQ](http://mywiki.wooledge.org/BashFAQ/), [Bash Pitfalls](http://mywiki.wooledge.org/BashPitfalls)
 * [Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
 * [Use the Unofficial Bash Strict Mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
+* <https://stackoverflow.com/questions/13195655/bash-set-x-without-it-being-printed>
 
 ## Books
 * [Learning the Bash Shell, 3rd Ed. O'Reilly](https://www.safaribooksonline.com/library/view/learning-the-bash/0596009658/)
