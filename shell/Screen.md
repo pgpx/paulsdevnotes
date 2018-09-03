@@ -4,9 +4,6 @@
 
 Can connect/disconnect to a session (resuming even after disconnecting the terminal)
 
-
-
-
 * Start a screen session:
 
 ```bash
@@ -33,4 +30,10 @@ screen -r <NAME>
 
 ```bash
 screen -ls
+```
+
+* Exit/close a screen:
+
+```bash
+exit
 ```
