@@ -11,6 +11,9 @@ Can connect/disconnect to a session (resuming even after disconnecting the termi
 
 ```bash
 screen
+
+# Or with a name
+screen -S myname
 ```
 
 * Detach from a screen session: `Ctrl+a+d`
@@ -23,6 +26,7 @@ screen -r
 
 # Specific
 screen -r <PID>
+screen -r <NAME>
 ```
 
 * List sessions and their PIDs:
