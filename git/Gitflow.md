@@ -4,6 +4,7 @@
 * [Atlassian explanation](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 * [Git extensions](https://github.com/nvie/gitflow)
 * [JGit Flow Maven Plugin](http://jgitflow.bitbucket.org/)
+* [GitLab Flow](https://docs.gitlab.com/ee/workflow/gitlab_flow.html) - alternative that doesn't use release or hotfix branches (amongst other changes)
 
 ## [JGit Flow Maven Plugin](http://jgitflow.bitbucket.org/)
 

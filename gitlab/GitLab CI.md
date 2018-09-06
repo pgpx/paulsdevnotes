@@ -95,3 +95,24 @@ In the `[runners.docker]` section of `config.toml`:
     ```
     volumes = ["/cache","ci-repository-cache:/var/cache/ci-repository-cache", ...]
     ```
+    
+## JUnit Reports
+
+* <https://docs.gitlab.com/ee/ci/yaml/#artifacts-reports-junit>
+* <https://docs.gitlab.com/ee/ci/junit_test_reports.html>
+
+Upload JUnit-style XML test reports, and can then show failed tests in merge requests (only).
+
+[Maven example](https://docs.gitlab.com/ee/ci/junit_test_reports.html#maven)
+
+```yaml
+java:
+  stage: test
+  script:
+  - mvn verify
+  artifacts:
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml
+```
