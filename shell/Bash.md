@@ -388,6 +388,22 @@ asdffdsa #Fails
 
 Raw or with `getopts` ([SO](http://stackoverflow.com/a/14203146/125246))
 
+## Numbers
+
+Divide numbers ([SO](https://stackoverflow.com/a/18093887/125246)):
+
+* Using expr
+
+    ```bash
+    expr $x / $y
+    ```
+
+* Or using expression syntax:
+
+    ```bash
+    echo $((x / y))
+    ```
+
 ## Strings
 
 ### Newlines ([SO](http://stackoverflow.com/a/8467448/125246))
@@ -422,6 +438,24 @@ my_value=$(awk -F= '$1=="my.key" {print $2}' my_file.properties)
 
 ```bash
 if [[ ! "$instance" =~ ^ebd0[0-9]ee$ ]]; then
+```
+
+## Replace a substring ([SO](https://stackoverflow.com/a/13210909/125246))
+
+Ref: [Bash Reference Manual, §3.5.3 "Shell Parameter Expansion"](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+
+```bash
+firstString="I love Suzi and Marry"
+secondString="Sara"
+echo "${firstString/Suzi/$secondString}"    # prints 'I love Sara and Marry'
+```
+
+To replace all occurrences, `use ${parameter//pattern/string}`
+
+```bash
+message='The secret code is 12345'
+echo "${message//[0-9]/X}"           # prints 'The secret code is XXXXX'
+
 ```
 
 ## Paths

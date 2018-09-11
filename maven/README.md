@@ -29,6 +29,10 @@ mvn package -pl henry-ee-database -am
 	if the id is the same then it will merge the execution details, if the
 	id's are different, then you get two executions
 
+## Useful plugins
+
+* <https://github.com/Ekryd/echo-maven-plugin> - echo a message during the build ([SO](https://stackoverflow.com/a/35763652/125246)).
+
 ## Profiles
 
 * [Maven reference](https://books.sonatype.com/mvnref-book/reference/profiles.html)
