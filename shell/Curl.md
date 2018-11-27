@@ -44,6 +44,12 @@ Use a SOCKS proxy (and get it to resolve hostnames) ([SO](http://stackoverflow.c
 curl -v --socks5-hostname <socks-proxy-ip/host:port> https://my-url.com/
 ```
 
+Use an HTTP proxy:
+
+```bash
+curl -v --proxy http://10.40.212.212:8081 http://test/url
+```
+
 Don't capture the response body (only output headers) ([SO](http://stackoverflow.com/questions/10060098/getting-only-response-header-from-http-post-using-curl))
 
 ```bash
