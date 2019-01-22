@@ -116,3 +116,16 @@ java:
         - target/surefire-reports/TEST-*.xml
         - target/failsafe-reports/TEST-*.xml
 ```
+
+### Scripting
+
+GitLab will exit as soon as a command fails - seems like it uses `set -e` ([SO](https://stackoverflow.com/a/39468230/125246)), so:
+
+```bash
+set +e # Disable exit on error
+command-that-might-fail
+EXIT_CODE=$?    # Save the exit code for later
+other-command
+set -e # Enable exit on error
+exit $EXIT_CODE # Re-apply the initial exit code
+```

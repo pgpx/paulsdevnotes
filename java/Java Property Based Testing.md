@@ -25,3 +25,4 @@ Libraries:
 * [Disorder](https://github.com/ambiata/disorder/) - Ambiata - Haskell and Scala
 * [spock-genesis](https://github.com/Bijnagte/spock-genesis) - Mostly lazy data generators for property based testing using the Spock test framework
 * [QuickCheck](https://bitbucket.org/blob79/quickcheck) - Java, 2011
+* [random-beans](https://github.com/benas/random-beans)

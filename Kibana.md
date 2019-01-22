@@ -3,6 +3,8 @@
 ## Query langauge
 
 * <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax>
+* Kibana uses the [Lucene Query Parser Syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
+
 
 ```
 not entryUrl: "/redirect" AND eventType: "purchase" AND _exists_: recommendedPass
