@@ -52,6 +52,12 @@ privileged = true
 volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/cache"]
 ```
 
+## Kubernetes executor
+
+* [The Kubernetes executor](https://docs.gitlab.com/runner/executors/kubernetes.html)
+* [Advanced configuration - The \[runners.kubernetes\] section](https://docs.gitlab.com/runner/configuration/advanced-configuration.html#the-runnerskubernetes-section)
+* [Run GitLab Runner on a Kubernetes cluster](https://docs.gitlab.com/runner/install/kubernetes.html)
+
 ## Triggering other pipelines
 
 * <https://docs.gitlab.com/ee/ci/triggers/>
