@@ -4,6 +4,8 @@
 * [Documentation](https://kubernetes.io/docs/home/?path=users&persona=app-developer&level=foundational), [Concepts](https://kubernetes.io/docs/concepts/)
 * [Kubeapps Hub](https://hub.kubeapps.com/) - k8s-ready apps
 * [Kubernetes Examples](https://github.com/kubernetes/examples) - [Selenium](https://github.com/kubernetes/examples/tree/master/staging/selenium)
+* Kubernetes API - [v1.13](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/), [API Conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#metadata)
+* <https://github.com/kubernetes/community> - Kubernetes community content
 
 ## Concepts
 
@@ -21,3 +23,12 @@
 ## Best practices
 
 * <https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-organizing-with-namespaces> - [kubens](https://github.com/ahmetb/kubectx)
+
+## Related tools
+
+* [Kustomize](https://github.com/kubernetes-sigs/kustomize) - templating for k8s YAML files.
+    * <https://medium.com/@at_ishikawa/getting-started-with-kustomize-53f600f9ebaa>
+    * <https://kubernetes.io/blog/2018/05/29/introducing-kustomize-template-free-configuration-customization-for-kubernetes/>
+* [operator-sdk](https://github.com/operator-framework/operator-sdk) - SDK for building Kubernetes application
+* Istio
+    * <https://programmaticponderings.com/2018/04/13/managing-applications-across-multiple-kubernetes-environments-with-istio-part-1/>

@@ -23,7 +23,8 @@
 
 Possible issues:
 
-* [CI runner breaks on activated git-lfs](https://gitlab.com/gitlab-org/gitlab-runner/issues/2245), [CI runner breaks on activated git-lfs (improved solution)](https://gitlab.com/gitlab-org/gitlab-runner/issues/2504)
+* [CI runner breaks on activated git-lfs](https://gitlab.com/gitlab-org/gitlab-runner/issues/2245), [CI runner breaks on activated git-lfs (improved solution)](https://gitlab.com/gitlab-org/gitlab-runner/issues/2504
+* [after_script and always are not called if a job is cancelled](https://gitlab.com/gitlab-org/gitlab-ce/issues/20727)
 
 ## Docker configuration
 
@@ -135,3 +136,8 @@ other-command
 set -e # Enable exit on error
 exit $EXIT_CODE # Re-apply the initial exit code
 ```
+
+## Triggering pipelines
+
+* [pipeline-commander](https://github.com/cfriedt/pipeline-commander) - A hackish tool to trigger a GitLab pipeline and wait for its completion.
+* <https://finestructure.co/blog/2017/12/2/gitlab-ci-pipeline-trigger-and-wait>
