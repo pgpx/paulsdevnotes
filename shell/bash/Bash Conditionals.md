@@ -14,3 +14,21 @@ A &     # Run A in background.
 ```bash
 if [ -z "${VAR+xxx}" ]; then echo VAR is not set at all; fi
 ```
+
+## Compare strings ([SO](https://stackoverflow.com/a/2237103/125246))
+
+```bash
+if [ "$x" = "valid" ]; then
+  echo "x has the value 'valid'"
+fi
+```
+
+* Use quotes around strings in case the string is empty, otherwise you'll get a syntax error because the argument would disappear and become: `if [  = "valid" ]; then`
+
+## Boolean operations
+
+[SO](https://stackoverflow.com/a/2237179/125246)
+
+```bash
+[ "$x" == "valid" ] && echo "x has the value 'valid'"
+```
