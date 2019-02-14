@@ -36,3 +36,11 @@ Complex regex substitution ([SO](https://unix.stackexchange.com/a/78626/32390)):
 ```bash
 sed -i -E "s/(<username>.+)name(.+<\/username>)/\1something\2/" file.xml
 ```
+
+Rename all of the files in the current directory:
+
+```bash
+for dir in /$(pwd)/*/; do
+    mv "$dir"  "$(echo $dir | sed -E 's/^(.*)\.([^.]+)$/\1_HtmlUnit.\2/')"
+done
+```
