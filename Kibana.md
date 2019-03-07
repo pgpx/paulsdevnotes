@@ -11,3 +11,4 @@ not entryUrl: "/redirect" AND eventType: "purchase" AND _exists_: recommendedPas
 ```
 
 * `_exists_: my-field` - does the field have a non-null value
+* `NOT myField: ("value-1" OR "value-2")` - does a field (not) have one of the specified values ([ref](https://discuss.elastic.co/t/filtering-for-multiple-values-of-a-single-field/97584))
