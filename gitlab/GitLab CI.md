@@ -141,3 +141,24 @@ exit $EXIT_CODE # Re-apply the initial exit code
 
 * [pipeline-commander](https://github.com/cfriedt/pipeline-commander) - A hackish tool to trigger a GitLab pipeline and wait for its completion.
 * <https://finestructure.co/blog/2017/12/2/gitlab-ci-pipeline-trigger-and-wait>
+
+## Tags and environment variables in pipelines
+
+When a pipeline is run on a tag:
+
+* `CI_BUILD_TAG`, `CI_BUILD_REF_NAME`, `CI_COMMIT_TAG`, `CI_COMMIT_REF_NAME` = `<tag>`, e.g. `v2.0.0`
+* `CI_BUILD_REF_SLUG`, `CI_COMMIT_REF_SLUG` = `<tag-with-hyphens>`, e.g. `v2-0-0`
+* `CI_COMMIT_SHA` is set
+* `git describe --tags --abbrev=0` = `tag`
+
+When a pipeline is run on a branch:
+
+* `CI_BUILD_TAG`, `CI_COMMIT_TAG` are not defined.
+* `CI_BUILD_REF_NAME`, `CI_COMMIT_REF_NAME` = `<branch>`, e.g. `master`
+* `CI_BUILD_REF_SLUG`, `CI_COMMIT_REF_SLUG` = `<branch-with-hyphens>`
+* `CI_COMMIT_SHA` is set
+* `git describe --tags --abbrev=0` = `tag` is the current (or nearest) tag
+
+When a pipeline is run on a branch manually:
+
+* Same as branch, except `CI_PIPELINE_SOURCE=web`
