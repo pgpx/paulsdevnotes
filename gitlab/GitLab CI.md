@@ -162,3 +162,14 @@ When a pipeline is run on a branch:
 When a pipeline is run on a branch manually:
 
 * Same as branch, except `CI_PIPELINE_SOURCE=web`
+
+## Accessing Multiple Repositories in a CI Build
+
+* [SO](https://stackoverflow.com/a/50163888/125246)
+
+    ```yaml
+    dummy_stage:
+      script:
+        - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.instance/group/project.git
+    ```
+* Or use a Git submodule

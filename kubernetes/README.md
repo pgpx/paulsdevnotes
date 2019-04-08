@@ -32,3 +32,7 @@
 * [operator-sdk](https://github.com/operator-framework/operator-sdk) - SDK for building Kubernetes application
 * Istio
     * <https://programmaticponderings.com/2018/04/13/managing-applications-across-multiple-kubernetes-environments-with-istio-part-1/>
+    
+## Blogs
+
+* <https://medium.com/@SandeepDinesh>

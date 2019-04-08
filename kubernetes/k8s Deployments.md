@@ -21,6 +21,8 @@ Better than checking condition=available because that might include pods from a 
 kubectl "-n=${NAMESPACE}" wait --timeout=30s --for=condition=Available -f "${SCRIPT_DIR_PATH}/base/30_deployment"
 ```
 
+* Use `kubectl replace` to delete and re-create the deployment, e.g. to fix broken pods (instead of `kubectl apply` which will just update changed) - a [disruptive update](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/#disruptive-updates)
+
 ## Issues
 
 * [Force pods to re-pull an image without changing the image tag #33664](https://github.com/kubernetes/kubernetes/issues/33664)

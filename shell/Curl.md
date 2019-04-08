@@ -89,3 +89,11 @@ curl --trace-ascii - --data param=value --data param2=value --data-urlencode par
 # => Send data, 4312 bytes (0x10d8)
 # 0000: pass=HS100&transactionId=b3ad500d-4f98-475d-a10a-31117337ec54&re
 ```
+
+Hide normal output, only showing errors ([SO](https://superuser.com/a/173214/108786))
+
+```bash
+curl --fail --silent --show-error http://www.example.com/ > /dev/null
+```
+
+* (or `-o /dev/null` instead of the redirect)
