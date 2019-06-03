@@ -30,3 +30,7 @@ kubectl exec -it my-pod --container main-app -- /bin/bash
 # local port:remote port
 kubectl port-forward -n my-namespace service/my-service 4444:4444
 ```
+
+## Dump all k8s configuration
+
+* <https://gist.github.com/negz/c3ee465b48306593f16c523a22015bec>
