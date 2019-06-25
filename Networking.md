@@ -4,6 +4,7 @@
 
 * [mitmproxy](https://mitmproxy.org/) - interactive HTTPS proxy
 * [unbound](https://nlnetlabs.nl/projects/unbound/about/) - validating, recursive, caching DNS resolver
+* <http://lg.he.net/> - Looking Glass - shows routing information.
 
 ## Commands
 
