@@ -3,6 +3,7 @@
 ## Useful tools
 
 * [mitmproxy](https://mitmproxy.org/) - interactive HTTPS proxy
+* [unbound](https://nlnetlabs.nl/projects/unbound/about/) - validating, recursive, caching DNS resolver
 
 ## Commands
 
