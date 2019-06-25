@@ -23,6 +23,7 @@
 ## Best practices
 
 * <https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-organizing-with-namespaces> - [kubens](https://github.com/ahmetb/kubectx)
+* [11 Ways (Not) to Get Hacked](https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/)
 
 ## Related tools
 

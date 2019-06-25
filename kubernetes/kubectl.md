@@ -24,6 +24,12 @@ kubectl exec -it my-pod --container main-app -- /bin/bash
 ```
 
 
+Sorted pods in a namespace:
+
+```bash
+$(kubectl -n "${namespace}" get deployment --no-headers -o custom-columns=":metadata.name" | sort)
+```
+
 ## Port forwarding
 
 ```bash

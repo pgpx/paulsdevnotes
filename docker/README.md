@@ -9,11 +9,24 @@ Links
 * <http://stackengine.com/the-definitive-guide-to-docker-free-and-open-source-tools/>
 * <https://www.databasesandlife.com/docker-build-pull-option/>
 
+* [Docker Tagging: Best practices for tagging and versioning docker images](https://blogs.msdn.microsoft.com/stevelasker/2018/03/01/docker-tagging-best-practices-for-tagging-and-versioning-docker-images/)
+
 ## Installation
 Mac (with Brew and Cask):
 ```sh
 brew cask install dockertoolbox
 ```
+
+* [Experimental features](https://github.com/docker/cli/tree/master/experimental#docker-experimental-features):
+
+    Start the Docker daemon with `--experimental` or put the following in `/etc/docker/daemon.json` (or tick `Experimental features` in Docker Desktop -> Preferences... -> Daemon -> Basic):
+
+    ```json
+    {
+        "experimental": true
+    }
+    ```
+    Check to see if they have been enabled: `docker version -f '{{.Server.Experimental}}'`
 
 ## Commands
 
@@ -315,3 +328,6 @@ chown -R `stat -c "%u:%g" /shared` /shared
 ```bash
 docker run -v `pwd`/shared:/shared -u `stat -c "%u:%g /shared` ubuntu bash
 ```
+## Users
+
+* [Understanding how uid and gid work in Docker containers](https://medium.com/@mccode/understanding-how-uid-and-gid-work-in-docker-containers-c37a01d01cf)

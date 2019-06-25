@@ -7,8 +7,16 @@ Other links:
 
 * [The Kubernetes Kustomize KEP Kerfuffle](https://gravitational.com/blog/kubernetes-kustomize-kep-kerfuffle/) - how Kustomize was too? rapidly integrated into Kubectl.
 
+Demos:
+
+* [Demo: Injecting k8s runtime data into containers](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/wordpress/README.md)
+
 ## kustomization.yaml
 
 * [GitHub sample/template](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/kustomization.yaml)
 
 Place in a directory - kustomize will look for it.
+
+## Strategic Merge Patch
+
+* [Sig Doc](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-api-machinery/strategic-merge-patch.md)

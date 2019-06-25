@@ -32,6 +32,8 @@ Ignore `STDERR` with `2>/dev/null` ([ref](http://ubuntuforums.org/showthread.php
 ls something_you_wont_find 2>/dev/null
 ```
 
+## Exit codes with special meanings ([ref](https://www.tldp.org/LDP/abs/html/exitcodes.html))
+
 ## Shell info
 ```bash
 # Bash version

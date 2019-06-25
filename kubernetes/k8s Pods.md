@@ -12,3 +12,49 @@
 Problems
 
 * e.g. missing host ([SO](https://stackoverflow.com/questions/49770036/kubernetes-probes-fail-on-tomcat))
+
+## Configuration
+
+* [Expose Pod Information to Containers Through Environment Variables](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)
+    * [Use pod fields as environment variables](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/#use-pod-fields-as-values-for-environment-variables):
+        ```yaml
+        env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: MY_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        ```
+    * [Use container fields as environment variables](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/#use-container-fields-as-values-for-environment-variables):
+        ```yaml
+      env:
+        - name: MY_MEM_LIMIT
+          valueFrom:
+            resourceFieldRef:
+              containerName: test-container
+              resource: limits.memory
+        ```
+        
+## Security Context
+
+* [Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
+* [Why non-root containers are important for security](https://engineering.bitnami.com/articles/why-non-root-containers-are-important-for-security.html) -  Because anyone who accesses your container running as root can start undesirable processes in it, such as injecting malicious code. And running a process in your container as root makes it possible to change the user id (UID) or group id (GID) when starting the container, which makes your application vulnerable.
+
+```yaml
+containers:
+- name: java
+  securityContext:
+    privileged: false
+    runAsNonRoot: true
+    capabilities:
+      add:
+        - IPC_LOCK
+        - SYS_RESOURCE
+```
