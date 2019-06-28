@@ -15,3 +15,14 @@ RUN touch /empty
 FROM scratch
 COPY --from=build-env /empty /.emptyfile
 ``` 
+
+* Use an ARG in Dockerfile FROM for dynamic image specification ([ref](https://www.jeffgeerling.com/blog/2017/use-arg-dockerfile-dynamic-image-specification)):
+
+    ```dockerfile
+    ARG MYAPP_IMAGE=myorg/myapp:latest
+    FROM $MYAPP_IMAGE
+    ```
+    
+    Then:
+    
+    `docker build -t container_tag --build-arg MYAPP_IMAGE=localimage:latest .`

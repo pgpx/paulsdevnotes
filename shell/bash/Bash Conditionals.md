@@ -25,6 +25,13 @@ fi
 
 * Use quotes around strings in case the string is empty, otherwise you'll get a syntax error because the argument would disappear and become: `if [  = "valid" ]; then`
 
+## Regex
+
+```bash
+if [[ "$val" =~ ^([0-9])+\.$ ]]; then
+    num=${BASH_REMATCH[1]}
+```
+
 ## Boolean operations
 
 [SO](https://stackoverflow.com/a/2237179/125246)
