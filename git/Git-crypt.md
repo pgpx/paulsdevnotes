@@ -8,6 +8,7 @@ Articles:
 
 * <https://robertknight.me.uk/posts/git-crypt-intro/>
 * <https://www.schibsted.pl/blog/devops/securing-data-with-git-crypt/>
+* <https://www.g-loaded.eu/2010/11/01/change-expiration-date-gpg-key/>
 
 ## Limitations
 
