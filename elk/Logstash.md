@@ -1,6 +1,6 @@
 # Logstash
 
-* [User Guide](https://www.elastic.co/guide/en/logstash/current/index.html)
+* [User Guide/Reference](https://www.elastic.co/guide/en/logstash/current/index.html)
 
 * Logback plugin: <https://github.com/logstash/logstash-logback-encoder>
 

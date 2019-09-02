@@ -2,24 +2,25 @@
 
 ## Formatting
 
-Turn off auto-formatting ([SO](http://stackoverflow.com/a/19492318/125246)):
+* Turn off auto-formatting ([SO](http://stackoverflow.com/a/19492318/125246)):
+    * _Preferences -> Editor -> Code Style -> General -> Formatter Control -> Enable formatter markers in comments_
 
-* _Preferences -> Editor -> Code Style -> General -> Formatter Control -> Enable formatter markers in comments_
+    Then:
 
-Then:
+    ```java
+    // @formatter:off
+    ...
+    // @formatter:on 
+    ```
+    
+    and
+    
+    ```xml
+    <!-- @formatter:off -->
+    <!-- @formatter:on -->
+    ```
 
-```java
-// @formatter:off
-...
-// @formatter:on 
-```
-
-and
-
-```xml
-<!-- @formatter:off -->
-<!-- @formatter:on -->
-```
+* Use [EditorConfig](https://editorconfig.org) to define an `.editorconfig` file with properties like tabs-as-spaces, which many editors will then detect.
 
 ## Turn off import wildcards
 

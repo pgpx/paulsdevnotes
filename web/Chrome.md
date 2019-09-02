@@ -8,6 +8,8 @@ Go to <chrome://net-internals/#hsts> and query/delete the problematic domain.
 
 ### Proxy configuration
 
+* <https://superuser.com/questions/1405499/chrome-72-seems-to-no-longer-accept-proxy-pac-url>
+
 * <https://www.chromium.org/developers/design-documents/network-stack/debugging-net-proxy>
 * Debug Chrome proxy config ([StackOverflow](http://superuser.com/a/343582/108786))
     * Effective proxy settings: `chrome://net-internals/proxyservice.config#proxy` (re-apply will update them immediately, e.g. if PAC file has changed)

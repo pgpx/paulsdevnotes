@@ -1,5 +1,7 @@
 # Bash output
 
+* [Displaying seconds as days/hours/mins/seconds?](https://unix.stackexchange.com/questions/27013/displaying-seconds-as-days-hours-mins-seconds)
+
 ## File descriptors
 
 Echo to stderr ([SO](https://stackoverflow.com/a/23550347/125246))

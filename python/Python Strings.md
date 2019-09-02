@@ -83,3 +83,13 @@ Substitute (returning the result):
 ```python
 res = re.sub(r'^(.*)z', r'\1y', string_to_apply_replacement_to)
 ```
+## Printing
+
+```python
+x = a + b
+x = '%s, %s!' % (imperative, expletive)
+x = '{}, {}'.format(first, second)
+x = 'name: %s; score: %d' % (name, n)
+x = 'name: {}; score: {}'.format(name, n)
+x = f'name: {name}; score: {n}'  # Python 3.6+
+```

@@ -7,4 +7,8 @@
 
 ## Java Cryptography Extension (JCE)
 
-Unlimited policy is enabled by default for Java 8 u162 ([blog](https://golb.hplar.ch/2017/10/JCE-policy-changes-in-Java-SE-8u151-and-8u152.html), [ref](https://bugs.openjdk.java.net/browse/JDK-8170157) 
+Unlimited policy is enabled by default for Java 8 u162 ([blog](https://golb.hplar.ch/2017/10/JCE-policy-changes-in-Java-SE-8u151-and-8u152.html), [ref](https://bugs.openjdk.java.net/browse/JDK-8170157)
+
+## Upgrading
+
+* InfoQ [Upgrading from Java 8 to Java 12](https://www.infoq.com/articles/upgrading-java-8-to-12/) 

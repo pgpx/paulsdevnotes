@@ -18,3 +18,7 @@ while read p; do
   echo "$p"
 done <peptides.txt
 ```
+
+## Iterating through directories
+
+* [Why you shouldn't parse the output of ls(1)](http://mywiki.wooledge.org/ParsingLs)
