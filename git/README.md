@@ -15,6 +15,7 @@
   * [Git Cheat Sheet](https://github.com/arslanbilal/git-cheat-sheet)
   * [Git Tips](https://github.com/git-tips/tips)
   * [Git Addons](https://github.com/stevemao/awesome-git-addons)
+* Post by Torvalds about Git merging: <https://www.mail-archive.com/dri-devel@lists.sourceforge.net/msg39091.html> ([SO](https://stackoverflow.com/a/2621837/125246))
 
 ## Read later
 

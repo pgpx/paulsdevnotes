@@ -19,3 +19,20 @@ Or in `sed` ([SO](http://stackoverflow.com/a/1159389/125246), [SO](http://stacko
 ```bash
 sed -r 's/(^.*)/\L\1/'
 ```
+
+Ignore escaped quotes within quotes:
+
+([SO](https://stackoverflow.com/a/5696141/125246))
+
+Good:
+`"([^"\\]|\\.)*"`
+Version 1: Works correctly but is not terribly efficient.
+
+Better:
+`"([^"\\]++|\\.)*" or "((?>[^"\\]+)|\\.)*"`
+Version 2: More efficient if you have possessive quantifiers or atomic groups (See: sin's correct answer which uses the atomic group method).
+
+Best:
+`"[^"\\]*(?:\\.[^"\\]*)*"`
+Version 3: More efficient still. Implements Friedl's: "unrolling-the-loop" technique. Does not require possessive or atomic groups (i.e. this can be used in Javascript and other less-featured regex engines.)
+```
