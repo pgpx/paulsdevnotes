@@ -27,3 +27,9 @@ kubectl "-n=${NAMESPACE}" wait --timeout=30s --for=condition=Available -f "${SCR
 
 * [Force pods to re-pull an image without changing the image tag #33664](https://github.com/kubernetes/kubernetes/issues/33664)
     * <https://stackoverflow.com/questions/40366192/kubernetes-how-to-make-deployment-to-update-image>
+    
+## Canary Deployments
+
+* <https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/#canary-deployments>
+* <https://dev.to/mostlyjason/intro-to-deployment-strategies-blue-green-canary-and-more-3a3>
+* <https://medium.com/google-cloud/kubernetes-canary-deployments-for-mere-mortals-13728ce032fe>

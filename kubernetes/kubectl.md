@@ -46,3 +46,7 @@ kubectl port-forward -n my-namespace service/my-service 4444:4444
 ```bash
 revision=$(kubectl -n "${namespace}" get "deployment/$deployment" --no-headers -o custom-columns=":metadata.annotations.deployment\.kubernetes\.io\/revision")
 ```
+
+## Dry-run and diff
+
+* <https://kubernetes.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/>
