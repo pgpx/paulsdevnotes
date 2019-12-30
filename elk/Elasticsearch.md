@@ -25,3 +25,7 @@ optionIds:(+72 +11 +9)
 ```
 
 * Wildcard querying issues: <https://discuss.elastic.co/t/wildcard-query-not-working-as-expected/84447/2>
+
+## Issues
+
+* <https://dev.sobeslavsky.net/kibana-how-to-solve-mapping-conflict/>
