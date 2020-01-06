@@ -44,3 +44,9 @@ for dir in /$(pwd)/*/; do
     mv "$dir"  "$(echo $dir | sed -E 's/^(.*)\.([^.]+)$/\1_HtmlUnit.\2/')"
 done
 ```
+
+Get the first line from a pipeline (without terminating/breaking it as `head -n 1` [would](https://stackoverflow.com/a/41516237/125246)) ([SO](https://unix.stackexchange.com/a/405967/32390):
+
+```bash
+cat myfile.txt | sed -e '1,1!d'
+```
