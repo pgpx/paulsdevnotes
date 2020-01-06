@@ -1,7 +1,8 @@
-# Brew
+# Brew (aka Homebrew)
 
 MacOS package manager.
 
+* <https://brew.sh/>
 * <https://docs.brew.sh/>
 
 ## Installing an old version of a package
@@ -17,3 +18,10 @@ If it is unavailable as `package@version` ([SO](https://stackoverflow.com/a/7787
 * `brew install <raw-link>`
 
 Can `brew pin postgresql` to avoid the package from being upgraded.
+
+## Where an earlier version isn't directly available
+
+Use a fork of a `homebrew-<app>` repo to control which version is installed:
+
+* Fork `derailed/homebrew-k9s` and revert `master` to an earlier commit.
+* Then switch to it: `brew uninstall k9s && brew untap derailed/k9s && brew tap pgpx/k9s && brew install k9s`
