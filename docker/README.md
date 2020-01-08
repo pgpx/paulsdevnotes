@@ -11,6 +11,10 @@ Links
 
 * [Docker Tagging: Best practices for tagging and versioning docker images](https://blogs.msdn.microsoft.com/stevelasker/2018/03/01/docker-tagging-best-practices-for-tagging-and-versioning-docker-images/)
 
+Interesting related projects:
+
+* [DockerSlim](https://github.com/docker-slim/docker-slim) (docker-slim): Don't change anything in your Docker container image and minify it by up to 30x (and for compiled languages even more) making it secure too! (free and open source) <https://dockersl.im>
+
 ## Installation
 Mac (with Brew and Cask):
 ```sh
