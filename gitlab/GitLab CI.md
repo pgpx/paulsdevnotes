@@ -26,6 +26,10 @@ Possible issues:
 * [CI runner breaks on activated git-lfs](https://gitlab.com/gitlab-org/gitlab-runner/issues/2245), [CI runner breaks on activated git-lfs (improved solution)](https://gitlab.com/gitlab-org/gitlab-runner/issues/2504
 * [after_script and always are not called if a job is cancelled](https://gitlab.com/gitlab-org/gitlab-ce/issues/20727)
 
+## Settings
+
+* Shallow clone - reduces number of commits to fetch for each branch (rather than all).  Needs more than the expected number of subsequent commits to that branch before the current pipeline finishes (because git checkout is done at a branch level).
+
 ## Docker configuration
 
 * [Building Docker images with GitLab CI/CD](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html)
