@@ -22,3 +22,15 @@
     ```bash
     FOO=${VARIABLE:=default}  # If variable not set or null, set it to default.
     ```
+  
+## Bash Arrays
+
+* [You don't know Bash: An introduction to Bash arrays](https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays)
+  
+```shell script
+allThreads=(1 2 4 8 16 32 64 128)
+for t in ${allThreads[@]}; do
+  ./pipeline --threads ${allThreads[$i]}
+done
+```
+  

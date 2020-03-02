@@ -20,3 +20,12 @@ Go to <chrome://net-internals/#hsts> and query/delete the problematic domain.
 e.g. if unexpectedly getting Cert/authentication requests from sites usually visited over a VPN:
 
 Go to <chrome://net-internals/#dns> and click 'Clear host cache'
+
+NET::ERR_CERT_INVALID
+
+
+he105142.emea1.cds.t-internal.com normally uses encryption to protect your information. When Google Chrome tried to connect to he105142.emea1.cds.t-internal.com this time, the website sent back unusual and incorrect credentials. This may happen when an attacker is trying to pretend to be he105142.emea1.cds.t-internal.com, or a Wi-Fi sign-in screen has interrupted the connection. Your information is still secure because Google Chrome stopped the connection before any data was exchanged.
+
+You cannot visit he105142.emea1.cds.t-internal.com at the moment because the website sent scrambled credentials that Google Chrome cannot process. Network errors and attacks are usually temporary, so this page will probably work later.
+
+Oh, I had to manually download the certificate (Chrome Dev Tools -> Security), then add it to Keychain Access on the Mac and then trust it (double click on it).  Now it is ok!
