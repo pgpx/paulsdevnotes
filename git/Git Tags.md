@@ -47,3 +47,11 @@ Date:   Sun Jul 15 00:14:43 2012 -0700
 ```
 
 ... but the tags have to be annotated tags, created with metadata-providing options (like `-a`, `-s`, or `-u`), otherwise they are just refs pointing straight to the tagged object ([SO](https://stackoverflow.com/a/2534787/125246K)).
+
+## Tags at HEAD
+
+Show all tags at HEAD ([SO](https://stackoverflow.com/a/15353441/125246))
+
+```bash
+git tag --points-at HEAD
+```

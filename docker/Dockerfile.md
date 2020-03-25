@@ -26,3 +26,10 @@ COPY --from=build-env /empty /.emptyfile
     Then:
     
     `docker build -t container_tag --build-arg MYAPP_IMAGE=localimage:latest .`
+    
+* Copy a directory keeping its structure: ([SO](https://stackoverflow.com/a/53539023/125246), [SO](https://stackoverflow.com/a/30220096/125246))
+
+    ```dockerfile
+    COPY files/ /files/
+    COPY .    /myfiles
+    ```

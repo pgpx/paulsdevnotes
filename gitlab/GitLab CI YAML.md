@@ -2,6 +2,9 @@
 
 * [GitLab CI YAML reference](https://docs.gitlab.com/ce/ci/yaml/README.html)
 
+Issues:
+* [The include keyword does not parse CI variables](https://gitlab.com/gitlab-org/gitlab/issues/24811)
+
 ## Git strategy
 
 * <https://docs.gitlab.com/ce/ci/yaml/README.html#git-strategy>
