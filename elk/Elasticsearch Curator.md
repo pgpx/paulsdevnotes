@@ -2,4 +2,5 @@
 
 Cleanup old indices based on rules.
 
-* <https://www.elastic.co/guide/en/elasticsearch/client/curator/current/cli.html>
+* [CLI](https://www.elastic.co/guide/en/elasticsearch/client/curator/current/cli.html)
+* DockerHub [bitnami/elasticsearch-curator](https://hub.docker.com/r/bitnami/elasticsearch-curator)
