@@ -30,7 +30,7 @@
 ```shell script
 allThreads=(1 2 4 8 16 32 64 128)
 for t in ${allThreads[@]}; do
-  ./pipeline --threads ${allThreads[$i]}
+    ./pipeline --threads ${allThreads[$i]}
 done
 ```
   

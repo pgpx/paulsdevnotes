@@ -9,6 +9,7 @@
     ```xml
     <project.build.outputTimestamp>${git.commit.timestamp.datetime}</project.build.outputTimestamp>
     ```
+* Debian related [wiki page](https://wiki.debian.org/ReproducibleBuilds/BuildinfoFiles)
   
 This allows Maven-based Docker builds to generate the same image.
 * Need to set timestamps otherwise Docker builds will not generate the same image (at least on GitLab CI).
