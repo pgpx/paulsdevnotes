@@ -62,6 +62,8 @@ IFS=$'\n\t'
 * `-o pipefail` - halt if any step in a pipeline fails
 * `IFS=$'\n\t'` - separate words with tabs and newlines (not spaces, for better loop iteration)
 
+Also see <https://sipb.mit.edu/doc/safe-shell/>
+
 ## Variables
 
 

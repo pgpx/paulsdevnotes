@@ -71,3 +71,12 @@ File exists?
 ```python
 if os.path.exists(filename):
 ```
+### Copy one file to another ([SO](https://stackoverflow.com/a/15343861/125246))
+
+```python
+with open("in.txt") as f:
+    with open("out.txt", "w") as f1:
+        for line in f:
+            if "ROW" in line:
+                f1.write(line) 
+```

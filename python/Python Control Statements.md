@@ -10,4 +10,3 @@ elif res > 3:
 else:
     #
 ```
-

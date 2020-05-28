@@ -11,6 +11,7 @@
 Books:
 
 * [Programming in Python 3: A Complete Introduction to the Python Language, Second Edition](https://www.safaribooksonline.com/library/view/programming-in-python/9780321699909/)
+* [Python Tips](https://book.pythontips.com/en/latest/index.html)
 
 ## Library
 
