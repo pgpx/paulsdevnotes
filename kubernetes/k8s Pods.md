@@ -2,6 +2,14 @@
 
 * [v1.13 Pod v1 core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#podspec-v1-core)
 
+## Commands
+
+Wait for a pod to be ready ([SO](https://stackoverflow.com/a/60810347/125246)):
+
+```bash
+kubectl -n tools wait --for=condition=ready --timeout=300s pod/my-pod
+```
+
 ## Liveness & readiness probes
 
 * [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)

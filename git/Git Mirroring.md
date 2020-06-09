@@ -50,3 +50,15 @@ Use `git fsck` to check the integrity of a mirror!
 
 * http://web.archive.org/web/20130326122719/http://jefferai.org/2013/03/24/screw-the-mirrors/
 * http://web.archive.org/web/20130326115327/http://jefferai.org:80/2013/03/24/too-perfect-a-mirror/
+
+## [Mirroring a repository that contains Git Large File Storage objects](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects)
+
+```bash
+git clone --bare https://github.com/exampleuser/old-repository.git
+cd old-repository.git
+git lfs fetch --all
+
+# Pull subsequent updates
+git fetch
+git lfs fetch --all
+```

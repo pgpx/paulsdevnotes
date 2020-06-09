@@ -26,6 +26,12 @@ elif not my_list:
     print("List is empty")
 ```
 
+Shallow-[copy](https://www.programiz.com/python-programming/methods/list/copy) a list (otherwise you are just copying a reference):
+
+```python
+my_copy = my_list.copy()
+```
+
 ## Iteration
 
 Capture index and element ([SO](https://stackoverflow.com/a/14532900/125246))
