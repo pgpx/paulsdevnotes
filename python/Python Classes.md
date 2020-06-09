@@ -12,6 +12,19 @@ Python has no privacy model ([SO](https://stackoverflow.com/a/20261595/125246)),
 
 * [Using @property versus getters and setters](https://stackoverflow.com/questions/6618002/using-property-versus-getters-and-setters)
 
+Cache property values ([SO](https://stackoverflow.com/a/57649971/125246) and [SO](https://stackoverflow.com/a/19979379/125246))
+
+```python
+import functools
+# create property whose value is cached for ten minutes
+@cached_property(ttl=600)
+def randint(self):
+
+# or, but stores objects separately, maybe avoiding GC, and self needs to be hashable.
+@property
+@functools.lru_cache()
+def foo(self):
+```
 
 ## Equality
 
