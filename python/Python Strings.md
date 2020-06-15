@@ -59,30 +59,6 @@ Python 2:
 print "my str {:} {:}".format(val1, val2)
 ```
 
-## [Regular Expressions](https://docs.python.org/3/library/re.html)
-
-```python
-import re
-line_re = re.compile(r""".*(abc).*""")
-
-# Or multi-line
-line_re = re.compile(r"""
-    ^(`w+)      # Comment
-    .*$
-    """, re.VERBOSE)
-```
-
-Matching:
-```python
-my_match = line_re.match(string)
-if my_match:
-    gr = my_match.group(1)
-```
-
-Substitute (returning the result):
-```python
-res = re.sub(r'^(.*)z', r'\1y', string_to_apply_replacement_to)
-```
 ## Printing
 
 ```python

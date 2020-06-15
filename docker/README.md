@@ -14,6 +14,7 @@ Links
 * <https://www.databasesandlife.com/docker-build-pull-option/>
 
 * [Docker Tagging: Best practices for tagging and versioning docker images](https://blogs.msdn.microsoft.com/stevelasker/2018/03/01/docker-tagging-best-practices-for-tagging-and-versioning-docker-images/)
+* <https://medium.com/@tariq.m.islam/container-deployments-a-lesson-in-deterministic-ops-a4a467b14a03>
 
 Interesting related projects:
 

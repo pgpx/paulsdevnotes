@@ -26,6 +26,30 @@ def randint(self):
 def foo(self):
 ```
 
+## Annotations
+
+`@classmethod` gets the class as the first parameter ([SO](https://stackoverflow.com/a/56236639/125246) and [SO](https://stackoverflow.com/a/1669524/125246)):
+
+```python
+@classmethod
+def f(cls, x, y)
+```
+
+e.g. as a factory ([SO](https://stackoverflow.com/q/40857170/125246)):
+
+```python
+@classmethod
+    def factory(cls, global_config, **local_config):
+        return cls(**local_config)
+```
+
+`@staticmethod` does not get any automatic arguments:
+
+```python
+@staticmethod
+def f(x, y)
+```
+
 ## Equality
 
 [SO](https://stackoverflow.com/a/390640/125246)

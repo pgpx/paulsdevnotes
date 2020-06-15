@@ -12,6 +12,14 @@ obj[key]
 obj.get(key, default)
 ```
 
+Create a dictionary with a list comprehension using [dict comprehension syntax](https://www.python.org/dev/peps/pep-0274/) ([SO](https://stackoverflow.com/a/1747827/125246)):
+
+```python
+my_dict = {key: value for (key, value) in iterable}
+```
+
+
+
 ## Remove a key: ([SO](https://stackoverflow.com/a/11277439/125246))
 
 ```python
