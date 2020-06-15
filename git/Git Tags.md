@@ -1,5 +1,8 @@
 # Git Tags
 
+* <https://git-scm.com/book/en/v2/Git-Basics-Tagging>
+* <https://stackoverflow.com/questions/11514075/what-is-the-difference-between-an-annotated-and-unannotated-tag#comment107584501_25996877>
+
 Delete a (remote) tag ([ref])(https://nathanhoad.net/how-to-delete-a-remote-git-tag))
 
 ```sh
@@ -50,8 +53,21 @@ Date:   Sun Jul 15 00:14:43 2012 -0700
 
 ## Tags at HEAD
 
-Show all tags at HEAD ([SO](https://stackoverflow.com/a/15353441/125246))
+Show all tags at HEAD ([SO](https://stackoverflow.com/a/15353441/125246)).  Empty if none.
 
 ```bash
 git tag --points-at HEAD
+```
+
+Get a single tag for the current commit failing if none:
+
+```bash
+git describe --tags --exact
+```
+
+Get a log entry showing the tags pointing at the current commit ([SO](https://stackoverflow.com/a/8818031/125246)):
+
+```bash
+git log --oneline --decorate=short
+# e9c7946 (HEAD -> develop, tag: test-tag6, tag: test-tag5, origin/develop) Log
 ```
