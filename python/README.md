@@ -7,6 +7,7 @@
 * <https://awesome-python.com/> - list of frameworks, libraries, software and resources
 * [Google Python Style Guide](http://google.github.io/styleguide/pyguide.html)
 * [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/)
+* <https://docs.quantifiedcode.com/python-anti-patterns/index.html>
 
 Books:
 
