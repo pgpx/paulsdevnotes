@@ -32,3 +32,9 @@ def test_gitlab_ci_branch_tag(self):
             if expected := test_case.get('expected'):
                 self.assertEqual(expected, make_call(test_case['param']))
 ```
+
+## Mocks
+
+* <https://semaphoreci.com/community/tutorials/getting-started-with-mocking-in-python>
+* <https://medium.com/@yeraydiazdiaz/what-the-mock-cheatsheet-mocking-in-python-6a71db997832>
+* <https://stackoverflow.com/questions/31129350/python-unit-test-mock-get-mocked-functions-input-arguments>

@@ -26,7 +26,10 @@ COPY --from=build-env /empty /.emptyfile
     Then:
     
     `docker build -t container_tag --build-arg MYAPP_IMAGE=localimage:latest .`
-    
+
+* Use an ARG and set it to a unique value (e.g. CI job id) to force all subsequent Dockerfile commands to be re-run even if the contents haven't changed (the ARG's value is added to the context of all subsequent commands so they won't be cached).
+    * Put the ARG in only some stages of a multi-stage builds to selectively disable caching from different stages ([ref](https://github.com/moby/moby/issues/1996#issuecomment-550020843))
+ 
 * Copy a directory keeping its structure: ([SO](https://stackoverflow.com/a/53539023/125246), [SO](https://stackoverflow.com/a/30220096/125246))
 
     ```dockerfile

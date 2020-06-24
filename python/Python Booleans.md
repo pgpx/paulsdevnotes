@@ -1,0 +1,13 @@
+# Python Booleans
+
+## Truth value testing
+
+* <https://docs.python.org/3/library/stdtypes.html#truth-value-testing>
+
+By default, an object is considered true unless its class defines either a `__bool__()` method that returns `False` or a `__len__()` method that returns zero, when called with the object. ([also](https://docs.python.org/3/reference/datamodel.html#customization))
+
+(Most) built-in objects defined to be `False`:
+
+* constants defined to be false: None and False.
+* zero of any numeric type: 0, 0.0, 0j, Decimal(0), Fraction(0, 1)
+* empty sequences and collections: '', (), [], {}, set(), range(0)

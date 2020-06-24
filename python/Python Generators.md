@@ -1,5 +1,8 @@
 # Python Generators
 
+* <https://wiki.python.org/moin/Generators>
+* <https://docs.python.org/3.6/library/itertools.html#itertools.chain.from_iterable>
+
 Generator expressions are similar to list comprehensions, but use `()` instead of `[]` ([ref](https://wiki.python.org/moin/Generators)):
 
 ```python

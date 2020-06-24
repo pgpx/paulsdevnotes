@@ -26,3 +26,9 @@ p.is_dir()
 # Can combine paths with /
 q = p / 'bin' / 'vim'
 ```
+Read a file as a string ([SO](https://stackoverflow.com/a/53204836/125246)):
+
+```python
+with open("foo","r") as f:
+    string = f.read()
+```
