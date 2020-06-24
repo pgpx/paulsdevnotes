@@ -45,3 +45,7 @@ Will throw `IllegalStateExceptions`.
 ## Useful plugins
 
 * [StringManipulation](https://plugins.jetbrains.com/plugin/2162-string-manipulation) - `Alt/Option+M` - lets you change case, escape/unescape XML/JSON/Java strings, etc.
+
+## Issues
+
+* `findbugs not compatible marked broken` - <https://youtrack.jetbrains.com/issue/IDEA-232675>

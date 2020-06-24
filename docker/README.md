@@ -4,6 +4,7 @@
 
 Tools
 * [Skopeo](https://github.com/containers/skopeo) - query Docker images and repositories
+* [ctop](https://github.com/bcicen/ctop) - Top-like interface for container metrics
 
 Books
 * [Docker + Consul](https://www.safaribooksonline.com/library/view/docker-in-the/9781939902184/ch15.html#idp6134288)
