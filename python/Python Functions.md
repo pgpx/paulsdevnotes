@@ -31,3 +31,15 @@ from functools import partial
 my_partial = partial(my_func, arg1, arg2)
 res = my_partial(arg3, arg4)
 ```
+
+## Unpack arguments from a list or dict:
+
+Unpack a list or tuple into positional arguments with `*`, and a dict into named arguments with `**` ([SO](https://stackoverflow.com/a/7527889/125246)):
+
+```python
+x = (1, 2, 3)
+add(*x)
+
+x = { 'a': 3, 'b': 1, 'c': 2 }
+add(**x) 
+```

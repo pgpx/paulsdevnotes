@@ -3,6 +3,8 @@
 * <https://docs.python.org/2.7/tutorial/datastructures.html#dictionaries>
 * <https://docs.python.org/2.7/library/stdtypes.html#dict>
 
+From 3.7, insertion order is iteration order,
+
 ```python
 # Test for key
 if key in obj:
@@ -17,8 +19,6 @@ Create a dictionary with a list comprehension using [dict comprehension syntax](
 ```python
 my_dict = {key: value for (key, value) in iterable}
 ```
-
-
 
 ## Remove a key: ([SO](https://stackoverflow.com/a/11277439/125246))
 
