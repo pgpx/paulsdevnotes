@@ -5,6 +5,13 @@
 * [pytz](https://pypi.python.org/pypi/pytz/)
 * <https://www.epochconverter.com/> - Convert epoch to human readable date and vice versa
 
+Current UTC timestamp in ISO format ([SO](https://stackoverflow.com/a/53623334/125246)):
+
+```python
+from datetime import datetime
+now = datetime.utcnow().isoformat()
+```
+
 Convert to epoch timestamp ([SO](https://stackoverflow.com/a/7241238/125246)):
 
 ```python

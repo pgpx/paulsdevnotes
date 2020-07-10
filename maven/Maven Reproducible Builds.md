@@ -3,7 +3,7 @@
 * <https://reproducible-builds.org/> - promise identical results from a given source - deterministic, and ensure no vulnerabilities have been adedd.mvn enforcer:display-info
 
 * Maven guide [Configuring for Reproducible Builds](https://maven.apache.org/guides/mini/guide-reproducible-builds.html)
-    * Describes how plugins need to be upgraded and `project.build.outputTimestam` set.
+    * Describes how plugins need to be upgraded and `project.build.outputTimestamp` set.
     * [Wiki page](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318)
 * [Maven Git Versioning Extension support](https://github.com/qoomon/maven-git-versioning-extension#reproducible-builds)
     ```xml

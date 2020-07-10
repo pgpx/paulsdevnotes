@@ -34,8 +34,13 @@ if [[ "$val" =~ ^([0-9])+\.$ ]]; then
 
 ## Boolean operations
 
+* [How-to: Use parentheses to group and expand expressions](https://ss64.com/bash/syntax-brackets.html)
+
 [SO](https://stackoverflow.com/a/2237179/125246)
 
 ```bash
 [ "$x" == "valid" ] && echo "x has the value 'valid'"
 ```
+
+`&&` and `||` have the same precedence (in `[[ ]]`), so use round brackets `( )` to group ([USE](https://unix.stackexchange.com/a/88851/32390))
+* They do short-circuit.
