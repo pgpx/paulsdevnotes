@@ -1,6 +1,7 @@
 # Yaml
 
 * <https://learnxinyminutes.com/docs/yaml/>
+* [Reusing data with YAML Anchors, Aliases and Merge Keys](http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html)
 
 ## Multiple-line strings ([SO](https://stackoverflow.com/a/21699210/125246))
 
