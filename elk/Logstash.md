@@ -1,9 +1,11 @@
 # Logstash
 
 * [User Guide/Reference](https://www.elastic.co/guide/en/logstash/current/index.html)
+* [Field References Deep Dive](https://www.elastic.co/guide/en/logstash/current/field-references-deepdive.html)
+* [Running Logstash from the Command Line](https://www.elastic.co/guide/en/logstash/current/running-logstash-command-line.html)
 
+Also:
 * Logback plugin: <https://github.com/logstash/logstash-logback-encoder>
-
 * Slow to start: <https://github.com/elastic/logstash/issues/5507>
 
 Articles:

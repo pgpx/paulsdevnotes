@@ -66,3 +66,17 @@ containers:
         - IPC_LOCK
         - SYS_RESOURCE
 ```
+
+## Lifecycle
+
+* [Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/) ref
+    * [Attach Handlers to Container Lifecycle Events](https://kubernetes.io/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/) - `postStart` and `preStop` handlers.
+* [Gracefully Shutting Down Pods in a Kubernetes Cluster](https://blog.gruntwork.io/gracefully-shutting-down-pods-in-a-kubernetes-cluster-328aecec90d)
+* [Delaying Shutdown to Wait for Pod Deletion Propagation](https://blog.gruntwork.io/delaying-shutdown-to-wait-for-pod-deletion-propagation-445f779a8304) - use `preStop` `sleep` commands to allow the container to still process requests while the pod is being removed from services, etc.
+
+```yaml
+lifecycle:
+  preStop:
+    exec:
+        command: ["sleep", "10"]
+```
