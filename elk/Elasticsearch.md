@@ -2,11 +2,14 @@
 
 * [Reference](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
 * <https://www.elastic.co/guide/en/elasticsearch/reference/6.x/xpack-sql.html>
+* Amazon Elasticsearch Service [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/)
+* OpenDistro [home](https://opendistro.github.io/), [docs](https://opendistro.github.io/for-elasticsearch-docs/)
 
 Interesting articles:
 * [Elasticsearch from the Top Down](https://www.elastic.co/blog/found-elasticsearch-top-down) - how it is implemented.
 * [Lucene's FuzzyQuery is 100 times faster in 4.0](http://blog.mikemccandless.com/2011/03/lucenes-fuzzyquery-is-100-times-faster.html) - edit-distance.
 * [Elasticsearch in Production](https://www.elastic.co/blog/found-elasticsearch-in-production)
+* [Elasticsearch as a Time Series Data Store](https://www.elastic.co/blog/elasticsearch-as-a-time-series-data-store)
 
 ## Querying
 
