@@ -80,3 +80,5 @@ lifecycle:
     exec:
         command: ["sleep", "10"]
 ```
+
+* [Graceful shutdown and zero downtime deployments in Kubernetes](https://learnk8s.io/graceful-shutdown)
