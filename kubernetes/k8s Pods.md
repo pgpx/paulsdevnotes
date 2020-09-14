@@ -82,3 +82,9 @@ lifecycle:
 ```
 
 * [Graceful shutdown and zero downtime deployments in Kubernetes](https://learnk8s.io/graceful-shutdown)
+
+* Get name and image of pods ([SO](https://stackoverflow.com/questions/46229072/how-do-i-extract-multiple-values-from-kubectl-with-jsonpath))
+
+```bash
+kubectl get pods -ao jsonpath='{range .items[*]}{@.metadata.name}{" "}{@.spec.containers[*].image}{"\n"}{end}'
+```

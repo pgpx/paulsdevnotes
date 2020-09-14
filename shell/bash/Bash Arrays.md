@@ -25,6 +25,15 @@ Syntax	        |  Result
     ```bash
     my_array=(val1 val2 val3 "val 4")
     ```
+  
+  Note that quoting a variable will add an empty element to the array, even if the variable is empty
+  
+* Append an array ([ref](https://linuxhint.com/bash_append_array/)):
+
+    ```bash
+    array+=('a' 'b')
+    ```
+  
 * Number of elements in an array: `${#arr[@]}` ([SO](https://serverfault.com/a/924549/126442))
 * Send an array as quoted arguments to a command using `"${arr[@]}"` ([AU](https://askubuntu.com/a/674347/36040))
 
@@ -38,6 +47,7 @@ Syntax	        |  Result
     ${arr[@]+"${arr[@]}"}  
   ```
 
+* Print an array using `$*` by concatenating based on `IFS`: `"My array: $array*"` or `"My array: " "${array[@]}"` ([SC2145](https://github.com/koalaman/shellcheck/wiki/SC2145))
 * Convert a string to an array ([SO](https://stackoverflow.com/a/19657765/125246)):
 
     ```bash

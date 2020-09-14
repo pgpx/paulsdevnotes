@@ -10,3 +10,17 @@ $ echo "$(($a + 1))"
 ```
 
 ... but using `$(())` or `(())` is unsafe if you don't know what the strings are.  *What should we use instead?*
+
+Comparing numbers ([SO](https://stackoverflow.com/a/18668580/125246)):
+
+```bash
+# Bash
+if (( a > b )); then
+    ...
+fi
+
+# For POSIX shells that don't support (()), you can use -lt and -gt.
+if [ "$a" -gt "$b" ]; then
+    ...
+fi
+```
