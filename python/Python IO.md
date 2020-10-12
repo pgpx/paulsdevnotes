@@ -23,6 +23,17 @@ import gzip
 fd = gzip.open(path, 'r', encoding='utf-8')
 ```
 
+## Read a line from STDIN
+
+* <https://docs.python.org/3/library/functions.html#input> ([SO](https://stackoverflow.com/a/1135035/125246))
+```python
+s = input('prompt -->')
+```
+
+* Strips trailing newline
+* Also see <https://docs.python.org/3/library/readline.html#module-readline>
+
+
 ## Progress bar
 
 [tqdm](https://github.com/tqdm/tqdm) ([SO](https://stackoverflow.com/a/26394657/125246))

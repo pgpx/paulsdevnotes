@@ -1,6 +1,7 @@
 # Python argparse
 
 * <https://docs.python.org/2/library/argparse.html>
+* Alternative: [Click](https://click.palletsprojects.com/en/7.x/)
 
 Create a parent parser if you want the same option to be added to multiple subparsers ([SO](https://stackoverflow.com/a/56595689/125246)):
 

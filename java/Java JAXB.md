@@ -80,7 +80,7 @@ Then use it via the [`@XmlJavaTypeAdapter`](http://docs.oracle.com/javase/8/docs
 Add `jaxb.properties` file to domain object package:
 
 ```properties
-# Use MOXy JAXB implementation (allows addtional customisation)
+# Use MOXy JAXB implementation (allows additional customisation)
 javax.xml.bind.context.factory=org.eclipse.persistence.jaxb.JAXBContextFactory
 ```
 

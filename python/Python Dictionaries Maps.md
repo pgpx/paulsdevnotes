@@ -20,6 +20,21 @@ Create a dictionary with a list comprehension using [dict comprehension syntax](
 my_dict = {key: value for (key, value) in iterable}
 ```
 
+## Copy a dictionary
+
+Shallow copy ([SO](https://stackoverflow.com/a/2465932/125246))
+
+```python
+dict2 = dict(dict1)
+dict2 = dict1.copy()
+```
+
+Deep copy ([SO](https://stackoverflow.com/a/2465951))
+
+```python
+dict2 = copy.deepcopy(dict1)
+```
+
 ## Remove a key: ([SO](https://stackoverflow.com/a/11277439/125246))
 
 ```python

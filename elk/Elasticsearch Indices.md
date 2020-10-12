@@ -1,5 +1,7 @@
 # Elasticsearch Indices
 
+* [Tune for indexing speed](https://www.elastic.co/guide/en/elasticsearch/reference/current/tune-for-indexing-speed.html#tune-for-indexing-speed)
+
 Delete an index ([API](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-delete-index.html):
 
 ```sh
