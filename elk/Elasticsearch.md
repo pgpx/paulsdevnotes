@@ -15,7 +15,7 @@ Interesting articles:
 ## Optimising
 
 * [Tune for disk usage](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-disk-usage.html]
-    * [Reindex]
+    * [Reindex API](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html)
 * [Tune for search speed](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-search-speed.html)
     * [Index Sorting](https://www.elastic.co/guide/en/elasticsearch/reference/master/index-modules-index-sorting.html) ([blog](https://www.elastic.co/blog/index-sorting-elasticsearch-6-0))
 

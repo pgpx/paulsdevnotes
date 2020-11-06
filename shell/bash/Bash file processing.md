@@ -1,5 +1,9 @@
 # Bash file processing
 
+## Get the absolute path of a file
+
+
+
 ## Loop through each line of a file
 
 ([SO](https://stackoverflow.com/a/1521498/125246)) Won't interpret escape characters within the file, and will always process the last line (even if it is missing a terminating linefeed):

@@ -58,6 +58,12 @@ git clone --bare https://github.com/exampleuser/old-repository.git
 cd old-repository.git
 git lfs fetch --all
 
+# Exclude a directory
+git filter-repo --invert-paths --path-match 'dir-to-exclude'
+
+# Push to new repo
+git lfs push origin --all
+
 # Pull subsequent updates
 git fetch
 git lfs fetch --all
