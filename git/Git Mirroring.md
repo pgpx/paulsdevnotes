@@ -54,6 +54,27 @@ Use `git fsck` to check the integrity of a mirror!
 ## [Mirroring a repository that contains Git Large File Storage objects](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects)
 
 ```bash
+git clone --bare https://gitlab.devops.telekom.de/ee/ebdc-ee/ebdc-mc.git
+cd ebdc-mc.git/
+git filter-repo --invert-paths --path-match 'Pass submissions'
+git filter-repo --invert-paths --path-match 'EBDC-EE content management-Passes.xls'
+git filter-repo --invert-paths --path-match 'data/pass'
+git filter-repo --invert-paths --path-match 'data/templatedata/ebdc/pass'
+git filter-repo --invert-paths --path-match 'data/templatedata/pass.xml'
+
+#git lfs fetch --all
+#git lfs prune
+git remote rename origin old-origin
+git remote add origin https://gitlab.devops.telekom.de/ee/ebdc-ee/ebdc-ee-page-content.git
+git push -u origin --all
+git push -u origin --tags
+  637  git lfs push origin --all
+  638  history
+
+```
+
+
+```bash
 git clone --bare https://github.com/exampleuser/old-repository.git
 cd old-repository.git
 git lfs fetch --all
