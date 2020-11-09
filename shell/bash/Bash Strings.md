@@ -13,9 +13,7 @@ printf "hello\nworld\n"
 
 ## Multiline
 
-Use heredocs to output multiple lines:
-
-https://stackoverflow.com/a/23930212/125246
+Use heredocs to output multiple lines ([SO](https://stackoverflow.com/a/23930212/125246))
 
 ```bash
 cat << EOF
