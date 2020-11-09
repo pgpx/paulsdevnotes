@@ -65,45 +65,6 @@ IFS=$'\n\t'
 
 Also see <https://sipb.mit.edu/doc/safe-shell/>
 
-## Variables
-
-
-Default values: [ref](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html)
-
-```bash
-# Don't change the variable, but return the default if not set
-var=${parameter:-defaultValue}
-
-# e.g. if $1 is not set or passed
-arg1=${1:-myDefaultValue}
-
-# Update the variable (doesn't work with positional arguments like $1)
-${var:=defaultValue}
-```
-
-unset - delete a variable ([ref](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html))
-
-```bash
-unset foo
-
-# Will output default
-echo ${foo:-default}
-```
-
-Exit with error if missing a value: ([ref](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html))
-
-```bash
-${varName?Error varName is not defined}
-${varName:?Error varName is not defined or is empty}
-${1:?"Missing operand"}
-```
-
-How to check if a variable is set in Bash? ([SO](https://stackoverflow.com/a/13864829/125246))
-
-```bash
-if [ -z ${var+x} ]; then echo "var is unset"; else echo "var is set to '$var'"; fi
-```
-
 ## Arguments
 [Iterate over arguments passed to script](http://stackoverflow.com/a/4528563/125246)
 ```bash
@@ -225,77 +186,6 @@ if [ $? -ne 0]; then
 if ! command1; then
 ```
 
-## Arrays:
-```bash
-# Add value to an array:
-myarray+=('new value')
-
-# Is array empty?
-if [ -z "$myarray+1" ]; then
-# Not empty:
-if [ -n "$myarray+1"]; then
-
-# Array, Value - does the array contain the value?
-contains() {
-  for v in $1; do
-    if [ "$v" = "$2" ]; then
-      echo '1'
-    fi
-  done
-}
-
-# Default values:
-for CC in ${natcos[@]:-AT AL BK BU CS DE HR HY CZ GR HU MK ME NL PL RO SK TE ZZ}; do
-```
-
-Array length ([ref](http://www.cyberciti.biz/faq/finding-bash-shell-array-length-elements/)):
-
-```bash
-${#ArrayName[#]}
-```
-
-Split a single comma-separated line into an array ([SO](http://stackoverflow.com/a/918931/125246)):
-
-```bash
-IFS=';' read -ra ADDR <<< "$IN"
-for i in "${ADDR[@]}"; do
-    # process "$i"
-done
-```
-
-Or multiple lines (;-separated):
-
-```bash
-while IFS=';' read -ra ADDR; do
-      for i in "${ADDR[@]}"; do
-          # process "$i"
-      done
-done <<< "$IN"
-```
-
-## File checks
-* -a file file exists
-* -d file file exists and is a directory
-* -e file file exists; same as -a
-* -f file file exists and is a regular file (i.e., not a directory or other special type of file)
-* -r file You have read permission on file
-* -s file file exists and is not empty
-* -w file You have write permission on file
-* -x file You have execute permission on file, or directory search permission if it is a directory
-* -N file file was modified since it was last read
-* -O file You own file
-* -G file file’s group ID matches yours (or one of yours, if you are in multiple groups)
-* `file1 -nt file2` - file1 is newer than file2 (modification times)
-* `file1 -ot file2` - file1 is older than file2 (modification times)
-
-## Integer conditionals
-* -lt Less than
-* -le Less than or equal
-* -eq Equal
-* -ge Greater than or equal
-* -gt Greater than
-* -ne Not equal
-
 ## [set](http://ss64.com/bash/set.html)
 
 ```
@@ -361,20 +251,6 @@ done <file
 
 Shift the positional parameters 'to the left' by its argument (defaults to 1).
 
-## String manipulation with sed
-```bash
-echo $1 | sed "s,/$,,"         # substitute, use , as delimiter, remove trailing slash
-```
-
-## User functions
-```bash
-function my_func() {
-    echo $1 $2 $3;         # Arguments are given as $1, etc.
-}
-
-NATCO=$(remove_slash "$NATCO")    # Prefer to call functions using $(func_name ...)
-```
-
 ## Run a command before the script exits ([SO](https://stackoverflow.com/a/2130323/125246))
 
 ```bash
@@ -392,76 +268,6 @@ asdffdsa #Fails
 ## Handling arguments
 
 Raw or with `getopts` ([SO](http://stackoverflow.com/a/14203146/125246))
-
-## Numbers
-
-Divide numbers ([SO](https://stackoverflow.com/a/18093887/125246)):
-
-* Using expr
-
-    ```bash
-    expr $x / $y
-    ```
-
-* Or using expression syntax:
-
-    ```bash
-    echo $((x / y))
-    ```
-
-## Strings
-
-### Newlines ([SO](http://stackoverflow.com/a/8467448/125246))
-```bash
-echo -e "Hello\nworld"
-echo -e 'Hello\nworld'
-echo Hello$'\n'world
-```
-Or `printf` ([SO](http://stackoverflow.com/a/8467449/125246))
-```bash
-printf "hello\nworld\n"
-```
-
-### tr
-[Convert string to lowercase](http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting)
-```bash
-echo $a | tr '[A-Z]' '[a-z]'
-a="$(tr [A-Z] [a-z] <<< "$a")"
-```
-
-### awk
-
-Get a value from a properties file (key=value) (assuming value doesn't contain another =) [SO](http://stackoverflow.com/a/20378117/125246)
-
-```bash
-my_value=$(awk -F= '$1=="my.key" {print $2}' my_file.properties)
-```
-
-### Regex
-
-[Linux Journal ref](http://www.linuxjournal.com/content/bash-regular-expressions)
-
-```bash
-if [[ ! "$instance" =~ ^ebd0[0-9]ee$ ]]; then
-```
-
-## Replace a substring ([SO](https://stackoverflow.com/a/13210909/125246))
-
-Ref: [Bash Reference Manual, §3.5.3 "Shell Parameter Expansion"](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
-
-```bash
-firstString="I love Suzi and Marry"
-secondString="Sara"
-echo "${firstString/Suzi/$secondString}"    # prints 'I love Sara and Marry'
-```
-
-To replace all occurrences, `use ${parameter//pattern/string}`
-
-```bash
-message='The secret code is 12345'
-echo "${message//[0-9]/X}"           # prints 'The secret code is XXXXX'
-
-```
 
 ## Paths
 * [Absolute path](http://stackoverflow.com/a/3915420/125246)

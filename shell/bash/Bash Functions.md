@@ -1,5 +1,14 @@
 # Bash Functions
 
+## User functions
+```bash
+function my_func() {
+    echo $1 $2 $3;         # Arguments are given as $1, etc.
+}
+
+NATCO=$(remove_slash "$NATCO")    # Prefer to call functions using $(func_name ...)
+```
+
 ## Return a boolean from a function [SO](https://stackoverflow.com/a/43840545/125246)
 
 * `0` means success, non-zero means failure.

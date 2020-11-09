@@ -1,6 +1,13 @@
 # Bash Arrays
 
-* <https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays>
+* [You don't know Bash: An introduction to Bash arrays](https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays)
+  
+```shell script
+allThreads=(1 2 4 8 16 32 64 128)
+for t in ${allThreads[@]}; do
+    ./pipeline --threads ${allThreads[$i]}
+done
+```
 
 ## [Syntax](https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays)
 
@@ -48,6 +55,19 @@ Syntax	        |  Result
   ```
 
 * Print an array using `$*` by concatenating based on `IFS`: `"My array: $array*"` or `"My array: " "${array[@]}"` ([SC2145](https://github.com/koalaman/shellcheck/wiki/SC2145))
+
+  Only works for single-character delimiters, e.g. ([SO](https://stackoverflow.com/a/17841619/125246))
+  
+  ```bash
+  function join_by { local IFS="$1"; shift; echo "$*"; }
+  join_by , a b c #a,b,c
+  ```
+  
+  Or multi-characters:
+  ```bash
+  function join_by { local d=$1; shift; local f=$1; shift; printf %s "$f" "${@/#/$d}"; }
+  ```
+
 * Convert a string to an array ([SO](https://stackoverflow.com/a/19657765/125246)):
 
     ```bash
@@ -63,3 +83,50 @@ Syntax	        |  Result
     ```bash
     command "${my_array[@]/#/-}" "$1"
     ```
+
+Add value to an array:
+```bash
+myarray+=('new value')
+
+# Is array empty?
+if [ -z "$myarray+1" ]; then
+# Not empty:
+if [ -n "$myarray+1"]; then
+
+# Array, Value - does the array contain the value?
+contains() {
+  for v in $1; do
+    if [ "$v" = "$2" ]; then
+      echo '1'
+    fi
+  done
+}
+
+# Default values:
+for CC in ${natcos[@]:-AT AL BK BU CS DE HR HY CZ GR HU MK ME NL PL RO SK TE ZZ}; do
+```
+
+Array length ([ref](http://www.cyberciti.biz/faq/finding-bash-shell-array-length-elements/)):
+
+```bash
+${#ArrayName[#]}
+```
+
+Split a single comma-separated line into an array ([SO](http://stackoverflow.com/a/918931/125246)):
+
+```bash
+IFS=';' read -ra ADDR <<< "$IN"
+for i in "${ADDR[@]}"; do
+    # process "$i"
+done
+```
+
+Or multiple lines (;-separated):
+
+```bash
+while IFS=';' read -ra ADDR; do
+      for i in "${ADDR[@]}"; do
+          # process "$i"
+      done
+done <<< "$IN"
+```

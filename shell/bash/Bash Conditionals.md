@@ -44,3 +44,26 @@ if [[ "$val" =~ ^([0-9])+\.$ ]]; then
 
 `&&` and `||` have the same precedence (in `[[ ]]`), so use round brackets `( )` to group ([USE](https://unix.stackexchange.com/a/88851/32390))
 * They do short-circuit.
+
+## File checks
+* -a file file exists
+* -d file file exists and is a directory
+* -e file file exists; same as -a
+* -f file file exists and is a regular file (i.e., not a directory or other special type of file)
+* -r file You have read permission on file
+* -s file file exists and is not empty
+* -w file You have write permission on file
+* -x file You have execute permission on file, or directory search permission if it is a directory
+* -N file file was modified since it was last read
+* -O file You own file
+* -G file file’s group ID matches yours (or one of yours, if you are in multiple groups)
+* `file1 -nt file2` - file1 is newer than file2 (modification times)
+* `file1 -ot file2` - file1 is older than file2 (modification times)
+
+## Integer conditionals
+* -lt Less than
+* -le Less than or equal
+* -eq Equal
+* -ge Greater than or equal
+* -gt Greater than
+* -ne Not equal

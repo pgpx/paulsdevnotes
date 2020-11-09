@@ -1,5 +1,19 @@
 # Bash Numbers
 
+Divide numbers ([SO](https://stackoverflow.com/a/18093887/125246)):
+
+* Using expr
+
+    ```bash
+    expr $x / $y
+    ```
+
+* Or using expression syntax:
+
+    ```bash
+    echo $((x / y))
+    ```
+ 
 Variables are treated as integer or string depending on context ([SO](https://unix.stackexchange.com/a/232386/32390))
 
 ```bash

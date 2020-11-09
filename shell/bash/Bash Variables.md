@@ -1,5 +1,26 @@
 # Bash Variables
 
+Default values: [ref](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html)
+
+```bash
+# Don't change the variable, but return the default if not set
+var=${parameter:-defaultValue}
+
+# e.g. if $1 is not set or passed
+arg1=${1:-myDefaultValue}
+
+# Update the variable (doesn't work with positional arguments like $1)
+${var:=defaultValue}
+```
+
+Exit with error if missing a value: ([ref](https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html))
+
+```bash
+${varName?Error varName is not defined}
+${varName:?Error varName is not defined or is empty}
+${1:?"Missing operand"}
+```
+
 * Unset (delete) a variable
 
     ```bash
@@ -22,15 +43,4 @@
     ```bash
     FOO=${VARIABLE:=default}  # If variable not set or null, set it to default.
     ```
-  
-## Bash Arrays
-
-* [You don't know Bash: An introduction to Bash arrays](https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays)
-  
-```shell script
-allThreads=(1 2 4 8 16 32 64 128)
-for t in ${allThreads[@]}; do
-    ./pipeline --threads ${allThreads[$i]}
-done
-```
   
