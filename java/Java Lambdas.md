@@ -20,3 +20,9 @@ Method references
 * [Java tutorial](http://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
 * [Examples / explanation](http://baddotrobot.com/blog/2014/02/18/method-references-in-java8/)
 * [No method references in annotations in Java 8](http://mail.openjdk.java.net/pipermail/lambda-dev/2011-August/003833.html)
+
+## `@FunctionalInterface`
+
+Annotate an interface with `@FunctionalInterface` to allow it to be treated as functional.
+
+* <https://www.baeldung.com/java-8-lambda-expressions-tips>
