@@ -4,6 +4,9 @@
           ([PDF](http://docs.spring.io/spring-boot/docs/current/reference/pdf/spring-boot-reference.pdf)),
           [API](http://docs.spring.io/spring-boot/docs/current/api/index.html)
 
+Articles
+
+* [Demystifying Spring Boot](https://medium.com/better-programming/demystifying-spring-boot-245e71feffc0) - The basics of API development in Spring Boot
 ## Embedded Tomcat
 
 * For JSP support, add `org.apache.tomcat.embed:tomcat-embed-jasper` dependency ([SO](http://stackoverflow.com/a/20602011/125246))
