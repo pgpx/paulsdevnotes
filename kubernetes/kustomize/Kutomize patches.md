@@ -42,3 +42,20 @@ patches:
       kind: Ingress
       name: app
 ```
+
+
+Add to an array: <https://github.com/kubernetes-sigs/kustomize/issues/642>
+
+```yaml
+patches:
+  - patch: |-
+      - op: add
+        path: /spec/template/spec/volumes/-
+        value:
+          name: dev-runner
+          persistentVolumeClaim:
+            claimName: dev-runner-pvc
+    target:
+      kind: Deployment
+      name: runner
+```
