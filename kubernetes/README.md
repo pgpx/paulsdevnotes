@@ -28,6 +28,7 @@
 
 ## Related tools
 
+* [Kind](https://kind.sigs.k8s.io/) - a tool for running local Kubernetes clusters using Docker container “nodes”.
 * [Kustomize](https://github.com/kubernetes-sigs/kustomize) - templating for k8s YAML files.
     * <https://medium.com/@at_ishikawa/getting-started-with-kustomize-53f600f9ebaa>
     * <https://kubernetes.io/blog/2018/05/29/introducing-kustomize-template-free-configuration-customization-for-kubernetes/>
