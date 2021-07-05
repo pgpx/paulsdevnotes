@@ -20,8 +20,10 @@ Links
 
 Interesting related projects:
 
-* [Hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter
 * [DockerSlim](https://github.com/docker-slim/docker-slim) (docker-slim): Don't change anything in your Docker container image and minify it by up to 30x (and for compiled languages even more) making it secure too! (free and open source) <https://dockersl.im>
+* [Hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter
+* [Testcontainers](https://www.testcontainers.org/) - Java library that supports JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.
+  * [Testcontainers Port Updater](https://github.com/yusufugurozbek/testcontainers-port-updater) - automatically updates the IntelliJ data source port number with the exposed random port number that Testcontainers chose on startup.
 
 ## Installation
 Mac (with Brew and Cask):
