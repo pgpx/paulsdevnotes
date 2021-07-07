@@ -5,6 +5,7 @@
 * [Maven Central search](http://search.maven.org/)
 * [Maven: The Complete Reference](https://books.sonatype.com/mvnref-book/reference/) (book)
 * [Lifecycle Reference](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference)
+* [Configuring](http://maven.apache.org/configure.html), [settings.xml](https://maven.apache.org/settings.html)
 
 ## Multi-module
 

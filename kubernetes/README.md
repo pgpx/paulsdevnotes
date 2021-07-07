@@ -25,6 +25,10 @@
 
 * <https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-organizing-with-namespaces> - [kubens](https://github.com/ahmetb/kubectx)
 * [11 Ways (Not) to Get Hacked](https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/)
+  
+## Articles
+
+* [Shifting from Infrastructure as Code to Infrastructure as Data](https://medium.com/dzerolabs/shifting-from-infrastructure-as-code-to-infrastructure-as-data-bdb1ae1840e3)
 
 ## Related tools
 
@@ -36,6 +40,8 @@
 * Istio
     * <https://programmaticponderings.com/2018/04/13/managing-applications-across-multiple-kubernetes-environments-with-istio-part-1/>
 * [Kapp](https://get-kapp.io/)
+* [kOps](https://github.com/kubernetes/kops) - Kubernetes Operations - The easiest way to get a production grade Kubernetes cluster up and running.
+* [Velero](https://velero.io/) - is an open source tool to safely backup and restore, perform disaster recovery, and migrate Kubernetes cluster resources and persistent volumes.
     
 ## Blogs
 
