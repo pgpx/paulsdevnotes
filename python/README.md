@@ -9,6 +9,9 @@
 * [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/)
 * <https://docs.quantifiedcode.com/python-anti-patterns/index.html>
 
+Docker:
+* [Python @ DockerHub](https://hub.docker.com/_/python)
+
 Books:
 
 * [Programming in Python 3: A Complete Introduction to the Python Language, Second Edition](https://www.safaribooksonline.com/library/view/programming-in-python/9780321699909/)

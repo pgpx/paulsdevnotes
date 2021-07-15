@@ -22,6 +22,7 @@ Interesting related projects:
 
 * [DockerSlim](https://github.com/docker-slim/docker-slim) (docker-slim): Don't change anything in your Docker container image and minify it by up to 30x (and for compiled languages even more) making it secure too! (free and open source) <https://dockersl.im>
 * [Hadolint](https://github.com/hadolint/hadolint) - Dockerfile linter
+* [orca-build](https://github.com/cyphar/orca-build) - allows you to build OCI images from a Dockerfile or Orcafile. It doesn't require a daemon or root privileges to operate.  Python wrapper around [umoci](https://github.com/openSUSE/umoci), [runC](https://github.com/opencontainers/runc), [skopeo](https://github.com/containers/skopeo)
 * [Testcontainers](https://www.testcontainers.org/) - Java library that supports JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.
   * [Testcontainers Port Updater](https://github.com/yusufugurozbek/testcontainers-port-updater) - automatically updates the IntelliJ data source port number with the exposed random port number that Testcontainers chose on startup.
 
