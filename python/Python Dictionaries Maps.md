@@ -20,6 +20,12 @@ Create a dictionary with a list comprehension using [dict comprehension syntax](
 my_dict = {key: value for (key, value) in iterable}
 ```
 
+Filtering: ([SO](https://stackoverflow.com/a/8425075/125246))
+
+```python
+d = {k: v for k, v in d.items() if v > 0}
+```
+
 ## Copy a dictionary
 
 Shallow copy ([SO](https://stackoverflow.com/a/2465932/125246))

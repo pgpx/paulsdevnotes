@@ -4,6 +4,10 @@
 
 PyInstaller freezes (packages) Python applications into stand-alone executables, under Windows, GNU/Linux, Mac OS X, FreeBSD, Solaris and AIX.
 
+* Docs - <https://pyinstaller.readthedocs.io/en/stable/>
+* [GitHub](https://github.com/pyinstaller/pyinstaller)
+* StaticX [GitHub](https://github.com/JonathonReinhart/staticx) - Bundle dynamic executables with their library dependencies so they can be run anywhere, just like a static executable.
+
 ## Scratch-based Docker images
 
 * <https://medium.com/analytics-vidhya/dockerizing-a-rest-api-in-python-less-than-9-mb-and-based-on-scratch-image-ef0ee3ad3f0a>
