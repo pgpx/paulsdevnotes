@@ -18,6 +18,9 @@ Links
 * <https://medium.com/@tariq.m.islam/container-deployments-a-lesson-in-deterministic-ops-a4a467b14a03>
 * <https://jpetazzo.github.io/2020/03/01/quest-minimal-docker-images-part-2/>
 
+Best practices
+* Google Cloud Architecture Center - [Best practices for building containers](https://cloud.google.com/architecture/best-practices-for-building-containers#carefully_consider_whether_to_use_a_public_image)
+
 Interesting related projects:
 
 * [DockerSlim](https://github.com/docker-slim/docker-slim) (docker-slim): Don't change anything in your Docker container image and minify it by up to 30x (and for compiled languages even more) making it secure too! (free and open source) <https://dockersl.im>
