@@ -2,6 +2,9 @@
 
 * <https://docs.python.org/3/library/typing.html>
 * <https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html>
+* [Pyright](https://github.com/Microsoft/pyright) - static type checker.
+
+
 Forward evaluation of type hints ([SO](https://stackoverflow.com/a/55344418/125246)) - converts hint annotations to strings, which should be faster.
 
 ```python

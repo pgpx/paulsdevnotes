@@ -1,6 +1,6 @@
 # Docker Registry API
 
-* [Docker Registry HTTP API V2](https://docs.docker.com/registry/spec/api/#listing-image-tags)
+* [Docker Registry HTTP API V2](https://docs.docker.com/registry/spec/api/)
 
 ## [API Version check](https://docs.docker.com/registry/spec/api/#api-version-check)
 
