@@ -3,6 +3,8 @@
 * <https://git-scm.com/book/en/v2/Git-Basics-Tagging>
 * <https://stackoverflow.com/questions/11514075/what-is-the-difference-between-an-annotated-and-unannotated-tag#comment107584501_25996877>
 
+* [GitVersion](https://gitversion.net/) - work with semver using Git tags and history.
+
 Delete a (remote) tag ([ref])(https://nathanhoad.net/how-to-delete-a-remote-git-tag))
 
 ```sh
