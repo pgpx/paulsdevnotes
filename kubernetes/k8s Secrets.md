@@ -2,6 +2,14 @@
 
 * <https://kubernetes.io/docs/concepts/configuration/secret/>
 
+Copy a secret from another namespace ([SO](https://stackoverflow.com/a/58235551/125246)):
+
+```bash
+kubectl get secret my-secret  --namespace default -o yaml |\
+sed s/"namespace: default"/"namespace: target-ns"/ |\
+kubectl apply --namespace=target-ns -f -
+```
+
 ## Bitnami Sealed Secrets
 
 * <https://github.com/bitnami-labs/sealed-secrets>

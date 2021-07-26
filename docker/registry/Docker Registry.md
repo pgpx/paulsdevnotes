@@ -1,6 +1,7 @@
 # Docker Registry
 
 * [Docs](https://docs.docker.com/registry/), [distribution/distribution GitHub](https://github.com/distribution/distribution), [DockerHub](https://hub.docker.com/_/registry)
+* [Docker Registry UI](https://github.com/Joxit/docker-registry-ui) - a simple and complete user interface for your private docker registry.  Also similarly <https://github.com/Quiq/docker-registry-ui>
 
 ## Configuration
 
