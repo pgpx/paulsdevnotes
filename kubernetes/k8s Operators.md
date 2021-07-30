@@ -9,3 +9,9 @@
 ## Kubebuilder
 
 * <https://github.com/kubernetes-sigs/kubebuilder>
+
+## Operator Lifecycle Manager
+
+> OLM extends Kubernetes to provide a declarative way to install, manage, and upgrade Operators and their dependencies in a cluster.
+
+* [GitHub](https://github.com/operator-framework/operator-lifecycle-manager)

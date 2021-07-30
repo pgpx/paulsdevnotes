@@ -11,3 +11,7 @@ Bug reports:
 * https://bugzilla.mozilla.org/show_bug.cgi?id=443354
 
 Also see: http://blog.petersondave.com/cookies/Session-Cookies-in-Chrome-Firefox-and-Sitecore/  and https://stackoverflow.com/a/10772420/125246
+
+## Redirects
+
+* <https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections>
