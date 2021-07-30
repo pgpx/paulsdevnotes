@@ -16,3 +16,14 @@ Can set name prefix/suffix, labels, annotations, override images
 ## Argo CD Operator
 
 * [Docs](https://argocd-operator.readthedocs.io/en/latest/), [GitHub](https://github.com/argoproj-labs/argocd-operator/)
+
+## ApplicationSet Generator
+
+* [GitHub](https://github.com/argoproj-labs/applicationset)
+* [Blog](https://blog.argoproj.io/introducing-the-applicationset-controller-for-argo-cd-982e28b62dc5)
+
+## Argo CD Image Updater
+
+> A tool to automatically update the container images of Kubernetes workloads which are managed by Argo CD
+
+* [GitHub](https://github.com/argoproj-labs/argocd-image-updater)
