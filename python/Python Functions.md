@@ -12,6 +12,16 @@ def manyArgs(*arg):
   print "I was called with", len(arg), "arguments:", arg
 ```
 
+`*` can be used by itself to indicate that keyword only arguments follow, without allowing for unlimited positional arguments ([SO](https://stackoverflow.com/a/26365795/125246)).
+
+```python
+def foo(arg, kwarg=None, *, kwarg2=None, **kwargs):
+    return arg, kwarg, kwarg2, kwargs
+
+# Here, kwarg2 again must be an explicitly named, keyword argument:
+foo(1,2,kwarg2='kwarg2', foo='foo', bar='bar')
+```
+
 ## Lambda functions
 
 * ([ref](https://docs.python.org/2.7/tutorial/controlflow.html#lambda-expressions))
