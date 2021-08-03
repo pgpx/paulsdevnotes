@@ -6,3 +6,4 @@ Pull image by digest ([SO](https://stackoverflow.com/questions/59671793/pulling-
 
 * <https://stackoverflow.com/questions/57819979/how-to-get-rollback-to-use-the-older-image-instead-of-staying-on-the-newest-ext> - [answer](https://stackoverflow.com/a/57932275/125246)
 * [Using Semver for Docker Image Tags](https://medium.com/@mccode/using-semantic-versioning-for-docker-image-tags-dfde8be06699) - prefer semver tags.
+* [Attack of the mutant tags! Or why tag mutability is a real security threat](https://sysdig.com/blog/toctou-tag-mutability/) - mutable tags can be changed accidentally/maliciously.   Digests cannot and some repos allow immutable tags (e.g. ECR).  Admissions policies can convert immutable to mutable.
