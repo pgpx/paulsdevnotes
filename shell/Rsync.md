@@ -46,3 +46,35 @@ chmod 1777 dir
 
 # In ls -l you'll see a trailing 't' instead of 'x' for executable sticky
 ```
+
+## Lsyncd -- Live Syncing (Mirror) Daemon
+
+* <https://github.com/axkibe/lsyncd>
+
+> Lsyncd watches a local directory trees event monitor interface (inotify or fsevents). It aggregates and combines events for a few seconds and then spawns one (or more) process(es) to synchronize the changes. By default this is rsync.
+
+* **Not installable with brew because no longer opensource.**
+
+Watch local directory and transfer it to remote via rsync+ssh
+
+```bash
+lsyncd -rsync /home remotehost.org::share/
+```
+
+## lftp
+
+> Command line driven, shell-like, reliable file transfer program.
+
+* <https://github.com/lavv17/lftp>
+
+```bash
+lftp sftp://target-domain.com/ -e "mirror --reverse --parallel=10 --delete --delete-excluded --exclude-glob-from=lftp-exclude.txt --verbose=1 $(pwd)/ ${TARGET}; exit"
+```
+
+Where `lftp-exclude.txt` contains glob matches, one per-line (e.g. `mydir/**`.
+
+Run with [fswatch](https://emcrisostomo.github.io/fswatch/) to continuously sync:
+
+```bash
+fswatch --one-per-batch --directories -v --recursive "$(pwd)" |  xargs -I{}  -n 1 <sync-command>
+```
