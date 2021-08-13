@@ -14,8 +14,9 @@ fswatch --one-per-batch --directories --filter-from=fswatch-filter.txt -v  --rec
 Where `fswatch-filter.txt` contains ([ref](http://emcrisostomo.github.io/fswatch/doc/1.16.0/fswatch.html/Invoking-fswatch.html#Filtering-by-Path)):
 
 ```
-- exclude-glob/*
-+ include-glob/*
+# Don't include a trailing / or /** to exclude directories
+- exclude-dir-with-glob
++ include-dir-with-glob
 -e exclude-extended-regex.*
 -ei exclude-case-insensitive-regex.*
 
