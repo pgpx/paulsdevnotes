@@ -1,5 +1,11 @@
 # Board Game Arena
 
+## Code
+
+* <https://en.doc.boardgamearena.com/BGA_Code_Sharing>
+* <https://github.com/elaskavaia/bga-sharedcode>
+* <https://github.com/danielholmes/bga-workbench>
+
 ## Setup
 
 ### Sync

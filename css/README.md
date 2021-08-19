@@ -5,3 +5,5 @@
 ```css
 div { display: list-item; margin-left: 1em; }
 ```
+
+[outline-style](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style) - a line that is drawn around an element, outside the border (does not affect box sizing).

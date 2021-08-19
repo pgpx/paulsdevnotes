@@ -1,6 +1,7 @@
 # k8s API
 
 * Ref: [v1.14](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/)
+* [Go k8s API v1](https://pkg.go.dev/k8s.io/api/core/v1)
 
 ## Labels
 

@@ -13,6 +13,7 @@ Demos:
 
 ## kustomization.yaml
 
+* * <https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/>
 * [GitHub sample/template](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/kustomization.yaml)
 
 Place in a directory - kustomize will look for it.
