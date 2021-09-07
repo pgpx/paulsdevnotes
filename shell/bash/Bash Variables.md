@@ -44,3 +44,14 @@ ${1:?"Missing operand"}
     FOO=${VARIABLE:=default}  # If variable not set or null, set it to default.
     ```
   
+## Read environment variables
+
+Read one-at-a-time ([SO](https://stackoverflow.com/a/25765360/125246)):
+
+```bash
+while IFS='=' read -r name value ; do
+  if [ ${#name} -gt 2 ]; then
+    echo "  $name: '"$(echo "$value" | sed -e 's/[^a-zA-Z0-9_-]/!/g')"'"
+  fi
+done < <(env)
+```

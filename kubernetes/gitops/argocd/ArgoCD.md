@@ -1,6 +1,6 @@
 # ArgoCD
 
-* <https://argoproj.github.io/argo-cd/>
+* https://argoproj.github.io/argo-cd/>, [GitHub](https://github.com/argoproj/argo-cd/)
 * Argo Rollouts ([home](https://argoproj.github.io/argo-rollouts/), [GitHub](https://github.com/argoproj/argo-rollouts))
 
 ## Initial login
@@ -42,3 +42,9 @@ Can set name prefix/suffix, labels, annotations, override images
 ## Plugins
 
 * [Example plugins](https://github.com/argoproj/argocd-example-apps/tree/master/plugins)
+
+## Helm
+
+* [Argo Helm Charts](https://github.com/argoproj/argo-helm) - [Argo CD Chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd)
+
+[config-cm](https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml) managed by `argocd.server.config` in [values.yaml](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)

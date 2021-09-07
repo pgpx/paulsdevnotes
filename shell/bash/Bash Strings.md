@@ -41,6 +41,16 @@ Line 3.
 EOM
 ``` 
 
+## Split a string into words, respecting quotes
+
+Use `xargs` [SO](https://superuser.com/a/1529316/108786):
+
+```bash
+$ argarray=()
+$ while IFS= read -r -d '' arg; do argarray+=("$arg"); done < <(echo "\"'foo bar'\" 'one two'" | xargs printf '%s\0')
+$ args "${argarray[@]}"
+2 args: <'foo bar'> <one two>
+```
 
 ## String manipulation with sed
 ```bash
