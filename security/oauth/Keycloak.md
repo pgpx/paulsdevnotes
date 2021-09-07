@@ -13,4 +13,7 @@ Misc
 
 ## Keycloak Operator
 
-* [Docs](https://www.keycloak.org/docs/latest/server_installation/#_operator), [GitHub](https://github.com/keycloak/keycloak-operator), [GitHub CRD schemas](https://github.com/keycloak/keycloak-operator/tree/master/deploy/crds), [operator.io](https://operatorhub.io/operator/keycloak-operator)
+* [Docs](https://www.keycloak.org/docs/latest/server_installation/#_operator), [GitHub](https://github.com/keycloak/keycloak-operator), [GitHub CRD schemas](https://github.com/keycloak/keycloak-operator/tree/master/deploy/crds), [operatorhub.io](https://operatorhub.io/operator/keycloak-operator)
+
+Articles:
+* [Keycloak Operator: Running Locally With Kind](https://www.coveros.com/keycloak-operator-running-locally-with-kind/)

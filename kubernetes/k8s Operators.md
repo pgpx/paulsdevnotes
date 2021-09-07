@@ -6,6 +6,14 @@
 * <https://operatorframework.io/>
 * <https://kudo.dev/> - The Kubernetes Universal Declarative Operator
 
+## Scope
+
+[ref](https://sdk.operatorframework.io/docs/building-operators/golang/operator-scope/)
+
+> A namespace-scoped operator watches and manages resources in a single Namespace, whereas a cluster-scoped operator watches and manages resources cluster-wide.
+
+> An operator should be cluster-scoped if it watches resources that can be created in any Namespace. An operator should be namespace-scoped if it is intended to be flexibly deployed. This scope permits decoupled upgrades, namespace isolation for failures and monitoring, and differing API definitions.
+
 ## Kubebuilder
 
 * <https://github.com/kubernetes-sigs/kubebuilder>
@@ -19,3 +27,8 @@
 ## Secrets
 
 * [Issue discussion](https://github.com/argoproj/argo-cd/issues/1364)
+
+## Operator Framework
+
+* <https://operatorframework.io/>
+* [Operator SDK](https://sdk.operatorframework.io/)

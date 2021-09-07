@@ -6,6 +6,8 @@
 
 ## jq
 
+* [GitHub](https://github.com/stedolan/jq), [DockerHub](https://hub.docker.com/r/stedolan/jq)
+
 CLI to manipulate JSON files
 
 Set a nested property:

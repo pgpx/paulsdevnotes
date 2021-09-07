@@ -1,6 +1,17 @@
 # ArgoCD
 
+* <https://argoproj.github.io/argo-cd/>
 * Argo Rollouts ([home](https://argoproj.github.io/argo-rollouts/), [GitHub](https://github.com/argoproj/argo-rollouts))
+
+## Initial login
+
+Get the initial admin password: ([ref](https://argoproj.github.io/argo-cd/getting_started/#4-login-using-the-cli)):
+```bash
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+
+Port-forward argocd-server to 8080
+And: argocd login localhost:8080 --username admin # and use the password
 
 ## Kustomize
 
@@ -27,3 +38,7 @@ Can set name prefix/suffix, labels, annotations, override images
 > A tool to automatically update the container images of Kubernetes workloads which are managed by Argo CD
 
 * [GitHub](https://github.com/argoproj-labs/argocd-image-updater)
+
+## Plugins
+
+* [Example plugins](https://github.com/argoproj/argocd-example-apps/tree/master/plugins)

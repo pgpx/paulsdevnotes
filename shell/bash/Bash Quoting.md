@@ -3,7 +3,15 @@
 * <https://mywiki.wooledge.org/Quotes> - good overview
 
 
+## Optionally passing arguments to a command
 
+Use `:+` to only expand if the variable is defined.  Quote inside of the `${}` to split into separate arguments([SU](https://superuser.com/a/802544/108786), [ref](http://mywiki.wooledge.org/BashFAQ/050#I_only_want_to_pass_options_if_the_runtime_data_needs_them)):
+
+```bash
+curl \
+    ${title:+ --data-urlencode "title=${title}"} \
+    http://example.com
+```
 
 ## Quoting within a command substitution $(...)
 
