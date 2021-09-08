@@ -1,5 +1,11 @@
 # ArgoCD Applications
 
+## `argocd app create`
+
+* [CLI Ref](https://argoproj.github.io/argo-cd/user-guide/commands/argocd_app_create/)
+
+* Create the target namespace if it doesn't exist (but it won't get deleted when the app is deleted): `--sync-option CreateNamespace=true`
+
 ## [Deletion](https://argoproj.github.io/argo-cd/user-guide/app_deletion/#app-deletion)
 
 Via CLI ([ref](https://argoproj.github.io/argo-cd/user-guide/app_deletion/#deletion-using-argocd)), will delete all associated resources:
