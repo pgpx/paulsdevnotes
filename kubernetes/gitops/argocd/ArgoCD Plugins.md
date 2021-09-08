@@ -1,5 +1,6 @@
 # ArgoCD Plugins
 
+* [Example plugins](https://github.com/argoproj/argocd-example-apps/tree/master/plugins)
 * <https://github.com/travisghansen/argo-cd-helmfile> - Example plugin
 
 ## Environment variables

@@ -20,3 +20,9 @@ Via `kubectl` ([ref](https://argoproj.github.io/argo-cd/user-guide/app_deletion/
 kubectl patch app APPNAME  -p '{"metadata": {"finalizers": ["resources-finalizer.argocd.argoproj.io"]}}' --type merge
 kubectl delete app APPNAME
 ```
+
+## Kustomize
+
+* <https://argoproj.github.io/argo-cd/user-guide/kustomize/>
+
+Can set name prefix/suffix, labels, annotations, override images
