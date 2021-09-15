@@ -19,5 +19,3 @@ Generator that looks for JSON or YAML files that are used to supply template val
 * `Directories` mode - list of directories to look for in the target repo - can include and exclude (will exclude if matches at least one exclude pattern, regardless of includes).
 * `Files` mode - Uses the contents of matching JSON/YAML files (within the target repo).  Can use glob patterns (?), including `**` and `*` 
 
-
-

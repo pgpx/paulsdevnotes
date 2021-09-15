@@ -21,7 +21,7 @@ From the repo server itself:
 * `ARGOCD_APPLICATION_CONTROLLER_*`, `ARGOCD_REDIS_*`, `ARGOCD_REPO_SERVER_*`, `ARGOCD_SERVER_*` - internal ArgoCD details
 * `AWS_ACCESS_KEY_ID`, `AWS_REGION`, `AWS_SECRET_ACCESS_KEY` - k8s credentials
 * `DEBIAN_FRONTEND` - `noninteractive`
-* `GIT_ASKPASS` - `git-ask-pass!sh`
+* `GIT_ASKPASS` - `git-ask-pass.sh`
 * `GIT_PASSWORD`, `GIT_USERNAME` - Git credentials
 * `HOME` - `/home/argocd/`
 * `HOSTNAME` - `argocd-repo-server-577f8c84bc-54sv4`
