@@ -3,6 +3,33 @@
 * https://help.github.com/articles/duplicating-a-repository/
 * http://blog.plataformatec.com.br/2013/05/how-to-properly-mirror-a-git-repository/
 
+## Work with an upstream branch
+
+Add the upstream repo as a remote:
+
+```bash
+git remote add upstream <url>
+```
+
+Fetch updates to upstream, including tags:
+
+```bash
+git fetch --tags upstream
+```
+
+Reset current local branch to upstream (or could `merge --ff-only`):
+
+```bash
+git reset --hard remotes/upstream/my-branch
+```
+
+Push to origin, including tags:
+
+```bash
+git push origin --tags my-branch
+```
+
+
 ## Mirror a repository and keep it up-to-date:
 
 ```bash

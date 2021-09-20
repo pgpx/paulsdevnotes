@@ -141,11 +141,6 @@ set -e # Enable exit on error
 exit $EXIT_CODE # Re-apply the initial exit code
 ```
 
-## Triggering pipelines
-
-* [pipeline-commander](https://github.com/cfriedt/pipeline-commander) - A hackish tool to trigger a GitLab pipeline and wait for its completion.
-* <https://finestructure.co/blog/2017/12/2/gitlab-ci-pipeline-trigger-and-wait>
-
 ## Tags and environment variables in pipelines
 
 When a pipeline is run on a tag:
