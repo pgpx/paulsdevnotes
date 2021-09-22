@@ -3,6 +3,7 @@
 ## Limitations
 
 * Does support caching another registry ([issue](https://github.com/aws/containers-roadmap/issues/939), [related blog](https://aws.amazon.com/blogs/containers/advice-for-customers-dealing-with-docker-hub-rate-limits-and-a-coming-soon-announcement/))
+* [Issue tracking custom domains for ECR](https://github.com/aws/containers-roadmap/issues/299) - looks like it isn't easily supported right now (other than with non-trivial workarounds). 
 
 ## Mutability
 
