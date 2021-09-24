@@ -21,3 +21,7 @@ Can define rules using:
 > With `countType = imageCountMoreThan`, images are sorted from youngest to oldest based on `pushed_at_time` and then all images greater than the specified count are expired.
 
 > With `countType = sinceImagePushed`, all images whose `pushed_at_time` is older than the specified number of days based on countNumber are expired.
+
+## Configuration
+
+* <https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html>
