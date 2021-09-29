@@ -42,3 +42,4 @@ compile:
       - target/pom.version
       - target/classes/configs/*.*
 ```
+
