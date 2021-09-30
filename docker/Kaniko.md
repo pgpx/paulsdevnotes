@@ -24,3 +24,4 @@ Code
 
 * [signatures support?](https://github.com/GoogleContainerTools/kaniko/issues/749)
 * [Missing or partial support for pattern substition in variable references (e.g. in RUN)](https://github.com/GoogleContainerTools/kaniko/issues/1246)
+* [Files created within kaniko can be partially accessed in Dockerfile](https://github.com/GoogleContainerTools/kaniko/issues/1553)

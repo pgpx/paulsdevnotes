@@ -26,3 +26,19 @@
     ```
     mvn dependency:tree --debug
     ```
+  
+## go-offline
+
+Copy all dependencies and plugins to prepare for an offline build (e.g. as the first `RUN` command in a Docker build, to enable caching).
+
+[dependency:go-offline](http://maven.apache.org/plugins/maven-dependency-plugin/go-offline-mojo.html) works, but misses lots of dependencies:
+
+```dockerfile
+RUN mvn dependency:go-offline -B
+```
+
+[qaware/go-offline-maven-plugin](https://github.com/qaware/go-offline-maven-plugin) copies most of them:
+
+```dockerfile
+RUN mvn de.qaware.maven:go-offline-maven-plugin:1.2.8:resolve-dependencies -B
+```
