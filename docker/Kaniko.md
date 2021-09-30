@@ -20,6 +20,12 @@ Code
 * <https://stackoverflow.com/questions/60138258/share-kaniko-cache-for-multi-stage-docker-builds-with-cloudbuild>
 * [Code fragment for cleaning cached images in GCR](https://github.com/GoogleContainerTools/kaniko/issues/1402)
 
+## Secrets
+
+Docker Buildkit supports `--secret` to pass secret values into the build (without storing them in the image), e.g. `--secret id=gitconfig,src=$HOME/.gitconfig`.
+
+Kaniko doesn't support this, with the only way to pass secret values into the build (without storing them in the image) is to copy them into `/kaniko` - they'll then be accessible within the build but not saved to the image ([related issue](https://github.com/GoogleContainerTools/kaniko/issues/1505) and [another issue](https://github.com/GoogleContainerTools/kaniko/issues/489)).
+
 ## Open issues
 
 * [signatures support?](https://github.com/GoogleContainerTools/kaniko/issues/749)
