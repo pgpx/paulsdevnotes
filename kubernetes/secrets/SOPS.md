@@ -55,3 +55,10 @@ stringData:
     pasword: 6789
     new-value: 12345
 ```
+
+## Helm-SOPS
+
+* <https://github.com/camptocamp/helm-sops> - Helm wrapper to decrypt SOPS secrets
+  * <https://github.com/camptocamp/docker-argocd> - ArgoCD Docker image containing helm-sops.
+  * <https://github.com/camptocamp/argocd-helm-sops-example>
+  * <https://dev.to/camptocamp-ops/argo-cd-secrets-management-using-sops-1eke>

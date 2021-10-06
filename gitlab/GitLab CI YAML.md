@@ -45,7 +45,7 @@ compile:
 
 ## ANSI colours and collapsible sections
 
-[Change the output colour of echo](https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux)
+[Change the output colour of echo](https://stackoverflow.com/a/5947802/125246)
 
 * [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code) - see 3-bit and 4-bit section.
 

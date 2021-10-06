@@ -1,5 +1,7 @@
 # ArgoCD Applications
 
+* [CRD](https://github.com/argoproj/argo-cd/blob/master/manifests/crds/application-crd.yaml)
+
 ## `argocd app create`
 
 * [CLI Ref](https://argoproj.github.io/argo-cd/user-guide/commands/argocd_app_create/)
