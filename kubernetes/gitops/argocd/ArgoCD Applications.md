@@ -23,6 +23,14 @@ kubectl patch app APPNAME  -p '{"metadata": {"finalizers": ["resources-finalizer
 kubectl delete app APPNAME
 ```
 
+## Restart deployments
+
+Will create new pods and delete the old ones, which can pull new images if the deployments have `imagePullPolicy: Always`:
+
+```bash
+argocd app actions run  my-app restart --kind Deployment --all
+```
+
 ## Kustomize
 
 * <https://argoproj.github.io/argo-cd/user-guide/kustomize/>
