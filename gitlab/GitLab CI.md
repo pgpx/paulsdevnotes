@@ -25,6 +25,7 @@ Possible issues:
 
 * [CI runner breaks on activated git-lfs](https://gitlab.com/gitlab-org/gitlab-runner/issues/2245), [CI runner breaks on activated git-lfs (improved solution)](https://gitlab.com/gitlab-org/gitlab-runner/issues/2504
 * [after_script and always are not called if a job is cancelled](https://gitlab.com/gitlab-org/gitlab-ce/issues/20727)
+* [Interruptible pipelines are not cancelled if created via web](https://gitlab.com/gitlab-org/gitlab/-/issues/287780)
 
 ## Settings
 
