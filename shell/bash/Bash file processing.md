@@ -1,5 +1,16 @@
 # Bash file processing
 
+## Read each line from a file into different variables
+
+Use read (assuming default input delimiter is `\n` ([SO](https://stackoverflow.com/a/44112055/125246))
+
+```bash
+{ read a; read b; read c;} <<< "${s}"
+{ read a; read b; read c;} < "my-file.txt"
+```
+
+`-d char` can specify another input delimiter`
+
 ## Get the absolute path of a file
 
 

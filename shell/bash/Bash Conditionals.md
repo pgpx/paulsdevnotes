@@ -9,6 +9,18 @@ A || B  # Run B if and only if A failed
 A &     # Run A in background.
 ```
 
+## Check if a command succeded ([SO](https://unix.stackexchange.com/a/22728/32390))
+
+(Does not trigger `-e` errors)
+
+```bash
+if command ; then
+    echo "Command succeeded"
+else
+    echo "Command failed"
+fi
+```
+
 ## Check if a variable is set [SO](https://stackoverflow.com/a/230593/125246)
 
 ```bash

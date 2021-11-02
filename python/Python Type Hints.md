@@ -16,3 +16,12 @@ from __future__ import annotations
     ```python
     bar: Sequence[int]
     ```
+  
+## Casting
+
+([SO](https://stackoverflow.com/a/9112513/125246))
+
+```python
+from typing import cast                                                              
+cast(int, 3.4)
+```

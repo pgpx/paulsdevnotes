@@ -93,3 +93,22 @@ def __eq__(self, other):
     with controlled_execution() as thing:
          some code
 ```
+
+## Determining type
+
+Determine the type of a variable using [type()](https://docs.python.org/3/library/functions.html#type) ([SO](https://stackoverflow.com/a/402704/125246):
+
+```python
+i=123
+type(i)
+<type 'int'>
+```
+
+Check if an object is a given type using [isinstance()](https://docs.python.org/3/library/functions.html#isinstance):
+
+```python
+>>> isinstance(i, int)
+True
+>>> isinstance(i, (int, float))       # Matches any type in a tuple
+True
+```

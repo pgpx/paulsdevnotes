@@ -36,3 +36,7 @@ help(L.append)  // Documentation for append method
 
 ## WSGI Web Server
 * [wsgiref](https://docs.python.org/2/library/wsgiref.html)
+
+## Tools
+
+* <https://pypi.org/project/versioneer/> - a tool for managing a recorded version number in distutils-based python projects

@@ -5,6 +5,8 @@
 
 * [GitVersion](https://gitversion.net/) - work with semver using Git tags and history.
 
+Can be stored in `.git/refs/tags` or `.git/packed-refs` ([SO](https://stackoverflow.com/a/5541389/125246))
+
 Delete a (remote) tag ([ref])(https://nathanhoad.net/how-to-delete-a-remote-git-tag))
 
 ```sh
