@@ -17,3 +17,11 @@ openssl req -x509 -nodes -days 730 -sha1 -newkey rsa:2048 -keyout "$1.key" -out 
 ```bash
 openssl x509 -in my.cert -text -noout
 ```
+
+## Remove encryption from a key
+
+Simply read and write it (you'll have to enter your passphrase):
+
+```bash
+openssl rsa -in my.key -out my.decrypted.key
+```
