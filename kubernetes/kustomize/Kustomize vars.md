@@ -1,5 +1,7 @@
 # Kustomize vars
 
+* [kustomize vars - enhance or replace? #2052](https://github.com/kubernetes-sigs/kustomize/issues/2052)
+
 ## Reading a value from a ConfigMap
 
 Can define the ConfigMap and var in `kustomization.yaml`:

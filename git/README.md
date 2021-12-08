@@ -19,6 +19,10 @@
 * <https://blog.carbonfive.com/2017/08/28/always-squash-and-rebase-your-git-commits/>
 * <https://ohmygit.org/> - visualisation game to learn Git
 
+## Tools
+
+* [forgit](https://github.com/wfxr/forgit) - [article](https://betterprogramming.pub/how-to-make-your-git-command-line-interactions-seamless-769d5c148097) - (uses [fzf](https://github.com/junegunn/fzf) - a general-purpose command-line fuzzy finder)
+
 ## Read later
 
 * <http://rnelson0.com/2015/05/01/preventing-git-astrophe-judicious-use-of-the-force-flag/>

@@ -20,6 +20,7 @@
 ** https://docs.gitlab.com/ee/administration/pages/
 ** https://about.gitlab.com/2016/12/07/building-a-new-gitlab-docs-site-with-nanoc-gitlab-ci-and-gitlab-pages/
 * [~jpetazzo/Using Docker-in-Docker for your CI or testing environment? Think twice.](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)  - `-v /var/run/docker.sock:/var/run/docker.sock` instead.
+* [How to automatically create a new MR on GitLab with GitLab CI](https://about.gitlab.com/blog/2017/09/05/how-to-automatically-create-a-new-mr-on-gitlab-with-gitlab-ci/)
 
 Possible issues:
 

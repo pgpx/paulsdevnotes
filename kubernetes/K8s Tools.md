@@ -5,6 +5,7 @@
 * [kubectx and kubens](https://github.com/ahmetb/kubectx) - CLI to help you switch between clusters and namespaces.
 * [Kubeval](https://www.kubeval.com/) - Kubeval is used to validate one or more Kubernetes configuration files, and is often used locally as part of a development workflow as well as in CI pipelines.
 * [Flagger](https://flagger.app/) - Progressive Delivery Operator for Kubernetes - A/B testing, canary, blue/green.
+* [KrakenD](https://www.krakend.io/) is a stateless, distributed, high-performance API Gateway that helps you effortlessly adopt microservices
 * [Lens](https://github.com/lensapp/lens) - GUI interface.
 * [MinIO](https://min.io) - S3-compatible storage.
 * [Okteto](https://okteto.com/) - CLI to work with multiple clusters and namespaces - [Working with Multiple Kubernetes Clusters using Okteto](https://okteto.com/blog/working-with-multiple-kubernetes-clusters/)
