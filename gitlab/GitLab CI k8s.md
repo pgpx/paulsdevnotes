@@ -31,5 +31,6 @@ variables:
   KUBERNETES_SERVICE_EPHEMERAL_STORAGE_LIMIT: 1Gi
 ```
 
-> The values for these variables are restricted to the [max overwrite](https://docs.gitlab.com/runner/executors/kubernetes.html#the-available-configtoml-settings) setting for that resource. If the max overwrite has not been set for a resource, the variable is ignored.
+> The values for these variables are restricted to the [max overwrite](https://docs.gitlab.com/runner/executors/kubernetes.html#the-available-configtoml-settings
+> ) setting for that resource. If the max overwrite has not been set for a resource, the variable is ignored.
 

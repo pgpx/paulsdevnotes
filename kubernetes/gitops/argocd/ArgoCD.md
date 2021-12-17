@@ -11,7 +11,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 ```
 
 Port-forward argocd-server to 8080
-And: argocd login localhost:8080 --username admin # and use the password
+And: `argocd login localhost:8080 --username admin # and use the password`
 
 ## Multi-tenancy
 
