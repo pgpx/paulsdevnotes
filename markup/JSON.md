@@ -12,9 +12,13 @@ CLI to manipulate JSON files
 
 Set a nested property:
 
-
 ```bash
 jq "setpath([\"auths\", \"${CACHE_REGISTRY}\"]; {\"auth\":\"${encoded}\"})"
+```
+
+Get values from a list:
+
+```bash
 ```
 
 ### Docker single-file build

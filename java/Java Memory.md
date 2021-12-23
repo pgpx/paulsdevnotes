@@ -1,0 +1,3 @@
+# Java Memory
+
+Java 8u191 and greater can use a heap based on the amount of RAM available to the container - i.e. the k8s memory limit.  That means that you'll still need to set k8s request/limit, but won't also need to set Java options (other than maybe `-XX:MaxRAMPercentage=75.0` which defaults to `25.0`).  (ref [SO](https://stackoverflow.com/a/64410587/125246) and [+UseContainerSupport to the Rescue](https://medium.com/adorsys/usecontainersupport-to-the-rescue-e77d6cfea712)
