@@ -23,3 +23,6 @@ RUN addgroup --group appgroup && adduser --ingroup appgroup appuser
 # Tell docker that all future commands should run as the appuser user
 USER appuser
 ```
+
+Add a system group/user with `-S`
+* System users are a like normal users but for are set an organizational purpose. The only difference is: They don't have an expiry date ( no aging set ), Their uids are below 999 like set on /etc/login.defs (can be changed)  ([SO](https://unix.stackexchange.com/a/619657/32390))
