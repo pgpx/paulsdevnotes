@@ -16,9 +16,10 @@ Set a nested property:
 jq "setpath([\"auths\", \"${CACHE_REGISTRY}\"]; {\"auth\":\"${encoded}\"})"
 ```
 
-Get values from a list:
+Get values from a list ([SO](https://stackoverflow.com/a/45524015/125246):
 
 ```bash
+.response[].text
 ```
 
 ### Docker single-file build
