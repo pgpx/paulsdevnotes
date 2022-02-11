@@ -20,3 +20,6 @@ Render the resource dependency graph:
 pulumi stack graph local/dev.dot
 dot -Tsvg local/dev.dot > local/dev.svg
 ```
+
+Refresh the Pulumi configuration with `pulumi refresh`.
+* Related issue: [Consider automatically refreshing on preview/update/destroy]((https://github.com/pulumi/pulumi/issues/2247)) - no reason given why refresh should not be the default.  

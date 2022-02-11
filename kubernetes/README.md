@@ -25,6 +25,9 @@
 
 * <https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-organizing-with-namespaces> - [kubens](https://github.com/ahmetb/kubectx)
 * [11 Ways (Not) to Get Hacked](https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/)
+* [learnk8s Kubernetes production best practices](https://learnk8s.io/production-best-practices)
+* [weaveworks Cluster Ready Checklist for Kubernetes](https://www.weave.works/blog/production-ready-checklist-kubernetes)
+* [CloudControl Kubernetes Production Readiness Checklist](https://www.ecloudcontrol.com/kubernetes-production-readiness-checklist/)
   
 ## Articles
 

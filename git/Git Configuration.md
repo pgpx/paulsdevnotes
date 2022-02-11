@@ -1,5 +1,7 @@
 # Git Configuration
 
+* [golang-standards/project-layout](https://github.com/golang-standards/project-layout)
+
 * Can switch configuration depending upon the path ([SO](https://stackoverflow.com/a/43884702/125246)):
 
     ```

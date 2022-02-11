@@ -27,6 +27,7 @@ Interesting articles:
 
 * <https://aws.amazon.com/blogs/database/get-started-with-amazon-elasticsearch-service-t-shirt-size-your-domain/>
     * Suggest maximum shard size of 50GB, 25 shards per GB of RAM allocated to the Node's JVM.
+    * Also [ref](https://www.elastic.co/guide/en/elasticsearch/reference/current/size-your-shards.html#shard-size-recommendation) suggests 20 shards/GB RAM and shard sizes 10GB to 50GB.
 * [Calculating Storage Requirements](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/sizing-domains.html#aes-bp-storage)
 * [Reducing cost for small Amazon Elasticsearch Service domains](https://aws.amazon.com/blogs/database/reducing-cost-for-small-amazon-elasticsearch-service-domains/)
 * <https://www.elastic.co/blog/how-many-shards-should-i-have-in-my-elasticsearch-cluster>

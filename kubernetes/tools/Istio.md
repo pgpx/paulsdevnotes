@@ -3,6 +3,10 @@
 * <https://istio.io/>
 * [Kiali](https://kiali.io/) - Service mesh management for Istio
 
+## Debugging
+
+* [Debugging Envoy and Istiod](https://istio.io/latest/docs/ops/diagnostic-tools/proxy-cmd/)
+
 ## CRDs
 
 * [Gateway](https://istio.io/latest/docs/reference/config/networking/gateway/)
