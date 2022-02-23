@@ -11,9 +11,9 @@ Or `printf` ([SO](http://stackoverflow.com/a/8467449/125246))
 printf "hello\nworld\n"
 ```
 
-## Multiline
+## Multiline Heredocs
 
-Use heredocs to output multiple lines ([SO](https://stackoverflow.com/a/23930212/125246))
+Use [Here Documents](https://tldp.org/LDP/abs/html/here-docs.html) to output multiple lines ([SO](https://stackoverflow.com/a/23930212/125246))
 
 ```bash
 cat << EOF
@@ -29,6 +29,15 @@ cat > test << EOM
 Line 1.
 Line 2.
 EOM
+```
+
+or ([SO](https://stackoverflow.com/a/2954835/125246))
+
+```bash
+cat << EOF > /tmp/yourfilehere
+These contents will be written to the file.
+        This line is indented.
+EOF
 ```
 
 Store in a variable:

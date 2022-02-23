@@ -2,7 +2,8 @@
 
 * <https://www.keycloak.org>
 
-[Docs](https://www.keycloak.org/docs/)
+* [Docs](https://www.keycloak.org/docs/)
+* [Release Notes](https://www.keycloak.org/docs/latest/release_notes/index.html)
 
 * [Securing Applications and Services Guide](https://www.keycloak.org/docs/latest/securing_apps/)
 * [Server Administration Guide](https://www.keycloak.org/docs/latest/server_admin/)
