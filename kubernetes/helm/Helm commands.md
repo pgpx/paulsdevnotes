@@ -11,7 +11,7 @@ helm
 * [Ref](https://docs.helm.sh/helm/#helm-template)
 
 ```bash
-helm template mychart
+helm template mychart -f secrets.yaml
 ```
 
 ## Providers

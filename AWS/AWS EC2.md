@@ -1,5 +1,9 @@
 # AWS EC2
 
+## Roles
+
+* [Using an IAM role to grant permissions to applications running on Amazon EC2 instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html)
+
 ## User data
 
 * [Run commands on your Linux instance at launch](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)
@@ -9,3 +13,7 @@
 ## Debug user data
 
 * <https://gist.github.com/jacoor/1088efc66c2bf168c08c290bf69f6969>
+
+## Security groups
+
+* [Security group rules](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules.html)
