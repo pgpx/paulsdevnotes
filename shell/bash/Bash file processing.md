@@ -37,3 +37,15 @@ done <peptides.txt
 ## Iterating through directories
 
 * [Why you shouldn't parse the output of ls(1)](http://mywiki.wooledge.org/ParsingLs)
+
+Loop ([SO](https://stackoverflow.com/a/9612232/125246)) through non-hidden files (and directories) ([SO](https://askubuntu.com/a/318211)):
+
+```bash
+# https://askubuntu.com/a/318211
+find . -not -path '*/.*' -type f -name '*.zip' -print0 |
+while IFS= read -r -d '' filename; do 
+	echo "${filename}"
+	unar -o "$(dirname "$filename")" -f "${filename}"
+	rm "${filename}"
+done	 
+```
