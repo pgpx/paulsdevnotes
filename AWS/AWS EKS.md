@@ -1,5 +1,6 @@
 # AWS EKS
 
+* [Release Calendar](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html#kubernetes-release-calendar) - includes end of support dates.
 * [Creating an IAM role and policy for your service account](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html)
 
 ## Upgrades
