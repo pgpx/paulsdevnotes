@@ -22,6 +22,8 @@ Get values from a list ([SO](https://stackoverflow.com/a/45524015/125246):
 .response[].text
 ```
 
+Escape keys - enclose in double-quotes ([SO](https://stackoverflow.com/a/37344498/125246)): `jq '."component-status"'`
+
 ### Docker single-file build
 
 ([ref](https://github.com/wesley-dean-flexion/busybox-jq-latest/blob/master/Dockerfile))
