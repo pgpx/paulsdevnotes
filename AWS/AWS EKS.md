@@ -22,3 +22,13 @@
 ## API
 
 * [CreateNodegroup](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateNodegroup.html) - creates a managed node group for an EKS cluster.
+
+## Retrieving Amazon EKS optimized Amazon Linux AMI IDs
+
+[ref](https://docs.aws.amazon.com/eks/latest/userguide/retrieve-ami-id.html)
+
+```bash
+aws ssm get-parameter --name /aws/service/eks/optimized-ami/1.21/amazon-linux-2/recommended/image_id --region region-code --query "Parameter.Value" --output text
+```
+
+Replace `amazon-linux-2` with `amazon-linux-2-gpu` or `amazon-linux-2-arm64` if required.
