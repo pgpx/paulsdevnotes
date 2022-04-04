@@ -1,6 +1,10 @@
 # Go Modules
 
 * [Reference](https://go.dev/ref/mod)
+* [Developing and publishing modules](https://go.dev/doc/modules/developing)
+* [Module release and versioning workflow](https://go.dev/doc/modules/release-workflow)
+* [Managing module source](https://go.dev/doc/modules/managing-source)
+* [Publishing a module](https://go.dev/doc/modules/publishing)
 * <https://blog.golang.org/using-go-modules>
 * <https://blog.golang.org/publishing-go-modules>
 

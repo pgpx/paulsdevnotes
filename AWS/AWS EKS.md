@@ -17,3 +17,7 @@
 ## IAM access
 
 * [Enabling IAM user and role access to your cluster](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html)
+
+## API
+
+* [CreateNodegroup](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateNodegroup.html) - creates a managed node group for an EKS cluster.

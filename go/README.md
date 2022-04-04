@@ -1,6 +1,8 @@
 # Go
 
 * <https://golang.org/>
+* [Effective Go](https://go.dev/doc/effective_go)
+* [FAQ](https://go.dev/doc/faq)
 * <https://awesome-go.com/> - List of Go frameworks, libraries and software.
 
 Utilities
