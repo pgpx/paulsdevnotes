@@ -36,3 +36,27 @@ argocd app actions run  my-app restart --kind Deployment --all
 * <https://argoproj.github.io/argo-cd/user-guide/kustomize/>
 
 Can set name prefix/suffix, labels, annotations, override images
+
+## Ignore differences
+
+e.g. those made by operators
+
+([ref](https://argo-cd.readthedocs.io/en/stable/user-guide/diffing/#application-level-configuration))
+
+```yaml
+spec:
+  ignoreDifferences:
+  # name and namespace are optional, and group and kind can be `*`
+  - group: apps
+    kind: Deployment
+    name: guestbook
+    namespace: default
+    jsonPointers:
+    - /spec/replicas
+    # or use an expression
+    jqPathExpressions:
+    - .spec.template.spec.initContainers[] | select(.name == "injected-init-container")
+    # ignore fields owned by specific managers defined in your live resources
+    managedFieldsManagers:
+      - kube-controller-manager
+```
