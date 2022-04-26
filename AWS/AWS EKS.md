@@ -32,3 +32,31 @@ aws ssm get-parameter --name /aws/service/eks/optimized-ami/1.21/amazon-linux-2/
 ```
 
 Replace `amazon-linux-2` with `amazon-linux-2-gpu` or `amazon-linux-2-arm64` if required.
+
+## Service accounts and trust relationships
+
+* <https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html>
+
+You can tell a container to run using a specific service account (in a specific namespace, instead of the per-namespace default), which can have restricted k8s permissions if required, but can also be linked to an IAM role (via a trust relationship), to give it specific AWS permissions (e.g. to be able to push to ECR or access specific S3 buckets).  By default, all EKS nodes can read (but not write) from the ECR repos of their AWS account, but you'll need to do something else to write to them.  The nice thing about using service accounts in this way is that you then don't need to store ECR credentials anywhere in your k8s configuration - you get read access by default, and specific GitLab runners can run with a service account to get push permissions.
+
+Example trust relationship:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::${ACCOUNT_ID}:oidc-provider/${OIDC_PROVIDER}"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "${OIDC_PROVIDER}:sub": "system:serviceaccount:${namespace}:${service_account}"
+        }
+      }
+    }
+  ]
+}
+```
