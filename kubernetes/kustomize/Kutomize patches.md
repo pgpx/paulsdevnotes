@@ -6,7 +6,7 @@ Inline patches: [examples](https://github.com/kubernetes-sigs/kustomize/blob/mas
 
 * [JSON Patch - rfc6902](https://tools.ietf.org/html/rfc6902)
 
-  * Escape `/` with `-1` and `-` with `--` ([ref](https://datatracker.ietf.org/doc/html/rfc6901#section-3))
+  * Escape `/` with `~1` and `~` with `~0` ([ref](https://datatracker.ietf.org/doc/html/rfc6901#section-3))
 
 ```yaml
 patches:
