@@ -24,6 +24,25 @@ Get values from a list ([SO](https://stackoverflow.com/a/45524015/125246):
 
 Escape keys - enclose in double-quotes ([SO](https://stackoverflow.com/a/37344498/125246)): `jq '."component-status"'`
 
+Filter:
+
+```bash
+jq '.deployment.resources[] | select ( .parent == "urn:pulumi:oc-dev::pulumi-aws::kubernetes:helm.sh/v3:Chart::test-redis" ) | .urn '  my.json
+```
+
+JSON-encode ([SO](https://stackoverflow.com/a/50380697/125246))
+
+```bash
+$ echo -n '猫に小判' | jq -aRs .
+"\u732b\u306b\u5c0f\u5224"
+```
+
+JSON-decode:
+
+```bash
+echo -n '"str"' | jq -r .
+```
+
 ### Docker single-file build
 
 ([ref](https://github.com/wesley-dean-flexion/busybox-jq-latest/blob/master/Dockerfile))
