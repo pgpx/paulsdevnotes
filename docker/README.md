@@ -5,6 +5,7 @@
 Tools
 * [Skopeo](https://github.com/containers/skopeo) - query Docker images and repositories
 * [ctop](https://github.com/bcicen/ctop) - Top-like interface for container metrics
+* [dazzle](https://github.com/gitpod-io/dazzle) - dazzle is a rather experimental Docker/OCI image builder. Its goal is to build independent layers where a change to one layer does not invalidate the ones sitting "above" it.
 
 Books
 * [Docker + Consul](https://www.safaribooksonline.com/library/view/docker-in-the/9781939902184/ch15.html#idp6134288)
