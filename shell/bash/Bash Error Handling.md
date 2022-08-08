@@ -19,3 +19,10 @@ trap clean_up EXIT
 cd invalid_directory
 echo "Shouldn't reach this"
 ```
+
+## Trap errors
+
+```bash
+trap "exit" INT TERM
+trap "rm '${tempdir}'/users*" EXIT
+```
