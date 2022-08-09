@@ -18,6 +18,19 @@
 
 ## Issues
 
+### Have to set `safe-to-evict` to allow autoscaler to scale down a node 
+
+* [autoscaler issue #3947](https://github.com/kubernetes/autoscaler/issues/3947)
+  * also see [istio issue #19395](https://github.com/istio/istio/issues/19395))
+
+Right now if you have a sidecar like istio's (istio/istio#19395) with an EmptyDir and the main service without it; the pod is excluded. A work around is to set the annotation
+
+```yaml
+cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+```
+
+but that applies at the whole pod level and one would need to duplicate the logic checking for volumes to decide true/false.
+
 ### Sidecar container doesn't stop after (cron)job finishes
 
 It is actually a general k8s issue about sidecars not stopping after jobs finish ([k8s issue](https://github.com/kubernetes/kubernetes/issues/25908)).
