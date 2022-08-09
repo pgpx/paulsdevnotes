@@ -3,6 +3,11 @@
 * <https://istio.io/>
 * [Kiali](https://kiali.io/) - Service mesh management for Istio
 
+Articles 
+
+* [Image signing and validation](https://istio.io/latest/docs/ops/best-practices/image-signing-validation/)
+* [Security Best Practices](https://istio.io/latest/docs/ops/best-practices/security/
+
 ## Debugging
 
 * [Debugging Envoy and Istiod](https://istio.io/latest/docs/ops/diagnostic-tools/proxy-cmd/)
@@ -46,4 +51,22 @@ Current solution is to hack something like the following ([Istio issue](https://
     echo \"Sidecar available. Running the command...\";
     <YOUR_COMMAND>;
     x=$(echo $?); curl -fsI -X POST http://localhost:15020/quitquitquit && exit $x
+```
+
+### [Pod or containers start with network issues if istio-proxy is not ready](https://istio.io/latest/docs/ops/common-problems/injection/#pod-or-containers-start-with-network-issues-if-istio-proxy-is-not-ready)
+
+> Many applications execute commands or checks during startup, which require network connectivity. This can cause application containers to hang or restart if the istio-proxy sidecar container is not ready.
+> 
+> To avoid this, set holdApplicationUntilProxyStarts to true. This causes the sidecar injector to inject the sidecar at the start of the pod’s container list, and configures it to block the start of all other containers until the proxy is ready.
+> 
+> This can be added as a global config option:
+
+```yaml
+values.global.proxy.holdApplicationUntilProxyStarts: true
+```
+
+or as a pod annotation:
+
+```yaml
+proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'
 ```
