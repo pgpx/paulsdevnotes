@@ -9,3 +9,7 @@
 * [Lens](https://github.com/lensapp/lens) - GUI interface.
 * [MinIO](https://min.io) - S3-compatible storage.
 * [Okteto](https://okteto.com/) - CLI to work with multiple clusters and namespaces - [Working with Multiple Kubernetes Clusters using Okteto](https://okteto.com/blog/working-with-multiple-kubernetes-clusters/)
+
+## Scanning
+
+* [Popeye](https://github.com/derailed/popeye) - is a utility that scans live Kubernetes cluster and reports potential issues with deployed resources and configurations.
