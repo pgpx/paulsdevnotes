@@ -10,3 +10,7 @@
 ## Kubernetes Provider
 
 * [Getting Started](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started)
+
+## Tools
+
+* [Terraformer](https://github.com/GoogleCloudPlatform/terraformer/) - CLI tool that generates tf/json and tfstate files based on existing infrastructure (reverse Terraform).
