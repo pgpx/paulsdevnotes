@@ -1,0 +1,3 @@
+# k8s Libraries
+
+* [k8schain](https://pkg.go.dev/github.com/google/go-containerregistry/pkg/authn/k8schain#section-readme) - This is an implementation of the authn.Keychain interface loosely based on the authentication semantics used by the Kubelet when performing the pull of a Pod's images.  Supports GCR< ACR, AWS ECR - if the keychain is used from within Kubernetes services on those clouds (GKE, AKS, EKS), any available service credentials will be discovered and used.

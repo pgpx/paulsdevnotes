@@ -43,6 +43,12 @@ JSON-decode:
 echo -n '"str"' | jq -r .
 ```
 
+Combine lists ([SO](https://stackoverflow.com/a/42013459/125246)):
+
+```bash
+$ jq 'reduce inputs as $i (.; .list += $i.list)' blahblah.json blueblue.json
+```
+
 ### Docker single-file build
 
 ([ref](https://github.com/wesley-dean-flexion/busybox-jq-latest/blob/master/Dockerfile))
