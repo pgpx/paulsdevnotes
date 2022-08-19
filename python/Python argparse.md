@@ -3,7 +3,8 @@
 * <https://docs.python.org/2/library/argparse.html>
 * Alternative: [Click](https://click.palletsprojects.com/en/7.x/)
 
-Create a parent parser if you want the same option to be added to multiple subparsers ([SO](https://stackoverflow.com/a/56595689/125246)):
+Create a parent parser if you want the same option to be added to multiple
+subparsers ([SO](https://stackoverflow.com/a/56595689/125246)):
 
 ```python
 # Create parent subparser. Note `add_help=False` and creation via `argparse.`
@@ -14,7 +15,9 @@ parser_create = subparsers.add_parser("create", parents=[parent_parser],
                                       help='Create something')
 ```
 
-Require non-empty string value for an argument, if specified; otherwise `--image=` will be treated as an empty string value.  Use a [type](https://docs.python.org/3/library/argparse.html#type) function (idea from [SO](https://stackoverflow.com/a/55063765/125246)):
+Require non-empty string value for an argument, if specified; otherwise `--image=` will be treated as an empty string
+value. Use a [type](https://docs.python.org/3/library/argparse.html#type) function (idea
+from [SO](https://stackoverflow.com/a/55063765/125246)):
 
 ```python
 def non_empty_str(val):
@@ -22,5 +25,27 @@ def non_empty_str(val):
         return val
     raise argparse.ArgumentTypeError(f"{val} is not a non-empty string")
 
+
 parser.add_argument('--image', '-i', type=non_empty_str)
 ```
+
+## boolean arguments
+
+[SO](https://stackoverflow.com/a/43357954/125246)
+
+```python
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
+    
+parser.add_argument("--nice", type=str2bool, nargs='?', const=True, default=False,
+                    help="Activate nice mode.")
+```
+
