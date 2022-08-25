@@ -49,6 +49,16 @@ Combine lists ([SO](https://stackoverflow.com/a/42013459/125246)):
 $ jq 'reduce inputs as $i (.; .list += $i.list)' blahblah.json blueblue.json
 ```
 
+Default value ([SO](https://stackoverflow.com/a/54333221/125246)):
+
+```bash
+.amazon.item.status |=
+  if . == null or . == ""
+  then "IN PROCESS"
+  else .
+  end
+```
+
 ### Docker single-file build
 
 ([ref](https://github.com/wesley-dean-flexion/busybox-jq-latest/blob/master/Dockerfile))
