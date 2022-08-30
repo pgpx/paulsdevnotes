@@ -14,8 +14,15 @@ openssl req -x509 -nodes -days 730 -sha1 -newkey rsa:2048 -keyout "$1.key" -out 
 ```
 
 ## Display the contents of a certificate
+
 ```bash
 openssl x509 -in my.cert -text -noout
+```
+
+From k8s:
+
+```bash
+kubectl -n auth get configmap/kube-root-ca.crt -o json | jq '.data."ca.crt"' -r | openssl x509  -text -noout
 ```
 
 ## Remove encryption from a key
