@@ -4,7 +4,7 @@
 
 * [How do I assume an IAM role using the AWS CLI?](https://aws.amazon.com/premiumsupport/knowledge-center/iam-assume-role-cli/)
 
-Role must have a trust relationship, e.g. with a user:
+Role must have a [trust relationship](https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html), e.g. with a user:
 
 ```json
 {

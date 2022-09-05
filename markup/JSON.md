@@ -71,3 +71,7 @@ RUN git clone https://github.com/stedolan/jq.git
 WORKDIR /workdir/jq
 RUN git submodule update --init && autoreconf -fi && ./configure --disable-docs --disable-maintainer-mode --with-oniguruma && make -j8 LDFLAGS=-all-static && strip jq
 ```
+
+## JSON Schema
+
+* Infer a schema from a file: <https://www.jsonschema.net/>
