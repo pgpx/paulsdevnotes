@@ -50,3 +50,9 @@ revision=$(kubectl -n "${namespace}" get "deployment/$deployment" --no-headers -
 ## Dry-run and diff
 
 * <https://kubernetes.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/>
+
+## Get events for a deployment ([SO](https://stackoverflow.com/a/69636530/125246))
+
+```bash
+kubectl get events --field-selector involvedObject.name=$DEPLOYMENT_NAME -n $NAMESPACE
+```

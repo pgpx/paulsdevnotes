@@ -6,7 +6,7 @@
 
 ## jq
 
-* [GitHub](https://github.com/stedolan/jq), [DockerHub](https://hub.docker.com/r/stedolan/jq)
+* [Docs](https://stedolan.github.io/jq/), [GitHub](https://github.com/stedolan/jq), [DockerHub](https://hub.docker.com/r/stedolan/jq)
 
 CLI to manipulate JSON files
 

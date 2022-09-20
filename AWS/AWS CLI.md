@@ -16,3 +16,10 @@ error: You must be logged in to the server (Unauthorized)
 Check the current AWS CLI identity: `aws sts get-caller-identity` - you might have the wrong AWS environment variables set (e.g. `AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`)
 
 
+## EKS
+
+```bash
+aws eks list-nodegroups --cluster-name my-cluster-name
+aws eks describe-nodegroup --cluster-name my-cluster-name --nodegroup-name my-nodegroup
+ws autoscaling describe-auto-scaling-groups --auto-scaling-group-names=my-eks-id
+```
