@@ -7,6 +7,7 @@
 * Kubernetes API - [v1.13](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/), [API Conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#metadata)
 * <https://github.com/kubernetes/community> - Kubernetes community content
 * <https://www.katacoda.com/courses/kubernetes> - Learn Kubernetes using Interactive Browser-Based Scenarios
+* [Unofficial Kubernetes](https://unofficial-kubernetes.readthedocs.io/en/latest/)
 
 ## Concepts
 
