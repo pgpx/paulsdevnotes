@@ -1,5 +1,9 @@
 # Mac OS/X
 
+Articles
+
+* <https://stanislas.blog/2020/02/different-nameservers-domains-macos/>
+
 ## Creating USB boot drives from ISOs
 
 ([Rockstor ref](http://rockstor.com/blog/tutorials/creating-a-rockstor-usb-install-drive-on-your-mac/))
