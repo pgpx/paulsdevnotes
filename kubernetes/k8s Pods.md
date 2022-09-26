@@ -10,6 +10,15 @@ Wait for a pod to be ready ([SO](https://stackoverflow.com/a/60810347/125246)):
 kubectl -n tools wait --for=condition=ready --timeout=300s pod/my-pod
 ```
 
+List all container images used in a cluster ([ref](https://kubernetes.io/docs/tasks/access-application-cluster/list-all-running-container-images/#list-all-container-images-in-all-namespaces)):
+
+```bash
+kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec.containers[*].image}" |\
+tr -s '[[:space:]]' '\n' |\
+sort |\
+uniq -c
+```
+
 ## Liveness & readiness probes
 
 * [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)
