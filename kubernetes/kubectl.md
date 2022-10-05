@@ -12,8 +12,6 @@ kubectl exec -it shell-demo -- /bin/bash
 kubectl exec -it my-pod --container main-app -- /bin/bash
 ```
 
-
-
 ```bash
 #if kubectl "-n=${NAMESPACE}" wait --timeout=0s --for=condition=Available deploy/ebdc-ee-app;
 #if kubectl "-n=${NAMESPACE}" wait --timeout=0s --for=condition=Available "namespace/${NAMESPACE}";
@@ -23,6 +21,20 @@ kubectl exec -it my-pod --container main-app -- /bin/bash
 #fi
 ```
 
+## Custom columns in output
+
+Use `[*]` to output all values from an array ([SO](https://stackoverflow.com/a/43521302/125246)):
+
+```bash
+kubectl get gateway -o custom-columns='NAMESPACE:metadata.namespace,NAME:metadata.name,CERT:spec.servers[*].tls.credentialName' -A
+kubectl get certificates -o custom-columns='NAMESPACE:metadata.namespace,NAME:metadata.name,DNS-NAMES:spec.dnsNames,ISSUER:spec.issuerRef.name' -A
+```
+
+* Use `[?(@.Key=="Value"]` to search for keys in a map ([SO](https://stackoverflow.com/a/71306921/125246)):
+
+```bash
+kubectl get nodes -o=custom-columns='NAME:.metadata.name,ROLE:TOBEDEFINED,CPU:.status.capacity.cpu,MEM:.status.capacity.memory,IP:.status.addresses[?(@.type=="InternalIP")].address'
+```
 
 Sorted pods in a namespace:
 
