@@ -42,6 +42,12 @@ Sorted pods in a namespace:
 $(kubectl -n "${namespace}" get deployment --no-headers -o custom-columns=":metadata.name" | sort)
 ```
 
+Sorted nodes and their nodegroups:
+
+```bash
+kubectl get nodes -o custom-columns='name:metadata.name,nodegroup:metadata.labels.eks\.amazonaws\.com\/nodegroup,created:metadata.creationTimestamp' --sort-by=metadata.creationTimestamp
+```
+
 ## Port forwarding
 
 ```bash
