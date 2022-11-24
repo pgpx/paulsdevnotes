@@ -33,7 +33,7 @@ Problems
 ## Configuration
 
 * [Expose Pod Information to Containers Through Environment Variables](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)
-    * [Use pod fields as environment variables](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/#use-pod-fields-as-values-for-environment-variables):
+    * [Use pod fields as environment variables](https://kubernetes.io/docc/tasks/inject-data-application/environment-variable-expose-pod-information/#use-pod-fields-as-values-for-environment-variables):
         ```yaml
         env:
         - name: MY_NODE_NAME
