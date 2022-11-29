@@ -17,3 +17,10 @@
 ## Security groups
 
 * [Security group rules](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules.html)
+
+## NAT Gateway External IPs
+
+```bash
+aws ec2 describe-nat-gateways --output text --query \
+  'NatGateways[].[NatGatewayAddresses[0].PublicIp, Tags[?Key==`Name`].Value | [0]]' | sort
+```
