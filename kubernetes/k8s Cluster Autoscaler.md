@@ -1,66 +1,57 @@
-# Cluster Autoscaler
+# k8s Autoscaler
 
-* <https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler>
-* [FAQ](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md)
+## Articles
 
-## AWS commands
+* [Kubernetes Cluster Autoscaler: More than scaling out](https://itnext.io/kubernetes-cluster-autoscaler-more-than-scaling-out-7b2d97f10b27)
 
-* List autoscaling groups: `aws autoscaling describe-auto-scaling-group`
+## [What types of pods can prevent CA from removing a node?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node)
 
-## Remove a node
+* Pods with restrictive PodDisruptionBudget.
+* Kube-system pods that:
+  * are not run on the node by default,
+  * don't have a pod disruption budget set or their PDB is too restrictive (since CA 0.6).
+* Pods that are not backed by a controller object (so not created by deployment, replica set, job, stateful set etc). *
+* Pods with local storage.
+* Pods that cannot be moved elsewhere due to various constraints (lack of resources, non-matching node selectors or affinity, matching anti-affinity, etc)
+* Pods that have the following annotation set: `"cluster-autoscaler.kubernetes.io/safe-to-evict": "false"`
 
-First [drain](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/) the
-node: `kubectl drain <node-name>`
+Unless the pod has the following annotation (supported in CA 1.0.3 or later): `"cluster-autoscaler.kubernetes.io/safe-to-evict": "true"`
 
-Then either wait for the autoscaler to scale down the EKS Node Group (will take 10 mins, depending on config), or do that manually from the AWS ASG console.
+Or you have overridden this behaviour with one of the relevant flags.
 
-Just deleting the node using k9s will *not* delete the underlying instance, so cluster autoscaler will log messages such
-as `unregistered nodes present` and will not scale up new nodes to replace it (until the node has been deleted from AWS), and just deleting the node from the AWS console will often cause the ASG to recreate it (if the autoscaler has not yet updated its desired number of nodes).
+## AWS
 
-## Taints and tolerations
+* [ref](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md)
 
-For AWS, need to add tags to the autoscaling group for the cluster-autoscaler to be able to use taints and tolerations when scaling the group from 0 nodes (would normally use taints and tolerations from existing nodes in the group, but cannot do that if there are 0):
+### ASG tags when scaling AWS nodegroups from 0
+
+* [ref](https://aws.github.io/aws-eks-best-practices/cluster-autoscaling/#scaling-from-0)
+
+Must set the following tags on the autoscaling group (created by a managed node group) to enable the cluster-autoscaler to scale from 0:
 
 ```
-k8s.io/cluster-autoscaler/node-template/label/<key>=<value
-k8s.io/cluster-autoscaler/node-template/taint/<key>=<value>:<effect>
+Key: k8s.io/cluster-autoscaler/node-template/resources/$RESOURCE_NAME
+Value: 5
+Key: k8s.io/cluster-autoscaler/node-template/label/$LABEL_KEY
+Value: $LABEL_VALUE
+Key: k8s.io/cluster-autoscaler/node-template/taint/$TAINT_KEY
+Value: <taint-value>:NoSchedule (or NO_SCHEDULE)
 ```
 
-If using managed node groups, then you must still apply these to the associated ASG.  For example in Pulumi:
+e.g.
 
-```go
-asgName := nodegroup.Resources.ApplyT(func(resources []eks.NodeGroupResource) (string, error) {
-    if len(resources) != 1 || len(resources[0].AutoscalingGroups) != 1 {
-		// Can't easily handle more than 1 generated ASG in Pulumi
-        return "", fmt.Errorf("NodeGroup has invalid ASG configuration")
-    }
-    return *resources[0].AutoscalingGroups[0].Name, nil
-}).(pulumi.StringOutput)
+```
+k8s.io/cluster-autoscaler/node-template/label/foo: bar
+k8s.io/cluster-autoscaler/node-template/taint/dedicated: true:NoSchedule
+k8s.io/cluster-autoscaler/node-template/resources/ephemeral-storage: 100G
 
-_, err = autoscaling.NewTag(ctx, "asg-tag", &autoscaling.TagArgs{
-    AutoscalingGroupName: asgName,
-    Tag: autoscaling.TagTagArgs{
-        Key:               pulumi.String("k8s.io/cluster-autoscaler/node-template/label/my-label"),
-        PropagateAtLaunch: pulumi.Bool(true),
-        Value:             pulumi.String("my-value"),
-    },
-}, pulumi.DependsOn([]pulumi.Resource{res}))
-if err != nil {
-    return
-}
+# To speed up GPU 
 ```
 
-Note that changes to the taints/labels are only read the first time that the cluster-autoscaler needs them and then are cached, so you need to restart it if values are changed!
+For GPUs:
 
-## Troubleshooting
+> device plugin on nodes that provides GPU resources can take some time to advertise the GPU resource to the cluster. This may cause Cluster Autoscaler to unnecessarily scale out multiple times
 
-The `cluster-autoscaler-status` configmap is updated every
-minute ([ref](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-check-what-is-going-on-in-ca-))
-. Can check its events as well:
-
-```bash
-$ kubectl get events --namespace kube-system --field-selector involvedObject.name=cluster-autoscaler-status
-LAST SEEN   TYPE     REASON           OBJECT                                MESSAGE
-16m         Normal   ScaleDownEmpty   configmap/cluster-autoscaler-status   Scale-down: removing empty node ip-172-22-12-145.eu-central-1.compute.internal
 ```
-
+k8s.amazonaws.com/accelerator=<gpu-type>
+```
