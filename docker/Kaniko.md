@@ -19,6 +19,7 @@ Code
 * <https://github.com/GoogleContainerTools/kaniko#caching-base-images>
 * <https://stackoverflow.com/questions/60138258/share-kaniko-cache-for-multi-stage-docker-builds-with-cloudbuild>
 * [Code fragment for cleaning cached images in GCR](https://github.com/GoogleContainerTools/kaniko/issues/1402)
+* `--cache-copy-layers` does not work for multi-stage builds ([issue](https://github.com/GoogleContainerTools/kaniko/issues/2065))
 
 ## Secrets
 
