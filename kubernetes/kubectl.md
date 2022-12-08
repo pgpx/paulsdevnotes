@@ -2,6 +2,7 @@
 
 * [Reference](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands), [Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 * [Golang Templates Cheatsheet](https://curtisvermeeren.github.io/2017/09/14/Golang-Templates-Cheatsheet)
+* [JSONPath support](https://kubernetes.io/docs/reference/kubectl/jsonpath/)
 
 ## [Get a shell to a running container](https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/)
 
@@ -46,6 +47,24 @@ Sorted nodes and their nodegroups:
 
 ```bash
 kubectl get nodes -o custom-columns='name:metadata.name,nodegroup:metadata.labels.eks\.amazonaws\.com\/nodegroup,created:metadata.creationTimestamp' --sort-by=metadata.creationTimestamp
+```
+
+Deployments not owned by ArgoCD or Pulumi
+
+```bash
+kubectl get deployments --all-namespaces -o custom-columns='namespace:metadata.namespace,name:metadata.name,argocd:metadata.labels.argocd\.argoproj\.io/instance,managed-by:metadata.labels.app\.kubernetes\.io/managed-by,ownerref:metadata.ownerReferences[0].name' --sort-by=metadata.namespace --selector='!argocd.argoproj.io/instance,app.kubernetes.io/managed-by!=pulumi'
+```
+
+Deployments owned by ArgoCD
+
+```bash
+kubectl get deployments --all-namespaces -o custom-columns='namespace:metadata.namespace,name:metadata.name,argocd:metadata.labels.argocd\.argoproj\.io/instance,managed-by:metadata.labels.app\.kubernetes\.io/managed-by' --sort-by=metadata.namespace --selector='argocd.argoproj.io/instance'
+```
+
+Deployments owned by Pulumi
+
+```bash
+kubectl get deployments --all-namespaces -o custom-columns='namespace:metadata.namespace,name:metadata.name,argocd:metadata.labels.argocd\.argoproj\.io/instance,managed-by:metadata.labels.app\.kubernetes\.io/managed-by' --sort-by=metadata.namespace --selector='app.kubernetes.io/managed-by=pulumi'
 ```
 
 ## Port forwarding
