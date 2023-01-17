@@ -21,6 +21,12 @@ ${varName:?Error varName is not defined or is empty}
 ${1:?"Missing operand"}
 ```
 
+* Output a value if a variable was set:
+
+  ```bash
+  echo "${PEM_PASSPHRASE:+-passin=pass:$PEM_PASSPHRASE}"
+* ```
+
 * Unset (delete) a variable
 
     ```bash
