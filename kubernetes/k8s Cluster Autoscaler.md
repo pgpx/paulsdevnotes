@@ -1,8 +1,17 @@
 # k8s Autoscaler
 
+* [Helm charts](https://github.com/kubernetes/autoscaler/tree/master/charts)
+
+## Alternatives
+
+* Karpenter
+* [KEDA](https://keda.sh/)
+  * [KEDA: Kubernetes Event-Driven Autoscaling](https://www.youtube.com/watch?v=3lcaawKAv6s)
+
 ## Articles
 
 * [Kubernetes Cluster Autoscaler: More than scaling out](https://itnext.io/kubernetes-cluster-autoscaler-more-than-scaling-out-7b2d97f10b27)
+* [Creating Kubernetes Auto Scaling Groups for Multiple Availability Zones](https://aws.amazon.com/blogs/containers/amazon-eks-cluster-multi-zone-auto-scaling-groups/)
 
 ## [What types of pods can prevent CA from removing a node?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node)
 
@@ -22,6 +31,7 @@ Or you have overridden this behaviour with one of the relevant flags.
 ## AWS
 
 * [ref](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md)
+* [Common Notes and Gotchas](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/aws#common-notes-and-gotchas)
 
 ### ASG tags when scaling AWS nodegroups from 0
 

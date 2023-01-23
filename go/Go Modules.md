@@ -5,6 +5,7 @@
 * [Module release and versioning workflow](https://go.dev/doc/modules/release-workflow)
 * [Managing module source](https://go.dev/doc/modules/managing-source)
 * [Publishing a module](https://go.dev/doc/modules/publishing)
+* [Tutorial: Getting started with multi-module workspaces](https://go.dev/doc/tutorial/workspaces)
 * <https://blog.golang.org/using-go-modules>
 * <https://blog.golang.org/publishing-go-modules>
 
