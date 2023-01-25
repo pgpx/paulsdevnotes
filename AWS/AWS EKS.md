@@ -3,6 +3,10 @@
 * [Release Calendar](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html#kubernetes-release-calendar) - includes end of support dates.
 * [Creating an IAM role and policy for your service account](https://docs.aws.amazon.com/eks/latest/userguide/create-service-account-iam-policy-and-role.html)
 
+## Cluster creation
+
+* [Creating an Amazon EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html) - user/role that creates the cluster will be its owner, which cannot be changed and is not visible.  Recommendation is to create a new IAM Role for this purpose, and to assume that role when performing the creation.
+
 ## Upgrades
 
 * Node upgrades will drain/cordon/terminate nodes in turn ([ref](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-update-behavior.html))
@@ -18,6 +22,8 @@
 ## IAM access
 
 * [Enabling IAM user and role access to your cluster](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html)
+
+Have to add users/roles to the `kube-system/aws-auth` configmap (use `eksctl` to do this).  Note that the user who created the cluster will always have access (and this user is hidden in the config, and cannot be changed!).
 
 ## API
 

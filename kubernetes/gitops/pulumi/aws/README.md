@@ -15,3 +15,7 @@ ssh -i "~/.ssh/my-kp.pem" ec2-user@172.1.2.3
 ```
 
 Or use [mssh](https://pypi.org/project/ec2instanceconnectcli/).
+
+## Provider configuration
+
+* [AWS Classic: Installation & Configuration](https://www.pulumi.com/registry/packages/aws/installation-configuration/) - can configure required account ids, roles to assume.
