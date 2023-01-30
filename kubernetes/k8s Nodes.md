@@ -6,3 +6,9 @@ k8s Nodes
 * [GitHub](https://github.com/kubernetes/autoscaler)
 * [FAQ](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md)
 * [Cluster Autoscaler on AWS](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md)
+
+## Drain a node
+
+```kubectl
+kubectl drain --ignore-daemonsets --delete-emptydir-data ip-172-19-14-71.eu-central-1.compute.internal
+```

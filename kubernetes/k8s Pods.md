@@ -19,6 +19,12 @@ sort |\
 uniq -c
 ```
 
+Delete a stuck pod:
+
+```bash
+kubectl delete pod -n my-ns my-pod-name  --grace-period=0 --force
+```
+
 ## Liveness & readiness probes
 
 * [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)

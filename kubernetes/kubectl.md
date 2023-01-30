@@ -49,6 +49,12 @@ Sorted nodes and their nodegroups:
 kubectl get nodes -o custom-columns='name:metadata.name,nodegroup:metadata.labels.eks\.amazonaws\.com\/nodegroup,created:metadata.creationTimestamp' --sort-by=metadata.creationTimestamp
 ```
 
+or filter and get only the name:
+
+```bash
+kubectl get nodes -o custom-columns='name:metadata.name,nodegroup:metadata.labels.eks\.amazonaws\.com\/nodegroup,created:metadata.creationTimestamp' --sort-by=metadata.creationTimestamp | grep wrk-compute | cut -w -f 1
+```
+
 Running Jupyter notebooks (using `awk '$3 == "1"'` to filter on the 3rd column where value is 1 ([SO](https://unix.stackexchange.com/a/31755/32390))
 
 ```bash
