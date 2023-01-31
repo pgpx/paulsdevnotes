@@ -19,7 +19,7 @@ sort |\
 uniq -c
 ```
 
-Delete a stuck pod:
+Delete a stuck pod ([SO](https://stackoverflow.com/a/38178833/125246)):
 
 ```bash
 kubectl delete pod -n my-ns my-pod-name  --grace-period=0 --force
