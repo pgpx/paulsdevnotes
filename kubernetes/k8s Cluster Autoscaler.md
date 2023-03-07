@@ -4,7 +4,7 @@
 
 ## Alternatives
 
-* Karpenter
+* [Karpenter](https://karpenter.sh)
 * [KEDA](https://keda.sh/)
   * [KEDA: Kubernetes Event-Driven Autoscaling](https://www.youtube.com/watch?v=3lcaawKAv6s)
 
