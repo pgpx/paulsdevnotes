@@ -11,4 +11,8 @@ k8s Nodes
 
 ```kubectl
 kubectl drain --ignore-daemonsets --delete-emptydir-data ip-172-19-14-71.eu-central-1.compute.internal
+
+# Multiple nodes matching a label
+kubectl drain --ignore-daemonsets=true --delete-emptydir-data=true --grace-period=3600 \
+    --selector=karpenter.sh/provisioner-name=test
 ```
