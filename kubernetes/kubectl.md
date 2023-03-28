@@ -46,7 +46,7 @@ $(kubectl -n "${namespace}" get deployment --no-headers -o custom-columns=":meta
 Sorted nodes and their nodegroups:
 
 ```bash
-kubectl get nodes -o custom-columns='name:metadata.name,nodegroup:metadata.labels.eks\.amazonaws\.com\/nodegroup,created:metadata.creationTimestamp' --sort-by=metadata.creationTimestamp
+kubectl get nodes -o custom-columns='name:metadata.name,nodegroup:metadata.labels.eks\.amazonaws\.com\/nodegroup,lt version:metadata.labels.eks\.amazonaws\.com/sourceLaunchTemplateVersion,version:status.nodeInfo.kubeletVersion,created:metadata.creationTimestamp' --sort-by=metadata.creationTimestamp
 ```
 
 or filter and get only the name:
