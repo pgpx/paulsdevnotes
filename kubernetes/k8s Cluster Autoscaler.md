@@ -8,6 +8,10 @@
 * [KEDA](https://keda.sh/)
   * [KEDA: Kubernetes Event-Driven Autoscaling](https://www.youtube.com/watch?v=3lcaawKAv6s)
 
+## Issues
+
+* [add annotation to ignore local storage volume during scale down](https://github.com/kubernetes/autoscaler/pull/5594) - `"cluster-autoscaler.kubernetes.io/safe-to-evict-local-volumes": "volume-1,volume-2"`
+* 
 ## Articles
 
 * [Kubernetes Cluster Autoscaler: More than scaling out](https://itnext.io/kubernetes-cluster-autoscaler-more-than-scaling-out-7b2d97f10b27)
