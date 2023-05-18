@@ -21,6 +21,7 @@ GET _cat/nodes?v
 
 # Index sizes
 GET _cat/indices?v&s=index
+GET _cat/indices?v&s=store.size
 GET _cat/indices/?v&s=index&index=ebdc-ee-prod-*
 
 # Index segments
@@ -29,6 +30,9 @@ GET my-index/_segments
 # Index templates
 GET _template/
 GET _cat/templates
+
+# Recovery
+GET _cat/recovery?v&active_only=true
 
 # Shards
 GET _cat/shards/?v
