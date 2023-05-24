@@ -79,6 +79,12 @@ Deployments owned by Pulumi
 kubectl get deployments --all-namespaces -o custom-columns='namespace:metadata.namespace,name:metadata.name,argocd:metadata.labels.argocd\.argoproj\.io/instance,managed-by:metadata.labels.app\.kubernetes\.io/managed-by' --sort-by=metadata.namespace --selector='app.kubernetes.io/managed-by=pulumi'
 ```
 
+AZs for each PV:
+
+```bash
+kubectl get pv -o custom-columns='claim:spec.claimRef.name,node:spec.nodeAffinity.required.nodeSelectorTerms[0].matchExpressions[0].values[0]'
+```
+
 ## Port forwarding
 
 ```bash
