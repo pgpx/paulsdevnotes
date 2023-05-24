@@ -33,6 +33,20 @@ Interesting articles:
 * <https://www.elastic.co/blog/how-many-shards-should-i-have-in-my-elasticsearch-cluster>
 * <https://www.elastic.co/guide/en/elasticsearch/reference/7.x/scalability.html>
 
+
+Primary/replica shards are allocated on different k8s nodes by default - in `elasticsearch.yml`:
+
+```yaml
+cluster:
+  routing:
+    allocation:
+      awareness:
+        attributes: k8s_node_name
+```
+
+* <https://opster.com/guides/elasticsearch/high-availability/elasticsearch-zone-awareness/>
+* <https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-cluster.html#shard-allocation-awareness>
+
 ## Querying
 
 * [Elasticsearch/Kibana Queries - In Depth Tutorial](https://www.timroes.de/2016/05/29/elasticsearch-kibana-queries-in-depth-tutorial/)
