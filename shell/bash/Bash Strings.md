@@ -1,5 +1,9 @@
 # Bash Strings
 
+Length of a string: `${#MYVAR}`
+
+Substring using [parameter expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html) ([SO](https://stackoverflow.com/a/428580/125246)): `${MYVAR:<offset-0-based>:<length>}`  e.g. `${a:0:5}` ()
+
 ## Newlines ([SO](http://stackoverflow.com/a/8467448/125246))
 ```bash
 echo -e "Hello\nworld"
