@@ -66,3 +66,7 @@ Example trust relationship:
   ]
 }
 ```
+
+## Ephemeral storage using local disks
+
+Need AMIs that include [this fix](https://github.com/awslabs/amazon-eks-ami/pull/1171) which adds a `--local-disks raid0` option to the `/etc/eks/bootstrap.sh` script that will combine all of the local disks into a raid 0 volume and use that for local storage (including ephemeral).

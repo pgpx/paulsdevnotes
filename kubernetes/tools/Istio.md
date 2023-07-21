@@ -8,6 +8,8 @@ Articles
 * [Image signing and validation](https://istio.io/latest/docs/ops/best-practices/image-signing-validation/)
 * [Security Best Practices](https://istio.io/latest/docs/ops/best-practices/security/
 
+Istio is built using BoringSSL, which means it does not support TLS 1.0 (and can't be manipulated to use it)
+
 ## Configuring the sidecar
 
 Stop Istio capturing inbound traffic (e.g. so that you can access directly via a LoadBalancer service), add the following annotation to the pod/deployment ([ref](https://istio.io/latest/about/faq/traffic-management/#controlling-inbound-ports))
