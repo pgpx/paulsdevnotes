@@ -1,5 +1,7 @@
 # Git Branches
 
+* [Branch-per-environment (Fowler)](https://martinfowler.com/articles/branching-patterns.html#environment-branch)
+
 Show the current branch ([SO](https://stackoverflow.com/a/12142066/125246), [SO](https://stackoverflow.com/a/1418022/125246))
 
 ```bash

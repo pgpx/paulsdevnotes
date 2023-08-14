@@ -88,7 +88,7 @@ kubectl get pv -o custom-columns='claim:spec.claimRef.name,node:spec.nodeAffinit
 Owners of k8s resources (Pulumi or ArgoCD?):
 
 ```bash
-kubectl get deployment,statefulset,cronjob,job,pod --all-namespaces \
+kubectl get deployment,statefulset,cronjob,job,pod,virtualservice --all-namespaces \
   -o custom-columns='namespace:metadata.namespace,kind:kind,name:metadata.name,managed-by:metadata.labels.app\.kubernetes\.io/managed-by,argocd-instance:metadata.labels.argocd\.argoproj\.io/instance,owner-reference:metadata.ownerReferences[0].name' \
   --sort-by=metadata.namespace | grep -E '<none>\s+<none>\s+<none>'
 ```
