@@ -93,6 +93,12 @@ kubectl get deployment,statefulset,cronjob,job,pod,virtualservice --all-namespac
   --sort-by=metadata.namespace | grep -E '<none>\s+<none>\s+<none>'
 ```
 
+Pods on a node ([SO](https://stackoverflow.com/a/50811992/125246)):
+
+```bash
+kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=<node name>
+```
+
 ## Port forwarding
 
 ```bash
