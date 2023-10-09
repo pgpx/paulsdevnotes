@@ -84,3 +84,28 @@ or as a pod annotation:
 ```yaml
 proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'
 ```
+
+### X-Forwarded-For
+
+* <https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-type-nodeport>
+* <https://istio.io/latest/docs/ops/configuration/traffic-management/network-topologies/#configuring-network-topologies>
+
+In Istio IngressGateway Helm:
+
+```yaml
+gateway:
+  service:
+    type: NodePort
+    # Preserve source IP, but will require client retries!
+    externalTrafficPolicy: "Local"
+```
+
+In VirtualServices:
+
+```yaml
+  http:
+    - match:
+        - headers:
+            X-Forwarded-For:
+              exact: 1.2.3.4
+```

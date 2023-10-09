@@ -18,3 +18,13 @@ Misc
 
 Articles:
 * [Keycloak Operator: Running Locally With Kind](https://www.coveros.com/keycloak-operator-running-locally-with-kind/)
+
+## Roles
+
+### [Role Scope Mappings](https://www.keycloak.org/docs/latest/server_admin/index.html#_role_scope_mappings)
+
+> Role Scope Mappings limit the roles declared inside an access token. When a client requests a user authentication, the access token they receive contains only the role mappings that are explicitly specified for the client’s scope. The result is that you limit the permissions of each individual access token instead of giving the client access to all the users permissions.
+
+## Resource servers
+
+* Any client application can be configured to support fine-grained permissions. In doing so, you are conceptually turning the client application into a resource server ([ref](https://www.keycloak.org/docs/latest/authorization_services/index.html#_resource_server_overview)).
