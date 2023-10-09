@@ -7,6 +7,7 @@
 * [Karpenter](https://karpenter.sh)
 * [KEDA](https://keda.sh/)
   * [KEDA: Kubernetes Event-Driven Autoscaling](https://www.youtube.com/watch?v=3lcaawKAv6s)
+* [Creating Kubernetes Auto Scaling Groups for Multiple Availability Zones](https://aws.amazon.com/blogs/containers/amazon-eks-cluster-multi-zone-auto-scaling-groups/) - create 1 ASG per AZ if you use EBS volumes (which are fixed to 1 AZ).
 
 ## Issues
 
