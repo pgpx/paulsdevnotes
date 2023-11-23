@@ -9,7 +9,7 @@ Python packaging and dependency management made easy
 Show outdated top-level dependencies:
 
 ```bash
-poetry show -T  # --top-level
+poetry show -oT  # --outdated --top-level
 ```
 
 ## [Explicit Package Sources](https://python-poetry.org/docs/repositories#explicit-package-sources)
