@@ -6,6 +6,12 @@ Python packaging and dependency management made easy
 
 ## CLI
 
+Update dependencies and check what will be installed:
+
+```bash
+rm -f poetry.lock && poetry lock --no-update && poetry install --no-root && poetry show -a
+```
+
 Show outdated top-level dependencies:
 
 ```bash
