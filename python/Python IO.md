@@ -33,6 +33,16 @@ s = input('prompt -->')
 * Strips trailing newline
 * Also see <https://docs.python.org/3/library/readline.html#module-readline>
 
+## Data pretty printer
+
+* [pprint](https://docs.python.org/3/library/pprint.html
+
+```python
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(stuff)
+```
+
 
 ## Progress bar
 

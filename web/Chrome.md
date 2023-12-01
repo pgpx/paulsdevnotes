@@ -2,6 +2,12 @@
 
 ## <chrome://net-internals>
 
+## Shortcut keys
+
+* [21 Chrome shortcuts you need to know](https://www.cnet.com/tech/computing/21-chrome-shortcuts-you-need-to-know/)
+* `Cmd+Up/Down` - top/bottom of page
+* `Opt+Up/Down` - page up/down
+
 ### Clear HSTS errors ([ref](https://andystechlife.wordpress.com/2016/09/18/how-to-clear-hsts-settings-in-chrome-and-firefox/))
 
 Go to <chrome://net-internals/#hsts> and query/delete the problematic domain.
