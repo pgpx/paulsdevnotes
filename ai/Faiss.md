@@ -5,6 +5,7 @@ Faiss is a library for efficient similarity search and clustering of dense vecto
 * <https://github.com/facebookresearch/faiss/>
 * <https://engineering.fb.com/2017/03/29/data-infrastructure/faiss-a-library-for-efficient-similarity-search/>
 * <https://towardsdatascience.com/how-to-build-a-semantic-search-engine-with-transformers-and-faiss-dcbea307a0e8>
+* PyPi: [faiss-cpu](https://pypi.org/project/faiss-cpu/)
 
 Alternatives:
 

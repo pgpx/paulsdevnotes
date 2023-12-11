@@ -9,6 +9,8 @@ Courses & books:
 
 * [Supervised Machine Learning: Regression and Classification -  Andrew Ng / Coursera](https://www.coursera.org/learn/machine-learning/)
 * [Hands on Machine Learning 3rd ed (Safari)](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781098125967/preface01.html#idm45720251958640) - [tutorials](https://colab.research.google.com/github/ageron/handson-ml3/blob/main/index.ipynb)
+* DeepLearning.AI - [Learn Generative AI Short Courses](https://www.deeplearning.ai/short-courses/)
+* [Prompt Engineering Guide](https://www.promptingguide.ai/)
 
 Code examples:
 
