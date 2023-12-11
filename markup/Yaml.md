@@ -23,3 +23,9 @@ script:
       Long string
       on multiple lines
 ```
+
+## YQ
+
+```bash
+yq ".experiment_name += \" (Git: $(git rev-parse --short HEAD) | $(git branch --show-current))\"" job.yaml
+```
