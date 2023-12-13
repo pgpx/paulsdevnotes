@@ -33,3 +33,9 @@ class JSONSetEncoder(json.JSONEncoder):
 print json.dumps(my_obj, indent=4, sort_keys=True, cls=JSONSetEncoder)
 ```
 
+Force UTF-8 encoding for output files ([SO](https://stackoverflow.com/q/16291358)):
+
+```python
+with open("example.json", "w", encoding='utf-8') as jsonfile:
+  json.dump(data, jsonfile, ensure_ascii=False)
+```
