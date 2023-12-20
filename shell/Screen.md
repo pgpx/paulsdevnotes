@@ -1,6 +1,7 @@
 # Screen
 
 * <https://linode.com/docs/networking/ssh/using-gnu-screen-to-manage-persistent-terminal-sessions/>
+* [Default Key Bindings](https://www.gnu.org/software/screen/manual/html_node/Default-Key-Bindings.html)
 
 Can connect/disconnect to a session (resuming even after disconnecting the terminal)
 
@@ -13,7 +14,7 @@ screen
 screen -S myname
 ```
 
-* Detach from a screen session: `Ctrl+a+d`
+* Detach from a screen session: `Ctrl+a, d`
 
 * Reattach to a Screen session:
 
@@ -26,6 +27,8 @@ screen -r <PID>
 screen -r <NAME>
 ```
 
+Or `screen -x`
+
 * List sessions and their PIDs:
 
 ```bash
@@ -37,3 +40,5 @@ screen -ls
 ```bash
 exit
 ```
+
+Or `Ctrl+a, k`

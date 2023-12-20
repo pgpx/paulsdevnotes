@@ -3,6 +3,7 @@
 * [How to determine the largest batch size of a given model saturating the GPU?](https://discuss.pytorch.org/t/how-to-determine-the-largest-batch-size-of-a-given-model-saturating-the-gpu/146075)
 * [How 🤗 Accelerate runs very large models thanks to PyTorch ](https://huggingface.co/blog/accelerate-large-models)
 * [Assisted Generation: a new direction toward low-latency text generation](https://huggingface.co/blog/assisted-generation)
+* [Accelerating Generative AI with PyTorch II: GPT, Fast](https://pytorch.org/blog/accelerating-generative-ai-2/)
 
 ## Installation
 

@@ -24,3 +24,12 @@
 aws ec2 describe-nat-gateways --output text --query \
   'NatGateways[].[NatGatewayAddresses[0].PublicIp, Tags[?Key==`Name`].Value | [0]]' | sort
 ```
+
+## Login to a VM using SSM
+
+Install the [session-manager plugin](https://formulae.brew.sh/cask/session-manager-plugin):
+
+```bash
+brew install session-manager-plugin
+```
+

@@ -15,3 +15,8 @@
 ## Tools
 
 * [lit-gpt](https://github.com/Lightning-AI/lit-gpt) - supports running many models, including using quantization.
+
+## Articles
+
+* HF: [Optimizing your LLM in production](https://huggingface.co/blog/optimize-llm) - lower precision, Flash Attention, The Science Behind LLM Architectures
+* HF: [Model Parallelism](https://huggingface.co/docs/transformers/v4.15.0/parallelism)
