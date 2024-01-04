@@ -6,6 +6,7 @@
 
 Articles:
 
+* [Deploy large language models on AWS Inferentia2 using large model inference containers](https://aws.amazon.com/blogs/machine-learning/deploy-large-language-models-on-aws-inferentia2-using-large-model-inference-containers/)
 * [Make your llama generation time fly with AWS Inferentia2](https://huggingface.co/blog/inferentia-llama2)
 * [Deploy Llama 2 7B on AWS inferentia2 with Amazon SageMaker](https://www.philschmid.de/inferentia2-llama-7b) - learn how to deploy and speed up Llama 2 inference using AWS Inferentia2 and optimum-neuron on Amazon SageMaker.
 * [Deploy Embedding Models on AWS inferentia2 with Amazon SageMaker](https://www.philschmid.de/inferentia2-embeddings) - learn how to deploy and speed up Embeddings Model inference using AWS Inferentia2 and optimum-neuron on Amazon SageMaker.

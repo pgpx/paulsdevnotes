@@ -20,3 +20,7 @@
 
 * HF: [Optimizing your LLM in production](https://huggingface.co/blog/optimize-llm) - lower precision, Flash Attention, The Science Behind LLM Architectures
 * HF: [Model Parallelism](https://huggingface.co/docs/transformers/v4.15.0/parallelism)
+
+## Papers
+
+* [Beyond Chinchilla-Optimal: Accounting for Inference in Language Model Scaling Laws](https://arxiv.org/abs/2401.00448) - find that LLM researchers expecting reasonably large inference demand (~1B requests) should train models smaller and longer than Chinchilla-optimal.

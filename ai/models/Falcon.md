@@ -10,3 +10,4 @@
 * [Falcon 180B foundation model from TII is now available via Amazon SageMaker JumpStart](https://aws.amazon.com/blogs/machine-learning/falcon-180b-foundation-model-from-tii-is-now-available-via-amazon-sagemaker-jumpstart/)
 * [Hello world to Falcon 180B](https://billtcheng2013.medium.com/hello-world-to-falcon-180b-25b257700a6a) -
   4bit quantization and Multi-GPU
+* [Improve performance of Falcon models with Amazon SageMaker](https://aws.amazon.com/blogs/machine-learning/improve-performance-of-falcon-models-with-amazon-sagemaker/)
