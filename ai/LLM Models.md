@@ -15,6 +15,7 @@
 ## Tools
 
 * [lit-gpt](https://github.com/Lightning-AI/lit-gpt) - supports running many models, including using quantization.
+* [vLLM](https://github.com/vllm-project/vllm) - Easy, fast, and cheap LLM serving for everyone
 
 ## Articles
 

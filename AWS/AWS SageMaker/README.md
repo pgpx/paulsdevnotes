@@ -7,6 +7,7 @@
 
 Samples:
 
+* [Amazon SageMaker Example Notebooks](https://sagemaker-examples.readthedocs.io/en/latest/index.html)
 * <https://github.com/aws-samples/sagemaker-101-workshop>
 
 Articles:
