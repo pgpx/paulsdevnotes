@@ -33,3 +33,10 @@ Install the [session-manager plugin](https://formulae.brew.sh/cask/session-manag
 brew install session-manager-plugin
 ```
 
+## Networking allowances
+
+* [Monitor network performance for your EC2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-network-performance-ena.html)
+
+  ```bash
+  ethtool -i eth0   # And look for *_allowance_exceeded entries
+  ```

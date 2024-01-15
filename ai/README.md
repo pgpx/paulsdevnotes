@@ -29,3 +29,8 @@
 
 * [Registry of Open Data on AWS](https://registry.opendata.aws/)
   * [Common Crawl](https://commoncrawl.org/) ([OD](https://registry.opendata.aws/commoncrawl/))- A corpus of web crawl data composed of over 50 billion web pages.
+
+## Techniques
+
+* Prompt compression
+  * [LLMLingua](https://github.com/microsoft/LLMLingua): Enhancing Large Language Model Inference via Prompt Compression, [blog](https://pub.towardsai.net/20x-savings-on-openai-bills-prompt-compression-llmlingua-51a585606348)

@@ -16,6 +16,8 @@
 
 * [lit-gpt](https://github.com/Lightning-AI/lit-gpt) - supports running many models, including using quantization.
 * [vLLM](https://github.com/vllm-project/vllm) - Easy, fast, and cheap LLM serving for everyone
+* Leaderboards - [blog](https://pub.towardsai.net/llm-benchmarks-in-2024-45226a1fcb54)
+  * [Helm](https://crfm.stanford.edu/helm/lite/latest/) - A holistic framework for evaluating foundation models.
 
 ## Articles
 
