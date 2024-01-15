@@ -25,3 +25,18 @@
   * quantization/lower-precision
   * Flash Attention
   * Strategic Selection for Long Text Inputs and Chat
+
+# Copying images
+
+* [hf-transfer](https://github.com/huggingface/hf_transfer) can speed up downloads
+
+```bash
+pip install -U "huggingface_hub[cli]"
+time huggingface-cli download --cache-dir cache1 --local-dir dir1 --local-dir-use-symlinks=False --force-download  meta-llama/Llama-2-7b-chat-hf --token <token>
+# https://github.com/peak/s5cmd
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda install s5cmd
+time s5cmd sync 'dir1/' s3://hf-models-copy/dir1b/
+```
+
