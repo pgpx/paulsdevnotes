@@ -9,3 +9,12 @@ JupyterLab is a next-generation web-based user interface for Project Jupyter.
 ## Autoreload
 
 * [Using autoreload to speed up IPython and Jupyter work](https://www.wrighters.io/using-autoreload-to-speed-up-ipython-and-jupyter-work/)
+
+## Formatting
+
+[Module: display](https://ipython.readthedocs.io/en/stable/api/generated/IPython.display.html)
+
+```python
+from IPython.display import Markdown
+display (Markdown('this is in <span style="color: #ff0000">red</span> color.'))
+```
