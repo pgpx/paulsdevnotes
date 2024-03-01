@@ -14,3 +14,7 @@
 ## Tools
 
 * [Terraformer](https://github.com/GoogleCloudPlatform/terraformer/) - CLI tool that generates tf/json and tfstate files based on existing infrastructure (reverse Terraform).
+
+## Issues
+
+* [Feature Request: Verbose option for plan #27547](https://github.com/hashicorp/terraform/issues/27547) - currently can only see diffs.
