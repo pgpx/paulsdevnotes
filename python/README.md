@@ -40,3 +40,6 @@ help(L.append)  // Documentation for append method
 ## Tools
 
 * <https://pypi.org/project/versioneer/> - a tool for managing a recorded version number in distutils-based python projects
+* [Hydra](https://hydra.cc/) - A framework for elegantly configuring complex applications
+* uv
+  * [Forget `pip install`, Use This Instead](https://medium.com/bitgrit-data-science-publication/forget-pip-install-use-this-instead-754863c58f1e)
