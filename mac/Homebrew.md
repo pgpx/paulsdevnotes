@@ -21,6 +21,13 @@ If it is unavailable as `package@version` ([SO](https://stackoverflow.com/a/7787
 
 Can `brew pin postgresql` to avoid the package from being upgraded.
 
+For git:
+
+```bash
+curl https://raw.githubusercontent.com/Homebrew/homebrew-core/115cd1cd624fe90b780e68ab0ebe81255154364b/Formula/g/git.rb -o git.rb
+brew install ./git.rb --force --build-bottle
+```
+
 ## Where an earlier version isn't directly available
 
 Use a fork of a `homebrew-<app>` repo to control which version is installed:
