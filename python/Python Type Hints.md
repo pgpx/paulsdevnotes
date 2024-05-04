@@ -25,3 +25,12 @@ from __future__ import annotations
 from typing import cast                                                              
 cast(int, 3.4)
 ```
+
+## Self class ([SO](https://stackoverflow.com/a/33533514/125246))
+
+```python
+from typing import Self
+
+class Position:
+    def __add__(self, other: Self) -> Self:
+```
