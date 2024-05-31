@@ -25,7 +25,14 @@ else
   (>&2 echo "Unsupported shell!")
   return
 fi
+```
 
+Or get the directory of a script when following a symlink to it ([SO](https://unix.stackexchange.com/a/17500/32390)):
+
+```bash
+# https://unix.stackexchange.com/a/17500/32390
+script_dir_path="$(dirname "$(readlink -f "$0")")"
+"${script_dir_path}"/target-script "$@"
 ```
 
 ## [Absolute path](http://stackoverflow.com/a/3915420/125246)
