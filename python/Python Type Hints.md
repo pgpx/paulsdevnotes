@@ -34,3 +34,11 @@ from typing import Self
 class Position:
     def __add__(self, other: Self) -> Self:
 ```
+
+## Concatenate
+
+Use [Concatenate](https://docs.python.org/3/library/typing.html#typing.Concatenate) to transform parameter types:
+
+```python
+def with_lock[**P, R](f: Callable[Concatenate[Lock, P], R]) -> Callable[P, R]: ...
+```
