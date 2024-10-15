@@ -13,6 +13,7 @@
 
 ## Tools
 
+* [Atlantis](https://www.runatlantis.io/) - Run Terraform (or OpenTofu) via merge request comments.
 * [Terraformer](https://github.com/GoogleCloudPlatform/terraformer/) - CLI tool that generates tf/json and tfstate files based on existing infrastructure (reverse Terraform).
 * [Terragrunt](https://terragrunt.gruntwork.io/) - Define Terraform code once, no matter how many environments you have.
   * [How to manage multiple environments with Terraform using Terragrunt](https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-using-terragrunt-2c3e32fc60a8)
