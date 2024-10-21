@@ -46,6 +46,10 @@ Will throw `IllegalStateExceptions`.
 
 * [StringManipulation](https://plugins.jetbrains.com/plugin/2162-string-manipulation) - `Alt/Option+M` - lets you change case, escape/unescape XML/JSON/Java strings, etc.
 
+## CLI
+
+[Start from the CLI](https://intellij-support.jetbrains.com/hc/en-us/articles/360011901879-How-to-start-IDE-from-the-command-line)
+
 ## Issues
 
 * `findbugs not compatible marked broken` - <https://youtrack.jetbrains.com/issue/IDEA-232675>
