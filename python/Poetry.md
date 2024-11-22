@@ -41,3 +41,8 @@ poetry add --source pytorch torch
 [tool.poetry.dependencies]
 torch = { version = "^2.1.0", source = "pytorch" }
 ```
+
+Install dependencies and remove those that are no longer needed (from `site-packages`) ([SO](https://stackoverflow.com/a/74982440/125246)) 
+```bash
+poetry install --sync
+```

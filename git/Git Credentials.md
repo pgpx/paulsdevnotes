@@ -26,3 +26,11 @@ Now `~/.gitconfig` will contain:
 ```
 https://user:pass@example.com
 ```
+
+# osxkeychain
+
+Get credentials:
+
+```bash
+echo "host=mygit-domain.com" | git credential-osxkeychain get
+```
