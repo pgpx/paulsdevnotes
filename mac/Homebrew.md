@@ -34,3 +34,7 @@ Use a fork of a `homebrew-<app>` repo to control which version is installed:
 
 * Fork `derailed/homebrew-k9s` and revert `master` to an earlier commit.
 * Then switch to it: `brew uninstall k9s && brew untap derailed/k9s && brew tap pgpx/k9s && brew install k9s`
+π
+brew remove git && brew cleanup
+curl https://raw.githubusercontent.com/Homebrew/homebrew-core/e3d54ee6b5a7e2087f96059f39d255eb4589187b/Formula/g/git.rb -o git.rb\nbrew install ./git.rb --force --build-bottle
+brew pin git
