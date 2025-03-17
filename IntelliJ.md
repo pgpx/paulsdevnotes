@@ -1,5 +1,26 @@
 # IntelliJ
 
+## CLI
+
+[Reference](https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#arguments)
+
+If IntelliJ doesn't start properly try:
+
+```bash
+/Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea dontReopenProjects
+```
+
+## Sync history
+
+To look at settings sync history ([ref](https://youtrack.jetbrains.com/issue/IJPL-13115/Feature-Restore-settings-to-previous-version-when-Settings-Sync-is-enabled#focus=Comments-27-11084096.0-0) and [ref](https://youtrack.jetbrains.com/issue/IJPL-13115/Feature-Restore-settings-to-previous-version-when-Settings-Sync-is-enabled#focus=Change-27-9466823.0-0.pinned)):
+
+* Search everywhere (double-`Shift`) for `Backup And Sync History`
+* Find the commit to revert
+* Go to the [configuration directory](Backup And Sync History)`/settingsSync`
+* `git checkout master`
+* `git revert <mycommit>`
+* `git checkout ide`
+
 ## Formatting
 
 * Turn off auto-formatting ([SO](http://stackoverflow.com/a/19492318/125246)):
