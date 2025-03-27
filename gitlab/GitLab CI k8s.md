@@ -29,6 +29,11 @@ variables:
   KUBERNETES_SERVICE_MEMORY_LIMIT: 4Gi
   KUBERNETES_SERVICE_EPHEMERAL_STORAGE_REQUEST: 512Mi
   KUBERNETES_SERVICE_EPHEMERAL_STORAGE_LIMIT: 1Gi
+
+  # Must match node_selector_overwrite_allowed regex in config.toml
+  KUBERNETES_NODE_SELECTOR_1: key=value
+  # Must match node_tolerations_overwrite_allowed regex in config.toml
+  KUBERNETES_NODE_TOLERATIONS_1: key=value:NoSchedule
 ```
 
 > The values for these variables are restricted to the [max overwrite](https://docs.gitlab.com/runner/executors/kubernetes.html#the-available-configtoml-settings

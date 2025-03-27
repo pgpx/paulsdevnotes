@@ -5,7 +5,7 @@
 Tools
 * [Skopeo](https://github.com/containers/skopeo) - query Docker images and repositories
 * [ctop](https://github.com/bcicen/ctop) - Top-like interface for container metrics
-* [crane/krane](https://github.com/google/go-containerregistry) - a tool for interacting with remote images and registries.
+* [crane/krane](https://github.com/google/go-containerregistry) - a tool for interacting with remote images and registries.  Its Docker images are no longer maintained, though alternatives are available (see [issue](https://github.com/google/go-containerregistry/issues/1877#issuecomment-2113616373))  
 * [dazzle](https://github.com/gitpod-io/dazzle) - dazzle is a rather experimental Docker/OCI image builder. Its goal is to build independent layers where a change to one layer does not invalidate the ones sitting "above" it.
 
 Books
