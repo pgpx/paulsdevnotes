@@ -31,7 +31,7 @@ variables:
   KUBERNETES_SERVICE_EPHEMERAL_STORAGE_LIMIT: 1Gi
 
   # Must match node_selector_overwrite_allowed regex in config.toml
-  KUBERNETES_NODE_SELECTOR_1: key=value
+ [GitLab Access Tokens.md](GitLab%20Access%20Tokens.md) KUBERNETES_NODE_SELECTOR_1: key=value
   # Must match node_tolerations_overwrite_allowed regex in config.toml
   KUBERNETES_NODE_TOLERATIONS_1: key=value:NoSchedule
 ```
@@ -39,3 +39,6 @@ variables:
 > The values for these variables are restricted to the [max overwrite](https://docs.gitlab.com/runner/executors/kubernetes.html#the-available-configtoml-settings
 > ) setting for that resource. If the max overwrite has not been set for a resource, the variable is ignored.
 
+## Docker auth config
+
+Set `DOCKER_AUTH_CONFIG` CI variable with `.docker/config.json` contents, and this will be used at runtime (added as a new dockerconfigjson secret, and added to the `imagePullSecrets` of the job pod ([ref](https://docs.gitlab.com/runner/configuration/advanced-configuration/#use-a-private-container-registry)).
