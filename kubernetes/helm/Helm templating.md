@@ -9,6 +9,16 @@ Values are applied to each file in `templates/`.
 
 * [Template Function List](https://helm.sh/docs/chart_template_guide/function_list/)
 
+### Make nested variables optional:
+
+Wrap each nullable level with parentheses `()` ([ref](https://stackoverflow.com/a/68807258/125246)).
+
+```gotemplate
+{{ if ((.Values.foo).bar) }}
+{{ .Values.foo.bar }}
+{{ end }}
+```
+
 ### b64enc
 
 Base64-encode a value: `{{ b64enc "hello" }}` and `{{ $.Values.myval | b64enc }}`
