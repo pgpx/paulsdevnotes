@@ -2,6 +2,7 @@
 
 * https://argoproj.github.io/argo-cd/>, [GitHub](https://github.com/argoproj/argo-cd/)
 * Argo Rollouts ([home](https://argoproj.github.io/argo-rollouts/), [GitHub](https://github.com/argoproj/argo-rollouts))
+* Kargo ([docs](https://docs.kargo.io/))
 
 ## Initial login
 
@@ -27,3 +28,10 @@ And: `argocd login localhost:8080 --username admin # and use the password`
 > A tool to automatically update the container images of Kubernetes workloads which are managed by Argo CD
 
 * [GitHub](https://github.com/argoproj-labs/argocd-image-updater)
+
+## Rendered manifests pattern
+
+Save rendered Helm charts (to git) instead of evaluating them at apply-time (so that we can diff changes beforehand).
+
+* <https://akuity.io/blog/the-rendered-manifests-pattern>
+* [Beyond the Chart: Mastering Kubernetes Deployments with Rendered Manifests and OCI](https://tldrecap.tech/posts/2025/argocon-na/rendered-manifests-oci-kubernetes-deployments/) - store rendered manifests in OCI registries, so that we don't pollute Git repos.
