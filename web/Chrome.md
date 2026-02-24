@@ -21,11 +21,17 @@ Go to <chrome://net-internals/#hsts> and query/delete the problematic domain.
     * Effective proxy settings: `chrome://net-internals/proxyservice.config#proxy` (re-apply will update them immediately, e.g. if PAC file has changed)
     * Events: `chrome://net-internals/proxyservice.config#events` - capture traffic, logging evaluation of PAC files, etc.
 
-### Clear invalid DNS entries
+### Clear (invalid) DNS entries
+
+Chrome has its own DNS cache.
 
 e.g. if unexpectedly getting Cert/authentication requests from sites usually visited over a VPN:
 
 Go to <chrome://net-internals/#dns> and click 'Clear host cache'
+
+* Can show resolved IP addresses for a domain there. 
+
+Also go to <chrome://net-internals/#sockets> and `Flush socket pools`. 
 
 NET::ERR_CERT_INVALID
 
