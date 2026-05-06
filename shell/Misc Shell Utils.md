@@ -14,3 +14,5 @@ echo $0
 ```
 
 [pv](https://linux.die.net/man/1/pv) - progress monitor
+
+`dua i` - interactively view disk usage and free up space.
