@@ -14,6 +14,13 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 Port-forward argocd-server to 8080
 And: `argocd login localhost:8080 --username admin # and use the password`
 
+
+Can also try:
+
+```
+argocd login hostname --grpc-web --skip-test-tls
+```
+
 ## Multi-tenancy
 
 * [Hassle-free multi-tenant K8S clusters management using Argo CD](https://blog.argoproj.io/hassle-free-multi-tenant-k8s-clusters-management-using-argo-cd-7dd35619046a)
